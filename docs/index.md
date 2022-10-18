@@ -22,7 +22,7 @@ hero:
 features:
   - icon: 🔧
     title: 常用 utils
-    details: 
+    details:
   - icon: 📦
     title: 仅供学习使用
     details:
