@@ -20,9 +20,9 @@ hero:
       link: https://juejin.cn/user/553809592726526/posts
 
 features:
-  - icon: 💡
-    title: VitePress
-    details: 基于VitePress开发
+  - icon: 🔧
+    title: 常用 utils
+    details: 
   - icon: 📦
     title: 仅供学习使用
     details:
