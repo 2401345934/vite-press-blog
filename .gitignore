@@ -1,0 +1,16 @@
+.vscode/
+.idea/
+.DS_Store
+int.bat
+dist/
+node_modules/
+npm-debug.log*
+yarn-error.log
+/coverage
+*bak
+.history
+*.log
+functions/*
+.temp/**
+screenshot
+.eslintcache
