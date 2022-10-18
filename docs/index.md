@@ -24,7 +24,7 @@ features:
     title: 常用 utils
     details:
   - icon: 📦
-    title: 仅供学习使用
+    title: 数据结构与算法
     details:
   - icon: 📖
     title: 包含各种面试题
