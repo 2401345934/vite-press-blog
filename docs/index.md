@@ -2,7 +2,7 @@
 layout: home
 
 title: Alan
-titleTemplate: 一个Vue3组件库
+titleTemplate: 个人纪录使用
 
 hero:
   name: Alan个人静态文档站点
