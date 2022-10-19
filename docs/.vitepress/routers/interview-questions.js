@@ -53,7 +53,10 @@ module.exports = [
         text: 'Vue/响应式原理',
         link: '/vue/reactive/implementation/',
         items: [
-          { text: '响应式的内部实现原理', link: '/vue/reactive/implementation/' },
+          { text: 'reactive API', link: '/vue/reactive/reactive/' },
+          { text: '依赖收集', link: '/vue/reactive/dep-collection/' },
+          { text: '派发通知', link: '/vue/reactive/notification/' },
+          { text: '响应式实现的优化 Vue3.2 版本', link: '/vue/reactive/implementation-optimized/' },
         ]
       }
     ]
