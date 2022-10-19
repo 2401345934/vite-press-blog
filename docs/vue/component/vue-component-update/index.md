@@ -36,10 +36,13 @@ patchProps  函数 会更新 DOM 节点的  class style event 等等其他 dom �
 patchChildren 函数
 元素子节点 vnode 一般会有 三种情况 ： 纯文本  vnode  数组 和空
 纯文本
+![图片](../../../assets/vue/text.png)
 
 vnode数组
+![图片](../../../assets/vue/nodeChildren.png)
 
 空
+![图片](../../../assets/vue/null.png)
 
 ## diff 算法
 
@@ -77,3 +80,4 @@ vnode数组
 4. 子节点的更新又分为多种情况 其中 最复杂的情况为数组到数组的更新 要在内部根据不同的情况分成几个 diff 流程
   a. 在需要移动的时候还要求解子节点的最长递增子序列
 5. 整个更新过程 利用来 树的深度遍历  通过递归执行 patch 函数 完成整个组件树的更新
+![图片](../../../assets/vue/update.png)
