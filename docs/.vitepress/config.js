@@ -9,23 +9,31 @@ module.exports = {
         text: '面试题',
         items: [
           {
-            text: '微信小程序面试题',
+            text: '微信小程序',
             items: [
               { text: 'westore', link: '/westore/' },
             ]
           },
           {
-            text: 'webpack 面试题',
+            text: 'Webpack ',
             items: [
               { text: 'webpack', link: '/webpack/' },
             ]
           },
           {
-            text: 'Vue面试题',
+            text: 'React',
             items: [
-              { text: 'vue/整体设计', link: '/vue/vue-design/' },
+              { text: '渲染控制', link: '/react/render/' },
+              { text: '事件机制', link: '/react/event-mechanism/' },
+              { text: 'Hooks原理', link: '/react/hooks/' },
+            ]
+          },
+          {
+            text: 'Vue',
+            items: [
+              { text: 'Vue/整体设计', link: '/vue/vue-design/' },
               {
-                text: 'vue/组件',
+                text: 'Vue/组件',
                 items: [
                   { text: '组件的渲染流程', link: '/vue/component/vue-component-create/' },
                   { text: '组件的更新流程', link: '/vue/component/vue-component-update/' },
@@ -37,7 +45,7 @@ module.exports = {
                 ]
               },
               {
-                text: 'vue/响应式原理',
+                text: 'Vue/响应式原理',
                 items: [
                   { text: '响应式的内部实现原理', link: '/vue/reactive/implementation/' },
                 ]
@@ -45,7 +53,7 @@ module.exports = {
             ]
           },
           {
-            text: 'Nginx 面试题',
+            text: 'Nginx ',
             items: [
               { text: 'Nginx', link: '/nginx/' },
             ]
