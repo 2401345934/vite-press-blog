@@ -8,7 +8,7 @@ module.exports = [
   },
   {
     text: '浏览器',
-    link: '/browser/',
+    link: '/browser/browser-cache/',
     items: [
       { text: '浏览器缓存机制', link: '/browser/browser-cache/' },
       { text: '从输入一个 URL 地址到浏览器完成渲染的整个过程!', link: '/browser/browser-open-url/' },
