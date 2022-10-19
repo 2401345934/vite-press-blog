@@ -10,18 +10,21 @@ module.exports = {
         items: [
           {
             text: '微信小程序',
+            link: '/westore/',
             items: [
               { text: 'westore', link: '/westore/' },
             ]
           },
           {
             text: 'Webpack ',
+            link: '/webpack/',
             items: [
               { text: 'webpack', link: '/webpack/' },
             ]
           },
           {
             text: 'React',
+            link: '/react/render/',
             items: [
               { text: '渲染控制', link: '/react/render/' },
               { text: '事件机制', link: '/react/event-mechanism/' },
@@ -30,10 +33,12 @@ module.exports = {
           },
           {
             text: 'Vue',
+            link: '/vue/vue-design/',
             items: [
               { text: 'Vue/整体设计', link: '/vue/vue-design/' },
               {
                 text: 'Vue/组件',
+                link: '/vue/component/vue-component-create/',
                 items: [
                   { text: '组件的渲染流程', link: '/vue/component/vue-component-create/' },
                   { text: '组件的更新流程', link: '/vue/component/vue-component-update/' },
@@ -46,6 +51,7 @@ module.exports = {
               },
               {
                 text: 'Vue/响应式原理',
+                link: '/vue/reactive/implementation/',
                 items: [
                   { text: '响应式的内部实现原理', link: '/vue/reactive/implementation/' },
                 ]
@@ -54,6 +60,7 @@ module.exports = {
           },
           {
             text: 'Nginx ',
+            link: '/nginx/',
             items: [
               { text: 'Nginx', link: '/nginx/' },
             ]
