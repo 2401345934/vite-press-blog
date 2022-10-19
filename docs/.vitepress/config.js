@@ -5,7 +5,6 @@ module.exports = {
       { text: "首页", link: "/" },
     ],
     sidebar: [
-
       {
         text: '面试题',
         items: [
@@ -44,7 +43,13 @@ module.exports = {
                 ]
               }
             ]
-          }
+          },
+          {
+            text: 'Nginx 面试题',
+            items: [
+              { text: 'Nginx', link: '/nginx/' },
+            ]
+          },
         ]
       },
     ]
