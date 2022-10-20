@@ -9,37 +9,37 @@
 ```javascript
 
 // 防抖——触发高频事件后 n 秒后函数只会执行一次，如果 n 秒内高频事件再次被触发，则重新计算时间；
-function debounce(fn) {
-     let timeout = null; // 创建一个标记用来存放定时器的返回值
-     return function () {
-       clearTimeout(timeout); // 每当用户输入的时候把前一个 setTimeout clear 掉
-       timeout = setTimeout(() => { // 然后又创建一个新的 setTimeout, 这样就能保证输入字符后的 interval 间隔内如果还有字符输入的话，就不会执行 fn 函数
-         fn.apply(this, arguments);
-       }, 500);
-     };
-   }
-   function sayHi() {
-     console.log('防抖成功');
-   }
-   var inp = document.getElementById('inp');
-   inp.addEventListener('input', debounce(sayHi)); // 防抖
+function debounce (fn) {
+  let timeout = null; // 创建一个标记用来存放定时器的返回值
+  return function () {
+    clearTimeout(timeout); // 每当用户输入的时候把前一个 setTimeout clear 掉
+    timeout = setTimeout(() => { // 然后又创建一个新的 setTimeout, 这样就能保证输入字符后的 interval 间隔内如果还有字符输入的话，就不会执行 fn 函数
+      fn.apply(this, arguments);
+    }, 500);
+  };
+}
+function sayHi () {
+  console.log('防抖成功');
+}
+var inp = document.getElementById('inp');
+inp.addEventListener('input', debounce(sayHi)); // 防抖
 // 节流——高频事件触发，但在 n 秒内只会执行一次，所以节流会稀释函数的执行频率。
-function throttle(fn) {
-     let canRun = true; // 通过闭包保存一个标记
-     return function () {
-       if (!canRun) return; // 在函数开头判断标记是否为 true，不为 true 则 return
-       canRun = false; // 立即设置为 false
-       setTimeout(() => { // 将外部传入的函数的执行放在 setTimeout 中
-         fn.apply(this, arguments);
-         // 最后在 setTimeout 执行完毕后再把标记设置为 true(关键) 表示可以执行下一次循环了。当定时器没有执行的时候标记永远是 false，在开头被 return 掉
-         canRun = true;
-       }, 500);
-     };
-   }
-   function sayHi(e) {
-     console.log(e.target.innerWidth, e.target.innerHeight);
-   }
-   window.addEventListener('resize', throttle(sayHi));
+function throttle (fn) {
+  let canRun = true; // 通过闭包保存一个标记
+  return function () {
+    if (!canRun) return; // 在函数开头判断标记是否为 true，不为 true 则 return
+    canRun = false; // 立即设置为 false
+    setTimeout(() => { // 将外部传入的函数的执行放在 setTimeout 中
+      fn.apply(this, arguments);
+      // 最后在 setTimeout 执行完毕后再把标记设置为 true(关键) 表示可以执行下一次循环了。当定时器没有执行的时候标记永远是 false，在开头被 return 掉
+      canRun = true;
+    }, 500);
+  };
+}
+function sayHi (e) {
+  console.log(e.target.innerWidth, e.target.innerHeight);
+}
+window.addEventListener('resize', throttle(sayHi));
 ```
 
 ## 介绍下 Set、Map、WeakSet 和 WeakMap 的区别？
@@ -58,84 +58,87 @@ function throttle(fn) {
 ```javascript
 
 //1.深度优先遍历的递归写法 
-function deepTraversal(node) {
+function deepTraversal (node) {
   let nodes = []
   if (node != null) {
-      nodes.push[node]
-      let childrens = node.children
-      for (let i = 0;
-          i < childrens.length; i++) deepTraversal(childrens[i])
+    nodes.push[node]
+    let childrens = node.children
+    for (let i = 0;
+      i < childrens.length; i++) deepTraversal(childrens[i])
   }
   return nodes
 }
 //2.深度优先遍历的非递归写法
-function deepTraversal(node) {
+function deepTraversal (node) {
   let nodes = []
   if (node != null) {
-      let stack = []
-      //同来存放将来要访问的节点
-      stack.push(node)
-      while (stack.length != 0) {
-          let item = stack.pop()
-          //正在访问的节点
-          nodes.push(item)
-          let childrens = item.children
-          for (
-              let i = childrens.length - 1;
-              i >= 0;
-              i--
-  //将现在访问点的节点的子节点存入 stack，供将来访问 )
+    let stack = []
+    //同来存放将来要访问的节点
+    stack.push(node)
+    while (stack.length != 0) {
+      let item = stack.pop()
+      //正在访问的节点
+      nodes.push(item)
+      let childrens = item.children
+      for (
+        let i = childrens.length - 1;
+        i >= 0;
+        i--
+      )
+        //将现在访问点的节点的子节点存入 stack，供将来访问
         stack.push(childrens[i])
-      }
+    }
   }
-    return nodes
+  return nodes
 }
 //3.广度优先遍历的递归写法
- function wideTraversal(node) {
-    let nodes = [],
-        i = 0
-    if (node != null) {
-        nodes.push(node)
-        wideTraversal(node.nextElementSibling)
-        node = nodes[i++]
-        wideTraversal(node.firstElementChild)
-    }
-    return nodes
+function wideTraversal (node) {
+  let nodes = [],
+    i = 0
+  if (node != null) {
+    nodes.push(node)
+    wideTraversal(node.nextElementSibling)
+    node = nodes[i++]
+    wideTraversal(node.firstElementChild)
+  }
+  return nodes
 }
 //4.广度优先遍历的非递归写法
- function wideTraversal(node) {
-    let nodes = [],i = 0
-       while (node != null) {
-            nodes.push(node)
-            node = nodes[i++]
-            let childrens = node.children
-            for (let i = 0;
-                i < childrens.length;
-                i++) {
-                nodes.push(childrens[i])
-            }
-        }
-    return nodes
+ function wideTraversal (node) {
+  let nodes = [], i = 0
+  while (node != null) {
+    nodes.push(node)
+    node = nodes[i++]
+    let childrens = node.children
+    for (let i = 0;
+      i < childrens.length;
+      i++) {
+      nodes.push(childrens[i])
+    }
+  }
+  return nodes
 }
 ```
 
 ## 请分别用深度优先思想和广度优先思想实现一个拷贝函数？
 
 ```javascript
-let _toString = Object.prototype.toStringlet map = {
-    array: 'Array',
-    object: 'Object',
-    function: 'Function',
-    string: 'String',
-    null: 'Null',
-    undefined: 'Undefined',
-    boolean: 'Boolean',
-    number: 'Number'
-}let getType = (item) => {
-return_toString.call(item).slice(8, -1)
-}let isTypeOf = (item, type)
-    => {
-    return map[type] && map[type] === getType(item)
+let _toString = Object.prototype.toString
+let map = {
+  array: 'Array',
+  object: 'Object',
+  function: 'Function',
+  string: 'String',
+  null: 'Null',
+  undefined: 'Undefined',
+  boolean: 'Boolean',
+  number: 'Number'
+}
+let getType = (item) => {
+  return _toString.call(item).slice(8, -1)
+}
+let isTypeOf = (item, type) => {
+  return map[type] && map[type] === getType(item)
 }
 ```
 
@@ -179,10 +182,14 @@ return_toString.call(item).slice(8, -1)
 
 ```javascript
 const promise = new Promise((resolve, reject) => {
-console.log(1)
-resolve()
-console.log(2)})promise.then(() => {
-console.log(3)})console.log(4)
+  console.log(1)
+  resolve()
+  console.log(2)
+})
+promise.then(() => {
+  console.log(3)
+})
+console.log(4)
 // 执行结果是：1243，promise 构造函数是同步执行的，then 方法是异步执行的
 ```
 
