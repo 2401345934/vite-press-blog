@@ -2,7 +2,15 @@ module.exports = [
   {
     text: '微信小程序',
     items: [
-      { text: 'westore', link: '/westore/' },
+      { text: 'westore', link: '/westore/principle/' },
+      { text: '微信小程序的理解', link: '/westore/understand/' },
+      { text: '小程序生命周期', link: '/westore/life-cycle/' },
+      { text: '微信小程序中路由跳转的方式有哪些？区别', link: '/westore/router-navigate/' },
+      { text: '提高微信小程序的应用速度的手段有哪些', link: '/westore/optimize/' },
+      { text: '微信小程序的登录流程', link: '/westore/login/' },
+      { text: '微信小程序的发布流程', link: '/westore/release/' },
+      { text: '微信小程序的支付流程', link: '/westore/pay/' },
+      { text: '微信小程序的实现原理', link: '/westore/implementation/' },
     ]
   },
   {

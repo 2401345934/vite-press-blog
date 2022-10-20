@@ -11,7 +11,7 @@ hero:
   actions:
     - theme: brand
       text: 开始
-      link: /westore/
+      link: /westore/principle/
     - theme: alt
       text: 在 github 上查看
       link: https://github.com/2401345934

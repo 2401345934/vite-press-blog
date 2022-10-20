@@ -64,7 +64,7 @@ rpx （responsive pixel）直译为：响应像素。写过小程序的都知道
 ### 编译
 
 WXSS并不可以直接执行在webview层进行渲染，而是通过了一层编译。我们接下来就带大家编译一个WXSS看一下。
-![第三部分：setCssToHead](../assets/westore/rpx.webp)
+![图片](../../assets/westore/rpx.webp)
 
 ### WCSC
 
@@ -81,7 +81,7 @@ px = rpx / 基础设备宽度 750 * 设备实际宽度
 
 ### 第三部分：setCssToHead
 
-![第三部分：setCssToHead](../assets/westore/setCssToHead.png)
+![图片](../../assets/westore/setCssToHead.png)
 
 可以看到其中在index.wxss中写rpx单位的属性都变成了区间的样子[0, 128]、[0, 20]。其他单位并没有转换。这样的话就可以方便的识别哪里写了rpx单位，然后执行第二部分的transformRPX方法即可。
 makeup组装之后，创建 style 标记，插入到 head 中。
