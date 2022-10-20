@@ -11,5 +11,6 @@
   "license": "MIT",
   "devDependencies": {
     "vitepress": "^1.0.0-alpha.21"
-  }
+  },
+  "dependencies": {}
 }
