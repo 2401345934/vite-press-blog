@@ -1,5 +1,6 @@
 const sidebar = require("./sidebar")
 const path = require("path")
+
 module.exports = {
   title: "Alan",
   lang: 'zh-CN',
@@ -13,6 +14,10 @@ module.exports = {
   },
   themeConfig: {
     outline: 'deep',
+    docFooter: {
+      prev: '上一页',
+      next: '下一页'
+    },
     footer: {
       message: 'Welcome to the site',
     },
