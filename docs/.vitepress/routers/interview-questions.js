@@ -55,6 +55,12 @@ module.exports = [
     ]
   },
   {
+    text: '面试题纲集合',
+    items: [
+      { text: '字节前端面试题', link: '/topic-outline/bytes/' },
+    ]
+  },
+  {
     text: 'TypeScript ',
     items: [
       { text: 'Array 和 tuple 的区别', link: '/ts/array-tuple/' },
