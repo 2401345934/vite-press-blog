@@ -12,6 +12,7 @@ module.exports = {
     lineNumbers: true
   },
   themeConfig: {
+    outline: 'deep',
     footer: {
       message: 'Welcome to the site',
     },

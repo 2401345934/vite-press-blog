@@ -57,11 +57,11 @@ const cacheSomething = useMemo(create,deps)
 * deps： 第二个参数为一个数组，存放当前 useMemo 的依赖项，在函数组件下一次执行的时候，会对比 deps 依赖项里面的状态，是否有改变，如果有改变重新执行 create ，得到新的缓存值。
 * cacheSomething：返回值，执行 create 的返回值。如果 deps 中有依赖项改变，返回的重新执行 create 产生的值，否则取上一次缓存值。
 
-## useMemo原理
+### useMemo原理
 
 useMemo 会记录上一次执行 create 的返回值，并把它绑定在函数组件对应的 fiber 对象上，只要组件不销毁，缓存值就一直存在，但是 deps 中如果有一项改变，就会重新执行 create ，返回值作为新的值记录到 fiber 对象上。
 
-## useMemo应用场景
+### useMemo应用场景
 
 * 可以缓存 element 对象，从而达到按条件渲染组件，优化性能的作用。
 * 如果组件中不期望每次 render 都重新计算一些值,可以利用 useMemo 把它缓存起来。
@@ -113,7 +113,7 @@ React.memo(Component,compare)
 
 React.memo 可作为一种容器化的控制渲染方案，可以对比 props 变化，来决定是否渲染组件，React.memo 接受两个参数，第一个参数 Component 原始组件本身，第二个参数 compare 是一个函数，可以根据一次更新中 props 是否相同决定原始组件是否重新渲染。
 
-## memo的几个特点是
+### memo的几个特点是
 
 * React.memo: 第二个参数 返回 true 组件不渲染 ， 返回 false 组件重新渲染。和 shouldComponentUpdate 相反，shouldComponentUpdate : 返回 true 组件渲染 ， 返回 false 组件不渲染。
 * memo 当二个参数 compare 不存在时，会用浅比较原则处理 props ，相当于仅比较 props 版本的 pureComponent

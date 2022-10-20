@@ -61,7 +61,7 @@ module.exports = [
       { text: 'interface 和 type 的区别', link: '/ts/interface-type/' },
       { text: 'unknown 和any 的区别', link: '/ts/unknown-any/' },
       { text: 'type of 和 key of 的区别', link: '/ts/type0f-keyOf/' },
-      { text: 'void  和 never  类型的 区别', link: '/nginx/void-never/' },
+      { text: 'void  和 never  类型的 区别', link: '/ts/void-never/' },
     ]
   },
   {

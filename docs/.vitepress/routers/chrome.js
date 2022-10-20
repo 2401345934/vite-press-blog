@@ -2,7 +2,6 @@
 module.exports = [
   {
     text: 'chrome小技巧',
-    link: '/chrome-dev/skills/DevTools-tips/',
     items: [
       {
         text: 'DevTools Tips',

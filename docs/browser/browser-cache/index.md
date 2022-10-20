@@ -23,12 +23,12 @@
 * 网络请求 fetch
   * 正常请求
 
-## Service Worker
+### Service Worker
 
 Service Worker 的缓存与浏览器其他内建的缓存机制不同，它可以让我们自由控制缓存哪些文件、如何匹配缓存、如何读取缓存，并且缓存是持续性的。
 当 Service Worker 没有命中缓存的时候，我们需要去调用 fetch 函数获取数据。也就是说，如果我们没有在 Service Worker 命中缓存的话，会根据缓存查找优先级去查找数据。但是不管我们是从 Memory Cache 中还是从网络请求中获取的数据，浏览器都会显示我们是从 Service Worker 中获取的内容。
 
-## Memory Cache
+### Memory Cache
 
 ![图片](../../assets/browser/Memory.webp)
 Memory Cache 也就是内存中的缓存，读取内存中的数据肯定比磁盘快。但是内存缓存虽然读取高效，可是缓存持续性很短，会随着进程的释放而释放。 一旦我们关闭 Tab 页面，内存中的缓存也就被释放了。
@@ -41,12 +41,12 @@ Memory Cache 也就是内存中的缓存，读取内存中的数据肯定比磁�
 * 对于大文件来说，大概率是不存储在内存中的，反之优先
 * 当前系统内存使用率高的话，文件优先存储进硬盘
 
-## Disk Cache
+### Disk Cache
 
 Disk Cache 也就是存储在硬盘中的缓存，读取速度慢点，但是什么都能存储到磁盘中，比之 Memory Cache 胜在容量和存储时效性上。
 在所有浏览器缓存中，Disk Cache 覆盖面基本是最大的。它会根据 HTTP Herder 中的字段判断哪些资源需要缓存，哪些资源可以不请求直接使用，哪些资源已经过期需要重新请求。并且即使在跨站点的情况下，相同地址的资源一旦被硬盘缓存下来，就不会再次去请求数据。
 
-## Push Cache
+### Push Cache
 
 Push Cache 是 HTTP/2 中的内容，当以上三种缓存都没有命中时，它才会被使用。并且缓存时间也很短暂，只在会话（Session）中存在，一旦会话结束就被释放。
 Push Cache 在国内能够查到的资料很少，也是因为 HTTP/2 在国内不够普及，但是 HTTP/2 将会是日后的一个趋势。这里推荐阅读 HTTP/2 push is tougher than I thought 这篇文章，但是内容是英文的，我翻译一下文章中的几个结论，有能力的同学还是推荐自己阅读
@@ -59,7 +59,7 @@ Push Cache 在国内能够查到的资料很少，也是因为 HTTP/2 在国内�
 * 浏览器可以拒绝接受已经存在的资源推送
 * 你可以给其他域名推送资源
 
-## 网络请求 fetch
+### 网络请求 fetch
 
 如果所有缓存都没有命中的话，那么只能发起请求来获取资源了。
 
@@ -67,16 +67,16 @@ Push Cache 在国内能够查到的资料很少，也是因为 HTTP/2 在国内�
 
 通常浏览器缓存策略分为两种：强缓存和协商缓存，并且缓存策略都是通过设置 HTTP Header 来实现的。
 
-## 强缓存
+### 强缓存
 
 强缓存可以通过设置两种 HTTP Header 实现：Expires 和 Cache-Control 。强缓存表示在缓存期间不需要请求，state code 为 200。
 
-## Expires
+#### Expires
 
 Expires: Wed, 22 Oct 2018 08:41:00 GMT
 Expires 是 HTTP/1 的产物，表示资源会在 Wed, 22 Oct 2018 08:41:00 GMT 后过期，需要再次请求。并且 Expires 受限于本地时间，如果修改了本地时间，可能会造成缓存失效。
 
-## Cache-control
+#### Cache-control
 
 ![图片](../../assets/browser/Cache-control.webp)
 
@@ -88,14 +88,14 @@ Cache-Control 可以在请求头或者响应头中设置，并且可以组合使
 接下来我们就来学习一些常见指令的作用
 ![图片](../../assets/browser/Cache-control2.webp)
 
-## 协商缓存
+### 协商缓存
 
 ![图片](../../assets/browser/Cache-control3.webp)
 
 如果缓存过期了，就需要发起请求验证资源是否有更新。协商缓存可以通过设置两种 HTTP Header 实现：Last-Modified 和 ETag 。
 当浏览器发起请求验证资源时，如果资源没有做改变，那么服务端就会返回 304 状态码，并且更新浏览器缓存有效期。
 
-## Last-Modified 和 If-Modified-Since
+#### Last-Modified 和 If-Modified-Since
 
 Last-Modified 表示本地文件最后修改日期，If-Modified-Since 会将 Last-Modified 的值发送给服务器，询问服务器在该日期后资源是否有更新，有更新的话就会将新的资源发送回来，否则返回 304 状态码。
 但是 Last-Modified 存在一些弊端：
@@ -104,19 +104,19 @@ Last-Modified 表示本地文件最后修改日期，If-Modified-Since 会将 La
 * 因为 Last-Modified 只能以秒计时，如果在不可感知的时间内修改完成文件，那么服务端会认为资源还是命中了，不会返回正确的资源
 因为以上这些弊端，所以在 HTTP / 1.1 出现了 ETag 。
 
-### ETag 和 If-None-Match
+#### ETag 和 If-None-Match
 
 ETag 类似于文件指纹，If-None-Match 会将当前 ETag 发送给服务器，询问该资源 ETag 是否变动，有变动的话就将新的资源发送回来。并且 ETag 优先级比 Last-Modified 高。
 以上就是缓存策略的所有内容了，看到这里，不知道你是否存在这样一个疑问。如果什么缓存策略都没设置，那么浏览器会怎么处理？
 对于这种情况，浏览器会采用一个启发式的算法，通常会取响应头中的 Date 减去 Last-Modified 值的 10% 作为缓存时间。
 
-## last-modified 和 etag 有什么区别
+### last-modified 和 etag 有什么区别
 
-## last-modified
+#### last-modified
 
 * 静态文件的 last-modified 一般会根据文件的最后修改时间生成
 
-## etag
+#### etag
 
 * 是根据文件的内容有没有变化进行更新
 * 如果仅仅是修改时间变了 但是内容没变 不会更新
@@ -124,14 +124,14 @@ ETag 类似于文件指纹，If-None-Match 会将当前 ETag 发送给服务器�
 * 尽量便于计算，不会特别耗 CPU。这样子利用摘要算法生成 (MD5, SHA128, SHA256) 需要慎重考虑，因为他们是 CPU 密集型运算
 * 必须横向扩展，分布式部署时多个服务器节点上生成的 etag 值保持一致。这样子 inode 就排除了
 
-## Etag主要为了解决Last-Modified无法解决的一些问题
+#### Etag主要为了解决Last-Modified无法解决的一些问题
 
 * 一些文件也许周期性的更改,但是它的内容并不改变(仅仅改变的是修改时间),这个时候我们不希望客户端认为这个文件被修改了,而重新获取资源.
 * 某些文件修改非常频繁,比如在下一秒的时间内进行修改(比如1s内修改了N次),If-Modified-Since能检查到的粒度是秒级的,这种修改是无法判断的(或者说UNIX记录MTIME只能精确到秒);
 * 某些服务器不能精确的得到文件的最后修改时间;
 * nginx配置里ETag选项默认开启的,所以请求的资源文件若发生改动,会在响应头里生成新的ETag值.这样客户端就能够发现If-None-Match的值和Etag字段的值不匹配,从而去请求最新的资源文件.
 
-### 如果 http 响应头中 ETag 值改变了，是否意味着文件内容一定已经更改 ？
+#### 如果 http 响应头中 ETag 值改变了，是否意味着文件内容一定已经更改 ？
 
 不一定，由服务器中 ETag 的生成算法决定。
 比如 nginx 中的 etag 由 last_modified 与 content_length 组成，而 last_modified 又由 mtime 组成
