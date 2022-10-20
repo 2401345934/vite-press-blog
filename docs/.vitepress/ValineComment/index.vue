@@ -18,12 +18,10 @@ import { watch,onMounted } from 'vue'
 import { useRoute } from 'vitepress'
 const route = useRoute()
 
-let valine;
-
 const initValine = () => {
   let path = location.origin + location.pathname
   document.getElementsByClassName('leancloud-visitors')[0].id = path
-  valine.init({
+  new Valine({
     el: '#vcomments',
     appId: '2GzP9zCeJjS8HzykzDRyptJf-gzGzoHsz',// your appId
     appKey: 'lduSByMe7OPglzonWDMAJrzX', // your appKey
@@ -45,7 +43,9 @@ watch(
 );
 
 onMounted(() => {
-  remoteImport('//unpkg.com/valine/dist/Valine.min.js').then(() => initValine());
+  remoteImport('//unpkg.com/valine/dist/Valine.min.js').then(() => {
+    initValine()
+  });
 });
 
 function remoteImport(url) {
