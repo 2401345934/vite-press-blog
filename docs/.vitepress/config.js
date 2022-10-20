@@ -30,4 +30,10 @@ module.exports = {
     },
     sidebar
   },
+  head: [
+    [
+      "script",
+      { src: '/Valine.min.js'},
+    ],
+  ],
 }

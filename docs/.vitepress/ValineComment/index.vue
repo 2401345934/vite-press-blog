@@ -16,7 +16,6 @@
 <script setup>
 import { watch } from 'vue'
 import { useRoute } from 'vitepress'
-import Valine from 'valine';
 const route = useRoute()
 
 let valine;
