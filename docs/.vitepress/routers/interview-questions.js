@@ -1,14 +1,12 @@
 module.exports = [
   {
     text: '微信小程序',
-    link: '/westore/',
     items: [
       { text: 'westore', link: '/westore/' },
     ]
   },
   {
     text: '浏览器',
-    link: '/browser/browser-cache/',
     items: [
       { text: '浏览器缓存机制', link: '/browser/browser-cache/' },
       { text: '从输入一个 URL 地址到浏览器完成渲染的整个过程!', link: '/browser/browser-open-url/' },
@@ -17,14 +15,12 @@ module.exports = [
   },
   {
     text: 'Webpack ',
-    link: '/webpack/',
     items: [
       { text: 'webpack', link: '/webpack/' },
     ]
   },
   {
     text: 'React',
-    link: '/react/render/',
     items: [
       { text: '渲染控制', link: '/react/render/' },
       { text: '事件机制', link: '/react/event-mechanism/' },
@@ -33,12 +29,10 @@ module.exports = [
   },
   {
     text: 'Vue',
-    link: '/vue/vue-design/',
     items: [
       { text: 'Vue/整体设计', link: '/vue/vue-design/' },
       {
         text: 'Vue/组件',
-        link: '/vue/component/vue-component-create/',
         items: [
           { text: '组件的渲染流程', link: '/vue/component/vue-component-create/' },
           { text: '组件的更新流程', link: '/vue/component/vue-component-update/' },
@@ -51,7 +45,6 @@ module.exports = [
       },
       {
         text: 'Vue/响应式原理',
-        link: '/vue/reactive/reactive/',
         items: [
           { text: 'reactive API', link: '/vue/reactive/reactive/' },
           { text: '依赖收集', link: '/vue/reactive/dep-collection/' },
@@ -63,7 +56,6 @@ module.exports = [
   },
   {
     text: 'TypeScript ',
-    link: '/ts/array-tuple/',
     items: [
       { text: 'Array 和 tuple 的区别', link: '/ts/array-tuple/' },
       { text: 'interface 和 type 的区别', link: '/ts/interface-type/' },
@@ -74,7 +66,6 @@ module.exports = [
   },
   {
     text: 'Nginx ',
-    link: '/nginx/',
     items: [
       { text: 'Nginx', link: '/nginx/' },
     ]

@@ -12,6 +12,9 @@ module.exports = {
     lineNumbers: true
   },
   themeConfig: {
+    footer: {
+      message: 'Welcome to the site',
+    },
     nav: [
       { text: "首页", link: "/" },
     ],
