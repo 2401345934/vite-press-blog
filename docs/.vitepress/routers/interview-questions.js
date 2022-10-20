@@ -51,7 +51,7 @@ module.exports = [
       },
       {
         text: 'Vue/响应式原理',
-        link: '/vue/reactive/implementation/',
+        link: '/vue/reactive/reactive/',
         items: [
           { text: 'reactive API', link: '/vue/reactive/reactive/' },
           { text: '依赖收集', link: '/vue/reactive/dep-collection/' },
@@ -59,6 +59,17 @@ module.exports = [
           { text: '响应式实现的优化 Vue3.2 版本', link: '/vue/reactive/implementation-optimized/' },
         ]
       }
+    ]
+  },
+  {
+    text: 'TypeScript ',
+    link: '/ts/array-tuple/',
+    items: [
+      { text: 'Array 和 tuple 的区别', link: '/ts/array-tuple/' },
+      { text: 'interface 和 type 的区别', link: '/ts/interface-type/' },
+      { text: 'unknown 和any 的区别', link: '/ts/unknown-any/' },
+      { text: 'type of 和 key of 的区别', link: '/ts/type0f-keyOf/' },
+      { text: 'void  和 never  类型的 区别', link: '/nginx/void-never/' },
     ]
   },
   {
