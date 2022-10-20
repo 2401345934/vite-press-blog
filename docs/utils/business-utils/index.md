@@ -318,3 +318,54 @@ export function isDef(v) {
 }
 
 ```
+
+## 生成随机十六进制
+
+```javascript
+const randomHexColor = () => `#${Math.floor(Math.random() * 0xffffff).toString(16).padEnd(6, "0")}`
+console.log(randomHexColor());
+// #a2ce5b
+```
+
+## 检查当前选项卡是否在后台
+
+```javascript
+const isTabActive = () => !document.hidden; 
+
+isTabActive()
+// true|false
+```
+
+## 检测元素是否处于焦点
+
+``` js
+const elementIsInFocus = (el) => (el === document.activeElement);
+
+elementIsInFocus(anyElement)
+// 元素处于焦点返回true，反之返回false
+```
+
+## 检查设备类型
+
+```javascript
+const judgeDeviceType =
+      () => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|OperaMini/i.test(navigator.userAgent) ? 'Mobile' : 'PC';
+
+judgeDeviceType()  // PC | Mobile
+```
+
+## 文字复制到剪贴板
+
+``` js
+const copyText = async (text) => await navigator.clipboard.writeText(text)
+copyText('单行代码 前端世界')
+```
+
+## 将 RGB 转换为十六进制
+
+```javascript
+const rgbToHex = (r, g, b) =>   "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+
+rgbToHex(255, 255, 255); 
+//  #ffffff
+```

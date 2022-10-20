@@ -3,7 +3,10 @@
 ## 两个日期之间的日差
 
 ``` js
-const daysBetween = (date1, date2) => Math.ceil(Math.abs(date1 - date2) / (1000 * 60 * 60 * 24))
+const dayDiff = (date1, date2) => Math.ceil(Math.abs(date1.getTime() - date2.getTime()) / 86400000);
+
+dayDiff(new Date("2021-10-21"), new Date("2022-02-12"))
+// Result: 114
 ```
 
 ## 获取前几天后几天的时间
@@ -115,4 +118,30 @@ const countdownFormat = (distance) => {
   }
 };
 
+```
+
+## 查询某天是否为工作日
+
+``` js
+const isWeekday = (date) => date.getDay() % 6 !== 0;
+
+isWeekday(new Date(2022, 03, 11))
+// true
+```
+
+## 转换华氏/摄氏
+
+``` js
+// 将华氏温度转换为摄氏温度
+const fahrenheitToCelsius = (fahrenheit) => (fahrenheit - 32) * 5/9;
+
+fahrenheitToCelsius(50);
+// 10
+// true
+
+// 将摄氏温度转华氏温度
+const celsiusToFahrenheit = (celsius) => celsius * 9/5 + 32;
+
+celsiusToFahrenheit(100)
+// 212
 ```

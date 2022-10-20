@@ -37,3 +37,11 @@ const sum = arr => {
 }
 
 ```
+
+## 数组去重
+
+```javascript
+const uniqueArr = (arr) => [...new Set(arr)];
+console.log(uniqueArr(["前端","js","html","js","css","html"]));
+// ['前端', 'js', 'html', 'css']
+```

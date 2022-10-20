@@ -53,3 +53,11 @@ const stringify = obj => {
   return str.slice(0, str.length - 1)
 }
 ```
+
+## 反转字符串
+
+```javascript
+const reverse = str => str.split('').reverse().join('');
+reverse('this is reverse');
+// esrever si siht
+```
