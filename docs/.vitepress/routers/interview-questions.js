@@ -46,10 +46,13 @@ module.exports = [
       {
         text: 'Vue/响应式原理',
         items: [
-          { text: 'reactive API', link: '/vue/reactive/reactive/' },
-          { text: '依赖收集', link: '/vue/reactive/dep-collection/' },
-          { text: '派发通知', link: '/vue/reactive/notification/' },
-          { text: '响应式实现的优化 Vue3.2 版本', link: '/vue/reactive/implementation-optimized/' },
+          { text: 'reactive API', link: '/vue/reactive-principle/reactive/' },
+          { text: '依赖收集', link: '/vue/reactive-principle/dep-collection/' },
+          { text: '派发通知', link: '/vue/reactive-principle/notification/' },
+          { text: '响应式实现的优化 Vue3.2 版本', link: '/vue/reactive-principle/implementation-optimized/' },
+          { text: 'ref', link: '/vue/reactive-principle/ref/' },
+          { text: 'shallowReactive', link: '/vue/reactive-principle/shallowReactive/' },
+          { text: 'readonly', link: '/vue/reactive-principle/readonly/' },
         ]
       }
     ]
