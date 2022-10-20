@@ -14,7 +14,7 @@
 </template>
 
 <script setup>
-import { watch } from 'vue'
+import { watch,onMounted } from 'vue'
 import { useRoute } from 'vitepress'
 const route = useRoute()
 
@@ -36,14 +36,33 @@ const initValine = () => {
   });
 }
 
-watch(() => route.path, () => {
-  initValine();
-})
+watch(
+  () => route.path,
+  () => {
+    console.log("监听路由变化");
+    initValine();
+  }
+);
 
-setTimeout(() => {
-  valine = new Valine()
-  initValine()
-}, 1000);
+onMounted(() => {
+  remoteImport('//unpkg.com/valine/dist/Valine.min.js').then(() => initValine());
+});
+
+function remoteImport(url) {
+  return new Promise((resolve) => {
+    var head = document.getElementsByTagName("head")[0];
+    var script = document.createElement("script");
+    script.setAttribute("type", "text/javascript");
+    script.setAttribute("src", url);
+    head.appendChild(script);
+
+    script.onload = function () {
+      resolve();
+    };
+  });
+}
+
+
 
 </script>
 
