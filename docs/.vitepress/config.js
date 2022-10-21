@@ -27,6 +27,7 @@ module.exports = {
       { text: "源码", link: "/source/",    activeMatch: '/source/' },
       { text: "常用-utils", link: "/utils/",    activeMatch: '/utils/' },
       { text: "浏览器", link: "/browser/",    activeMatch: '/browser/' },
+      { text: "HTTP", link: "/http/",    activeMatch: '/http/' },
       { text: "算法与数据结构", link: "/data-structures-algorithms/",activeMatch:'/data-structures-algorithms/' },
       {
         text: "相关链接",
