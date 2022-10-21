@@ -25,3 +25,10 @@
 
 * 解析和执行javascript来实现网页的动态效果
 * 最开始渲染引擎和JS引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎
+
+## 常见的浏览器内核有哪些
+
+* Trident内核：IE,MaxThon,TT,The World,360,搜狗浏览器等。[又称MSHTML]
+* Gecko内核：Netscape6及以上版本，FF,MozillaSuite/SeaMonkey等
+* Presto内核：Opera7及以上。 [Opera内核原为：Presto，现为：Blink;]
+* Webkit内核：Safari,Chrome等。 [ Chrome的Blink（WebKit的分支）]

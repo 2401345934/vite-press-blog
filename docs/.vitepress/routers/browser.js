@@ -18,4 +18,8 @@ module.exports = [
       },
     ],
   },
+  {
+    text: '浏览器 storage',
+    link: '/browser/storage/',
+  },
 ]
