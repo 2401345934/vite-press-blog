@@ -1,6 +1,7 @@
 const interviewQuestions = require("./routers/interview-questions")
 const utils = require("./routers/utils")
 const rule = require("./routers/rule")
+const hooks = require("./routers/hooks")
 const chrome = require("./routers/chrome")
 
 module.exports =[
@@ -15,6 +16,10 @@ module.exports =[
   {
     text: 'rule',
     items: rule
+  },
+  {
+    text: 'hooks',
+    items: hooks
   },
   {
     text: 'chrome',
