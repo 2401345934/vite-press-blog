@@ -726,3 +726,237 @@ function getFileExtension3(filename) {
   return filename.slice((filename.lastIndexOf(".") - 1 >>> 0) + 2);
 }
 ```
+
+## 大文件 断点续传
+
+### 创建切片
+
+createFileChunks 方法接收两个参数
+
+* 要进行切片的文件对象
+* 切片大小，这里设置默认值为 1024*100，单位为字节
+
+```javascript
+// 创建切片
+  const createFileChunks = function (file, size = 1024*100) {
+      // 创建数组，存储文件的所有切片
+      let fileChunks = [];
+      for (let cur = 0; cur < file.size; cur += size) {
+        // file.slice 方法用于切割文件，从 cur 字节开始，切割到 cur+size 字节
+        fileChunks.push(file.slice(cur, cur + size));
+      }
+      return fileChunks;
+    };
+```
+
+### 拼接 formData
+
+上传的时候，通过 formData 对象组装要上传的切片数据
+/**
+
+* 2、拼接 formData
+* 参数1：存储文件切片信息的数组
+* 参数2：上传时的文件名称
+
+ ```javascript
+   */
+  const concatFormData = function (fileChunks, filename) {
+    /**
+  * map 方法会遍历切片数组 fileChunks中的元素map 方法会遍历切片数组 fileChunks中的元素,
+  * 数组中有多少个切片，创建几个 formData，在其中上传的文件名称、hash值和切片，并将此 formData
+  * 返回，最终chunksList中存储的就是多个 formData(每个切片对应一个 formData)
+  *
+     */
+    const chunksList = fileChunks.map((chunk, index) => {
+      let formData = new FormData();
+      // 这个'filename' 字符串的名字要与后端约定好
+      formData.append("filename", filename);
+      // 作为区分每个切片的编号，后端会以此作为切片的文件名称，此名称也应该与后端约定好
+      formData.append("hash", index);
+      // 后端会以此作为切片文件的内容
+      formData.append("chunk", chunk);
+      return {
+        formData,
+      };
+    });
+    return chunksList;
+  };
+
+ ```
+
+### 上传切片
+
+遍历上面的 chunksList 数组，调用 axios 对每个 formData 信息进行提交
+// 3、上传切片
+
+ ```javascript
+   const uploadChunks=async (chunksList)=>{
+     const uploadList = chunksList.map(({ formData }) =>
+       axios({
+         method: "post",
+         url: "/upload",
+         data: formData,
+       })
+     );
+     await Promise.all(uploadList);
+   }
+ ```
+
+### 合并切片
+
+当所有切片都已经上传成功后，告诉后端一声
+ // 合并切片
+
+ ```javascript
+    const mergeFileChunks = async function (filename) {
+      await axios({
+        method: "get",
+        url: "/merge",
+        params: {
+          filename,
+        },
+      });
+    };
+
+ ```
+
+### handleFileUpload 函数
+
+ // 大文件上传
+
+```javascript
+async function handleFileUpload(event) {
+  event.preventDefault();
+  const file = window.file;
+  if (!file) return;
+  // 1、切片切割，第二个参数采用默认值
+  const fileChunks = createFileChunks(file);
+  // 2、将切片信息拼接成 formData 对象
+  const chunksList = concatFormData(fileChunks, file.name);
+  // 3、上传切片
+  await uploadChunks(chunksList);
+  // 4、所有切片上传成功后后，再告诉后端所有切片都已完成
+  await mergeFileChunks(file.name);
+  console.log("上传完成");
+}
+```
+
+### vue 示例
+
+```html
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>大文件上传</title>
+  </head>
+  <body>
+    <div id="app">
+      <form action="">
+        <input type="file" name="" id="uploadInput" />
+        <button id="uploadBtn">上传</button>
+      </form>
+    </div>
+  </body>
+</html>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+  axios.defaults.baseURL = `http://localhost:3000`;
+
+  let file = null;
+  // 文件被更改
+  function handleFileChange(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+    window.file = file;
+  }
+
+  // 1、创建切片
+  const createFileChunks = (file, size = 1024 * 100) => {
+    // 创建数组，存储文件的所有切片
+    let fileChunks = [];
+    for (let cur = 0; cur < file.size; cur += size) {
+      // file.slice 方法用于切割文件，从 cur 字节开始，切割到 cur+size 字节
+      fileChunks.push(file.slice(cur, cur + size));
+    }
+    return fileChunks;
+  };
+  /**
+
+* 2、拼接 formData
+* 参数1：存储文件切片信息的数组
+* 参数2：上传时的文件名称
+   */
+  const concatFormData = function (fileChunks, filename) {
+    /**
+  * map 方法会遍历切片数组 fileChunks中的元素map 方法会遍历切片数组 fileChunks中的元素,
+  * 数组中有多少个切片，创建几个 formData，在其中上传的文件名称、hash值和切片，并将此 formData
+  * 返回，最终chunksList中存储的就是多个 formData(每个切片对应一个 formData)
+  *
+     */
+    const chunksList = fileChunks.map((chunk, index) => {
+      let formData = new FormData();
+      // 这个'filename' 字符串的名字要与后端约定好
+      formData.append("filename", filename);
+      // 作为区分每个切片的编号，后端会以此作为切片的文件名称，此名称也应该与后端约定好
+      formData.append("hash", index);
+      // 后端会以此作为切片文件的内容
+      formData.append("chunk", chunk);
+      return {
+        formData,
+      };
+    });
+    return chunksList;
+  };
+  // 3、上传切片
+  const uploadChunks = async (chunksList) => {
+    const uploadList = chunksList.map(({ formData }) =>
+      axios({
+        method: "post",
+        url: "/upload",
+        data: formData,
+      })
+    );
+    await Promise.all(uploadList);
+  };
+
+  // 大文件上传
+  async function handleFileUpload(event) {
+    event.preventDefault();
+
+    const file = window.file;
+    if (!file) return;
+    // 1、切片切割，第二个参数采用默认值
+    const fileChunks = createFileChunks(file);
+    // 2、将切片信息拼接成 formData 对象
+    const chunksList = concatFormData(fileChunks, file.name);
+    // 3、上传切片
+    await uploadChunks(chunksList);
+    // 4、所有切片上传成功后后，再告诉后端所有切片都已完成
+    await mergeFileChunks(file.name);
+    console.log("上传完成");
+  }
+
+  // 合并切片
+  const mergeFileChunks = async function (filename) {
+    await axios({
+      method: "get",
+      url: "/merge",
+      params: {
+        filename,
+      },
+    });
+  };
+
+  document
+    .getElementById("uploadInput")
+    .addEventListener("change", handleFileChange);
+  document
+    .getElementById("uploadBtn")
+    .addEventListener("click", handleFileUpload);
+</script>
+
+```

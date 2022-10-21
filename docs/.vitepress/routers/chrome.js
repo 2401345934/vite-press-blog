@@ -41,4 +41,8 @@ module.exports = [
       },
      ]
   },
+  {
+    text: '浏览器的 5 种 Observer',
+    link: '/chrome-dev/observer/',
+  },
 ]
