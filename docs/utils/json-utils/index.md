@@ -1,9 +1,9 @@
 # json-utils
 
-## safeJsonParse  JSON转换
+## safeJsonParse JSON 转换
 
 ```javascript
-const safeJsonParse = str => {
+const safeJsonParse = (str) => {
   if (!str || typeof str != 'string') {
     return str
   }

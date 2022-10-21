@@ -1,6 +1,14 @@
 
 module.exports = [
   {
+    text: '时间复杂度',
+    link: '/data-structures-algorithms/time-complexity/',
+  },
+  {
+    text: '空间复杂度',
+    link: '/data-structures-algorithms/space-complexity/',
+  },
+  {
     text: '算法题',
     items: [
       {

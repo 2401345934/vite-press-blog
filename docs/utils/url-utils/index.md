@@ -1,6 +1,6 @@
 # url-utils
 
-## 追加url参数
+## 追加 url 参数
 
 ```javascript
 const appendQuery = (url, key, value) => {
@@ -19,10 +19,10 @@ const appendQuery = (url, key, value) => {
 }
 ```
 
-## 根据url地址下载
+## 根据 url 地址下载
 
 ```javascript
-const download = url => {
+const download = (url) => {
   let isChrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1
   let isSafari = navigator.userAgent.toLowerCase().indexOf('safari') > -1
   if (isChrome || isSafari) {
@@ -45,14 +45,18 @@ const download = url => {
   window.open(url, '_self')
   return true
 }
-
 ```
 
-## 从url获取参数并转为对象
+## 从 url 获取参数并转为对象
 
 ```javascript
-const getParameters = URL => JSON.parse(`{"${decodeURI(URL.split("?")[1]).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"')}"}`
+const getParameters = (URL) =>
+  JSON.parse(
+    `{"${decodeURI(URL.split('?')[1])
+      .replace(/"/g, '\\"')
+      .replace(/&/g, '","')
+      .replace(/=/g, '":"')}"}`
   )
-getParameters("https://www.google.com.hk/search?q=js+md&newwindow=1");
+getParameters('https://www.google.com.hk/search?q=js+md&newwindow=1')
 // {q: 'js+md', newwindow: '1'}
 ```

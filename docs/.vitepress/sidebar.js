@@ -3,6 +3,7 @@ const utils = require("./routers/utils")
 const rule = require("./routers/rule")
 const hooks = require("./routers/hooks")
 const chrome = require("./routers/chrome")
+const browser = require("./routers/browser")
 const dataStructuresAlgorithms = require("./routers/data-structures-algorithms")
 
 module.exports =[
@@ -25,6 +26,10 @@ module.exports =[
   {
     text: '数据结构与算法',
     items: dataStructuresAlgorithms
+  },
+  {
+    text: '浏览器',
+    items: browser
   },
   {
     text: 'chrome',

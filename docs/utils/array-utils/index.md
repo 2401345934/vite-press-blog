@@ -1,14 +1,14 @@
-# 数组utils
+# 数组 utils
 
 ## 计算数组的平均值
 
-``` js
+```js
 const average = (arr) => arr.reduce((a, b) => a + b) / arr.length
 ```
 
 ## 数组排序，{type} 1：从小到大 2：从大到小 3：随机
 
-``` js
+```js
 // 数组排序，{type} 1：从小到大 2：从大到小 3：随机
 const sort = (arr, type = 1) => {
   return arr.sort((a, b) => {
@@ -24,24 +24,22 @@ const sort = (arr, type = 1) => {
     }
   })
 }
-
 ```
 
 ## 求和
 
 ```javascript
-const sum = arr => {
+const sum = (arr) => {
   return arr.reduce((pre, cur) => {
     return pre + cur
   })
 }
-
 ```
 
 ## 数组去重
 
 ```javascript
-const uniqueArr = (arr) => [...new Set(arr)];
-console.log(uniqueArr(["前端","js","html","js","css","html"]));
+const uniqueArr = (arr) => [...new Set(arr)]
+console.log(uniqueArr(['前端', 'js', 'html', 'js', 'css', 'html']))
 // ['前端', 'js', 'html', 'css']
 ```

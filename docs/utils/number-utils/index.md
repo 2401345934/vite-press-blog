@@ -1,20 +1,19 @@
-# 数字utils
+# 数字 utils
 
 ## 随机数范围
 
-``` js
+```js
 const random = (min, max) => {
   if (arguments.length === 2) {
     return Math.floor(min + Math.random() * (max + 1 - min))
   }
   return null
 }
-
 ```
 
 ## 数字千分位
 
-``` js
+```js
 /**
  * 数字千分位
  * @param {Number|String} number 数字
@@ -22,7 +21,8 @@ const random = (min, max) => {
  * @returns 千分位之后的结果
  */
 exports.toThousands = function (number, fix = 'no') {
-  const numberTemp = fix === 'no' ? String((number || 0)) : Number((number || 0)).toFixed(fix)
+  const numberTemp =
+    fix === 'no' ? String(number || 0) : Number(number || 0).toFixed(fix)
   if (isNaN(numberTemp)) return number
   const numArr = numberTemp.split('.')
   const negative = numArr[0].includes('-') ? '-' : ''
@@ -35,5 +35,4 @@ exports.toThousands = function (number, fix = 'no') {
   num && (result = num + result)
   return `${negative}${result}${numArr[1] ? '.' + numArr[1] : ''}`
 }
-
 ```

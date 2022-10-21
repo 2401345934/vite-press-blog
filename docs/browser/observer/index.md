@@ -8,15 +8,16 @@ IntersectionObserver 可以监听一个元素和可视区域相交部分的比�
 
 ```javascript
 const intersectionObserver = new IntersectionObserver(
-    function (entries) {
-        console.log('info:');
-        entries.forEach(item => {
-            console.log(item.target, item.intersectionRatio)
-        })
-    }, {
-    threshold: [0.5, 1]
-});
-
+  function (entries) {
+    console.log('info:')
+    entries.forEach((item) => {
+      console.log(item.target, item.intersectionRatio)
+    })
+  },
+  {
+    threshold: [0.5, 1],
+  }
+)
 ```
 
 intersectionObserver.observe( document.querySelector('#box1'));
@@ -36,14 +37,13 @@ MutationObserver 可以监听对元素的属性的修改、对它的子节点的
 
 ```js
 const mutationObserver = new MutationObserver((mutationsList) => {
-    console.log(mutationsList)
-});
+  console.log(mutationsList)
+})
 
 mutationObserver.observe(box, {
-    attributes: true,
-    childList: true
-});
-
+  attributes: true,
+  childList: true,
+})
 ```
 
 ### 这有啥用？
@@ -59,10 +59,10 @@ mutationObserver.observe(box, {
 元素可以用 ResizeObserver 监听大小的改变，当 width、height 被修改时会触发回调。
 
 ```javascript
-const resizeObserver = new ResizeObserver(entries => {
-    console.log('当前大小', entries)
-});
-resizeObserver.observe(box);
+const resizeObserver = new ResizeObserver((entries) => {
+  console.log('当前大小', entries)
+})
+resizeObserver.observe(box)
 ```
 
 可以拿到元素和它的位置、尺寸。
@@ -80,8 +80,7 @@ performance.mark('registered-observer');
 用 measure 方法记录某个时间段：
 
 ```javascript
-performance.measure('button clicked', 'from', 'to');
-
+performance.measure('button clicked', 'from', 'to')
 ```
 
 后两个个参数是时间点，不传代表从开始到现在。
@@ -89,26 +88,30 @@ performance.measure('button clicked', 'from', 'to');
 
 ```html
 <html>
-<body>
-  <button onclick="measureClick()">Measure</button>
+  <body>
+    <button onclick="measureClick()">Measure</button>
 
-  <img src="https://p9-passport.byteacctimg.com/img/user-avatar/4e9e751e2b32fb8afbbf559a296ccbf2~300x300.image" />
+    <img
+      src="https://p9-passport.byteacctimg.com/img/user-avatar/4e9e751e2b32fb8afbbf559a296ccbf2~300x300.image"
+    />
 
-  <script>
-    const performanceObserver = new PerformanceObserver(list => {
-      list.getEntries().forEach(entry => {
-        console.log(entry);// 上报
+    <script>
+      const performanceObserver = new PerformanceObserver((list) => {
+        list.getEntries().forEach((entry) => {
+          console.log(entry) // 上报
+        })
       })
-    });
-    performanceObserver.observe({entryTypes: ['resource', 'mark', 'measure']});
+      performanceObserver.observe({
+        entryTypes: ['resource', 'mark', 'measure'],
+      })
 
-    performance.mark('registered-observer');
+      performance.mark('registered-observer')
 
-    function measureClick() {
-      performance.measure('button clicked');
-    }
-  </script>
-</body>
+      function measureClick() {
+        performance.measure('button clicked')
+      }
+    </script>
+  </body>
 </html>
 ```
 
@@ -127,9 +130,9 @@ ReportingObserver 可以监听过时的 api、浏览器干预等报告等的打�
 
 ### 浏览器提供了这 5 种 Observer
 
-* IntersectionObserver：监听元素可见性变化，常用来做元素显示的数据采集、图片的懒加载
-* MutationObserver：监听元素属性和子节点变化，比如可以用来做去不掉的水印
-* ResizeObserver：监听元素大小变化
-还有两个与元素无关的：
-* PerformanceObserver：监听 performance 记录的行为，来上报数据
-* ReportingObserver：监听过时的 api、浏览器的一些干预行为的报告，可以让我们更全面的了解网页 app 的运行情况
+- IntersectionObserver：监听元素可见性变化，常用来做元素显示的数据采集、图片的懒加载
+- MutationObserver：监听元素属性和子节点变化，比如可以用来做去不掉的水印
+- ResizeObserver：监听元素大小变化
+  还有两个与元素无关的：
+- PerformanceObserver：监听 performance 记录的行为，来上报数据
+- ReportingObserver：监听过时的 api、浏览器的一些干预行为的报告，可以让我们更全面的了解网页 app 的运行情况
