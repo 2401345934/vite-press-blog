@@ -1,28 +1,33 @@
 
 module.exports = [
   {
-    text: '时间复杂度',
-    link: '/data-structures-algorithms/time-complexity/',
-  },
-  {
-    text: '空间复杂度',
-    link: '/data-structures-algorithms/space-complexity/',
-  },
-  {
-    text: '算法题',
-    items: [
+    text:"算法",
+    items:[
       {
-        text: '排序',
-        link: '/data-structures-algorithms/sort/',
+        text: '时间复杂度',
+        link: '/data-structures-algorithms/time-complexity/',
       },
       {
-        text: '树',
-        link: '/data-structures-algorithms/tree/',
+        text: '空间复杂度',
+        link: '/data-structures-algorithms/space-complexity/',
       },
       {
-        text: '二叉树',
-        link: '/data-structures-algorithms/binary-tree/',
+        text: '算法题',
+        items: [
+          {
+            text: '排序',
+            link: '/data-structures-algorithms/sort/',
+          },
+          {
+            text: '树',
+            link: '/data-structures-algorithms/tree/',
+          },
+          {
+            text: '二叉树',
+            link: '/data-structures-algorithms/binary-tree/',
+          },
+         ]
       },
-     ]
-  },
+    ]
+  }
 ]

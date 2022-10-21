@@ -2,89 +2,52 @@ module.exports = [
   {
     text: '微信小程序',
     items: [
-      { text: 'westore', link: '/westore/principle/' },
-      { text: '微信小程序的理解', link: '/westore/understand/' },
-      { text: '小程序生命周期', link: '/westore/life-cycle/' },
-      { text: '微信小程序中路由跳转的方式有哪些？区别', link: '/westore/router-navigate/' },
-      { text: '提高微信小程序的应用速度的手段有哪些', link: '/westore/optimize/' },
-      { text: '微信小程序的登录流程', link: '/westore/login/' },
-      { text: '微信小程序的发布流程', link: '/westore/release/' },
-      { text: '微信小程序的支付流程', link: '/westore/pay/' },
-      { text: '微信小程序的实现原理', link: '/westore/implementation/' },
+      { text: 'westore', link: '/interview-questions/westore/principle/' },
+      { text: '微信小程序的理解', link: '/interview-questions/westore/understand/' },
+      { text: '小程序生命周期', link: '/interview-questions/westore/life-cycle/' },
+      { text: '微信小程序中路由跳转的方式有哪些？区别', link: '/interview-questions/westore/router-navigate/' },
+      { text: '提高微信小程序的应用速度的手段有哪些', link: '/interview-questions/westore/optimize/' },
+      { text: '微信小程序的登录流程', link: '/interview-questions/westore/login/' },
+      { text: '微信小程序的发布流程', link: '/interview-questions/westore/release/' },
+      { text: '微信小程序的支付流程', link: '/interview-questions/westore/pay/' },
+      { text: '微信小程序的实现原理', link: '/interview-questions/westore/implementation/' },
     ]
   },
   {
     text: 'Js ',
     items: [
-      { text: 'URL 转码 和解码', link: '/js/url-encryption-to-decrypt/' },
-      { text: '手写常用函数', link: '/js/my-js/' },
-      { text: '手写promise', link: '/js/my-promise/' },
+      { text: 'URL 转码 和解码', link: '/interview-questions/js/url-encryption-to-decrypt/' },
+      { text: '手写常用函数', link: '/interview-questions/js/my-js/' },
+      { text: '手写promise', link: '/interview-questions/js/my-promise/' },
     ]
   },
   {
     text: 'Webpack ',
     items: [
-      { text: 'webpack', link: '/webpack/' },
+      { text: 'webpack', link: '/interview-questions/webpack/' },
     ]
   },
-  {
-    text: 'React',
-    items: [
-      { text: '渲染控制', link: '/react/render/' },
-      { text: '事件机制', link: '/react/event-mechanism/' },
-      { text: 'Hooks原理', link: '/react/hooks/' },
-    ]
-  },
-  {
-    text: 'Vue',
-    items: [
-      { text: 'Vue/整体设计', link: '/vue/vue-design/' },
-      {
-        text: 'Vue/组件',
-        items: [
-          { text: '组件的渲染流程', link: '/vue/component/vue-component-create/' },
-          { text: '组件的更新流程', link: '/vue/component/vue-component-update/' },
-          { text: '组件的实例', link: '/vue/component/vue-component-instance/' },
-          { text: '组件的 props', link: '/vue/component/vue-component-props/' },
-          { text: '组件的生命周期', link: '/vue/component/vue-component-life-cycle/' },
-          { text: '异步组件', link: '/vue/component/vue-component-async/' },
-
-        ]
-      },
-      {
-        text: 'Vue/响应式原理',
-        items: [
-          { text: 'reactive API', link: '/vue/reactive-principle/reactive/' },
-          { text: '依赖收集', link: '/vue/reactive-principle/dep-collection/' },
-          { text: '派发通知', link: '/vue/reactive-principle/notification/' },
-          { text: '响应式实现的优化 Vue3.2 版本', link: '/vue/reactive-principle/implementation-optimized/' },
-          { text: 'ref', link: '/vue/reactive-principle/ref/' },
-          { text: 'shallowReactive', link: '/vue/reactive-principle/shallowReactive/' },
-          { text: 'readonly', link: '/vue/reactive-principle/readonly/' },
-        ]
-      }
-    ]
-  },
+  
   {
     text: '面试题纲集合',
     items: [
-      { text: '字节前端面试题', link: '/topic-outline/bytes/' },
+      { text: '字节前端面试题', link: '/interview-questions/topic-outline/bytes/' },
     ]
   },
   {
     text: 'TypeScript ',
     items: [
-      { text: 'Array 和 tuple 的区别', link: '/ts/array-tuple/' },
-      { text: 'interface 和 type 的区别', link: '/ts/interface-type/' },
-      { text: 'unknown 和any 的区别', link: '/ts/unknown-any/' },
-      { text: 'type of 和 key of 的区别', link: '/ts/type0f-keyOf/' },
-      { text: 'void  和 never  类型的 区别', link: '/ts/void-never/' },
+      { text: 'Array 和 tuple 的区别', link: '/interview-questions/ts/array-tuple/' },
+      { text: 'interface 和 type 的区别', link: '/interview-questions/ts/interface-type/' },
+      { text: 'unknown 和any 的区别', link: '/interview-questions/ts/unknown-any/' },
+      { text: 'type of 和 key of 的区别', link: '/interview-questions/ts/type0f-keyOf/' },
+      { text: 'void  和 never  类型的 区别', link: '/interview-questions/ts/void-never/' },
     ]
   },
   {
     text: 'Nginx ',
     items: [
-      { text: 'Nginx', link: '/nginx/' },
+      { text: 'Nginx', link: '/interview-questions/nginx/' },
     ]
   },
 ]
