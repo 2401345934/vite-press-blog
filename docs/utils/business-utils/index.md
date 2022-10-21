@@ -369,3 +369,360 @@ const rgbToHex = (r, g, b) =>   "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toS
 rgbToHex(255, 255, 255);
 //  #ffffff
 ```
+
+## 根据身份证号自动生成性别、出生日期和年龄
+
+```javascript
+//根据身份证号自动生成性别、出生日期和年龄
+      const reg = /^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/
+      if (reg.test(value))) { // 身份证号码是否合法
+        var org_birthday = value.substring(6, 14);
+        var org_gender = value.substring(16, 17);
+        var sex = org_gender % 2 == 1 ? "男" : "女";
+        var birthday = org_birthday.substring(0, 4) + "-" + org_birthday.substring(4, 6) + "-" + org_birthday.substring(6, 8);
+        var birthdays = new Date(birthday.replace(/-/g, "/"));
+        let d = new Date();
+        let age = d.getFullYear() - birthdays.getFullYear() - (d.getMonth() < birthdays.getMonth() || (d.getMonth() == birthdays.getMonth() && d.getDate() < birthdays.getDate()) ? 1 : 0);
+      }
+```
+
+## 扁平数据结构转Tree
+
+### 递归
+
+```javascript
+ /**
+     * 递归查找，获取children
+     */
+    const getChildren = (data, result, pid) => {
+      for (const item of data) {
+        if (item.pid === pid) {
+          const newItem = {
+            ...item,
+            children: []
+          };
+          result.push(newItem);
+          getChildren(data, newItem.children, item.id);
+        }
+      }
+    }
+    /**
+     * 转换方法
+     */
+    const arrayToTree = (data, pid) => {
+      const result = [];
+      getChildren(data, result, pid)
+      return result;
+    }
+
+
+
+    console.log(arrayToTree(arr, 0))
+
+```
+
+### map  地址引用
+
+```javascript
+  function arrayToTree(items, parentId = 'pid') {
+      const result = []; // 存放结果集
+      const itemMap = {}; // 
+      for (const item of items) {
+        const id = item.id;
+        const pid = item[parentId];
+
+        itemMap[id] = {
+          ...item || {},
+          children: itemMap[id] ? itemMap[id]['children'] : []
+        };
+
+        const treeItem = itemMap[id];
+
+        if (pid === 0) {
+          result.push(treeItem);
+        } else {
+          if (!itemMap[pid]) {
+            itemMap[pid] = {
+              children: [],
+            }
+          }
+          itemMap[pid].children.push(treeItem);
+        }
+
+      }
+      return result;
+    }
+
+```
+
+## 数字滚动
+
+### 封装
+
+```javascript
+ /**
+   * 实现数字滚动的效果的类
+   */
+  class DigitScroll {
+    constructor(options) {
+      //获取容器的DOM，没有则抛出错误
+      this.container = document.querySelector(options.container);
+      if (!this.container) {
+        throw Error('no container');
+      }
+      this.container.style.overflow = 'hidden';
+      this.container.style.display = 'flex';
+      //可视容器高度 也是滚动间隔距离,容器要设置高度，否则默认30px
+      this.rollHeight = parseInt(getComputedStyle(this.container).height) || 30;
+      this.container.style.height = this.rollHeight + 'px';
+    }
+    roll(num) {
+      // 将传入的要滚动的数字拆分后初始化每一位数字的容器
+      this.initDigitEle(num);
+      const numEles = this.container.querySelectorAll('.single-num');
+      // 遍历生成每一位数字的滚动队列，如滚动到7，则生成内容为0，1，2，3，4，5，6，7的7个div，用于滚动动画
+      [...numEles].forEach((numEle, index) => {
+        const curNum = 0;
+        let targetNum = Number(this.numberArr[index]);
+        if (curNum >= targetNum) {
+          targetNum = targetNum + 10;
+        }
+        let cirNum = curNum;
+        // 文档碎片，拼凑好后一次性插入节点中
+        const fragment = document.createDocumentFragment();
+        // 生成从0到目标数字对应的div
+        while (targetNum >= cirNum) {
+          const ele = document.createElement('div');
+          ele.innerHTML = cirNum % 10;
+          cirNum++;
+          fragment.appendChild(ele);
+        }
+        numEle.innerHTML = '';
+        numEle.appendChild(fragment);
+        //重置位置
+        numEle.style.cssText += '-webkit-transition-duration:0s;-webkit-transform:translateY(0)';
+        setTimeout(() => {
+          numEle.style.cssText += `-webkit-transition-duration:1s;-webkit-transform:translateY(${
+            -(targetNum - curNum) * this.rollHeight
+          }px);`;
+        }, 50);
+      });
+    }
+    // 初始化容器
+    initDigitEle(num) {
+      // 数字拆分位数
+      const numArr = num.toString().split('');
+      // 文档碎片，拼凑好后一次性插入节点中
+      const fragment = document.createDocumentFragment();
+      numArr.forEach((item) => {
+        const el = document.createElement('div');
+        // 数字是要滚动的，非数字如.是不滚动的
+        if (/[0-9]/.test(item)) {
+          el.className = 'single-num';
+          el.style.height = this.rollHeight + 'px';
+          el.style.lineHeight = this.rollHeight + 'px';
+        } else {
+          el.innerHTML = item;
+          el.className = 'no-move';
+          el.style.verticalAlign = 'bottom';
+        }
+        // el.style.float='left';
+        fragment.appendChild(el);
+      }, []);
+      this.container.innerHTML = '';
+      this.container.appendChild(fragment);
+      // 存储滚动的数字
+      this.numberArr = numArr.filter((item) => /[0-9]/.test(item));
+    }
+  }
+```
+
+### 使用
+
+```javascript
+ const a = new DigitScroll({
+      container: '#test',
+      // container 要操作的DOM节点
+    });
+    a.roll(`400-30`);
+    console.log(a);
+```
+
+## 处理海量数据
+
+### React
+
+#### 时间分片
+
+时间分片主要解决，初次加载，一次性渲染大量数据造成的卡顿现象。浏览器执 js 速度要比渲染 DOM 速度快的多。，时间分片，并没有本质减少浏览器的工作量，而是把一次性任务分割开来，给用户一种流畅的体验效果。就像造一个房子，如果一口气完成，那么会把人累死，所以可以设置任务，每次完成任务一部分，这样就能有效合理地解决问题。
+
+```tsx
+/* 获取随机颜色 */
+function getColor(){
+    const r = Math.floor(Math.random()*255);
+    const g = Math.floor(Math.random()*255);
+    const b = Math.floor(Math.random()*255);
+    return 'rgba('+ r +','+ g +','+ b +',0.8)';
+ }
+/* 获取随机位置 */
+function getPostion(position){
+     const { width , height } = position
+     return { left: Math.ceil( Math.random() * width ) + 'px',top: Math.ceil(  Math.random() * height ) + 'px'}
+}
+/* 色块组件 */
+function Circle({ position }){
+    const style = React.useMemo(()=>{ //用useMemo缓存，计算出来的随机位置和色值。
+         return {  
+            background : getColor(),
+            ...getPostion(position)
+         }
+    },[])
+    return <div style={style} className="circle" />
+}
+    class Index extends React.Component{
+    state={
+        dataList:[],    //数据源列表
+        renderList:[],  //渲染列表
+        position:{ width:0,height:0 }, // 位置信息
+        eachRenderNum:500,  // 每次渲染数量
+    }
+    box = React.createRef() 
+    componentDidMount(){
+        const { offsetHeight , offsetWidth } = this.box.current
+        const originList = new Array(20000).fill(1)
+        const times = Math.ceil(originList.length / this.state.eachRenderNum) /* 计算需要渲染此次数*/
+        let index = 1
+        this.setState({
+            dataList:originList,
+            position: { height:offsetHeight,width:offsetWidth },
+        },()=>{
+            this.toRenderList(index,times)
+        })
+    }
+    toRenderList=(index,times)=>{
+        if(index > times) return /* 如果渲染完成，那么退出 */
+        const { renderList } = this.state
+        renderList.push(this.renderNewList(index)) /* 通过缓存element把所有渲染完成的list缓存下来，下一次更新，直接跳过渲染 */
+        this.setState({
+            renderList,
+        })
+        requestIdleCallback(()=>{ /* 用 requestIdleCallback 代替 setTimeout 浏览器空闲执行下一批渲染 */
+            this.toRenderList(++index,times)
+        })
+    }
+    renderNewList(index){  /* 得到最新的渲染列表 */
+        const { dataList , position , eachRenderNum } = this.state
+        const list = dataList.slice((index-1) * eachRenderNum , index * eachRenderNum  )
+        return <React.Fragment key={index} >
+            {  
+                list.map((item,index) => <Circle key={index} position={position}  />)
+            }
+        </React.Fragment>
+    }
+    render(){
+         return <div className="bigData_index" ref={this.box}  >
+            { this.state.renderList }
+         </div>
+    }
+}
+```
+
+#### 虚拟列表
+
+虚拟列表是一种长列表的解决方案，现在滑动加载是 M 端和 PC 端一种常见的数据请求加载场景，这种数据交互有一个问题就是，如果没经过处理，加载完成后数据展示的元素，都显示在页面上，如果伴随着数据量越来越大，会使页面中的 DOM 元素越来越多，即便是像 React 可以良好运用 diff 来复用老节点，但也不能保证大量的 diff 带来的性能开销。所以虚拟列表的出现，就是解决大量 DOM 存在，带来的性能问题。
+
+```tsx
+function VirtualList(){
+   const [ dataList,setDataList ] = React.useState([])  /* 保存数据源 */
+   const [ position , setPosition ] = React.useState([0,0]) /* 截取缓冲区 + 视图区索引 */
+   const scroll = React.useRef(null)  /* 获取scroll元素 */
+   const box = React.useRef(null)     /* 获取元素用于容器高度 */
+   const context = React.useRef(null) /* 用于移动视图区域，形成滑动效果。 */
+   const scrollInfo = React.useRef({ 
+       height:500,     /* 容器高度 */
+       bufferCount:8,  /* 缓冲区个数 */
+       itemHeight:60,  /* 每一个item高度 */
+       renderCount:0,  /* 渲染区个数 */ 
+    }) 
+    React.useEffect(()=>{
+        const height = box.current.offsetHeight
+        const { itemHeight , bufferCount } = scrollInfo.current
+        const renderCount =  Math.ceil(height / itemHeight) + bufferCount
+        scrollInfo.current = { renderCount,height,bufferCount,itemHeight }
+        const dataList = new Array(10000).fill(1).map((item,index)=> index + 1 )
+        setDataList(dataList)
+        setPosition([0,renderCount])
+    },[])
+   const handleScroll = () => {
+       const { scrollTop } = scroll.current
+       const { itemHeight , renderCount } = scrollInfo.current
+       const currentOffset = scrollTop - (scrollTop % itemHeight) 
+       const start = Math.floor(scrollTop / itemHeight)
+       context.current.style.transform = `translate3d(0, ${currentOffset}px, 0)` /* 偏移，造成下滑效果 */
+       const end = Math.floor(scrollTop / itemHeight + renderCount + 1)
+       if(end !== position[1] || start !== position[0]  ){ /* 如果render内容发生改变，那么截取  */
+            setPosition([ start , end ])
+       }
+   } 
+   const { itemHeight , height } = scrollInfo.current
+   const [ start ,end ] = position
+   const renderList = dataList.slice(start,end) /* 渲染区间 */
+   console.log('渲染区间',position)
+   return <div className="list_box" ref={box} >
+     <div className="scroll_box" style={{ height: height + 'px'  }}  onScroll={ handleScroll } ref={scroll}  >
+        <div className="scroll_hold" style={{ height: `${dataList.length * itemHeight}px` }}  />
+        <div className="context" ref={context}> 
+            {
+               renderList.map((item,index)=> <div className="list" key={index} >  {item + '' } Item </div>)
+            }  
+        </div>
+     </div>
+   </div>
+}
+```
+
+## 纯JS监听document是否加载完成
+
+跨浏览器且纯JavaScript检测document是否加载完成的方法是使用readyState
+
+```js
+.
+
+if (document.readyState === 'complete') {
+  // 页面已完全加载
+}
+// 这样可以在document完全加载时监测到……
+
+let stateCheck = setInterval(() => {
+  if (document.readyState === 'complete') {
+ clearInterval(stateCheck);
+ // document ready
+  }
+}, 100);
+// 或者使用onreadystatechange
+
+document.onreadystatechange = () => {
+  if (document.readyState === 'complete') {
+ // document ready
+  }
+};
+// 使用document.readyState === 'interactive'监听DOM是否加载完成。
+```
+
+## 取得文件扩展名
+
+```javascript
+var file1 = "50.xsl";
+var file2 = "30.doc";
+getFileExtension(file1); //returs xsl
+getFileExtension(file2); //returs doc
+function getFileExtension1(filename) {
+  return (/[.]/.exec(filename)) ? /[^.]+$/.exec(filename)[0] : undefined;
+}
+function getFileExtension2(filename) {
+  return filename.split('.').pop();
+}
+function getFileExtension3(filename) {
+  return filename.slice((filename.lastIndexOf(".") - 1 >>> 0) + 2);
+}
+```

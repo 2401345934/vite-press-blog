@@ -22,6 +22,14 @@ module.exports = [
     ]
   },
   {
+    text: 'Js ',
+    items: [
+      { text: 'URL 转码 和解码', link: '/js/url-encryption-to-decrypt/' },
+      { text: '手写常用函数', link: '/js/my-js/' },
+      { text: '手写promise', link: '/js/my-promise/' },
+    ]
+  },
+  {
     text: 'Webpack ',
     items: [
       { text: 'webpack', link: '/webpack/' },
