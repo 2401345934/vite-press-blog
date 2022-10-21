@@ -10,8 +10,10 @@
 
 * escape()函数用于js对字符串进行编码，不常用。
 
+```javascript
 　var url = "http://localhost:8080/pro?a=1&b=张三&c=aaa";
-　　escape(url)  -->   http%3A//localhost%3A8080/pro%3Fa%3D1%26b%3D%u5F20%u4E09%26c%3Daaa  
+　　escape(url)  -->  ///   http%3A//localhost%3A8080/pro%3Fa%3D1%26b%3D%u5F20%u4E09%26c%3Daaa  
+```
 
 ## 2. encodeURI 和 decodeURI
 
@@ -23,7 +25,7 @@
 
 ``` js
 　　var url = "http://localhost:8080/pro?a=1&b=张三&c=aaa";
-　　encodeURI(url)  -->   <http://localhost:8080/pro?a=1&b=%E5%BC%A0%E4%B8%89&c=aaa>
+　　encodeURI(url)  -->   // <http://localhost:8080/pro?a=1&b=%E5%BC%A0%E4%B8%89&c=aaa>
 ```
 
 ## 3. encodeURIComponent 和 decodeURIComponent
@@ -37,7 +39,7 @@ encodeURIComponent() 用于参数的传递，参数包含特殊字符可能会�
 
 ``` js
 　　var url = "http://localhost:8080/pro?a=1&b=张三&c=aaa";
-　　encodeURIComponent(url) --> http%3A%2F%2Flocalhost%3A8080%2Fpro%3Fa%3D1%26b%3D%E5%BC%A0%E4%B8%89%26c%3Daaa
+　　encodeURIComponent(url) --> /// http%3A%2F%2Flocalhost%3A8080%2Fpro%3Fa%3D1%26b%3D%E5%BC%A0%E4%B8%89%26c%3Daaa
 
 ```
 
@@ -48,6 +50,6 @@ encodeURIComponent() 用于参数的传递，参数包含特殊字符可能会�
 　var url = "<http://localhost:8080/pp?a=1&b>="+ paramUrl,
 　　var paramUrl = "http://localhost:8080/aa?a=1&b=2&c=3";
 　　// 应该使用encodeURIComponent()进行转码　　
-　　encodeURIComponent(paramUrl) --> <http://localhost:8080/pp?a=1&b=http%3A%2F%2Flocalhost%3A8080%2Faa%3Fa%3D1%26b%3D2%23%26c%3D3>
+　　encodeURIComponent(paramUrl) --> /// <http://localhost:8080/pp?a=1&b=http%3A%2F%2Flocalhost%3A8080%2Faa%3Fa%3D1%26b%3D2%23%26c%3D3>
 
 ```
