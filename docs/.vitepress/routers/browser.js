@@ -25,6 +25,10 @@ module.exports = [
         text: '浏览器 storage',
         link: '/browser/browser/storage/',
       },
+      {
+        text: '浏览器基础知识点及常考面试题',
+        link: '/browser/interview-questions/',
+      },
     ],
   },
  
