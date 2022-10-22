@@ -6,7 +6,7 @@ TCP 基本是和 UDP 反着来，建立连接断开连接都需要先需要进�
 
 从这个图上我们就可以发现 TCP 头部比 UDP 头部复杂的多。
 
-![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3ffa6ebc9ae24c90941d694cce016b6c~tplv-k3u1fbpfcp-zoom-1.image)
+![图片](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3ffa6ebc9ae24c90941d694cce016b6c~tplv-k3u1fbpfcp-zoom-1.webp)
 
 对于 TCP 头部来说，以下几个字段是很重要的
 
@@ -26,7 +26,7 @@ TCP 基本是和 UDP 反着来，建立连接断开连接都需要先需要进�
 
 TCP 的状态机是很复杂的，并且与建立断开连接时的握手息息相关，接下来就来详细描述下两种握手。
 
-![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b1052f33ffb34c739a3b0728b99e5113~tplv-k3u1fbpfcp-zoom-1.image)
+![图片](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b1052f33ffb34c739a3b0728b99e5113~tplv-k3u1fbpfcp-zoom-1.webp)
 
 在这之前需要了解一个重要的性能指标 RTT。该指标表示发送端发送数据到接收到对端数据所需的往返时间。
 
@@ -36,15 +36,15 @@ TCP 的状态机是很复杂的，并且与建立断开连接时的握手息息�
 
 起初，两端都为 CLOSED 状态。在通信开始前，双方都会创建 TCB。 服务器创建完 TCB 后便进入 LISTEN 状态，此时开始等待客户端发送数据。
 
-**第一次握手**
+### 第一次握手
 
 客户端向服务端发送连接请求报文段。该报文段中包含自身的数据通讯初始序号。请求发送后，客户端便进入 SYN-SENT 状态。
 
-**第二次握手**
+### 第二次握手
 
 服务端收到连接请求报文段后，如果同意连接，则会发送一个应答，该应答中也会包含自身的数据通讯初始序号，发送完成后便进入 SYN-RECEIVED 状态。
 
-**第三次握手**
+### 第三次握手
 
 当客户端收到连接同意的应答后，还要向服务端发送一个确认报文。客户端发完这个报文段后便进入 ESTABLISHED 状态，服务端收到这个应答后也进入 ESTABLISHED 状态，此时连接建立成功。
 
@@ -62,25 +62,25 @@ PS：在建立连接中，任意一端掉线，TCP 都会重发 SYN 包，一般
 
 ### 断开链接四次握手
 
-![图片](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/462f0f69e696425c9a51fac10011b3cc~tplv-k3u1fbpfcp-zoom-1.image)
+![图片](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/462f0f69e696425c9a51fac10011b3cc~tplv-k3u1fbpfcp-zoom-1.webp)
 
 TCP 是全双工的，在断开连接时两端都需要发送 FIN 和 ACK。
 
-**第一次握手**
+### 第一次握手
 
 若客户端 A 认为数据发送完成，则它需要向服务端 B 发送连接释放请求。
 
-**第二次握手**
+### 第二次握手
 
 B 收到连接释放请求后，会告诉应用层要释放 TCP 链接。然后会发送 ACK 包，并进入 CLOSE_WAIT 状态，此时表明 A 到 B 的连接已经释放，不再接收 A 发的数据了。但是因为 TCP 连接是双向的，所以 B 仍旧可以发送数据给 A。
 
-**第三次握手**
+### 第三次握手
 
 B 如果此时还有没发完的数据会继续发送，完毕后会向 A 发送连接释放请求，然后 B 便进入 LAST-ACK 状态。
 
 PS：通过延迟确认的技术（通常有时间限制，否则对方会误认为需要重传），可以将第二次和第三次握手合并，延迟 ACK 包的发送。
 
-**第四次握手**
+### 第四次握手
 
 A 收到释放请求后，向 B 发送确认应答，此时 A 进入 TIME-WAIT 状态。该状态会持续 2MSL（最大段生存期，指报文段在网络中生存的时间，超时会被抛弃） 时间，若该时间段内没有 B 的重发请求的话，就进入 CLOSED 状态。当 B 收到确认应答后，也便进入 CLOSED 状态。
 
@@ -130,13 +130,13 @@ PS：一般定时器设定的时间都会大于一个 RTT 的平均时间。
 
 发送端窗口包含已发送但未收到应答的数据和可以发送但是未发送的数据。
 
-![图片](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/567f0adf09544e69aaeab316d6a3e574~tplv-k3u1fbpfcp-zoom-1.image)
+![图片](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/567f0adf09544e69aaeab316d6a3e574~tplv-k3u1fbpfcp-zoom-1.webp)
 
 发送端窗口是由接收窗口剩余大小决定的。接收方会把当前接收窗口的剩余大小写入应答报文，发送端收到应答后根据该值和当前网络拥塞情况设置发送窗口的大小，所以发送窗口的大小是不断变化的。
 
 当发送端接收到应答报文后，会随之将窗口进行滑动
 
-![图片](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a6d6c13b51d14a46bdcd414c9450e5fb~tplv-k3u1fbpfcp-zoom-1.image)
+![图片](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a6d6c13b51d14a46bdcd414c9450e5fb~tplv-k3u1fbpfcp-zoom-1.webp)
 
 滑动窗口是一个很重要的概念，它帮助 TCP 实现了流量控制的功能。接收方通过报文告知发送方还可以发送多少数据，从而保证接收方能够来得及接收数据，防止出现接收方带宽已满，但是发送方还一直发送数据的情况。
 
