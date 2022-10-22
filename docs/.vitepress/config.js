@@ -25,7 +25,14 @@ module.exports = {
     nav,
     algolia: {
       apiKey: 'f8e742898c758644dac164a10cf39ad9',
-      indexName: 'index_name'
+      indexName: 'index_name',
+      // appId: '<APP_ID>',
+      translations: {
+        button: {
+          buttonText: '搜索文档',
+          buttonAriaLabel: '搜索文档',
+        },
+      },
     },
     sidebar
   },
