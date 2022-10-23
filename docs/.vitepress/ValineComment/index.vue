@@ -43,7 +43,7 @@ watch(
 );
 
 onMounted(() => {
-  remoteImport('/Valine.min.js').then(() => {
+  remoteImport('//unpkg.com/valine/dist/Valine.min.js').then(() => {
     initValine()
   });
 });
