@@ -7,6 +7,7 @@ module.exports = [
   { text: "浏览器", link: "/browser/browser/composition/", activeMatch: '/browser/' },
   { text: "HTTP", link: "/http/http-https/", activeMatch: '/http/' },
   { text: "算法与数据结构", link: "/data-structures-algorithms/time-complexity/", activeMatch: '/data-structures-algorithms/' },
+  { text: "工作软能力", link: "/soft-power/asking-questions/", activeMatch: '/soft-power/' },
   {
     text: "相关链接",
     items: [
