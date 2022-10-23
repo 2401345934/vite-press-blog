@@ -5,6 +5,7 @@ const browser = require("./routers/browser")
 const source = require("./routers/source")
 const http = require("./routers/http")
 const softPower = require("./routers/soft-power")
+const tool = require("./routers/tool")
 const dataStructuresAlgorithms = require("./routers/data-structures-algorithms")
 module.exports ={
     '/interview-questions/': interviewQuestions,
@@ -14,4 +15,5 @@ module.exports ={
     '/data-structures-algorithms/':  dataStructuresAlgorithms,
     '/http/':  http,
     '/soft-power/':  softPower,
+    '/tool/':  tool,
 }
