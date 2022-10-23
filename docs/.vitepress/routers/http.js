@@ -7,18 +7,6 @@ module.exports = [
         link: '/http/http-https/',
       },
       {
-        text: 'TCP三次握手 TCP 四次挥手',
-        link: '/http/tcp-three-tcp-four/',
-      },
-      {
-        text: 'TCP/IP / 如何保证数据包传输的有序可靠？',
-        link: '/http/orderly-reliable-transmission/',
-      },
-      {
-        text: 'TCP和UDP的区别',
-        link: '/http/tcp-udp/',
-      },
-      {
         text: 'HTTP 请求跨域问题',
         link: '/http/cross-domain/',
       },
@@ -33,6 +21,27 @@ module.exports = [
       {
         text: 'HTTP 及 TLS',
         link: '/http/http-tls/',
+      },
+    ],
+  },
+  {
+    text: '计算器网络',
+    items: [
+      {
+        text: '计算机网络分层结构',
+        link: '/http/structure-computer-networks/',
+      },
+      {
+        text: 'TCP三次握手 TCP 四次挥手',
+        link: '/http/tcp-three-tcp-four/',
+      },
+      {
+        text: 'TCP/IP / 如何保证数据包传输的有序可靠？',
+        link: '/http/orderly-reliable-transmission/',
+      },
+      {
+        text: 'TCP和UDP的区别',
+        link: '/http/tcp-udp/',
       },
       {
         text: 'TCP',
