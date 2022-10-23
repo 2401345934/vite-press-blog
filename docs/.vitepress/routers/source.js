@@ -33,6 +33,13 @@ module.exports = [
           { text: 'shallowReactive', link: '/source/vue/reactive-principle/shallowReactive/' },
           { text: 'readonly', link: '/source/vue/reactive-principle/readonly/' },
         ]
+      },
+      {
+        text: '计算属性 computed',
+        items: [
+          { text: 'computed API', link: '/source/vue/computed/computed/' },
+          { text: '计算属性的运行机制', link: '/source/vue/computed/operation-mechanism/' },
+        ]
       }
     ]
   },
