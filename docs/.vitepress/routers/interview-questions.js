@@ -35,6 +35,7 @@ module.exports = [
     text: '性能优化',
     items: [
       { text: 'performance', link: '/interview-questions/performance-optimization/performance/' },
+      { text: '前端懒加载和预加载', link: '/interview-questions/performance-optimization/lazyload-preload/' },
     ]
   },
   {
