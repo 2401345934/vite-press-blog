@@ -4,6 +4,10 @@ module.exports = [
     text:"算法",
     items:[
       {
+        text: '入门',
+        link: '/data-structures-algorithms/introduction/',
+      },
+      {
         text: '时间复杂度',
         link: '/data-structures-algorithms/time-complexity/',
       },

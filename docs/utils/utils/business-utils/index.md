@@ -289,6 +289,14 @@ typeOf(value) === 'object'
 
 ## getUUID
 
+### createObjectURL
+
+```javascript
+URL.createObjectURL(new Blob()).substr(-36)
+```
+
+### 随机
+
 ```javascript
 export function getUUID(len = 8, radix = 16) {
   let chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('')
@@ -959,4 +967,362 @@ async function handleFileUpload(event) {
     .addEventListener("click", handleFileUpload);
 </script>
 
+```
+
+## 页面尺寸整体缩放
+
+```js
+window.addEventListener('resize', () => {
+  fun();
+});
+const heightAll = ref(document.documentElement.clientHeight);
+const fun = () => {
+  let devicewidth = document.documentElement.clientWidth; //获取当前分辨率下的可是区域宽度
+  let scale = devicewidth / 1440; // 分母——设计稿的尺寸
+  heightAll.value = document.documentElement.clientHeight / scale;
+  document.body.style.zoom = scale; //放大缩小相应倍数
+};
+fun();
+
+```
+
+## 用数组建立一个简单的循环 (循环播放使用)
+
+```javascript
+var aList = ['A','B','C','D','E'];
+function make_looper( arr ){
+
+    arr.loop_idx = 0;
+
+    // return current item
+    arr.current = function(){
+      this.loop_idx = ( this.loop_idx ) % this.length;// 无需检查 !!
+      return arr[ this.loop_idx ];
+    };
+
+    // 增加 loop_idx 然后返回新的当前元素
+    arr.next = function(){
+      this.loop_idx++;
+      return this.current();
+    };
+    
+    // 减少 loop_idx 然后返回新的当前元素
+    arr.prev = function(){
+      this.loop_idx += this.length - 1;
+      return this.current();
+    };
+}
+
+make_looper( aList);
+
+aList.current();// -> A
+aList.next();// -> B
+aList.next();// -> C
+aList.next();// -> D
+aList.next();// -> E
+aList.next();// -> A
+aList.pop() ;// -> E
+aList.prev();// -> D
+aList.prev();// -> C
+aList.prev();// -> B
+aList.prev();// -> A
+aList.prev();// -> D
+```
+
+## js 实现上传
+
+### window.showOpenFilePicker()
+
+代表选中文件
+
+```javascript
+
+    const clickFunc = async () => {
+      const options = {
+        types: [
+          {
+            description: '这只是一个描述',
+            accept: {
+              // 'image/*': ['.png', '.gif', '.jpeg', '.jpg'],
+              // "text/plain": [".txt"],
+              'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': ['.xlsx']
+            }
+          }
+        ],
+        excludeAcceptAllOption: false // 有一个选项的按钮
+        // multiple: true
+      }
+      try {
+        myFiles.file = await window.showOpenFilePicker(options)
+      } catch (error) {
+        console.error(error)
+      }
+    }
+
+```
+
+### 相关 options 的属性
+
+* excludeAcceptAllOption上面代码中 options 里的一个配置 excludeAcceptAllOption
+  * 这个值如果是 false则显示下图中的这个选项按钮，并且能看看到 格式 的 一个 描述信息。
+  * 这个值如果是true这不显示 这个按钮
+* myltiple多选的意思，能够选取多个文件
+* type这个通过 accept 来以 键值对的形式来接受，值为 数组 类型。
+
+### window.showSaveFilePicker()
+
+保存文件
+
+ ```javascript
+  const clickFunc = async () => {
+      const options = {
+        types: [
+          {
+            description: '这只是一个描述',
+            accept: {
+              // "text/plain": [".txt"],
+              'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': ['.xlsx']
+            }
+          }
+        ],
+      }
+      try {
+        myFiles.file = await window.showSaveFilePicker(options)
+        console.log(myFiles.file)
+        // console.log(myFiles.file)
+        console.log(myFiles.file.getFile()) // 返回一个 promise
+        // // 所以我们需要 await 来接受
+        // console.log(await myFiles.file[0].getFile());
+
+      } catch (error) {
+        console.error(error)
+      }
+    }
+ ```
+
+### window.showDirectoryPicker()
+
+这个 API 代表的是 选中 文件夹
+
+```javascript
+
+      const clickFunc = async () => {
+        try {
+          myFiles.file = await window.showDirectoryPicker()
+          console.log(myFiles.file)
+          console.log(myFiles.file.values())
+
+          for await (const item of myFiles.file.values()) {
+            console.log(item)
+          }
+        } catch (error) {
+          console.error(error)
+        }
+      }
+
+```
+
+## 处理浏览器默认样式
+
+```css
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.markdown-body pre,
+.markdown-body pre > code.hljs {
+  color: #333;
+  background: #f8f8f8;
+}
+.hljs-comment,
+.hljs-quote {
+  color: #998;
+  font-style: italic;
+}
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-subst {
+  color: #333;
+  font-weight: 700;
+}
+.hljs-literal,
+.hljs-number,
+.hljs-tag .hljs-attr,
+.hljs-template-variable,
+.hljs-variable {
+  color: teal;
+}
+.hljs-doctag,
+.hljs-string {
+  color: #d14;
+}
+.hljs-section,
+.hljs-selector-id,
+.hljs-title {
+  color: #900;
+  font-weight: 700;
+}
+.hljs-subst {
+  font-weight: 400;
+}
+.hljs-class .hljs-title,
+.hljs-type {
+  color: #458;
+  font-weight: 700;
+}
+.hljs-attribute,
+.hljs-name,
+.hljs-tag {
+  color: navy;
+  font-weight: 400;
+}
+.hljs-link,
+.hljs-regexp {
+  color: #009926;
+}
+.hljs-bullet,
+.hljs-symbol {
+  color: #990073;
+}
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #0086b3;
+}
+.hljs-meta {
+  color: #999;
+  font-weight: 700;
+}
+.hljs-deletion {
+  background: #fdd;
+}
+.hljs-addition {
+  background: #dfd;
+}
+.hljs-emphasis {
+  font-style: italic;
+}
+.hljs-strong {
+  font-weight: 700;
+}
 ```

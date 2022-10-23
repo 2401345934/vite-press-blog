@@ -22,19 +22,6 @@ module.exports = [
     ]
   },
   {
-    text: 'Webpack ',
-    items: [
-      { text: 'webpack', link: '/interview-questions/webpack/' },
-    ]
-  },
-  
-  {
-    text: '面试题纲集合',
-    items: [
-      { text: '字节前端面试题', link: '/interview-questions/topic-outline/bytes/' },
-    ]
-  },
-  {
     text: 'TypeScript ',
     items: [
       { text: 'Array 和 tuple 的区别', link: '/interview-questions/ts/array-tuple/' },
@@ -44,6 +31,25 @@ module.exports = [
       { text: 'void  和 never  类型的 区别', link: '/interview-questions/ts/void-never/' },
     ]
   },
+  {
+    text: '性能优化',
+    items: [
+      { text: 'performance', link: '/interview-questions/performance-optimization/performance/' },
+    ]
+  },
+  {
+    text: 'Webpack ',
+    items: [
+      { text: 'webpack', link: '/interview-questions/webpack/' },
+    ]
+  },
+  {
+    text: '面试题纲集合',
+    items: [
+      { text: '字节前端面试题', link: '/interview-questions/topic-outline/bytes/' },
+    ]
+  },
+  
   {
     text: 'Nginx ',
     items: [
