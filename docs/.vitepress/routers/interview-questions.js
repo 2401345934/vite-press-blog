@@ -17,6 +17,7 @@ module.exports = [
     text: 'Js ',
     items: [
       { text: 'URL 转码 和解码', link: '/interview-questions/js/url-encryption-to-decrypt/' },
+      { text: 'for-in vs for-of', link: '/interview-questions/js/forIn-forOf/' },
       { text: '手写常用函数', link: '/interview-questions/js/my-js/' },
       { text: '手写promise', link: '/interview-questions/js/my-promise/' },
     ]
