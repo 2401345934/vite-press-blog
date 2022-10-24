@@ -24,6 +24,9 @@ module.exports = [
   {
     text: 'TypeScript ',
     items: [
+      { text: '说说你对 TypeScript 的理解？与 JavaScript 的区别？', link: '/interview-questions/ts/ts-understand/' },
+      { text: '面试题集合', link: '/interview-questions/ts/interview-questions/' },
+      { text: 'tsconfig', link: '/interview-questions/ts/tsconfig/' },
       { text: 'Array 和 tuple 的区别', link: '/interview-questions/ts/array-tuple/' },
       { text: 'interface 和 type 的区别', link: '/interview-questions/ts/interface-type/' },
       { text: 'unknown 和any 的区别', link: '/interview-questions/ts/unknown-any/' },
