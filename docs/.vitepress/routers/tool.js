@@ -29,6 +29,18 @@ module.exports = [
     text: '功能网站',
     items: [
       {
+        text: '常用轮子集合',
+        link: '/tool/tool-collection/',
+      },
+      {
+        text: '页面评论功能',
+        link: '/tool/valine/',
+      },
+      {
+        text: '页面引导功能',
+        link: '/tool/intro/',
+      },
+      {
         text: '静态网站部署',
         link: '/tool/static-html/',
       },

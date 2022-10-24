@@ -1326,3 +1326,143 @@ table {
   font-weight: 700;
 }
 ```
+
+## scrollToTop：平滑滚动至顶部
+
+```javascript
+const scrollToTop = () => {
+  const c = document.documentElement.scrollTop || document.body.scrollTop;
+  if (c > 0) {
+    window.requestAnimationFrame(scrollToTop);
+    window.scrollTo(0, c - c / 8);
+  }
+};
+
+scrollToTop();
+```
+
+## smoothScroll：滚动到指定元素区域
+
+```javascript
+const smoothScroll = element =>
+  document.querySelector(element).scrollIntoView({
+    behavior: 'smooth'
+  });
+smoothScroll('#fooBar');
+smoothScroll('.fooBar');
+```
+
+## detectDeviceType：检测移动/PC设备
+
+```javascript
+const detectDeviceType = () =>
+  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+    ? 'Mobile'
+    : 'Desktop';
+```
+
+## getScrollPosition：返回当前的滚动位置
+
+默认参数为window ，pageXOffset(pageYOffset)为第一选择，没有则用scrollLeft(scrollTop)
+
+```javascript
+const getScrollPosition = (el = window) => ({
+  x: el.pageXOffset !== undefined ? el.pageXOffset : el.scrollLeft,
+  y: el.pageYOffset !== undefined ? el.pageYOffset : el.scrollTop
+});
+
+getScrollPosition(); // {x: 0, y: 200}
+```
+
+## escapeHTML：转义HTML
+
+当然是用来防XSS攻击啦。
+
+```javascript
+const escapeHTML = str =>
+  str.replace(
+    /[&<>'"]/g,
+    tag =>
+      ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        "'": '&#39;',
+        '"': '&quot;'
+      }[tag] || tag)
+  );
+
+escapeHTML('<a href="#">Me & you</a>'); // '&lt;a href=&quot;#&quot;&gt;Me &amp; you&lt;/a&gt;'
+```
+
+## isBrowser：检查是否为浏览器环境
+
+```javascript
+const isBrowser = () => ![typeof window, typeof document].includes('undefined');
+
+isBrowser(); // true (browser)
+isBrowser(); // false (Node)
+```
+
+## isBrowserTab：检查当前标签页是否活动
+
+```javascript
+const isBrowserTabFocused = () => !document.hidden;
+
+isBrowserTabFocused(); // true
+```
+
+## Random Hexadecimal Color Code：随机十六进制颜色
+
+```javascript
+
+const randomHexColorCode = () => {
+  let n = (Math.random() * 0xfffff * 1000000).toString(16);
+  return '#' + n.slice(0, 6);
+};
+
+randomHexColorCode(); // "#e34155"
+```
+
+## httpsRedirect：HTTP 跳转 HTTPS
+
+```javascript
+const httpsRedirect = () => {
+  if (location.protocol !== 'https:') location.replace('https://' + location.href.split('//')[1]);
+};
+
+httpsRedirect(); // 若在`http://www.baidu.com`, 则跳转到`https://www.baidu.com`
+```
+
+## hide：隐藏所有的指定标签
+
+```javascript
+const hide = (...el) => [...el].forEach(e => (e.style.display = 'none'));
+
+hide(document.querySelectorAll('img')); // 隐藏所有<img>标签
+```
+
+## hasClass：校验指定元素的类名
+
+```javascript
+const hasClass = (el, className) => el.classList.contains(className);
+hasClass(document.querySelector('p.special'), 'special'); // true
+```
+
+## distance：返回两点间的距离
+
+```javascript
+const distance = (x0, y0, x1, y1) => Math.hypot(x1 - x0, y1 - y0);
+
+distance(1, 1, 2, 3); // 2.23606797749979
+```
+
+## bottomVisible：检查页面底部是否可见
+
+```javascript
+const bottomVisible = () =>
+  document.documentElement.clientHeight + window.scrollY >=
+  (document.documentElement.scrollHeight || document.documentElement.clientHeight);
+
+bottomVisible(); // true
+```

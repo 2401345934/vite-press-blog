@@ -61,3 +61,40 @@ const reverse = (str) => str.split('').reverse().join('')
 reverse('this is reverse')
 // esrever si siht
 ```
+
+## byteSize：返回字符串的字节长度
+
+```javascript
+const byteSize = str => new Blob([str]).size;
+
+byteSize('😀'); // 4
+byteSize('Hello World'); // 11
+```
+
+## capitalize：首字母大写
+
+```javascript
+const capitalize = ([first, ...rest]) =>
+  first.toUpperCase() + rest.join('');
+  
+capitalize('fooBar'); // 'FooBar'
+capitalize('fooBar', true); // 'Foobar'
+```
+
+## capitalizeEveryWord：每个单词首字母大写
+
+```javascript
+const capitalizeEveryWord = str => str.replace(/\b[a-z]/g, char => char.toUpperCase());
+
+capitalizeEveryWord('hello world!'); // 'Hello World!'
+```
+
+## decapitalize：首字母小写
+
+```javascript
+const decapitalize = ([first, ...rest]) =>
+  first.toLowerCase() + rest.join('')
+
+decapitalize('FooBar'); // 'fooBar'
+decapitalize('FooBar'); // 'fooBar'
+```

@@ -36,3 +36,30 @@ exports.toThousands = function (number, fix = 'no') {
   return `${negative}${result}${numArr[1] ? '.' + numArr[1] : ''}`
 }
 ```
+
+## randomNumberInRange：生成指定范围的随机小数
+
+```js
+const randomNumberInRange = (min, max) => Math.random() * (max - min) + min;
+
+randomNumberInRange(2, 10); // 6.0211363285087005
+```
+
+## round：四舍五入到指定位数
+
+```js
+const round = (n, decimals = 0) => Number(`${Math.round(`${n}e${decimals}`)}e-${decimals}`);
+
+round(1.005, 2); // 1.01
+```
+
+## toCurrency：简单的货币单位转换
+
+```js
+const toCurrency = (n, curr, LanguageFormat = undefined) =>
+  Intl.NumberFormat(LanguageFormat, { style: 'currency', currency: curr }).format(n);
+toCurrency(123456.789, 'EUR'); // €123,456.79
+toCurrency(123456.789, 'USD', 'en-us'); // $123,456.79  
+toCurrency(123456.789, 'USD', 'fa'); // ۱۲۳٬۴۵۶٫۷۹
+toCurrency(322342436423.2435, 'JPY'); // ¥322,342,436,423 
+```

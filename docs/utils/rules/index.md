@@ -497,3 +497,18 @@
 ```javascript
 /^([0-9a-zA-Z-]{1,}\.)+([a-zA-Z]{2,})$/
 ```
+
+## luhnCheck：银行卡号码校验（luhn算法）
+
+```javascript
+const luhnCheck = num => {
+  let arr = (num + '')
+    .split('')
+    .reverse()
+    .map(x => parseInt(x));
+  let lastDigit = arr.splice(0, 1)[0];
+  let sum = arr.reduce((acc, val, i) => (i % 2 !== 0 ? acc + val : acc + ((val * 2) % 9) || 9), 0);
+  sum += lastDigit;
+  return sum % 10 === 0;
+};
+```

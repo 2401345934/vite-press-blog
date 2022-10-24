@@ -60,3 +60,11 @@ const getParameters = (URL) =>
 getParameters('https://www.google.com.hk/search?q=js+md&newwindow=1')
 // {q: 'js+md', newwindow: '1'}
 ```
+
+## currentURL：返回当前链接url
+
+```javascript
+const currentURL = () => window.location.href;
+
+currentURL(); // 'https://juejin.cn'
+```
