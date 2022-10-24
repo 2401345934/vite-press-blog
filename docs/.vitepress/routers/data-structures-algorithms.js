@@ -23,6 +23,14 @@ module.exports = [
             link: '/data-structures-algorithms/sort/',
           },
           {
+            text: '数组',
+            link: '/data-structures-algorithms/array/',
+          },
+          {
+            text: '字符串',
+            link: '/data-structures-algorithms/string/',
+          },
+          {
             text: '树',
             link: '/data-structures-algorithms/tree/',
           },
