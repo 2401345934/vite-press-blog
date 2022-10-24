@@ -16,6 +16,7 @@ module.exports = [
   {
     text: 'Js ',
     items: [
+      { text: 'JSON-stringify', link: '/interview-questions/js/json-stringify/' },
       { text: 'URL 转码 和解码', link: '/interview-questions/js/url-encryption-to-decrypt/' },
       { text: 'for-in vs for-of', link: '/interview-questions/js/forIn-forOf/' },
       { text: '跨页面通信', link: '/interview-questions/js/page-communication/' },
