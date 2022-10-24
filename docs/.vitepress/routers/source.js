@@ -40,7 +40,14 @@ module.exports = [
           { text: 'computed API', link: '/source/vue/computed/computed/' },
           { text: '计算属性的运行机制', link: '/source/vue/computed/operation-mechanism/' },
         ]
-      }
+      },
+      {
+        text: '监听器 wacher',
+        items: [
+          { text: 'watch API 的实现原理', link: '/source/vue/watch/realize-principle/' },
+        ]
+      },
+      
     ]
   },
 ]
