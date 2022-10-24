@@ -6,11 +6,30 @@
     "start": "vitepress dev docs",
     "build": "npm run docs:build",
     "docs:dev": "vitepress dev docs",
+    "commit": "npm run changelog && git add . && git cz ",
+    "changelog": "conventional-changelog -p custom-config -i CHANGELOG.md -s -r 0",
     "docs:build": "vitepress build docs",
+    "prepare": "husky install",
     "docs:serve": "vitepress serve docs"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
   },
   "license": "MIT",
   "devDependencies": {
+    "@commitlint/config-conventional": "^17.1.0",
+    "commitizen": "^4.2.5",
+    "commitlint": "^17.1.2",
+    "commitlint-config-cz": "^0.13.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-customizable": "^7.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
     "vitepress": "^1.0.0-alpha.21"
   },
   "dependencies": {
