@@ -1,5 +1,6 @@
-## 1.0.0 (2022-10-24)
+## 1.0.0 (2022-10-25)
 
+* ✨新增(package): 增加提交代码规范配置 ([175edd4](https://github.com/2401345934/vite-press/commit/175edd4))
 * 补充-westore ([9e7e30f](https://github.com/2401345934/vite-press/commit/9e7e30f))
 * 补充常用轮子 ([639bfdc](https://github.com/2401345934/vite-press/commit/639bfdc))
 * 补充业务utils ([22fea4d](https://github.com/2401345934/vite-press/commit/22fea4d))
@@ -28,6 +29,7 @@
 * 修改标题 deep ([910f2ab](https://github.com/2401345934/vite-press/commit/910f2ab))
 * 修改默认进入路径和增加tcp握手挥手 ([d9bcb29](https://github.com/2401345934/vite-press/commit/d9bcb29))
 * 修改Valine ([fec0ce9](https://github.com/2401345934/vite-press/commit/fec0ce9))
+* 增加了性能优化篇 ([36cc771](https://github.com/2401345934/vite-press/commit/36cc771))
 * 增加全局评论组件 && 默认所有页面下面都有该组件 ([49d9e7f](https://github.com/2401345934/vite-press/commit/49d9e7f))
 * 增加chrome ([fa4eab2](https://github.com/2401345934/vite-press/commit/fa4eab2))
 * 增加chrome ([65fd04f](https://github.com/2401345934/vite-press/commit/65fd04f))
