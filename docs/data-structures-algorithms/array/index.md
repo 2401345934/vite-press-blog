@@ -225,3 +225,32 @@ const threeSum = function(nums) {
     return res
 };
 ```
+
+## 在区间范围内统计奇数数目
+
+```javascript
+不能被0整除的数为奇数,那么求两个数之间的奇数个数,以0为开始,然后相减即可
+//规律
+var countOdds = function(low, high) {
+  return count(high)-count(low-1)
+};
+
+var count = function(x){
+  if(x==0) return 0
+  return Math.ceil(x/2)
+}
+```
+
+## 去掉最低工资和最高工资后的工资平均值
+
+```javascript
+var average = function(salary) {
+  // 先算 最大最小的和
+   const sumOther = (Math.max(...salary)+Math.min(...salary))
+  //  求和
+   const sum = salary.reduce((pre,cur)=>pre+cur)
+  //  通过整体的 和 减去 最大最小的和 / 数组长度 - 2 的值
+   return (sum-sumOther)/(salary.length-2)
+};
+
+```
