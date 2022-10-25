@@ -6,7 +6,7 @@
 
 ## 代码演示
 
-<starry-sky :stars-count="1000" :distance="1000" />
+<starry-sky style="width:100%;height:400px;position: relative;" :stars-count="1000" :distance="1000" />
 ```tsx
 <script setup>
 import { StarrySky } from "@xiaomh/vue3-alan-vite-component"
