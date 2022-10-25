@@ -8,6 +8,10 @@ module.exports = [
         link: '/my-vite-component/introduce/',
       },
       {
+        text: 'Button ',
+        link: '/my-vite-component/Button/',
+      },
+      {
         text: 'DigitalScroll 数字滚动组件',
         link: '/my-vite-component/DigitalScroll/',
       },
