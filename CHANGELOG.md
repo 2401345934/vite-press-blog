@@ -5,6 +5,7 @@
 * ✨新增(package): 增加提交代码规范配置 ([175edd4](https://github.com/2401345934/vite-press/commit/175edd4))
 * ✨新增(pages): 新增 button 按钮组件库 ([cae9589](https://github.com/2401345934/vite-press/commit/cae9589))
 * ✨新增(pages): 新增 vite 组件栏目 ([694440b](https://github.com/2401345934/vite-press/commit/694440b))
+* ✨新增(pages): 新增button ([e704b6e](https://github.com/2401345934/vite-press/commit/e704b6e))
 * ✨新增(pages): 修复组件库 strayysky 部署 ([7297e09](https://github.com/2401345934/vite-press/commit/7297e09))
 * 补充-westore ([9e7e30f](https://github.com/2401345934/vite-press/commit/9e7e30f))
 * 补充常用轮子 ([639bfdc](https://github.com/2401345934/vite-press/commit/639bfdc))
