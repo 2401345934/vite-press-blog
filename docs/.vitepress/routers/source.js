@@ -45,9 +45,9 @@ module.exports = [
         text: '监听器 wacher',
         items: [
           { text: 'watch API 的实现原理', link: '/source/vue/watch/realize-principle/' },
+          { text: '异步队列任务的设计', link: '/source/vue/watch/design/' },
         ]
       },
-      
     ]
   },
 ]
