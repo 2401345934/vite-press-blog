@@ -1,5 +1,6 @@
 ## 1.0.0 (2022-10-25)
 
+* ✨新增(package): 引入自己的组件库 ([3827403](https://github.com/2401345934/vite-press/commit/3827403))
 * ✨新增(package): 增加提交代码规范配置 ([175edd4](https://github.com/2401345934/vite-press/commit/175edd4))
 * 补充-westore ([9e7e30f](https://github.com/2401345934/vite-press/commit/9e7e30f))
 * 补充常用轮子 ([639bfdc](https://github.com/2401345934/vite-press/commit/639bfdc))
