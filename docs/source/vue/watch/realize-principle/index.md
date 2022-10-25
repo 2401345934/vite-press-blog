@@ -24,7 +24,7 @@
 * source 可以是 getter 函数 也可以是响应式对象 甚至是响应式对象数组
   * 所以需要标准化 source
 * source 标准化主要是根据 source 类型 生成标准化后的 getter 函数
-* 如果 source 是 erf 对象 创建一个访问 source.value 的gettr 函数
+* 如果 source 是 ref 对象 创建一个访问 source.value 的 getter 函数
 * 如果 source是 reactive 对象 创建一个访问 source 的 getter 函数 设置 deep 为 true
 * 如果 source 是一个函数 进一步判断第二个参数 cb 是否存在
 * 如果 source 是一个数组 生成的 getter 函数内部通过 source.map 函数映射出有一个新的数组 会判断每个数组元素类型

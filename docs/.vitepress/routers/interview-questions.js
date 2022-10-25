@@ -41,6 +41,13 @@ module.exports = [
     text: '性能优化',
     items: [
       { text: 'performance', link: '/interview-questions/performance-optimization/performance/' },
+      { text: 'HTML优化', link: '/interview-questions/performance-optimization/html/' },
+      {
+        text: 'JS优化',
+        items: [
+          { text: '减少引用类型内存访问', link: '/interview-questions/performance-optimization/js/reference-memory-access/' },
+        ]
+      },
       { text: '前端懒加载和预加载', link: '/interview-questions/performance-optimization/lazyload-preload/' },
     ]
   },
@@ -56,7 +63,7 @@ module.exports = [
       { text: '字节前端面试题', link: '/interview-questions/topic-outline/bytes/' },
     ]
   },
-  
+
   {
     text: 'Nginx ',
     items: [
