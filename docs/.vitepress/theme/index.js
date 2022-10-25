@@ -1,6 +1,6 @@
 import DefaultTheme from 'vitepress/theme'
 import MyLayout from './MyLayout.vue'
-import AlanViteComponent  from "@xiaomh/vue3-alan-vite-component"
+import AlanViteComponent from "@xiaomh/vue3-alan-vite-component"
 import '@xiaomh/vue3-alan-vite-component/lib/style.css';
 export default {
   ...DefaultTheme,

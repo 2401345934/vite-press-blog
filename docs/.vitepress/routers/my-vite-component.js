@@ -19,6 +19,11 @@ module.exports = [
         text: 'StarrySky 星空背景',
         link: '/my-vite-component/StarrySky/',
       },
+      {
+        text: 'CodeBackgroundWall 代码背景墙',
+        link: '/my-vite-component/CodeBackgroundWall/',
+      },
+      
      ]
   },
 ]
