@@ -31,6 +31,10 @@ module.exports = [
         text: 'TherMometer 温度计',
         link: '/my-vite-component/TherMometer/',
       },
+      {
+        text: 'YuanWar 圆圆战争',
+        link: '/my-vite-component/YuanWar/',
+      },
      ]
   },
 ]
