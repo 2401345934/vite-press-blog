@@ -58,6 +58,15 @@ module.exports = [
     ]
   },
   {
+    text: 'npm',
+    items: [
+      { text: '简介', link: '/interview-questions/npm/start/' },
+      { text: '常用操作', link: '/interview-questions/npm/common-operations/' },
+      { text: 'link 创建软链', link: '/interview-questions/npm/link/' },
+      { text: '运行 npm run xxx 的时候发生了什么？', link: '/interview-questions/npm/npm-run-xxx/' },
+    ]
+  },
+  {
     text: '面试题纲集合',
     items: [
       { text: '字节前端面试题', link: '/interview-questions/topic-outline/bytes/' },

@@ -27,7 +27,7 @@ features:
     title: chrome-技巧
     details:
   - icon: 🪣
-    title: 源码
+    title: 源码 & 组件库
     details:
   - icon: 📈
     title: 性能优化-技巧
