@@ -16,7 +16,7 @@ module.exports = [
         link: '/my-vite-component/BackTop/',
       },
       {
-        text: 'DigitalScroll 数字滚动组件',
+        text: 'DigitalScroll 数字滚动',
         link: '/my-vite-component/DigitalScroll/',
       },
       {
@@ -26,6 +26,10 @@ module.exports = [
       {
         text: 'CodeBackgroundWall 代码背景墙',
         link: '/my-vite-component/CodeBackgroundWall/',
+      },
+      {
+        text: 'TherMometer 温度计',
+        link: '/my-vite-component/TherMometer/',
       },
      ]
   },
