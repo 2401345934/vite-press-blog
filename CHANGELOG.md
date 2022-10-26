@@ -13,6 +13,7 @@
 * ✨新增(pages): 修复组件依赖版本 ([a895cf5](https://github.com/2401345934/vite-press/commit/a895cf5))
 * ✨新增(pages): 组件库新增代码背景墙 ([8fb148a](https://github.com/2401345934/vite-press/commit/8fb148a))
 * ✨新增(pages): navigator 兼容 ([5d64a59](https://github.com/2401345934/vite-press/commit/5d64a59))
+* ✨新增(pages): nginx 知识补充 ([2f1acc0](https://github.com/2401345934/vite-press/commit/2f1acc0))
 * 补充-westore ([9e7e30f](https://github.com/2401345934/vite-press/commit/9e7e30f))
 * 补充常用轮子 ([639bfdc](https://github.com/2401345934/vite-press/commit/639bfdc))
 * 补充业务utils ([22fea4d](https://github.com/2401345934/vite-press/commit/22fea4d))
