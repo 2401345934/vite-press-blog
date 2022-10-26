@@ -77,6 +77,7 @@ module.exports = [
     text: 'Nginx ',
     items: [
       { text: 'Nginx', link: '/interview-questions/nginx/' },
+      { text: '基础知识', link: '/interview-questions/nginx/basis/' },
     ]
   },
 ]

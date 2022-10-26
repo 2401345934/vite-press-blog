@@ -6,6 +6,7 @@
 * ✨新增(package): 组件库新增 backtop 组件 ([ba9afe7](https://github.com/2401345934/vite-press/commit/ba9afe7))
 * ✨新增(pages): 算法题补充 ([1ca7bd4](https://github.com/2401345934/vite-press/commit/1ca7bd4))
 * ✨新增(pages): 新增 button 按钮组件库 ([cae9589](https://github.com/2401345934/vite-press/commit/cae9589))
+* ✨新增(pages): 新增 npm 面试相关知识 ([a089dad](https://github.com/2401345934/vite-press/commit/a089dad))
 * ✨新增(pages): 新增 vite 组件栏目 ([694440b](https://github.com/2401345934/vite-press/commit/694440b))
 * ✨新增(pages): 新增button ([e704b6e](https://github.com/2401345934/vite-press/commit/e704b6e))
 * ✨新增(pages): 修复组件库 strayysky 部署 ([7297e09](https://github.com/2401345934/vite-press/commit/7297e09))
