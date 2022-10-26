@@ -46,6 +46,9 @@ module.exports = [
         items: [
           { text: 'watch API 的实现原理', link: '/source/vue/watch/realize-principle/' },
           { text: '异步队列任务的设计', link: '/source/vue/watch/design/' },
+          { text: 'watchEffect API', link: '/source/vue/watch/watchEffect/' },
+          { text: '开发环境 侦听器调试', link: '/source/vue/watch/dev-debg/' },
+          { text: '总结', link: '/source/vue/watch/conclusion/' },
         ]
       },
     ]
