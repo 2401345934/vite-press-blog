@@ -33,7 +33,7 @@
     "vitepress": "^1.0.0-alpha.21"
   },
   "dependencies": {
-    "@xiaomh/vue3-alan-vite-component": "^1.0.17",
+    "@xiaomh/vue3-alan-vite-component": "^1.0.18",
     "valine": "^1.5.1"
   }
 }

@@ -6,7 +6,7 @@
 
 ## 代码演示
 
- <code-background-wall></code-background-wall>
+ <code-background-wall ></code-background-wall>
 
 ```tsx
 <script setup>
