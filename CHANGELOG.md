@@ -3,6 +3,7 @@
 * ✨新增(package): 升级 alan-vite-component ([38b85fd](https://github.com/2401345934/vite-press/commit/38b85fd))
 * ✨新增(package): 引入自己的组件库 ([3827403](https://github.com/2401345934/vite-press/commit/3827403))
 * ✨新增(package): 增加提交代码规范配置 ([175edd4](https://github.com/2401345934/vite-press/commit/175edd4))
+* ✨新增(package): 组件库新增 backtop 组件 ([ba9afe7](https://github.com/2401345934/vite-press/commit/ba9afe7))
 * ✨新增(pages): 算法题补充 ([1ca7bd4](https://github.com/2401345934/vite-press/commit/1ca7bd4))
 * ✨新增(pages): 新增 button 按钮组件库 ([cae9589](https://github.com/2401345934/vite-press/commit/cae9589))
 * ✨新增(pages): 新增 vite 组件栏目 ([694440b](https://github.com/2401345934/vite-press/commit/694440b))
