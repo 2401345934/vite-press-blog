@@ -1,4 +1,4 @@
-## 1.0.0 (2022-10-26)
+## 1.0.0 (2022-10-27)
 
 * ✨新增(custom): 更新 md ([87234de](https://github.com/2401345934/vite-press/commit/87234de))
 * ✨新增(package): 升级 alan-vite-component ([38b85fd](https://github.com/2401345934/vite-press/commit/38b85fd))
@@ -6,6 +6,7 @@
 * ✨新增(package): 增加提交代码规范配置 ([175edd4](https://github.com/2401345934/vite-press/commit/175edd4))
 * ✨新增(package): 组件库新增 backtop 组件 ([ba9afe7](https://github.com/2401345934/vite-press/commit/ba9afe7))
 * ✨新增(pages): 算法题补充 ([1ca7bd4](https://github.com/2401345934/vite-press/commit/1ca7bd4))
+* ✨新增(pages): 新增 圆圆组件 ([500a41d](https://github.com/2401345934/vite-press/commit/500a41d))
 * ✨新增(pages): 新增 button 按钮组件库 ([cae9589](https://github.com/2401345934/vite-press/commit/cae9589))
 * ✨新增(pages): 新增 npm 面试相关知识 ([a089dad](https://github.com/2401345934/vite-press/commit/a089dad))
 * ✨新增(pages): 新增 vite 组件栏目 ([694440b](https://github.com/2401345934/vite-press/commit/694440b))

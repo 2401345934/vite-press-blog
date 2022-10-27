@@ -29,6 +29,15 @@ module.exports = [
         text: '浏览器基础知识点及常考面试题',
         link: '/browser/interview-questions/',
       },
+      {
+        text: 'V8引擎',
+        items: [
+          {
+            text: 'JS运行9大概念',
+            link: '/browser/v8/js-run/',
+          },
+        ],
+      },
     ],
   },
  
