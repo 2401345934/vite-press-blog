@@ -67,9 +67,12 @@ module.exports = [
     ]
   },
   {
-    text: '面试题纲集合',
+    text: 'Git',
     items: [
-      { text: '字节前端面试题', link: '/interview-questions/topic-outline/bytes/' },
+      { text: '储藏 stash', link: '/interview-questions/git/stash/' },
+      { text: '常用命令', link: '/interview-questions/git/commands/' },
+      { text: '工作区&暂存区的操作命令', link: '/interview-questions/git/workspace-temporary/' },
+      { text: '本地仓库上的操作&gitignore', link: '/interview-questions/git/gitignore-localRepository/' },
     ]
   },
   {
@@ -77,6 +80,12 @@ module.exports = [
     items: [
       { text: 'Nginx', link: '/interview-questions/nginx/' },
       { text: '基础知识', link: '/interview-questions/nginx/basis/' },
+    ]
+  },
+  {
+    text: '面试题纲集合',
+    items: [
+      { text: '字节前端面试题', link: '/interview-questions/topic-outline/bytes/' },
     ]
   },
 ]
