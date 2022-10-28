@@ -5,6 +5,7 @@
 * ✨新增(package): 引入自己的组件库 ([3827403](https://github.com/2401345934/vite-press/commit/3827403))
 * ✨新增(package): 增加提交代码规范配置 ([175edd4](https://github.com/2401345934/vite-press/commit/175edd4))
 * ✨新增(package): 组件库新增 backtop 组件 ([ba9afe7](https://github.com/2401345934/vite-press/commit/ba9afe7))
+* ✨新增(pages): 补充 git 知识 ([bcba8c8](https://github.com/2401345934/vite-press/commit/bcba8c8))
 * ✨新增(pages): 算法题补充 ([1ca7bd4](https://github.com/2401345934/vite-press/commit/1ca7bd4))
 * ✨新增(pages): 新增  v8内容 ([2c4754e](https://github.com/2401345934/vite-press/commit/2c4754e))
 * ✨新增(pages): 新增 圆圆组件 ([500a41d](https://github.com/2401345934/vite-press/commit/500a41d))

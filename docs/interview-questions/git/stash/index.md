@@ -40,7 +40,7 @@ git stash : 将全部未保存的代码添加到储藏
 * 创建新分支branchName，并切换到此分支，分支的状态与stash储藏时的状态一致，此时新分支应用的stash代码进了暂存区。
 
 ```javascript
-git stash branch branchName stash@{1}: 
+git stash branch branchName stash@{1}:
 ```
 
 ## 如图，展示了几个常用的stash命令
