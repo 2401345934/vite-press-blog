@@ -1,9 +1,9 @@
 const interviewQuestions = require("./routers/interview-questions")
 const utils = require("./routers/utils")
 const source = require("./routers/source")
-const http = require("./routers/http")
-const softPower = require("./routers/soft-power")
+const basicQuality = require("./routers/basic-quality")
 const tool = require("./routers/tool")
+const engineering = require("./routers/engineering")
 const dataStructuresAlgorithms = require("./routers/data-structures-algorithms")
 const myViteComponent = require("./routers/my-vite-component")
 
@@ -12,8 +12,8 @@ module.exports ={
     '/source/':  source,
     '/utils/':  utils,
     '/data-structures-algorithms/':  dataStructuresAlgorithms,
-    '/http/':  http,
-    '/soft-power/':  softPower,
+    '/basic-quality/':  basicQuality,
     '/tool/':  tool,
+    '/engineering/':engineering,
     '/my-vite-component/':  myViteComponent,
 }
