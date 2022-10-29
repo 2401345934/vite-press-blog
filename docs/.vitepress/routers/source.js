@@ -51,6 +51,17 @@ module.exports = [
           { text: '总结', link: '/source/vue/watch/conclusion/' },
         ]
       },
+      {
+        text: '模版解析',
+        items: [
+          { text: '生成 AST', link: '/source/vue/parsing/create-ast/' },
+          { text: '创建解析上下文', link: '/source/vue/parsing/resolving-content/' },
+          { text: '解析子节点', link: '/source/vue/parsing/resolving-children/' },
+          { text: '创建 AST 根节点', link: '/source/vue/parsing/create-root/' },
+          { text: '总结', link: '/source/vue/parsing/conclusion/' },
+        ]
+      },
+      // parsing
     ]
   },
 ]
