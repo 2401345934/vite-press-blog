@@ -39,6 +39,10 @@ module.exports = [
         text: 'DynamicCard 动画卡片',
         link: '/my-vite-component/DynamicCard/',
       },
+      {
+        text: 'TakingPictures 拍照组件',
+        link: '/my-vite-component/TakingPictures/',
+      },
      ]
   },
 ]
