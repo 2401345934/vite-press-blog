@@ -1,4 +1,4 @@
-## 1.0.0 (2022-10-29)
+## 1.0.0 (2022-10-30)
 
 * ✨新增(custom): 更新 md ([87234de](https://github.com/2401345934/vite-press/commit/87234de))
 * ✨新增(package): 升级 alan-vite-component ([38b85fd](https://github.com/2401345934/vite-press/commit/38b85fd))
@@ -23,6 +23,7 @@
 * ✨新增(pages): navigator 兼容 ([5d64a59](https://github.com/2401345934/vite-press/commit/5d64a59))
 * ✨新增(pages): nginx 知识补充 ([2f1acc0](https://github.com/2401345934/vite-press/commit/2f1acc0))
 * ✨新增(pages): vite-component-thermometer 新增温度计组件 ([220905b](https://github.com/2401345934/vite-press/commit/220905b))
+* ✨新增(pages): vue 源码 模版解析新内容 ([28870f6](https://github.com/2401345934/vite-press/commit/28870f6))
 * ✨新增(pages): vue-wacher源码总结 ([ebd8a62](https://github.com/2401345934/vite-press/commit/ebd8a62))
 * ✨新增(router): 路由调整新增工程化栏目 ([ed1863e](https://github.com/2401345934/vite-press/commit/ed1863e))
 * 🔧工具(package): 更新最新版本 vitepress ([6624470](https://github.com/2401345934/vite-press/commit/6624470))

@@ -617,10 +617,10 @@
   dependencies:
     vue-demi "*"
 
-"@xiaomh/vue3-alan-vite-component@^1.0.23":
-  version "1.0.23"
-  resolved "https://registry.npmjs.org/@xiaomh/vue3-alan-vite-component/-/vue3-alan-vite-component-1.0.23.tgz#821470b1410f5e38c47355a5a277f39e7a409cc7"
-  integrity sha512-L0C49fsLgHMo6Kq7lfBqvC90AOsE6ZJkB/FK0x58/tDSe+HSCxjlTZ+ar2OXaEhJvajUsy8Iu9GBiappSagJlQ==
+"@xiaomh/vue3-alan-vite-component@^1.0.25":
+  version "1.0.25"
+  resolved "https://registry.npmjs.org/@xiaomh/vue3-alan-vite-component/-/vue3-alan-vite-component-1.0.25.tgz#d2365a3e75e153f8410603f1fda0d9e22ad87874"
+  integrity sha512-ZLAwHIqCmJ1el1ICmy0gytVL3vgBwKBGcX3zpfbBMf/N9alQi0LqdjT/0nbFkjo6DNGlDjvGMpKfvQr6epKq9Q==
   dependencies:
     vue "^3.2.25"
 

@@ -35,6 +35,10 @@ module.exports = [
         text: 'YuanWar 圆圆战争',
         link: '/my-vite-component/YuanWar/',
       },
+      {
+        text: 'DynamicCard 动画卡片',
+        link: '/my-vite-component/DynamicCard/',
+      },
      ]
   },
 ]
