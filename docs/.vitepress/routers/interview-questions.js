@@ -48,6 +48,12 @@ module.exports = [
           { text: '减少引用类型内存访问', link: '/interview-questions/performance-optimization/js/reference-memory-access/' },
         ]
       },
+      {
+        text: '虚拟列表',
+        items: [
+          { text: 'react版本', link: '/interview-questions/performance-optimization/virtual-list/react/' },
+        ]
+      },
       { text: '前端懒加载和预加载', link: '/interview-questions/performance-optimization/lazyload-preload/' },
     ]
   },

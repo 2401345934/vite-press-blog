@@ -10,6 +10,7 @@
 * ✨新增(pages): 软能力提示 ([aba2696](https://github.com/2401345934/vite-press/commit/aba2696))
 * ✨新增(pages): 算法题补充 ([1ca7bd4](https://github.com/2401345934/vite-press/commit/1ca7bd4))
 * ✨新增(pages): 新增  v8内容 ([2c4754e](https://github.com/2401345934/vite-press/commit/2c4754e))
+* ✨新增(pages): 新增 录制视频组件文档 ([ef27794](https://github.com/2401345934/vite-press/commit/ef27794))
 * ✨新增(pages): 新增 圆圆组件 ([500a41d](https://github.com/2401345934/vite-press/commit/500a41d))
 * ✨新增(pages): 新增 button 按钮组件库 ([cae9589](https://github.com/2401345934/vite-press/commit/cae9589))
 * ✨新增(pages): 新增 npm 面试相关知识 ([a089dad](https://github.com/2401345934/vite-press/commit/a089dad))
