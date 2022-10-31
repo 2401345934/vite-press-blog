@@ -35,7 +35,7 @@
     "vitepress-plugin-search": "^1.0.4-alpha.14"
   },
   "dependencies": {
-    "@xiaomh/vue3-alan-vite-component": "^1.0.28",
+    "@xiaomh/vue3-alan-vite-component": "^1.0.29",
     "blueimp-md5": "^2.19.0",
     "dayjs": "^1.11.6",
     "fast-glob": "^3.2.12",
