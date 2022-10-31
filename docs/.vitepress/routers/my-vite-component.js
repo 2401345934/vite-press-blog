@@ -43,6 +43,10 @@ module.exports = [
         text: 'TakingPictures 拍照组件',
         link: '/my-vite-component/TakingPictures/',
       },
+      {
+        text: 'VideoRecording 录制视频组件',
+        link: '/my-vite-component/VideoRecording/',
+      },
      ]
   },
 ]

@@ -15,6 +15,7 @@
 * ✨新增(pages): 新增 npm 面试相关知识 ([a089dad](https://github.com/2401345934/vite-press/commit/a089dad))
 * ✨新增(pages): 新增 vite 组件栏目 ([694440b](https://github.com/2401345934/vite-press/commit/694440b))
 * ✨新增(pages): 新增动画卡片组件 ([2fdd526](https://github.com/2401345934/vite-press/commit/2fdd526))
+* ✨新增(pages): 新增浏览器的代码片段分享 ([2a86840](https://github.com/2401345934/vite-press/commit/2a86840))
 * ✨新增(pages): 新增拍照组件展示 \& 卡片组件修改传参 ([15a3815](https://github.com/2401345934/vite-press/commit/15a3815))
 * ✨新增(pages): 新增前端工程化代码规范 ([0496948](https://github.com/2401345934/vite-press/commit/0496948))
 * ✨新增(pages): 新增button ([e704b6e](https://github.com/2401345934/vite-press/commit/e704b6e))
