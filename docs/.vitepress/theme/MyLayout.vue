@@ -5,9 +5,9 @@ import Copyright from "./layout/Copyright.vue"
 import ValineComment from '../ValineComment/index.vue'
 import { useData } from 'vitepress'
 import md5 from 'blueimp-md5'
-const { page,  } = useData()
+const { page, } = useData()
 const { Layout } = DefaultTheme
-const detectDeviceType = () =>  {
+const detectDeviceType = () => {
   if (typeof window === 'undefined') return
   return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
     ? 'Mobile'
@@ -18,11 +18,15 @@ const detectDeviceType = () =>  {
 <template>
   <Layout>
     <template #doc-footer-before>
-      <Copyright :key="md5(page.relativePath)" />
+      <ClientOnly>
+        <Copyright :key="md5(page.relativePath)" />
+      </ClientOnly>
     </template>
     <template #doc-after>
-      <ValineComment />
-      <AlanBackTop v-if="detectDeviceType() === 'Desktop'"></AlanBackTop>
+      <ClientOnly>
+        <ValineComment />
+        <AlanBackTop v-if="detectDeviceType() === 'Desktop'"></AlanBackTop>
+      </ClientOnly>
     </template>
   </Layout>
 </template>

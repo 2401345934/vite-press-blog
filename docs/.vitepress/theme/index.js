@@ -9,7 +9,7 @@ export default {
   // override the Layout with a wrapper component that injects the slots
   Layout: MyLayout,
   enhanceApp({ app }) {
-     app.use(AlanViteComponent)
-     app.component('ArticleMetadata',ArticleMetadata)
+    app.use(AlanViteComponent)
+    app.component('ArticleMetadata',ArticleMetadata)
   }
 }

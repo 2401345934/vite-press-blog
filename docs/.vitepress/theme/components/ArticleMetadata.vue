@@ -69,7 +69,7 @@ const data = reactive({
   categories: props.article?.categories ?? [],
   tags: props.article?.tags ?? [],
 })
-const { author, date, categories, tags } = toRefs(data)
+const { author, date, } = toRefs(data)
 </script>
 
 <style scoped>
