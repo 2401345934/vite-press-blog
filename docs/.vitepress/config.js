@@ -1,6 +1,7 @@
-const sidebar = require("./sidebar")
 const path = require("path")
-const nav = require("./nav")
+const head = require("./config/head")
+const themeConfig = require("./config/themeConfig")
+const markdown = require("./config/markdown")
 
 module.exports = {
   title: "Alan",
@@ -9,37 +10,7 @@ module.exports = {
     '@/': path.resolve(__dirname, 'docs'),
     '@img/': path.resolve(__dirname, 'docs', 'assets'),
   },
-  markdown: {
-    theme: 'material-palenight',
-    lineNumbers: true
-  },
-  themeConfig: {
-    outline: 'deep',
-    docFooter: {
-      prev: '上一页',
-      next: '下一页'
-    },
-    footer: {
-      message: 'Welcome to the site',
-    },
-    nav,
-    algolia: {
-      apiKey: 'f8e742898c758644dac164a10cf39ad9',
-      indexName: 'index_name',
-      // appId: '<APP_ID>',
-      translations: {
-        button: {
-          buttonText: '搜索文档',
-          buttonAriaLabel: '搜索文档',
-        },
-      },
-    },
-    sidebar
-  },
-  head: [
-    [
-      "script",
-      { src: '/Valine.min.js' },
-    ],
-  ],
+  markdown,
+  themeConfig,
+  head,
 }
