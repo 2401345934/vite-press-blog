@@ -2,6 +2,7 @@
 
 * ✨新增(custom): 更新 md ([87234de](https://github.com/2401345934/vite-press/commit/87234de))
 * ✨新增(package): 升级 alan-vite-component ([38b85fd](https://github.com/2401345934/vite-press/commit/38b85fd))
+* ✨新增(package): 修复build ([dbdeee8](https://github.com/2401345934/vite-press/commit/dbdeee8))
 * ✨新增(package): 引入自己的组件库 ([3827403](https://github.com/2401345934/vite-press/commit/3827403))
 * ✨新增(package): 增加提交代码规范配置 ([175edd4](https://github.com/2401345934/vite-press/commit/175edd4))
 * ✨新增(package): 组件库新增 backtop 组件 ([ba9afe7](https://github.com/2401345934/vite-press/commit/ba9afe7))
