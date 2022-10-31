@@ -154,6 +154,10 @@ module.exports = [
         link: '/basic-quality/browser/chrome-dev/skills/DevTools-tips/',
       },
       {
+        text: 'Devtools Snippets',
+        link: '/basic-quality/browser/chrome-dev/skills/DevTools-Snippets/',
+      },
+      {
         text: '使用 control (按钮) 来移动元素',
         link: '/basic-quality/browser/chrome-dev/skills/control/',
       },

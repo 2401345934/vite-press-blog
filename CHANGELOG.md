@@ -1,4 +1,4 @@
-## 1.0.0 (2022-10-30)
+## 1.0.0 (2022-10-31)
 
 * ✨新增(custom): 更新 md ([87234de](https://github.com/2401345934/vite-press/commit/87234de))
 * ✨新增(package): 升级 alan-vite-component ([38b85fd](https://github.com/2401345934/vite-press/commit/38b85fd))
@@ -15,6 +15,7 @@
 * ✨新增(pages): 新增 npm 面试相关知识 ([a089dad](https://github.com/2401345934/vite-press/commit/a089dad))
 * ✨新增(pages): 新增 vite 组件栏目 ([694440b](https://github.com/2401345934/vite-press/commit/694440b))
 * ✨新增(pages): 新增动画卡片组件 ([2fdd526](https://github.com/2401345934/vite-press/commit/2fdd526))
+* ✨新增(pages): 新增拍照组件展示 \& 卡片组件修改传参 ([15a3815](https://github.com/2401345934/vite-press/commit/15a3815))
 * ✨新增(pages): 新增前端工程化代码规范 ([0496948](https://github.com/2401345934/vite-press/commit/0496948))
 * ✨新增(pages): 新增button ([e704b6e](https://github.com/2401345934/vite-press/commit/e704b6e))
 * ✨新增(pages): 修复组件库 strayysky 部署 ([7297e09](https://github.com/2401345934/vite-press/commit/7297e09))
