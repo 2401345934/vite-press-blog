@@ -1,15 +1,13 @@
-const path = require("path")
-const head = require("./config/head")
-const themeConfig = require("./config/themeConfig")
-const markdown = require("./config/markdown")
+import head from "./config/head"
+import themeConfig from "./config/themeConfig"
+import markdown from "./config/markdown"
 
-module.exports = {
+export default {
   title: "Alan",
   lang: 'zh-CN',
-  alias: {
-    '@/': path.resolve(__dirname, 'docs'),
-    '@img/': path.resolve(__dirname, 'docs', 'assets'),
-  },
+  locale: 'zh_CN',
+  description: '个人知识库，记录 & 分享个人碎片化、结构化、体系化的知识内容。',
+  lastUpdated: true, // 显示最后更新时间
   markdown,
   themeConfig,
   head,

@@ -5,9 +5,9 @@ title: Alan
 titleTemplate: 个人纪录使用
 
 hero:
-  name: Alan个人静态文档站点
-  text: 搭建静态站点
-  tagline: 没啥特点仅供娱乐
+  name: 个人站点
+  text: 专注  & 分享
+  tagline: 个人知识库
   actions:
     - theme: brand
       text: 开始

@@ -1,5 +1,5 @@
 
-module.exports = [
+export default [
   {
     text: '工作工具',
     items: [
