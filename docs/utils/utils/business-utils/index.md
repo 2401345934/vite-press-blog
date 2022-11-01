@@ -1527,3 +1527,20 @@ const globalProxy = new SandboxGlobalProxy(blacklist);
 
 makeSandbox(code, globalProxy);
 ```
+
+## 防止重复请求
+
+保证同一时间只有一个请求
+
+```js
+function firstPromise(promiseFunction) {
+  let p = null;
+  return function (...args) {
+    // 请求的实例，已存在意味着正在请求中，直接返回实例，不触发新的请求
+    return p
+      ? p
+      // 否则发送请求，且在finally时将p置空，那么下一次请求可以重新发起
+      : (p = promiseFunction.apply(this, args).finally(() => (p = null)));
+  };
+}
+```
