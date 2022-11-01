@@ -42,6 +42,7 @@
 * ✨新增(pages): vue-wacher源码总结 ([ebd8a62](https://github.com/2401345934/vite-press/commit/ebd8a62))
 * ✨新增(router): 路由调整新增工程化栏目 ([ed1863e](https://github.com/2401345934/vite-press/commit/ed1863e))
 * ✨新增(tsconfig): 先暂时去掉viteconfig ([8b8c774](https://github.com/2401345934/vite-press/commit/8b8c774))
+* 🐛修复(package): 去掉node版本限制 ([e77f9f5](https://github.com/2401345934/vite-press/commit/e77f9f5))
 * 💄格式(pages): 修改默认最大样式 ([31de843](https://github.com/2401345934/vite-press/commit/31de843))
 * 🔧工具(package): 更新最新版本 vitepress ([6624470](https://github.com/2401345934/vite-press/commit/6624470))
 * 补充-westore ([9e7e30f](https://github.com/2401345934/vite-press/commit/9e7e30f))
