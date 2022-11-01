@@ -10,6 +10,10 @@ export default [
         text: '代码规范',
         link: '/engineering/code-specification/',
       },
+      {
+        text: '自动修改 packager.json 文件 version',
+        link: '/engineering/package-version/',
+      }
     ],
   },
 ]

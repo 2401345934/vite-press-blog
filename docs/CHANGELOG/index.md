@@ -1,4 +1,4 @@
-## <small>1.0.2 (2022-11-01)</small>
+## <small>1.0.3 (2022-11-01)</small>
 
 * ⚡️性能(webpack): 修复令牌 ([ab89e15](https://github.com/2401345934/vite-press/commit/ab89e15))
 * ✨新增(config): 新增yml文件 ([be08d5f](https://github.com/2401345934/vite-press/commit/be08d5f))
@@ -57,6 +57,7 @@
 * 💄格式(pages): 修改默认最大样式 ([31de843](https://github.com/2401345934/vite-press/commit/31de843))
 * 📝文档(package): 更新github token ([57000dc](https://github.com/2401345934/vite-press/commit/57000dc))
 * 🔧工具(package): 更新最新版本 vitepress ([6624470](https://github.com/2401345934/vite-press/commit/6624470))
+* 🔧工具(package): 新增可以不修改版本 ([a2a4ae3](https://github.com/2401345934/vite-press/commit/a2a4ae3))
 * 补充-westore ([9e7e30f](https://github.com/2401345934/vite-press/commit/9e7e30f))
 * 补充常用轮子 ([639bfdc](https://github.com/2401345934/vite-press/commit/639bfdc))
 * 补充业务utils ([22fea4d](https://github.com/2401345934/vite-press/commit/22fea4d))
