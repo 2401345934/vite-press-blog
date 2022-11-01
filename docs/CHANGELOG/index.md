@@ -1,4 +1,4 @@
-## <small>1.0.5 (2022-11-01)</small>
+## <small>1.0.6 (2022-11-01)</small>
 
 * ⚡️性能(webpack): 修复令牌 ([ab89e15](https://github.com/2401345934/vite-press/commit/ab89e15))
 * ✨新增(config): 新增yml文件 ([be08d5f](https://github.com/2401345934/vite-press/commit/be08d5f))
@@ -44,6 +44,7 @@
 * ✨新增(pages): 修改整体项目结构 ([f429749](https://github.com/2401345934/vite-press/commit/f429749))
 * ✨新增(pages): 修改base路径' ([f1942df](https://github.com/2401345934/vite-press/commit/f1942df))
 * ✨新增(pages): 组件库新增代码背景墙 ([8fb148a](https://github.com/2401345934/vite-press/commit/8fb148a))
+* ✨新增(pages): docker 简单介绍 ([6f1c343](https://github.com/2401345934/vite-press/commit/6f1c343))
 * ✨新增(pages): github page schedule ([6b26e52](https://github.com/2401345934/vite-press/commit/6b26e52))
 * ✨新增(pages): navigator 兼容 ([5d64a59](https://github.com/2401345934/vite-press/commit/5d64a59))
 * ✨新增(pages): nginx 知识补充 ([2f1acc0](https://github.com/2401345934/vite-press/commit/2f1acc0))
