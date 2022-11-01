@@ -12,9 +12,6 @@
     "prepare": "husky install",
     "docs:serve": "vitepress serve docs"
   },
-  "engines": {
-    "node": ">=17.0.0"
-  },
   "config": {
     "commitizen": {
       "path": "node_modules/cz-customizable"
