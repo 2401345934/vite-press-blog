@@ -92,6 +92,7 @@ export default [
     text: '面试题纲集合',
     items: [
       { text: '字节前端面试题', link: '/interview-questions/topic-outline/bytes/' },
+      { text: '常见的前端算法题', link: '/interview-questions/topic-outline/algorithm/' },
     ]
   },
 ]
