@@ -1,3 +1,7 @@
+---
+createTime: 2022/10/18
+tag: 'ts'
+---
 # tsconfig
 
 ## tsconfig.json 是 TypeScript 项目的配置文件

@@ -1,3 +1,7 @@
+---
+createTime: 2022/10/25
+tag: 'chrome'
+---
 # 将下方代码粘贴到 浏览器控制台中 运行即可
 
 ```javascript

@@ -1,3 +1,7 @@
+---
+createTime: 2022/10/30
+tag: 'Vue源码'
+---
 # 创建 AST 根节点
 
 * 子节点解析完毕  baseParse 过程就剩最后一步创建 AST 根节点

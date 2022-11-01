@@ -1,3 +1,7 @@
+---
+createTime: 2022/10/26
+tag: 'HTTP'
+---
 # http  vs https
 
 ## 1.http 和 https 的基本概念

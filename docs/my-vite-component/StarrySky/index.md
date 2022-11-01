@@ -1,3 +1,7 @@
+---
+createTime: 2022/10/30
+tag: 'Vite,组件库'
+---
 # StarrySky 星空背景
 
 ## 何时使用

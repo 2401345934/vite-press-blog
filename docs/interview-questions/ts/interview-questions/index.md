@@ -1,3 +1,7 @@
+---
+createTime: 2022/10/18
+tag: 'ts'
+---
 # 面试题集合
 
 ## 什么是TypeScript？

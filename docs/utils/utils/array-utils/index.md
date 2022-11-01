@@ -1,3 +1,7 @@
+---
+createTime: 2022/10/29
+tag: 'utils'
+---
 # 数组 utils
 
 ## 计算数组的平均值

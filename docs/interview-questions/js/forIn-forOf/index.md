@@ -1,3 +1,7 @@
+---
+createTime: 2022/10/11
+tag: 'js'
+---
 # for-in vs for-of
 
 ## for...in的特点

@@ -1,3 +1,7 @@
+---
+createTime: 2022/10/24
+tag: 'npm'
+---
 # link 创建软链
 
 ### 使用软链 npm link

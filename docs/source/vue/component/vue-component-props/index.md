@@ -1,4 +1,7 @@
-
+---
+createTime: 2022/10/24
+tag: 'Vue源码'
+---
 # 组件的 props
 
 ## props 配置的标准化

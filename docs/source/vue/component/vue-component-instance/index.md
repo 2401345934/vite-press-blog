@@ -1,3 +1,7 @@
+---
+createTime: 2022/10/24
+tag: 'Vue源码'
+---
 # 组件的实例
 
 ## mountComponent

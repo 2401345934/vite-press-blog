@@ -1,3 +1,7 @@
+---
+createTime: 2022/10/30
+tag: 'Vite,组件库'
+---
 # VideoRecording 录制视频组件
 
 ## 何时使用

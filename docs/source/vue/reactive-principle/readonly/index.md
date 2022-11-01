@@ -1,3 +1,7 @@
+---
+createTime: 2022/10/23
+tag: 'Vue源码'
+---
 # readonly
 
 * readonly  和 reactive 主要区别 就是执行 createReactiveObject 函数的参数 isReadonly 不同

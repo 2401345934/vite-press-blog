@@ -1,4 +1,7 @@
-
+---
+createTime: 2022/10/24
+tag: 'Vue源码'
+---
 # 组件的生命周期
 
 * setup 函数替代了 vue2 中的 beforeCreate created 钩子函数

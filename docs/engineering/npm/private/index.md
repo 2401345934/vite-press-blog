@@ -1,3 +1,7 @@
+---
+createTime: 2022/10/26
+tag: '工程化,npm'
+---
 # 30 秒搭建一个 npm 私服库
 
 ## 下载依赖  verdaccio

@@ -1,3 +1,7 @@
+---
+createTime: 2022/10/25
+tag: '浏览器'
+---
 # 浏览器的 5 种 Observer
 
 ## IntersectionObserver

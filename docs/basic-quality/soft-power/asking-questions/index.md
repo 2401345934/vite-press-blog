@@ -1,3 +1,7 @@
+---
+createTime: 2022/10/27
+tag: '软能力'
+---
 # 提问的艺术
 
 ![图片](../assets/tiwen.webp)

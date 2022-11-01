@@ -1,3 +1,7 @@
+---
+createTime: 2022/10/30
+tag: 'Vue源码'
+---
 # 总结
 
 * 模版解析是 vue 编译过程的第一步 把 template 解析生成  AST对象

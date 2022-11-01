@@ -1,3 +1,7 @@
+---
+createTime: 2022/10/18
+tag: 'ts'
+---
 # interface 和 type 的区别
 
 ## type和interface的相同点

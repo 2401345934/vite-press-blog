@@ -37,6 +37,7 @@
 * ✨新增(pages): 修复组件依赖版本 ([a895cf5](https://github.com/2401345934/vite-press/commit/a895cf5))
 * ✨新增(pages): 修改整体导入导出架构全部采用esmodule ([4d97048](https://github.com/2401345934/vite-press/commit/4d97048))
 * ✨新增(pages): 修改整体项目结构 ([f429749](https://github.com/2401345934/vite-press/commit/f429749))
+* ✨新增(pages): 修改base路径' ([f1942df](https://github.com/2401345934/vite-press/commit/f1942df))
 * ✨新增(pages): 组件库新增代码背景墙 ([8fb148a](https://github.com/2401345934/vite-press/commit/8fb148a))
 * ✨新增(pages): navigator 兼容 ([5d64a59](https://github.com/2401345934/vite-press/commit/5d64a59))
 * ✨新增(pages): nginx 知识补充 ([2f1acc0](https://github.com/2401345934/vite-press/commit/2f1acc0))

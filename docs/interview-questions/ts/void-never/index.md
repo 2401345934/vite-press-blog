@@ -1,3 +1,7 @@
+---
+createTime: 2022/10/18
+tag: 'ts'
+---
 # void  和 never  类型的 区别
 
 * void 类型 代表返回值 是空    只要不写 return  语句都可以  或者不返回东西  

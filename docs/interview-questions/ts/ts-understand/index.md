@@ -1,3 +1,7 @@
+---
+createTime: 2022/10/18
+tag: 'ts'
+---
 # 说说你对 TypeScript 的理解？与 JavaScript 的区别？
 
 ## 一、是什么

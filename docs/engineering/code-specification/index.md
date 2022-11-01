@@ -1,3 +1,7 @@
+---
+createTime: 2022/10/26
+tag: '工程化'
+---
 # Eslint + Prettier + Husky + Commitlint+ Lint-staged 规范前端工程代码规范
 
 ## 1.代码规范

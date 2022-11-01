@@ -1,3 +1,7 @@
+---
+createTime: 2022/10/30
+tag: 'Vite,组件库'
+---
 # TherMometer 温度计
 
 展示温度计

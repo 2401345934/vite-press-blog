@@ -1,3 +1,7 @@
+---
+createTime: 2022/10/29
+tag: 'utils'
+---
 # 数字 utils
 
 ## 随机数范围

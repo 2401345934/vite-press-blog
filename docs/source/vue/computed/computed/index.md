@@ -1,3 +1,7 @@
+---
+createTime: 2022/10/24
+tag: 'Vue源码'
+---
 # computed API
 
 * 如果传递给 computed 是一个函数 就会默认是 getter 函数 不能修改 只能获取

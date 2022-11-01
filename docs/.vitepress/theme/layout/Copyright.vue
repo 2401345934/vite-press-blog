@@ -20,6 +20,10 @@
         <span>本文链接：</span>
         <span><a :href="articleLink" target="_blank">{{ articleLink }}</a></span>
       </div>
+
+      <div class="item">
+        人生95%事情是决定不了的，但依然用5%的努力去撬动这95%无法决定的事情
+      </div>
     </div>
   </div>
 </template>

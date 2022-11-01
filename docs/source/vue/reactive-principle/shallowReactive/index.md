@@ -1,3 +1,7 @@
+---
+createTime: 2022/10/23
+tag: 'Vue源码'
+---
 # shallowReactive API
 
 * reactive  和 shallowReactive 主要区别相当于 baseHandlers 和 collectionHandlers 的区别

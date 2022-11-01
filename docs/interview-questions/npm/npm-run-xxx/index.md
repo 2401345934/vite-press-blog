@@ -1,3 +1,7 @@
+---
+createTime: 2022/10/24
+tag: 'npm'
+---
 # npm run xxx
 
 ## 运行 npm run xxx 的时候发生了什么？

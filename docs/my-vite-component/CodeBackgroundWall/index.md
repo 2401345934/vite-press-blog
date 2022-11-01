@@ -1,3 +1,7 @@
+---
+createTime: 2022/10/30
+tag: 'Vite,组件库'
+---
 # DigitalScroll 数字滚动组件
 
 ## 何时使用

@@ -1,3 +1,7 @@
+---
+createTime: 2022/10/11
+tag: 'js'
+---
 # JSON stringify 特性
 
 ## JSON.stringify()
