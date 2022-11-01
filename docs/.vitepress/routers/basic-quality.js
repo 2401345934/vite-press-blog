@@ -58,6 +58,10 @@ export default [
         text: 'V8引擎',
         items: [
           {
+            text: 'JavaScript是怎么被运行起来的',
+            link: '/basic-quality/browser/v8/start/',
+          },
+          {
             text: 'JS运行9大概念',
             link: '/basic-quality/browser/v8/js-run/',
           },

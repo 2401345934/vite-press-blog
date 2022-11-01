@@ -62,6 +62,14 @@ export default [
         ]
       },
       // parsing
+      {
+        text: 'AST 转换',
+        items: [
+          { text: 'AST 转换', link: '/source/vue/ast-transform/ast-transform/' },
+          { text: '创建 tramsform 上下文', link: '/source/vue/ast-transform/create-transform/' },
+          { text: '遍历 AST 节点', link: '/source/vue/ast-transform/each-transform/' },
+        ]
+      },
     ]
   },
 ]
