@@ -18,9 +18,8 @@ on:
   #   例如：笔者多次亲身经历，凌晨时间 pages build and deployment 任务大概能持续 8 分钟的 Current status: deployment_queued 状态，
   #        即使能进入 Current status: deployment_in_progress 和 Current status: syncing_files 状态，如果文件多点，没一会儿就 Error: Timeout reached, aborting! 超时失败了
   schedule:
-    - cron: 0 0 0,3,6,9,12,15,18,21 * * ?
-    - cron: 0 4 * * *
-
+    - cron: 0 1 * * *
+    - cron: 30 * * * *
   # 可手动执行
   workflow_dispatch:
 
