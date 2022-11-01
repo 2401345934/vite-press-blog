@@ -1,12 +1,13 @@
 {
   "name": "@xiaomh/vitepress",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "main": "index.js",
   "scripts": {
+    "bump": "zx bump.mjs",
     "start": "vitepress dev docs",
     "build": "npm run docs:build",
     "docs:dev": "vitepress dev docs",
-    "commit": "npm run changelog && git add . && git cz ",
+    "commit": "npm run bump && npm run changelog && git add . && git cz ",
     "changelog": "conventional-changelog -p custom-config -i docs/CHANGELOG/index.md -s -r 0",
     "docs:build": "vitepress build docs",
     "prepare": "husky install",
@@ -32,8 +33,10 @@
     "lint-staged": "^13.0.3",
     "markdown-it": "^13.0.1",
     "prettier": "^2.7.1",
+    "prompts": "^2.4.2",
     "vitepress": "^1.0.0-alpha.26",
-    "vitepress-plugin-search": "^1.0.4-alpha.14"
+    "vitepress-plugin-search": "^1.0.4-alpha.14",
+    "zx": "^7.1.1"
   },
   "dependencies": {
     "@xiaomh/vue3-alan-vite-component": "^1.0.29",
