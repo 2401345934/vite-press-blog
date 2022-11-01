@@ -12,6 +12,7 @@
 * ✨新增(pages): 框架改造 ([97327a9](https://github.com/2401345934/vite-press/commit/97327a9))
 * ✨新增(pages): 软能力提升 ([71f0873](https://github.com/2401345934/vite-press/commit/71f0873))
 * ✨新增(pages): 软能力提示 ([aba2696](https://github.com/2401345934/vite-press/commit/aba2696))
+* ✨新增(pages): 删除 webopack ([568c179](https://github.com/2401345934/vite-press/commit/568c179))
 * ✨新增(pages): 算法题补充 ([1ca7bd4](https://github.com/2401345934/vite-press/commit/1ca7bd4))
 * ✨新增(pages): 项目结构拆分\&\& 修改主题变量 ([63d4299](https://github.com/2401345934/vite-press/commit/63d4299))
 * ✨新增(pages): 新增  v8内容 ([2c4754e](https://github.com/2401345934/vite-press/commit/2c4754e))
