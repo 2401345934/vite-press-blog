@@ -70,5 +70,3 @@ jobs:
           target_branch: gh-pages
           # 部署目录为 .vitepress 的默认输出目录
           build_dir: docs/.vitepress/dist
-
-    runs-on: ubuntu-latest

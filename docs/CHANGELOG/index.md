@@ -38,6 +38,7 @@
 * ✨新增(pages): 组件库新增代码背景墙 ([8fb148a](https://github.com/2401345934/vite-press/commit/8fb148a))
 * ✨新增(pages): navigator 兼容 ([5d64a59](https://github.com/2401345934/vite-press/commit/5d64a59))
 * ✨新增(pages): nginx 知识补充 ([2f1acc0](https://github.com/2401345934/vite-press/commit/2f1acc0))
+* ✨新增(pages): s ([8ce9245](https://github.com/2401345934/vite-press/commit/8ce9245))
 * ✨新增(pages): vite-component-thermometer 新增温度计组件 ([220905b](https://github.com/2401345934/vite-press/commit/220905b))
 * ✨新增(pages): vue 源码 模版解析新内容 ([28870f6](https://github.com/2401345934/vite-press/commit/28870f6))
 * ✨新增(pages): vue-wacher源码总结 ([ebd8a62](https://github.com/2401345934/vite-press/commit/ebd8a62))
