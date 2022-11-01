@@ -84,8 +84,14 @@ export default [
   {
     text: 'Nginx ',
     items: [
-      { text: 'Nginx', link: '/interview-questions/nginx/' },
+      { text: 'Nginx', link: '/interview-questions/nginx/start/' },
       { text: '基础知识', link: '/interview-questions/nginx/basis/' },
+    ]
+  },
+  {
+    text: 'Docker ',
+    items: [
+      { text: 'Docker介绍', link: '/interview-questions/docker/start/' },
     ]
   },
   {
