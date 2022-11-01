@@ -7,6 +7,7 @@
 * ✨新增(package): 修复build ([dbdeee8](https://github.com/2401345934/vite-press/commit/dbdeee8))
 * ✨新增(package): 引入自己的组件库 ([3827403](https://github.com/2401345934/vite-press/commit/3827403))
 * ✨新增(package): 增加提交代码规范配置 ([175edd4](https://github.com/2401345934/vite-press/commit/175edd4))
+* ✨新增(package): 展示vite ([8e72f44](https://github.com/2401345934/vite-press/commit/8e72f44))
 * ✨新增(package): 组件库新增 backtop 组件 ([ba9afe7](https://github.com/2401345934/vite-press/commit/ba9afe7))
 * ✨新增(pages): 补充 git 知识 ([bcba8c8](https://github.com/2401345934/vite-press/commit/bcba8c8))
 * ✨新增(pages): 测试 build ([f062175](https://github.com/2401345934/vite-press/commit/f062175))

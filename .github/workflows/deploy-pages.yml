@@ -1,0 +1,74 @@
+name: Deploy Pages
+
+on:
+  # 推送时执行
+  push:
+    branches: [main, master]
+  # pr 时执行
+  pull_request:
+    branches: [main, master]
+  # 定时执行，字段含义：分钟 小时 日 月 星期
+  # 注意：
+  # 1.采用的是 UTC 时间
+  #   即，你配置的 0 0 * * *（UTC）00:00 实际上是（GMT+0800）08:00
+  #   只有你配置为 00 16 * * *（UTC）16:00 实际上才是 GMT+0800）00:00
+  # 2.官方声明：schedule 事件在 GitHub Actions 工作流运行期间负载过高时可能会延迟。 高负载时间包括每小时的开始时间。 为了降低延迟的可能性，建议将您的工作流程安排在不同时间运行。
+  #   例如：笔者之前设定的定时规则为 0 0 * * *（UTC），实际（GMT+0800）执行时间通常在 9:10 ~ 10:00，甚至会出现在 10:00 之后执行的情况
+  # 3.建议不只是定时执行的时候注意时间，自己 push 时也注意时间，早点休息
+  #   例如：笔者多次亲身经历，凌晨时间 pages build and deployment 任务大概能持续 8 分钟的 Current status: deployment_queued 状态，
+  #        即使能进入 Current status: deployment_in_progress 和 Current status: syncing_files 状态，如果文件多点，没一会儿就 Error: Timeout reached, aborting! 超时失败了
+  schedule:
+    - cron: 30 17 * * *
+  # 可手动执行
+  workflow_dispatch:
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest # 指定运行所需要的虚拟机环境（必填）
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          # “最近更新时间” 等 git 日志相关信息，需要拉取全部提交记录
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          # 选择要使用的 node 版本
+          node-version: "17"
+
+      # 缓存 node_modules
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: |
+            **/node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      # 如果缓存没有命中，安装依赖
+      - name: Install dependencies
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: yarn --frozen-lockfile
+
+      # 运行构建脚本
+      - name: Build VitePress site
+        run: yarn build
+
+      # 查看 workflow 的文档来获取更多信息
+      # @see https://github.com/crazy-max/ghaction-github-pages
+      - name: Deploy to GitHub Pages
+        uses: crazy-max/ghaction-github-pages@v2
+        # 环境变量
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACTION_SECRET }}
+        with:
+          # 部署到 gh-pages 分支
+          target_branch: gh-pages
+          # 部署目录为 .vitepress 的默认输出目录
+          build_dir: docs/.vitepress/dist
+
+    runs-on: ubuntu-latest

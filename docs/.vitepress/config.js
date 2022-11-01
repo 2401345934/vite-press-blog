@@ -11,4 +11,5 @@ export default {
   markdown,
   themeConfig,
   head,
+  base:'/github.io',
 }
