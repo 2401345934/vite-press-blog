@@ -47,6 +47,11 @@ export default [
         text: 'VideoRecording 录制视频组件',
         link: '/my-vite-component/VideoRecording/',
       },
+      {
+        text: 'Clocks 钟表组件',
+        link: '/my-vite-component/Clocks/',
+      },
+      
      ]
   },
 ]

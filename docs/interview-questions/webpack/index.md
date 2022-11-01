@@ -95,7 +95,7 @@ tag: 'webpack'
 * compression-webpack-plugin  生产环境可采用gzip压缩JS和CSS
 * happypack： 通过多进程模型，来加速代码构建
 * clean-wenpack-plugin  清理每次打包下没有使用的文件
-* speed-measure-webpack-plugin:可以看至U每个Loader和Plugin执行耗时（整个扌丁包耗时、每个Plugin和 Loader 耗时）
+* speed-measure-webpack-plugin:可以看至U每个Loader和Plugin执行耗时（整个打包耗时、每个Plugin和 Loader 耗时）
 * webpack-bundle-analyzer:可视化Webpack输出文件的体积（业务组件、依赖第三方模块
 
 ## webpack 的构建流程是什么
