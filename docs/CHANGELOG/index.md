@@ -1,5 +1,6 @@
 ## 1.0.0 (2022-11-01)
 
+* ✨新增(config): 新增yml文件 ([be08d5f](https://github.com/2401345934/vite-press/commit/be08d5f))
 * ✨新增(config): 暂时去掉search ([9252450](https://github.com/2401345934/vite-press/commit/9252450))
 * ✨新增(custom): 更新 md ([87234de](https://github.com/2401345934/vite-press/commit/87234de))
 * ✨新增(package): 升级 alan-vite-component ([38b85fd](https://github.com/2401345934/vite-press/commit/38b85fd))
