@@ -28,6 +28,7 @@
 * ✨新增(pages): 新增拍照组件展示 \& 卡片组件修改传参 ([15a3815](https://github.com/2401345934/vite-press/commit/15a3815))
 * ✨新增(pages): 新增前端工程化代码规范 ([0496948](https://github.com/2401345934/vite-press/commit/0496948))
 * ✨新增(pages): 新增虚拟列表-react ([4afee99](https://github.com/2401345934/vite-press/commit/4afee99))
+* ✨新增(pages): 新增制定node版本 ([235db2b](https://github.com/2401345934/vite-press/commit/235db2b))
 * ✨新增(pages): 新增button ([e704b6e](https://github.com/2401345934/vite-press/commit/e704b6e))
 * ✨新增(pages): 修复组件库 strayysky 部署 ([7297e09](https://github.com/2401345934/vite-press/commit/7297e09))
 * ✨新增(pages): 修复组件依赖版本 ([a895cf5](https://github.com/2401345934/vite-press/commit/a895cf5))
