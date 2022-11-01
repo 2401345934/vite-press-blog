@@ -3,11 +3,11 @@
   "version": "1.0.2",
   "main": "index.js",
   "scripts": {
-    "bump": "zx bump.mjs",
+    "version": "zx bump.mjs",
     "start": "vitepress dev docs",
     "build": "npm run docs:build",
     "docs:dev": "vitepress dev docs",
-    "commit": "npm run bump && npm run changelog && git add . && git cz ",
+    "commit": "npm run version && npm run changelog && git add . && git cz ",
     "changelog": "conventional-changelog -p custom-config -i docs/CHANGELOG/index.md -s -r 0",
     "docs:build": "vitepress build docs",
     "prepare": "husky install",

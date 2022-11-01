@@ -5,6 +5,7 @@
 * ✨新增(config): 暂时去掉search ([9252450](https://github.com/2401345934/vite-press/commit/9252450))
 * ✨新增(custom): 更新 md ([87234de](https://github.com/2401345934/vite-press/commit/87234de))
 * ✨新增(package): 升级 alan-vite-component ([38b85fd](https://github.com/2401345934/vite-press/commit/38b85fd))
+* ✨新增(package): 新增修改版本的插件 ([d4c1f1e](https://github.com/2401345934/vite-press/commit/d4c1f1e))
 * ✨新增(package): 新增node ([6806fce](https://github.com/2401345934/vite-press/commit/6806fce))
 * ✨新增(package): 修复build ([dbdeee8](https://github.com/2401345934/vite-press/commit/dbdeee8))
 * ✨新增(package): 引入自己的组件库 ([3827403](https://github.com/2401345934/vite-press/commit/3827403))

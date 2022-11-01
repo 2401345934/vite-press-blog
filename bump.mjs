@@ -15,12 +15,14 @@ const [major, minor, patch] = version.split('.')
 const nextMajor = String(Number(major) + 1) + '.0.0'
 const nextMinor = major + '.' + String(Number(minor) + 1) + '.0'
 const nextPatch = major + '.' + minor + '.' + String(Number(patch) + 1)
+const sourcePatch = major + '.' + minor + '.' + patch
 const questions = [
   {
     type: 'select',
     name: 'version',
     message: 'Which part do you want to bump? ',
     choices: [
+      { title: 'no-change: ' + sourcePatch, value: sourcePatch },
       { title: 'patch: ' + nextPatch, value: nextPatch },
       { title: 'minor: ' + nextMinor, value: nextMinor },
       { title: 'major: ' + nextMajor, value: nextMajor },
