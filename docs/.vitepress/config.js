@@ -11,5 +11,5 @@ export default {
   markdown,
   themeConfig,
   head,
-  base:'/github.io',
+  base:'/vite-press',
 }
