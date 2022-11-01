@@ -36,15 +36,15 @@ jobs:
         uses: actions/setup-node@v1
         with:
           # 选择要使用的 node 版本
-          node-version: "17"
+          node-version: "16.7.0"
 
       # 如果缓存没有命中，安装依赖
       - name: Install dependencies
-        run: yarn
+        run: npm install
 
       # 运行构建脚本
       - name: Build VitePress site
-        run: yarn build
+        run: npm run build
 
       # 查看 workflow 的文档来获取更多信息
       # @see https://github.com/crazy-max/ghaction-github-pages
