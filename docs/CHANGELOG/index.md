@@ -1,4 +1,4 @@
-## <small>1.0.8 (2022-11-02)</small>
+## <small>1.0.9 (2022-11-02)</small>
 
 * ⚡️性能(webpack): 修复令牌 ([ab89e15](https://github.com/2401345934/vite-press/commit/ab89e15))
 * ✨新增(config): 新增yml文件 ([be08d5f](https://github.com/2401345934/vite-press/commit/be08d5f))
@@ -15,6 +15,7 @@
 * ✨新增(package): 组件库新增 backtop 组件 ([ba9afe7](https://github.com/2401345934/vite-press/commit/ba9afe7))
 * ✨新增(pages): 补充 git 知识 ([bcba8c8](https://github.com/2401345934/vite-press/commit/bcba8c8))
 * ✨新增(pages): 测试 build ([f062175](https://github.com/2401345934/vite-press/commit/f062175))
+* ✨新增(pages): 规整工程化结构 ([de23e05](https://github.com/2401345934/vite-press/commit/de23e05))
 * ✨新增(pages): 框架改造 ([97327a9](https://github.com/2401345934/vite-press/commit/97327a9))
 * ✨新增(pages): 软能力提升 ([71f0873](https://github.com/2401345934/vite-press/commit/71f0873))
 * ✨新增(pages): 软能力提示 ([aba2696](https://github.com/2401345934/vite-press/commit/aba2696))

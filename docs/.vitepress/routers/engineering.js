@@ -12,7 +12,7 @@ export default [
     text: '代码规范',
     items: [
       {
-        text: 'Eslint + Prettier + Husky + Commitlint+ Lint-staged',
+        text: 'Eslint + Prettier + Husky + Commitlint + Lint-staged',
         link: '/engineering/code-specification/',
       },
     ],
