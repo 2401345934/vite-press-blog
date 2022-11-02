@@ -12,17 +12,19 @@ module.exports = {
     { value: '⏪回滚', name: '回滚:    代码回退' }
   ],
   scopes: [
-    { name: 'webpack' },
-    { name: 'router' },
     { name: 'config' },
-    { name: 'static' },
-    { name: 'pages' },
-    { name: 'tsconfig' },
     { name: 'components' },
-    { name: 'package' },
-    { name: 'request' },
-    { name: 'utils' },
-    { name: 'hook' }
+    { name: 'doc/面试题' },
+    { name: 'doc/源码' },
+    { name: 'doc/utils' },
+    { name: 'doc/浏览器' },
+    { name: 'doc/计算机' },
+    { name: 'doc/http' },
+    { name: 'doc/软能力' },
+    { name: 'doc/算法' },
+    { name: 'doc/工程化' },
+    { name: 'doc/工作工具' },
+    { name: 'doc/vite-component' },
   ],
   // it needs to match the value for field type. Eg.: 'fix'
   /*  scopeOverrides: {

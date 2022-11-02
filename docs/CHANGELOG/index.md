@@ -1,4 +1,4 @@
-## <small>1.0.11 (2022-11-02)</small>
+## <small>1.0.12 (2022-11-02)</small>
 
 * ⚡️性能(webpack): 修复令牌 ([ab89e15](https://github.com/2401345934/vite-press/commit/ab89e15))
 * ✨新增(config): 新增yml文件 ([be08d5f](https://github.com/2401345934/vite-press/commit/be08d5f))
@@ -38,6 +38,7 @@
 * ✨新增(pages): 新增制定node版本 ([235db2b](https://github.com/2401345934/vite-press/commit/235db2b))
 * ✨新增(pages): 新增自动修改package version 文章 ([f21f627](https://github.com/2401345934/vite-press/commit/f21f627))
 * ✨新增(pages): 新增button ([e704b6e](https://github.com/2401345934/vite-press/commit/e704b6e))
+* ✨新增(pages): 修复 webpack 图片层级 ([9473eb5](https://github.com/2401345934/vite-press/commit/9473eb5))
 * ✨新增(pages): 修复组件库 strayysky 部署 ([7297e09](https://github.com/2401345934/vite-press/commit/7297e09))
 * ✨新增(pages): 修复组件依赖版本 ([a895cf5](https://github.com/2401345934/vite-press/commit/a895cf5))
 * ✨新增(pages): 修改 github  schedule 定时触发 ([48f690b](https://github.com/2401345934/vite-press/commit/48f690b))

@@ -6,6 +6,18 @@ export default [
         text: 'NPM私服库的搭建',
         link: '/engineering/npm/private/',
       },
+      {
+        text: '初识 npm script',
+        link: '/engineering/npm/start-script/',
+      },
+      {
+        text: '运行多个 npm script 的各种姿势',
+        link: '/engineering/npm/more-script/',
+      },
+      {
+        text: '给 npm script 传递参数和添加注释',
+        link: '/engineering/npm/parameter-script/',
+      },
     ],
   },
   {
