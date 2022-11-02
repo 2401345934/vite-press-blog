@@ -51,7 +51,10 @@ export default [
         text: 'Clocks 钟表组件',
         link: '/my-vite-component/Clocks/',
       },
-      
+      {
+        text: 'Spotlight 手电筒',
+        link: '/my-vite-component/Spotlight/',
+      },
      ]
   },
 ]

@@ -1,6 +1,6 @@
 {
   "name": "@xiaomh/vitepress",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "main": "index.js",
   "scripts": {
     "version": "zx bump.mjs",
@@ -40,7 +40,7 @@
     "zx": "^7.1.1"
   },
   "dependencies": {
-    "@xiaomh/vue3-alan-vite-component": "^1.0.30",
+    "@xiaomh/vue3-alan-vite-component": "^1.0.31",
     "blueimp-md5": "^2.19.0",
     "dayjs": "^1.11.6",
     "fast-glob": "^3.2.12",

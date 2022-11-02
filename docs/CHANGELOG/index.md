@@ -1,4 +1,4 @@
-## <small>1.0.7 (2022-11-01)</small>
+## <small>1.0.8 (2022-11-02)</small>
 
 * ⚡️性能(webpack): 修复令牌 ([ab89e15](https://github.com/2401345934/vite-press/commit/ab89e15))
 * ✨新增(config): 新增yml文件 ([be08d5f](https://github.com/2401345934/vite-press/commit/be08d5f))
@@ -51,6 +51,7 @@
 * ✨新增(pages): nginx 知识补充 ([2f1acc0](https://github.com/2401345934/vite-press/commit/2f1acc0))
 * ✨新增(pages): s ([8ce9245](https://github.com/2401345934/vite-press/commit/8ce9245))
 * ✨新增(pages): souce 和 v8 运行引擎 ([3b9fa2e](https://github.com/2401345934/vite-press/commit/3b9fa2e))
+* ✨新增(pages): utils 新增 ([907a563](https://github.com/2401345934/vite-press/commit/907a563))
 * ✨新增(pages): vite component 新增钟表组件 \&\& 网站增加角标 ([c843a7a](https://github.com/2401345934/vite-press/commit/c843a7a))
 * ✨新增(pages): vite-component-thermometer 新增温度计组件 ([220905b](https://github.com/2401345934/vite-press/commit/220905b))
 * ✨新增(pages): vue 源码 模版解析新内容 ([28870f6](https://github.com/2401345934/vite-press/commit/28870f6))
