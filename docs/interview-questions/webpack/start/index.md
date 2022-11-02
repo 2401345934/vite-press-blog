@@ -6,7 +6,7 @@ tag: 'webpack'
 
 ## Webpack 的编译过程
 
-![图片](../assets/webpack/packaging.webp)
+![图片](../../assets/webpack/packaging.webp)
 
 * 输入：从文件系统读入代码文件；
 * 模块递归处理：调用 Loader 转译 Module 内容，并将结果转换为 AST，从中分析出模块依赖关系，进一步递归调用模块处理过程，直到所有依赖文件都处理完毕；
@@ -15,7 +15,7 @@ tag: 'webpack'
 
 ## Webpack 的打包过程
 
-![图片](../assets/webpack/compile.webp)
+![图片](../../assets/webpack/compile.webp)
 
 * 合并webpack.config.js和命令行传递的参数，形成最终的配置
 * 解析配置，得到entry入口
@@ -109,12 +109,12 @@ tag: 'webpack'
 
 1. webpack 的运行流程是一个串行的过程，从启动到结束会依次执行以下流程：首先会从配置文件和 Shell 语句中读取与合并参数，并初始化需要使用的插件和配置插件等执行环境所需要的参数；
 2. 初始化完成后会调用Compiler的run来真正启动webpack编译构建过程，webpack的构建流程包括compile、make、build、seal、emit阶段，执行完这些阶段就完成了构建过程。
-![图片](../assets/webpack/build.png)
+![图片](../../assets/webpack/build.png)
 
 ## webpack Plugin 和 Loader 的区别
 
 loader是文件加载器，能够加载资源文件，并对文件进行一些处理，如编译，压缩 等，最终一起打包到指定的文件中。
-![图片](../assets/webpack/loader.png)
+![图片](../../assets/webpack/loader.png)
 
 * plugin赋予了webpack各种灵活的功能，如打包优化，资源管理，环境变量，注入等，目的是为了解决loader无法实现的功能。
 

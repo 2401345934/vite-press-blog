@@ -76,5 +76,6 @@ plugins: [
 
 结论：当规则为 contenthash 时，每个文件的hash值都是根据自身内容而生成，当某个文件内容修改时，打包后只会修改其本身的hash值，不会影响其他文件的hash值
 
-file-loader 配置的 hash 是上面说的哪一种 hash。
+## file-loader 配置的 hash 是上面说的哪一种 hash
+
 contenthash
