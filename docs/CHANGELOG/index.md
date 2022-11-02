@@ -1,4 +1,4 @@
-## <small>1.0.9 (2022-11-02)</small>
+## <small>1.0.10 (2022-11-02)</small>
 
 * ⚡️性能(webpack): 修复令牌 ([ab89e15](https://github.com/2401345934/vite-press/commit/ab89e15))
 * ✨新增(config): 新增yml文件 ([be08d5f](https://github.com/2401345934/vite-press/commit/be08d5f))
@@ -61,6 +61,7 @@
 * ✨新增(tsconfig): 先暂时去掉viteconfig ([8b8c774](https://github.com/2401345934/vite-press/commit/8b8c774))
 * 🐛修复(package): 去掉node版本限制 ([e77f9f5](https://github.com/2401345934/vite-press/commit/e77f9f5))
 * 🐛修复(package): 修复yml脚步文件 ([97b9d40](https://github.com/2401345934/vite-press/commit/97b9d40))
+* 🐛修复(pages): 修复错别字 ([e2ff842](https://github.com/2401345934/vite-press/commit/e2ff842))
 * 🐛修复(webpack): 修复githubpag ([34b5225](https://github.com/2401345934/vite-press/commit/34b5225))
 * 💄格式(pages): 修改默认最大样式 ([31de843](https://github.com/2401345934/vite-press/commit/31de843))
 * 📝文档(package): 更新github token ([57000dc](https://github.com/2401345934/vite-press/commit/57000dc))

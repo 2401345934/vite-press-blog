@@ -60,7 +60,8 @@ export default [
   {
     text: 'Webpack ',
     items: [
-      { text: 'webpack', link: '/interview-questions/webpack/' },
+      { text: 'webpack', link: '/interview-questions/webpack/start/' },
+      { text: 'hash的3种方式', link: '/interview-questions/webpack/hash/' },
     ]
   },
   {
