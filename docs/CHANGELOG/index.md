@@ -1,9 +1,10 @@
-## <small>1.0.12 (2022-11-02)</small>
+## <small>1.0.13 (2022-11-03)</small>
 
 * ⚡️性能(webpack): 修复令牌 ([ab89e15](https://github.com/2401345934/vite-press/commit/ab89e15))
 * ✨新增(config): 新增yml文件 ([be08d5f](https://github.com/2401345934/vite-press/commit/be08d5f))
 * ✨新增(config): 暂时去掉search ([9252450](https://github.com/2401345934/vite-press/commit/9252450))
 * ✨新增(custom): 更新 md ([87234de](https://github.com/2401345934/vite-press/commit/87234de))
+* ✨新增(doc/工程化): npm 内容 ([9324251](https://github.com/2401345934/vite-press/commit/9324251))
 * ✨新增(package): 升级 alan-vite-component ([38b85fd](https://github.com/2401345934/vite-press/commit/38b85fd))
 * ✨新增(package): 新增算法常见面试题 ([3eee594](https://github.com/2401345934/vite-press/commit/3eee594))
 * ✨新增(package): 新增修改版本的插件 ([d4c1f1e](https://github.com/2401345934/vite-press/commit/d4c1f1e))

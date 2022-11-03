@@ -18,6 +18,18 @@ export default [
         text: '给 npm script 传递参数和添加注释',
         link: '/engineering/npm/parameter-script/',
       },
+      {
+        text: '使用 npm script 的钩子',
+        link: '/engineering/npm/npm-hook/',
+      },
+      {
+        text: '在 npm script 中使用变量',
+        link: '/engineering/npm/npm-var/',
+      },
+      {
+        text: '实现命令行自动补全',
+        link: '/engineering/npm/npm-auto/',
+      },
     ],
   },
   {
