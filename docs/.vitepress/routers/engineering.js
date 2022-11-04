@@ -2,6 +2,7 @@ export default [
   {
     text: 'NPM',
     items: [
+      
       {
         text: 'NPM私服库的搭建',
         link: '/engineering/npm/private/',
@@ -41,6 +42,10 @@ export default [
       {
         text: '文件变化时自动运行 npm script',
         link: '/engineering/npm/npm-watch/',
+      },
+      {
+        text: 'npm 安装流程',
+        link: '/engineering/npm/npm-install/',
       },
     ],
   },
