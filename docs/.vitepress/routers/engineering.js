@@ -33,6 +33,15 @@ export default [
     ],
   },
   {
+    text: 'git',
+    items: [
+      {
+        text: 'Git Submodules 介绍',
+        link: '/engineering/git/Submodules/',
+      },
+    ],
+  },
+  {
     text: '代码规范',
     items: [
       {
@@ -41,6 +50,7 @@ export default [
       },
     ],
   },
+
   {
     text: 'package.json',
     items: [

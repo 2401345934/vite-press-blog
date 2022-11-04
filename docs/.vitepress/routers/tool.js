@@ -29,6 +29,10 @@ export default [
     text: '功能网站',
     items: [
       {
+        text: 'CDN',
+        link: '/tool/cdn/',
+      },
+      {
         text: '常用轮子集合',
         link: '/tool/tool-collection/',
       },
