@@ -55,8 +55,12 @@ export default [
     text: 'package.json',
     items: [
       {
+        text: 'packager介绍',
+        link: '/engineering/package/package-start/',
+      },
+      {
         text: '自动修改 packager.json 文件 version',
-        link: '/engineering/package-version/',
+        link: '/engineering/package/package-version/',
       }
     ],
   },

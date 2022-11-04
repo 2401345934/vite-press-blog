@@ -1,7 +1,10 @@
 {
   "name": "@xiaomh/vitepress",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "main": "index.js",
+  "homepage": "https://2401345934.github.io/vite-press/",
+  "bugs": "https://github.com/2401345934/vite-press/issues/new",
+  "author": "minghhui",
   "scripts": {
     "version": "zx bump.mjs",
     "start": "vitepress dev docs",
