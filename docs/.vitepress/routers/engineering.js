@@ -30,6 +30,18 @@ export default [
         text: '实现命令行自动补全',
         link: '/engineering/npm/npm-auto/',
       },
+      {
+        text: '实现 npm script 跨平台兼容',
+        link: '/engineering/npm/cross-platform/',
+      },
+      {
+        text: '用 node.js 脚本替代复杂的 npm script',
+        link: '/engineering/npm/node/',
+      },
+      {
+        text: '文件变化时自动运行 npm script',
+        link: '/engineering/npm/npm-watch/',
+      },
     ],
   },
   {
