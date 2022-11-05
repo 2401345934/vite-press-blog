@@ -11,6 +11,7 @@
 * ✨新增(doc/工程化): npm 内容 ([9324251](https://github.com/2401345934/vite-press/commit/9324251))
 * ✨新增(doc/工程化): npm 知识补充 ([f21e5e1](https://github.com/2401345934/vite-press/commit/f21e5e1))
 * ✨新增(doc/工程化): package start ([72a067f](https://github.com/2401345934/vite-press/commit/72a067f))
+* ✨新增(doc/工作工具): code-fun ([a84483e](https://github.com/2401345934/vite-press/commit/a84483e))
 * ✨新增(doc/面试题): 30到vue面试题合集 ([f3dd2a8](https://github.com/2401345934/vite-press/commit/f3dd2a8))
 * ✨新增(doc/面试题): 补充面试题合集 ([b1d8eae](https://github.com/2401345934/vite-press/commit/b1d8eae))
 * ✨新增(doc/面试题): js \& 网络 \& html \& css ([4306336](https://github.com/2401345934/vite-press/commit/4306336))

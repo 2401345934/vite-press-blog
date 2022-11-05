@@ -10,7 +10,7 @@
     "start": "vitepress dev docs",
     "build": "# 打包 \n npm run docs:build",
     "docs:dev": "vitepress dev docs",
-    "commit": "# 发送冲锋 \n npm run build && npm run version && npm run changelog && # 开始提交 \n  git add . &&   # 开始输入信息 \n git cz ",
+    "commit": "# 发送冲锋 \n npm run build && npm run version && npm run changelog && git add . &&  git cz ",
     "push": "npm run commit && git cz && git ps",
     "changelog": "# 拉取 changlog  \n conventional-changelog -p custom-config -i docs/CHANGELOG/index.md -s -r 0",
     "docs:build": "vitepress build docs",
