@@ -29,6 +29,10 @@ export default [
     text: '功能网站',
     items: [
       {
+        text: 'code-fun 生成代码',
+        link: '/tool/code-fun/',
+      },
+      {
         text: 'CDN',
         link: '/tool/cdn/',
       },
