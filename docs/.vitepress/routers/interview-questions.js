@@ -109,6 +109,12 @@ export default [
     ]
   },
   {
+    text: 'Linux ',
+    items: [
+      { text: '硬链接和软链接', link: '/interview-questions/linux/soft-hard/' },
+    ]
+  },
+  {
     text: '面试题纲集合',
     items: [
       { text: '30 道 Vue 面试题', link: '/interview-questions/topic-outline/vue30/' },

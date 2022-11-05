@@ -1,6 +1,6 @@
 {
   "name": "@xiaomh/vitepress",
-  "version": "1.0.23",
+  "version": "1.0.24",
   "main": "index.js",
   "homepage": "https://2401345934.github.io/vite-press/",
   "bugs": "https://github.com/2401345934/vite-press/issues/new",
@@ -11,7 +11,7 @@
     "build": "# 打包 \n npm run docs:build",
     "docs:dev": "vitepress dev docs",
     "commit": "# 发送冲锋 \n npm run build && npm run version && npm run changelog && git add . &&  git cz ",
-    "push": "npm run commit && git cz && git ps",
+    "push": "# 发送冲锋 \n npm run build && npm run version && npm run changelog && git add . &&  git cz && git ps",
     "changelog": "# 拉取 changlog  \n conventional-changelog -p custom-config -i docs/CHANGELOG/index.md -s -r 0",
     "docs:build": "vitepress build docs",
     "prepare": "husky install",
