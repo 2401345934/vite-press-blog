@@ -90,4 +90,13 @@ export default [
       }
     ],
   },
+  {
+    text: '项目搭建',
+    items: [
+      {
+        text: '从0搭建 Vite 3 + Vue 3',
+        link: '/engineering/project-structures/vue3-vite/',
+      }
+    ],
+  },
 ]

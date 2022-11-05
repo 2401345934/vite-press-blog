@@ -119,7 +119,6 @@ const { author, date, tags } = toRefs(data)
   text-overflow: ellipsis;
   white-space: nowrap;
   vertical-align: middle;
-  max-width: 240px;
   color: var(--vp-c-text-2);
   cursor: default;
   font-size: 14px;
