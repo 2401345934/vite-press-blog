@@ -129,6 +129,30 @@ export default [
         link: '/basic-quality/soft-power/mece/',
       },
       {
+        text: '飞轮思维',
+        link: '/basic-quality/soft-power/flywheel/',
+      },
+      {
+        text: '防错思维',
+        link: '/basic-quality/soft-power/mistake-proofing/',
+      },
+      {
+        text: '迭代思维',
+        link: '/basic-quality/soft-power/iteration/',
+      },
+      {
+        text: '根因思维',
+        link: '/basic-quality/soft-power/returning/',
+      },
+      {
+        text: '复盘思维',
+        link: '/basic-quality/soft-power/analyse/',
+      },
+      {
+        text: '灰度思维',
+        link: '/basic-quality/soft-power/gray/',
+      },
+      {
         text: '管理',
         link: '/basic-quality/soft-power/management/',
       },
