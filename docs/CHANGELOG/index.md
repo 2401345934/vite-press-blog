@@ -1,9 +1,10 @@
-## <small>1.0.19 (2022-11-05)</small>
+## <small>1.0.20 (2022-11-05)</small>
 
 * ⚡️性能(webpack): 修复令牌 ([ab89e15](https://github.com/2401345934/vite-press/commit/ab89e15))
 * ✨新增(config): 新增yml文件 ([be08d5f](https://github.com/2401345934/vite-press/commit/be08d5f))
 * ✨新增(config): 暂时去掉search ([9252450](https://github.com/2401345934/vite-press/commit/9252450))
 * ✨新增(custom): 更新 md ([87234de](https://github.com/2401345934/vite-press/commit/87234de))
+* ✨新增(doc/工程化): 项目搭建 ([313af20](https://github.com/2401345934/vite-press/commit/313af20))
 * ✨新增(doc/工程化): npm ([7e765c6](https://github.com/2401345934/vite-press/commit/7e765c6))
 * ✨新增(doc/工程化): npm ([0622beb](https://github.com/2401345934/vite-press/commit/0622beb))
 * ✨新增(doc/工程化): npm 安装流程 ([9102d55](https://github.com/2401345934/vite-press/commit/9102d55))

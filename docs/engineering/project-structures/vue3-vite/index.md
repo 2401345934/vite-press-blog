@@ -31,7 +31,7 @@ tag: '工程化,项目搭建,Vue,Vite'
 
 确保你安装了最新版本的 [Node.js](https://link.juejin.cn/?target=https%3A%2F%2Fnodejs.org%2F "https://nodejs.org/")，然后在命令行中运行以下命令：
 
-```
+```js
 # npm 6.x
 npm create vite@latest vite-vue-js-template --template vue
 
@@ -52,7 +52,7 @@ pnpm create vite vite-vue-js-template --template vue
 
 在项目被创建后，通过以下步骤安装依赖并启动开发服务器：
 
-```
+```js
 # 打开项目
 cd <your-project-name>
 
@@ -73,7 +73,7 @@ Vite 配置文件 `vite.config.js` 位于项目根目录下，项目启动时会
 
 本项目针对公共基础路径、自定义路径别名、服务器选项、构建选项等做了如下基础配置：
 
-```
+```js
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
 import vue from '@vitejs/plugin-vue';
@@ -121,7 +121,7 @@ export default defineConfig({
 规范目录结构
 ------
 
-```
+```js
 ├── dist/
 └── src/
     ├── api/                       // 接口请求目录
@@ -148,9 +148,8 @@ export default defineConfig({
 
 ### 安装依赖
 
-```
+```js
 npm i vue-router@4
-
 ```
 
 ### 创建路由配置文件
@@ -171,7 +170,7 @@ npm i vue-router@4
 
 * 减少 Git 合并代码冲突可能性
 
-```
+```js
 export default [
   {
     path: '/',
@@ -187,7 +186,7 @@ export default [
 
 ```
 
-```
+```js
 import { createRouter, createWebHistory } from 'vue-router';
 
 import baseRouters from './modules/base';
@@ -195,7 +194,7 @@ import baseRouters from './modules/base';
 const routes = [...baseRouters];
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(),
   routes,
   scrollBehavior() {
     return {
@@ -216,7 +215,7 @@ export default router;
 
 在 `main.js` 文件中挂载路由配置
 
-```
+```js
 import { createApp } from 'vue';
 
 import App from './App.vue';
@@ -231,16 +230,15 @@ createApp(App).use(router).mount('#app');
 
 ### 安装依赖
 
-```
+```js
 npm i pinia
-
 ```
 
 ### 创建仓库配置文件
 
 在 `src/store` 目录下新建 `index.js` 文件与 `modules` 文件夹
 
-```
+```js
 └── src/
     ├── store/
      ├── modules/  // 仓库模块
@@ -248,7 +246,7 @@ npm i pinia
 
 ```
 
-```
+```js
 import { defineStore } from 'pinia';
 
 export const useCounterStore = defineStore('counter', {
@@ -264,7 +262,7 @@ export const useCounterStore = defineStore('counter', {
 
 ```
 
-```
+```js
 import { createPinia } from 'pinia';
 
 const store = createPinia();
@@ -281,7 +279,7 @@ export * from './modules/counter';
 
 在 `main.js` 文件中挂载 `Vuex` 配置
 
-```
+```js
 import { createApp } from 'vue';
 
 import App from './App.vue';
@@ -297,14 +295,14 @@ createApp(App).use(router).use(store).mount('#app');
 
 ### 安装依赖
 
-```
+```js
 npm i tdesign-vue-next
 
 ```
 
 ### 基础使用
 
-```
+```js
 import { createApp } from 'vue';
 
 import TDesign from 'tdesign-vue-next';
@@ -321,14 +319,13 @@ app.use(TDesign);
 
 使用 `unplugin-vue-components` 和 `unplugin-auto-import` 来实现自动导入：
 
-```
+```js
 npm install unplugin-vue-components unplugin-auto-import -D
-
 ```
 
 在 Vite 对应的配置文件 `vite.config.js` 添加上述插件：
 
-```
+```js
 import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
 import { TDesignResolver } from 'unplugin-vue-components/resolvers';
@@ -355,7 +352,7 @@ export default {
 
 ### 安装依赖
 
-```
+```js
 npm i axios
 
 ```
@@ -372,7 +369,7 @@ npm i axios
 
 ```
 
-```
+```js
 import axios from 'axios';
 
 // 创建请求实例
@@ -483,7 +480,7 @@ export default instance;
 
 在 `User` 类中比如有登录、注册、获取用户信息等方法，如果有业务逻辑变动，只需要修改相关方法即可。
 
-```
+```js
 import { post } from '@/utils/request';
 
 export default class User {
@@ -509,7 +506,7 @@ export default class User {
 
 在需要使用接口的地方，引入对应的业务模型文件，参考如下：
 
-```
+```vue
 <script>
 import User from '@/api/user';
 
@@ -540,7 +537,7 @@ Vite 内部已帮我们集成了相关的 `loader`，不需要额外配置。
 
 ### 安装依赖
 
-```
+```js
 npm i less -D
 
 ```
@@ -571,7 +568,7 @@ npm i less -D
 
 在 `vite.config.js` 配置文件中新增CSS 预处理器相关配置即可实现 less 全局样式：
 
-```
+```js
 import { resolve } from 'path';
 
 export default defineConfig({
@@ -596,7 +593,7 @@ export default defineConfig({
 
 在 Vue3 中，改变了以往样式穿透的语法，如果继续使用 `::v-deep`、`/deep/`、`>>>` 等语法的话，会出现一个警告，下面是新的语法：
 
-```
+```css
 /* 深度选择器 */
 :deep(selector) {
   /* ... */
@@ -641,7 +638,7 @@ export default defineConfig({
 
 在项目根目录下添加 `.editorconfig` 文件：
 
-```
+```js
 # 表示是最顶层的 EditorConfig 配置文件
 root = true
 
@@ -684,16 +681,15 @@ indent_size = 2
 
 ### 安装依赖
 
-* [`ESLint`](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Feslint%2Feslint "https://github.com/eslint/eslint") - ESLint 本体
-* [`eslint-define-config`](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2FShinigami92%2Feslint-define-config "https://github.com/Shinigami92/eslint-define-config") - 改善 ESLint 规范编写体验
-* [`eslint-plugin-vue`](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Fvuejs%2Feslint-plugin-vue "https://github.com/vuejs/eslint-plugin-vue") - 适用于 Vue 文件的 ESLint 插件
-* [`eslint-config-airbnb-base`](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Fairbnb%2Fjavascript%2Ftree%2Fmaster%2Fpackages%2Feslint-config-airbnb-base "https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb-base") - Airbnb JavaScript 风格指南
-* [`eslint-plugin-import`](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Fimport-js%2Feslint-plugin-import "https://github.com/import-js/eslint-plugin-import") - 使用 `eslint-config-airbnb-base` 时必须安装的前置插件
-* [`vue-eslint-parser`](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Fvuejs%2Fvue-eslint-parser "https://github.com/vuejs/vue-eslint-parser") - 使用 `eslint-plugin-vue` 时必须安装的 ESLint 解析器
+* [图片](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Feslint%2Feslint "https://github.com/eslint/eslint") - ESLint 本体
+* [图片](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2FShinigami92%2Feslint-define-config "https://github.com/Shinigami92/eslint-define-config") - 改善 ESLint 规范编写体验
+* [图片](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Fvuejs%2Feslint-plugin-vue "https://github.com/vuejs/eslint-plugin-vue") - 适用于 Vue 文件的 ESLint 插件
+* [图片](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Fairbnb%2Fjavascript%2Ftree%2Fmaster%2Fpackages%2Feslint-config-airbnb-base "https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb-base") - Airbnb JavaScript 风格指南
+* [图片](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Fimport-js%2Feslint-plugin-import "https://github.com/import-js/eslint-plugin-import") - 使用 `eslint-config-airbnb-base` 时必须安装的前置插件
+* [图片](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Fvuejs%2Fvue-eslint-parser "https://github.com/vuejs/vue-eslint-parser") - 使用 `eslint-plugin-vue` 时必须安装的 ESLint 解析器
 
-```
+```js
 npm i eslint eslint-define-config eslint-config-airbnb-base eslint-plugin-import eslint-plugin-vue vue-eslint-parser -D
-
 ```
 
 ### 安装插件
@@ -708,7 +704,7 @@ JetBrains 系列编辑器（WebStorm、IntelliJ IDEA 等）则不用额外安装
 
 在项目根目录创建 `.eslintrc.js` 文件，并填入以下内容：
 
-```
+```js
 const { defineConfig } = require('eslint-define-config');
 
 module.exports = defineConfig({
@@ -809,7 +805,7 @@ module.exports = defineConfig({
 
 ```
 
-> 关于更多配置项信息，请前往 ESLint 官网查看 [ESLint-Configuring](https://link.juejin.cn/?target=http%3A%2F%2Feslint.cn%2Fdocs%2Fuser-guide%2Fconfiguring "http://eslint.cn/docs/user-guide/configuring")
+![ESLint-Configuring](https://link.juejin.cn/?target=http%3A%2F%2Feslint.cn%2Fdocs%2Fuser-guide%2Fconfiguring "http://eslint.cn/docs/user-guide/configuring")
 
 ### 创建 ESLint 过滤规则
 
@@ -1504,8 +1500,7 @@ npm install -D cz-git
 
 例如：([⇒ 配置模板](https://link.juejin.cn/?target=https%3A%2F%2Fcz-git.qbb.sh%2Fzh%2Fconfig%2F "https://cz-git.qbb.sh/zh/config/"))
 
-```
-/** @type {import('cz-git').UserConfig} */
+```js
 module.exports = {
   extends: ['@commitlint/config-conventional'],
   rules: {},
@@ -1640,9 +1635,8 @@ npx husky add .husky/commit-msg "npx --no-install commitlint --edit $1"
 
 打开 `package.json` 文件，新增 `homepage` 字段，表示该应用发布后的根目录（参见[官方文档](https://link.juejin.cn/?target=https%3A%2F%2Fcreate-react-app.dev%2Fdocs%2Fdeployment%23building-for-relative-paths "https://create-react-app.dev/docs/deployment#building-for-relative-paths")）。
 
-```
+```js
 "homepage": "https://[username].github.io/github-actions-demo",
-
 ```
 
 上面代码中，将 `[username]` 替换成你的 GitHub 用户名，参见[范例](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2FElanYoung%2Fvite-vue-js-starter-template%2Fblob%2Fmaster%2Fpackage.json%23L11 "https://github.com/ElanYoung/vite-vue-js-starter-template/blob/master/package.json#L11")。
@@ -1658,7 +1652,7 @@ npx husky add .husky/commit-msg "npx --no-install commitlint --edit $1"
 
 ![.github/workflows/deploy.yml](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/01ca2c1f76fa4162971a46297c270a9e~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image)
 
-```
+```yaml
 name: Vite Vue Deploy
 
 on:

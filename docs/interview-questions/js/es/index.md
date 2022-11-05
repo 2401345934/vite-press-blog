@@ -235,7 +235,7 @@ console.log(`半径为 4 的圆的面积是 ${circle.area(4)}`)
 
 在ES6之后我们则可以写成以下形式：
 
-```
+```js
 // circle.js
 // 输出
 const { PI } = Math
@@ -1597,15 +1597,15 @@ globalThis === this // true
 
 ```
 
-### import()
+### import 语句
 
-静态的`import` 语句用于导入由另一个模块导出的绑定。无论是否声明了 严格模式，导入的模块都运行在严格模式下。在浏览器中，`import` 语句只能在声明了 `type="module"` 的 `script` 的标签中使用。
+静态的 import 语句用于导入由另一个模块导出的绑定。无论是否声明了 严格模式，导入的模块都运行在严格模式下。在浏览器中，import 语句只能在声明了 type="module 的 script 的标签中使用。
 
-但是在ES10之后，我们有动态 `import()`，它不需要依赖 `type="module"` 的script标签。
+但是在ES10之后，我们有动态 import()，它不需要依赖 type="module 的script标签。
 
 所以我们有以下例子：
 
-```
+```js
 const main = document.querySelector("main")
 for (const link of document.querySelectorAll("nav > a")) {
       link.addEventListener("click", e => {
