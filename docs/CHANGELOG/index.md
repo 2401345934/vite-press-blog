@@ -1,4 +1,4 @@
-## <small>1.0.20 (2022-11-05)</small>
+## <small>1.0.21 (2022-11-05)</small>
 
 * ⚡️性能(webpack): 修复令牌 ([ab89e15](https://github.com/2401345934/vite-press/commit/ab89e15))
 * ✨新增(config): 新增yml文件 ([be08d5f](https://github.com/2401345934/vite-press/commit/be08d5f))
@@ -69,6 +69,7 @@
 * ✨新增(router): 路由调整新增工程化栏目 ([ed1863e](https://github.com/2401345934/vite-press/commit/ed1863e))
 * ✨新增(tsconfig): 先暂时去掉viteconfig ([8b8c774](https://github.com/2401345934/vite-press/commit/8b8c774))
 * ✨新增(webpack): 新增 webpack 内容 ([c763031](https://github.com/2401345934/vite-press/commit/c763031))
+* 🐛修复(doc/工程化): 工程化 环境变量 的引入导致 build error ([eaa6b7c](https://github.com/2401345934/vite-press/commit/eaa6b7c))
 * 🐛修复(package): 去掉node版本限制 ([e77f9f5](https://github.com/2401345934/vite-press/commit/e77f9f5))
 * 🐛修复(package): 修复yml脚步文件 ([97b9d40](https://github.com/2401345934/vite-press/commit/97b9d40))
 * 🐛修复(pages): 修复错别字 ([e2ff842](https://github.com/2401345934/vite-press/commit/e2ff842))
