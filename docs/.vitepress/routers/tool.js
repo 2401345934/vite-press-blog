@@ -26,6 +26,20 @@ export default [
     ]
   },
   {
+    text: 'mac 工具',
+    items: [
+      {
+        text: '命令行工具-Warp',
+        link: '/tool/Warp/',
+      },
+      {
+        text: 'Markdown-marktext',
+        link: '/tool/marktext/',
+      },
+      
+    ]
+  },
+  {
     text: '功能网站',
     items: [
       {
