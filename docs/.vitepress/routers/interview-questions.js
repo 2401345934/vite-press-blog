@@ -113,6 +113,9 @@ export default [
     items: [
       { text: '30 道 Vue 面试题', link: '/interview-questions/topic-outline/vue30/' },
       { text: '字节前端面试题', link: '/interview-questions/topic-outline/bytes/' },
+      { text: '中级前端面试(上)', link: '/interview-questions/topic-outline/intermediate-engineer-top/' },
+      { text: '中级前端面试(中)', link: '/interview-questions/topic-outline/intermediate-engineer-center/' },
+      { text: '中级前端面试(下)', link: '/interview-questions/topic-outline/intermediate-engineer-bottom/' },
       { text: '常见的前端算法题', link: '/interview-questions/topic-outline/algorithm/' },
       { text: '面试万字总结（浏览器网络篇）', link: '/interview-questions/topic-outline/browser/' },
     ]
