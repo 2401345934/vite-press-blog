@@ -1,18 +1,5 @@
 export default [
-  {
-    text: '微信小程序',
-    items: [
-      { text: 'westore', link: '/interview-questions/westore/principle/' },
-      { text: '微信小程序的理解', link: '/interview-questions/westore/understand/' },
-      { text: '小程序生命周期', link: '/interview-questions/westore/life-cycle/' },
-      { text: '微信小程序中路由跳转的方式有哪些？区别', link: '/interview-questions/westore/router-navigate/' },
-      { text: '提高微信小程序的应用速度的手段有哪些', link: '/interview-questions/westore/optimize/' },
-      { text: '微信小程序的登录流程', link: '/interview-questions/westore/login/' },
-      { text: '微信小程序的发布流程', link: '/interview-questions/westore/release/' },
-      { text: '微信小程序的支付流程', link: '/interview-questions/westore/pay/' },
-      { text: '微信小程序的实现原理', link: '/interview-questions/westore/implementation/' },
-    ]
-  },
+  
   {
     text: 'html ',
     items: [
@@ -48,6 +35,20 @@ export default [
       { text: 'unknown 和any 的区别', link: '/interview-questions/ts/unknown-any/' },
       { text: 'type of 和 key of 的区别', link: '/interview-questions/ts/type0f-keyOf/' },
       { text: 'void  和 never  类型的 区别', link: '/interview-questions/ts/void-never/' },
+    ]
+  },
+  {
+    text: '微信小程序',
+    items: [
+      { text: 'westore', link: '/interview-questions/westore/principle/' },
+      { text: '微信小程序的理解', link: '/interview-questions/westore/understand/' },
+      { text: '小程序生命周期', link: '/interview-questions/westore/life-cycle/' },
+      { text: '微信小程序中路由跳转的方式有哪些？区别', link: '/interview-questions/westore/router-navigate/' },
+      { text: '提高微信小程序的应用速度的手段有哪些', link: '/interview-questions/westore/optimize/' },
+      { text: '微信小程序的登录流程', link: '/interview-questions/westore/login/' },
+      { text: '微信小程序的发布流程', link: '/interview-questions/westore/release/' },
+      { text: '微信小程序的支付流程', link: '/interview-questions/westore/pay/' },
+      { text: '微信小程序的实现原理', link: '/interview-questions/westore/implementation/' },
     ]
   },
   {
@@ -90,6 +91,17 @@ export default [
       { text: '常用操作', link: '/interview-questions/npm/common-operations/' },
       { text: 'link 创建软链', link: '/interview-questions/npm/link/' },
       { text: '运行 npm run xxx 的时候发生了什么？', link: '/interview-questions/npm/npm-run-xxx/' },
+    ]
+  },
+  {
+    text: '设计模式 ',
+    items: [
+      { text: '发布订阅模式', link: '/interview-questions/design-patterns/release-subscription/' },
+      { text: '观察者模式', link: '/interview-questions/design-patterns/observer/' },
+      { text: '代理模式', link: '/interview-questions/design-patterns/decorator/' },
+      { text: '装饰器模式', link: '/interview-questions/design-patterns/agent/' },
+      { text: '适配器模式', link: '/interview-questions/design-patterns/adapter/' },
+      { text: '策略模式', link: '/interview-questions/design-patterns/strategy/' },
     ]
   },
   {
