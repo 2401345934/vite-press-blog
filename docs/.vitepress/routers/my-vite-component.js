@@ -55,6 +55,11 @@ export default [
         text: 'Spotlight 手电筒',
         link: '/my-vite-component/Spotlight/',
       },
+      {
+        text: 'DrawImage 图片合并',
+        link: '/my-vite-component/DrawImage/',
+      },
+      
      ]
   },
 ]

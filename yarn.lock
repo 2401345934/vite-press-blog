@@ -655,10 +655,10 @@
   dependencies:
     vue-demi "*"
 
-"@xiaomh/vue3-alan-vite-component@^1.0.31":
-  version "1.0.31"
-  resolved "https://registry.npmjs.org/@xiaomh/vue3-alan-vite-component/-/vue3-alan-vite-component-1.0.31.tgz#5da727b1bbbe42ceb266c29ea34d53920922bce9"
-  integrity sha512-MrcwqWORk5/H1CiM4dlfjFGCBNplSzIF1PdUOJBpj+jHmMpkpap28QUhjB65WFlLPWDElu9i3ZmNtUmmbNv9Wg==
+"@xiaomh/vue3-alan-vite-component@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.npmjs.org/@xiaomh/vue3-alan-vite-component/-/vue3-alan-vite-component-1.1.0.tgz#70c7bde7312b71f83b969751482713a952ca14c6"
+  integrity sha512-BvbUDpmNFJ2El+c4aVElx80fUwjpoqM1hRVT00L9A9kH4vNsd4byEuLV4EWi33g1FTwWOacQPCTkkwzD+RffVg==
   dependencies:
     vue "^3.2.25"
 

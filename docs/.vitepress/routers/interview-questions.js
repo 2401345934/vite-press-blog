@@ -71,6 +71,12 @@ export default [
     ]
   },
   {
+    text: 'React ',
+    items: [
+      { text: '自定义hooks', link: '/interview-questions/react/hooks/' },
+    ]
+  },
+  {
     text: 'Webpack ',
     items: [
       { text: 'webpack', link: '/interview-questions/webpack/start/' },
