@@ -15,6 +15,7 @@ export default [
   {
     text: 'Js ',
     items: [
+      { text: '跨域原理', link: '/interview-questions/js/cross-domain/' },
       { text: 'JSON-stringify', link: '/interview-questions/js/json-stringify/' },
       { text: 'URL 转码 和解码', link: '/interview-questions/js/url-encryption-to-decrypt/' },
       { text: 'for-in vs for-of', link: '/interview-questions/js/forIn-forOf/' },

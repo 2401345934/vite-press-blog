@@ -1,6 +1,6 @@
 ---
 createTime: 2022/11/04
-tag: 'js'
+tag: 'js,面试题'
 ---
 # 从ES6到ES10
 
