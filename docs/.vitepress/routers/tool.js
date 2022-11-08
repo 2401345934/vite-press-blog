@@ -36,7 +36,6 @@ export default [
         text: 'Markdown-marktext',
         link: '/tool/marktext/',
       },
-      
     ]
   },
   {

@@ -57,6 +57,7 @@ export default [
     items: [
       { text: 'performance', link: '/interview-questions/performance-optimization/performance/' },
       { text: 'HTML优化', link: '/interview-questions/performance-optimization/html/' },
+      { text: '图片懒加载', link: '/interview-questions/performance-optimization/img-lazy/' },
       {
         text: 'JS优化',
         items: [

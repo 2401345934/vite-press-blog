@@ -121,4 +121,13 @@ export default [
       }
     ],
   },
+  {
+    text: '埋点',
+    items: [
+      {
+        text: '数据埋点起步',
+        link: '/engineering/buried-point/start/',
+      }
+    ],
+  },
 ]
