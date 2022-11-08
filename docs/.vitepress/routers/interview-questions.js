@@ -144,6 +144,9 @@ export default [
     items: [
       { text: '30 道 Vue 面试题', link: '/interview-questions/topic-outline/vue30/' },
       { text: '字节前端面试题', link: '/interview-questions/topic-outline/bytes/' },
+      { text: '2022高频前端面试题——HTML篇', link: '/interview-questions/topic-outline/2022-html/' },
+      { text: '2022高频前端面试题——CSS篇', link: '/interview-questions/topic-outline/2022-css/' },
+      { text: '2022高频前端面试题合集之JavaScript篇', link: '/interview-questions/topic-outline/2022-js-top/' },
       { text: '中级前端面试(上)', link: '/interview-questions/topic-outline/intermediate-engineer-top/' },
       { text: '中级前端面试(中)', link: '/interview-questions/topic-outline/intermediate-engineer-center/' },
       { text: '中级前端面试(下)', link: '/interview-questions/topic-outline/intermediate-engineer-bottom/' },

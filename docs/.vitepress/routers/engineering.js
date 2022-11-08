@@ -73,9 +73,18 @@ export default [
   {
     text: 'cicd',
     items: [
+     
+      {
+        text: 'gitlab CiCd',
+        link: '/engineering/cicd/gitlab-cicd/',
+      },
       {
         text: '基于GitLab+docker的前端自动化构建部署(CI/CD)流程 ',
-        link: '/engineering/cicd/gitlab-docker/',
+        link: '/engineering/cicd/gitlab-docker-cicd/',
+      },
+      {
+        text: ' 基于 Docker ( Gitlab、Gitlab Runner ) 自动部署运行 ',
+        link: '/engineering/cicd/gitlab-two-docker-cicd/',
       },
     ],
   },
@@ -93,15 +102,7 @@ export default [
       }
     ],
   },
-  {
-    text: 'cicd',
-    items: [
-      {
-        text: 'gitlab CiCd',
-        link: '/engineering/gitlab-cicd/',
-      }
-    ],
-  },
+
   {
     text: '项目搭建',
     items: [
