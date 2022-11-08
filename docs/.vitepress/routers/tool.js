@@ -8,6 +8,10 @@ export default [
         link: '/tool/compressed-image/',
       },
       {
+        text: '压缩视频',
+        link: '/tool/compressed-video/',
+      },
+      {
         text: 'api查询',
         link: '/tool/api-all/',
       },
