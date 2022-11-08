@@ -145,6 +145,7 @@ export default [
     items: [
       { text: '30 道 Vue 面试题', link: '/interview-questions/topic-outline/vue30/' },
       { text: '字节前端面试题', link: '/interview-questions/topic-outline/bytes/' },
+      { text: '三十七个常见Vue面试题', link: '/interview-questions/topic-outline/vue-37/' },
       { text: '2022高频前端面试题——HTML篇', link: '/interview-questions/topic-outline/2022-html/' },
       { text: '2022高频前端面试题——CSS篇', link: '/interview-questions/topic-outline/2022-css/' },
       { text: '2022高频前端面试题合集之JavaScript篇', link: '/interview-questions/topic-outline/2022-js-top/' },
