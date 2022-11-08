@@ -2,7 +2,6 @@ export default [
   {
     text: 'NPM',
     items: [
-      
       {
         text: 'NPM私服库的搭建',
         link: '/engineering/npm/private/',
@@ -10,6 +9,10 @@ export default [
       {
         text: '初识 npm script',
         link: '/engineering/npm/start-script/',
+      },
+      {
+        text: 'npm ci和npm install区别',
+        link: '/engineering/npm/npm-ci/',
       },
       {
         text: '运行多个 npm script 的各种姿势',
@@ -64,6 +67,15 @@ export default [
       {
         text: 'Eslint + Prettier + Husky + Commitlint + Lint-staged',
         link: '/engineering/code-specification/',
+      },
+    ],
+  },
+  {
+    text: 'cicd',
+    items: [
+      {
+        text: '基于GitLab+docker的前端自动化构建部署(CI/CD)流程 ',
+        link: '/engineering/cicd/gitlab-docker/',
       },
     ],
   },

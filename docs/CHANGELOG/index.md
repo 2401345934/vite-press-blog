@@ -1,4 +1,4 @@
-## <small>1.1.6 (2022-11-08)</small>
+## <small>1.1.7 (2022-11-08)</small>
 
 * ⚡️性能(webpack): 修复令牌 ([ab89e15](https://github.com/2401345934/vite-press/commit/ab89e15))
 * ✨新增(config): 新增yml文件 ([be08d5f](https://github.com/2401345934/vite-press/commit/be08d5f))
@@ -20,6 +20,7 @@
 * ✨新增(doc/面试题): js \& 网络 \& html \& css ([4306336](https://github.com/2401345934/vite-press/commit/4306336))
 * ✨新增(doc/面试题): js跨域 ([410f001](https://github.com/2401345934/vite-press/commit/410f001))
 * ✨新增(doc/面试题): linux ([b7afb96](https://github.com/2401345934/vite-press/commit/b7afb96))
+* ✨新增(doc/面试题): vue ([20831b9](https://github.com/2401345934/vite-press/commit/20831b9))
 * ✨新增(doc/软能力): 软能力更新 ([c28c21d](https://github.com/2401345934/vite-press/commit/c28c21d))
 * ✨新增(doc/vite-component): 新增图片合并组建 ([e5e5e52](https://github.com/2401345934/vite-press/commit/e5e5e52))
 * ✨新增(package): 升级 alan-vite-component ([38b85fd](https://github.com/2401345934/vite-press/commit/38b85fd))
