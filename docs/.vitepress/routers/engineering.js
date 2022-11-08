@@ -99,4 +99,13 @@ export default [
       }
     ],
   },
+  {
+    text: 'Vite',
+    items: [
+      {
+        text: 'Vite项目屏幕适配的两种方案',
+        link: '/engineering/vite/screen-adaptation/',
+      }
+    ],
+  },
 ]
