@@ -73,6 +73,12 @@ export default [
     ]
   },
   {
+    text: 'Vue ',
+    items: [
+      { text: 'Vue3中操作dom的四种方式', link: '/interview-questions/vue/dom/' },
+    ]
+  },
+  {
     text: 'React ',
     items: [
       { text: '自定义hooks', link: '/interview-questions/react/hooks/' },

@@ -9,4 +9,4 @@
 * [x] 实现自己的 layout 组件
 * [x] 引入自己的组件库
 * [x] 通过自己的组件库 实现 backtop 在浏览器端
-* [ ] 基于 doc search 实现全文搜索功能
+* [x] 基于 doc search 实现全文搜索功能
