@@ -1,4 +1,4 @@
-## <small>1.1.11 (2022-11-08)</small>
+## <small>1.1.12 (2022-11-09)</small>
 
 * ⚡️性能(webpack): 修复令牌 ([ab89e15](https://github.com/2401345934/vite-press/commit/ab89e15))
 * ✨新增(config): 新增yml文件 ([be08d5f](https://github.com/2401345934/vite-press/commit/be08d5f))
@@ -17,6 +17,7 @@
 * ✨新增(doc/工作工具): 新增命令行工具和md工具 ([86a4efc](https://github.com/2401345934/vite-press/commit/86a4efc))
 * ✨新增(doc/工作工具): code-fun ([a84483e](https://github.com/2401345934/vite-press/commit/a84483e))
 * ✨新增(doc/面试题): 30到vue面试题合集 ([f3dd2a8](https://github.com/2401345934/vite-press/commit/f3dd2a8))
+* ✨新增(doc/面试题): 37道vue面试图补充 ([76f1672](https://github.com/2401345934/vite-press/commit/76f1672))
 * ✨新增(doc/面试题): 补充面试题合集 ([b1d8eae](https://github.com/2401345934/vite-press/commit/b1d8eae))
 * ✨新增(doc/面试题): 面试题集合 ([5a7d856](https://github.com/2401345934/vite-press/commit/5a7d856))
 * ✨新增(doc/面试题): 新增设计模式 ([55f75e7](https://github.com/2401345934/vite-press/commit/55f75e7))

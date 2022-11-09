@@ -93,6 +93,12 @@ export default [
     ]
   },
   {
+    text: 'Node ',
+    items: [
+      { text: '需要了解的nodejs知识', link: '/interview-questions/node/understand-start/' },
+    ]
+  },
+  {
     text: 'npm',
     items: [
       { text: '简介', link: '/interview-questions/npm/start/' },
