@@ -4,23 +4,27 @@ export default [
     items: [
       {
         text: 'http  vs https',
-        link: '/basic-quality/http-https/',
+        link: '/basic-quality/http/http-https/',
+      },
+      {
+        text: 'HTTP请求头',
+        link: '/basic-quality/http/http-headers/',
       },
       {
         text: 'HTTP 请求跨域问题',
-        link: '/basic-quality/cross-domain/',
+        link: '/basic-quality/http/cross-domain/',
       },
       {
         text: 'http 状态码都有哪些',
-        link: '/basic-quality/status-code/',
+        link: '/basic-quality/http/status-code/',
       },
       {
         text: 'http2.0 做了哪些改进 3.0',
-        link: '/basic-quality/http2-http3/',
+        link: '/basic-quality/http/http2-http3/',
       },
       {
         text: 'HTTP 及 TLS',
-        link: '/basic-quality/http-tls/',
+        link: '/basic-quality/http/http-tls/',
       },
     ],
   },

@@ -67,4 +67,4 @@ tag: 'HTTP'
 * 504 （网关超时）服务器作为网关或代理，但是没有及时从上游服务器收到请求
 * 505 （ HTTP 版本不受支持）服务器不支持请求中所用的 HTTP 协议版本
 
-![图片](../assets/status-code.webp)
+![图片](../../assets/status-code.webp)
