@@ -30,6 +30,7 @@
 * ✨新增(doc/面试题): node ([0669303](https://github.com/2401345934/vite-press/commit/0669303))
 * ✨新增(doc/面试题): vue ([20831b9](https://github.com/2401345934/vite-press/commit/20831b9))
 * ✨新增(doc/软能力): 软能力更新 ([c28c21d](https://github.com/2401345934/vite-press/commit/c28c21d))
+* ✨新增(doc/源码): 大幅度更新 vue源码 配图 配代码 ([d48d227](https://github.com/2401345934/vite-press/commit/d48d227))
 * ✨新增(doc/vite-component): 新增图片合并组建 ([e5e5e52](https://github.com/2401345934/vite-press/commit/e5e5e52))
 * ✨新增(package): 升级 alan-vite-component ([38b85fd](https://github.com/2401345934/vite-press/commit/38b85fd))
 * ✨新增(package): 新增算法常见面试题 ([3eee594](https://github.com/2401345934/vite-press/commit/3eee594))

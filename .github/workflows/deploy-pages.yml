@@ -45,7 +45,7 @@ jobs:
 
       # 运行构建脚本
       - name: Build VitePress site
-        run: npm run build
+        run: export NODE_OPTIONS=--max_old_space_size=8000 && npm run build
 
       # 查看 workflow 的文档来获取更多信息
       # @see https://github.com/crazy-max/ghaction-github-pages
