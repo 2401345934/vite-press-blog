@@ -12,6 +12,95 @@ tag: 'Vue源码'
 * 会用 comp._props 进行缓存 对一个组件重复执行 normalizePropsOptions 会返回 缓存的结果
 * 最后使用 instance.propsOptions 存储标准化结果 方便后续统一处理
 
+```ts
+export function normalizePropsOptions(
+  comp: ConcreteComponent,
+  appContext: AppContext,
+  asMixin = false
+): NormalizedPropsOptions {
+  const cache = appContext.propsCache
+  const cached = cache.get(comp)
+  if (cached) {
+    return cached
+  }
+
+  const raw = comp.props
+  const normalized: NormalizedPropsOptions[0] = {}
+  const needCastKeys: NormalizedPropsOptions[1] = []
+
+  // apply mixin/extends props
+  let hasExtends = false
+  if (__FEATURE_OPTIONS_API__ && !isFunction(comp)) {
+    const extendProps = (raw: ComponentOptions) => {
+      if (__COMPAT__ && isFunction(raw)) {
+        raw = raw.options
+      }
+      hasExtends = true
+      const [props, keys] = normalizePropsOptions(raw, appContext, true)
+      extend(normalized, props)
+      if (keys) needCastKeys.push(...keys)
+    }
+    if (!asMixin && appContext.mixins.length) {
+      appContext.mixins.forEach(extendProps)
+    }
+    if (comp.extends) {
+      extendProps(comp.extends)
+    }
+    if (comp.mixins) {
+      comp.mixins.forEach(extendProps)
+    }
+  }
+
+  if (!raw && !hasExtends) {
+    if (isObject(comp)) {
+      cache.set(comp, EMPTY_ARR as any)
+    }
+    return EMPTY_ARR as any
+  }
+
+  if (isArray(raw)) {
+    for (let i = 0; i < raw.length; i++) {
+      if (__DEV__ && !isString(raw[i])) {
+        warn(`props must be strings when using array syntax.`, raw[i])
+      }
+      const normalizedKey = camelize(raw[i])
+      if (validatePropName(normalizedKey)) {
+        normalized[normalizedKey] = EMPTY_OBJ
+      }
+    }
+  } else if (raw) {
+    if (__DEV__ && !isObject(raw)) {
+      warn(`invalid props options`, raw)
+    }
+    for (const key in raw) {
+      const normalizedKey = camelize(key)
+      if (validatePropName(normalizedKey)) {
+        const opt = raw[key]
+        const prop: NormalizedProp = (normalized[normalizedKey] =
+          isArray(opt) || isFunction(opt) ? { type: opt } : opt)
+        if (prop) {
+          const booleanIndex = getTypeIndex(Boolean, prop.type)
+          const stringIndex = getTypeIndex(String, prop.type)
+          prop[BooleanFlags.shouldCast] = booleanIndex > -1
+          prop[BooleanFlags.shouldCastTrue] =
+            stringIndex < 0 || booleanIndex < stringIndex
+          // if the prop needs boolean casting or default value
+          if (booleanIndex > -1 || hasOwn(prop, 'default')) {
+            needCastKeys.push(normalizedKey)
+          }
+        }
+      }
+    }
+  }
+
+  const res: NormalizedPropsOptions = [normalized, needCastKeys]
+  if (isObject(comp)) {
+    cache.set(comp, res)
+  }
+  return res
+}
+```
+
 ## props 值的初始化
 
 * 有了标准化的 props 配置 还需要根据配置对父组件传递的 props 数据做一些求值和验证 然后把结果 赋值到组件的实例上 过程就是 props 的初始化
@@ -29,10 +118,129 @@ tag: 'Vue源码'
   * 如果没有定义 判断这个 key 是否为非事件派发相关
   * 若是 则把它的值赋到 attrs 对象中作为普通属性
 
+```ts
+function setFullProps(
+  instance: ComponentInternalInstance,
+  rawProps: Data | null,
+  props: Data,
+  attrs: Data
+) {
+  const [options, needCastKeys] = instance.propsOptions
+  let hasAttrsChanged = false
+  let rawCastValues: Data | undefined
+  if (rawProps) {
+    for (let key in rawProps) {
+      // key, ref are reserved and never passed down
+      if (isReservedProp(key)) {
+        continue
+      }
+
+      if (__COMPAT__) {
+        if (key.startsWith('onHook:')) {
+          softAssertCompatEnabled(
+            DeprecationTypes.INSTANCE_EVENT_HOOKS,
+            instance,
+            key.slice(2).toLowerCase()
+          )
+        }
+        if (key === 'inline-template') {
+          continue
+        }
+      }
+
+      const value = rawProps[key]
+      // prop option names are camelized during normalization, so to support
+      // kebab -> camel conversion here we need to camelize the key.
+      let camelKey
+      if (options && hasOwn(options, (camelKey = camelize(key)))) {
+        if (!needCastKeys || !needCastKeys.includes(camelKey)) {
+          props[camelKey] = value
+        } else {
+          ;(rawCastValues || (rawCastValues = {}))[camelKey] = value
+        }
+      } else if (!isEmitListener(instance.emitsOptions, key)) {
+        // Any non-declared (either as a prop or an emitted event) props are put
+        // into a separate `attrs` object for spreading. Make sure to preserve
+        // original key casing
+        if (__COMPAT__) {
+          if (isOn(key) && key.endsWith('Native')) {
+            key = key.slice(0, -6) // remove Native postfix
+          } else if (shouldSkipAttr(key, instance)) {
+            continue
+          }
+        }
+        if (!(key in attrs) || value !== attrs[key]) {
+          attrs[key] = value
+          hasAttrsChanged = true
+        }
+      }
+    }
+  }
+
+  if (needCastKeys) {
+    const rawCurrentProps = toRaw(props)
+    const castValues = rawCastValues || EMPTY_OBJ
+    for (let i = 0; i < needCastKeys.length; i++) {
+      const key = needCastKeys[i]
+      props[key] = resolvePropValue(
+        options!,
+        rawCurrentProps,
+        key,
+        castValues[key],
+        instance,
+        !hasOwn(castValues, key)
+      )
+    }
+  }
+
+  return hasAttrsChanged
+}
+```
+
 ## 验证props
 
 * validateProp 函数用来检测 props 求的的值 是否合法 如不匹配则会抛出警告
 * validateProp 首先验证 required 情况  然后验证 prop 值的类型
+
+```ts
+function validateProp(
+  name: string,
+  value: unknown,
+  prop: PropOptions,
+  isAbsent: boolean
+) {
+  const { type, required, validator } = prop
+  // required!
+  if (required && isAbsent) {
+    warn('Missing required prop: "' + name + '"')
+    return
+  }
+  // missing but optional
+  if (value == null && !prop.required) {
+    return
+  }
+  // type check
+  if (type != null && type !== true) {
+    let isValid = false
+    const types = isArray(type) ? type : [type]
+    const expectedTypes = []
+    // value is valid as long as one of the specified types match
+    for (let i = 0; i < types.length && !isValid; i++) {
+      const { valid, expectedType } = assertType(value, types[i])
+      expectedTypes.push(expectedType || '')
+      isValid = valid
+    }
+    if (!isValid) {
+      warn(getInvalidTypeMessage(name, value, expectedTypes))
+      return
+    }
+  }
+  // custom validator
+  if (validator && !validator(value)) {
+    warn('Invalid prop: custom validator check failed for prop "' + name + '".')
+  }
+}
+```
 
 ## 响应式处理
 

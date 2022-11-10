@@ -28,12 +28,75 @@ tag: 'Vue源码'
   * 即使多次执行 queueJob或者 queueCb 添加任务
   * 也只是在宏任务执行完毕之后的微任务阶段执行一次 flushJobs
 
+```ts
+function queueFlush() {
+  if (!isFlushing && !isFlushPending) {
+    isFlushPending = true
+    currentFlushPromise = resolvedPromise.then(flushJobs)
+  }
+}
+```
+
 ## 异步任务队列的执行
 
 ### flushJobs
 
 * 一开始会把 isFlushPending 重置为 false 把 isFlushing 设置为 true 表示正在执行异步队列任务
 * 执行异步任务队列之前 queue 之前 先执行 flushPreFlushCbs 处理所有预处理任务队列
+
+```ts
+function flushJobs(seen?: CountMap) {
+  isFlushPending = false
+  isFlushing = true
+  if (__DEV__) {
+    seen = seen || new Map()
+  }
+
+  // Sort queue before flush.
+  // This ensures that:
+  // 1. Components are updated from parent to child. (because parent is always
+  //    created before the child so its render effect will have smaller
+  //    priority number)
+  // 2. If a component is unmounted during a parent component's update,
+  //    its update can be skipped.
+  queue.sort(comparator)
+
+  // conditional usage of checkRecursiveUpdate must be determined out of
+  // try ... catch block since Rollup by default de-optimizes treeshaking
+  // inside try-catch. This can leave all warning code unshaked. Although
+  // they would get eventually shaken by a minifier like terser, some minifiers
+  // would fail to do that (e.g. https://github.com/evanw/esbuild/issues/1610)
+  const check = __DEV__
+    ? (job: SchedulerJob) => checkRecursiveUpdates(seen!, job)
+    : NOOP
+
+  try {
+    for (flushIndex = 0; flushIndex < queue.length; flushIndex++) {
+      const job = queue[flushIndex]
+      if (job && job.active !== false) {
+        if (__DEV__ && check(job)) {
+          continue
+        }
+        // console.log(`running:`, job.id)
+        callWithErrorHandling(job, null, ErrorCodes.SCHEDULER)
+      }
+    }
+  } finally {
+    flushIndex = 0
+    queue.length = 0
+
+    flushPostFlushCbs(seen)
+
+    isFlushing = false
+    currentFlushPromise = null
+    // some postFlushCb queued jobs!
+    // keep flushing until it drains.
+    if (queue.length || pendingPostFlushCbs.length) {
+      flushJobs(seen)
+    }
+  }
+}
+```
 
 ### flushPreFlushCbs
 
@@ -43,6 +106,29 @@ tag: 'Vue源码'
 * 当 activePreFlushCbs执行完毕后 清空 activePreFlushCbs 将 preFlushIndex重置为 0
 * 由于 可能在 flushPreFlushCbs 执行过程中再次添加 pendingPreFlushCbs 所以需要递归执行 flushPreFlushCbs 直到 pendingPreFlushCbs 为空
 
+```ts
+export function flushPreFlushCbs(
+  seen?: CountMap,
+  // if currently flushing, skip the current job itself
+  i = isFlushing ? flushIndex + 1 : 0
+) {
+  if (__DEV__) {
+    seen = seen || new Map()
+  }
+  for (; i < queue.length; i++) {
+    const cb = queue[i]
+    if (cb && cb.pre) {
+      if (__DEV__ && checkRecursiveUpdates(seen!, cb)) {
+        continue
+      }
+      queue.splice(i, 1)
+      i--
+      cb()
+    }
+  }
+}
+```
+
 ### flushPostFlushCbs
 
 * flushPostFlushCbs 函数和 flushPreFlushCbs 的逻辑类似 主要就是执行一些后续处理的任务
@@ -51,9 +137,73 @@ tag: 'Vue源码'
   * activePostFlushCbs 中的任务在执行前会按照 id 大小排序 保证组件的数据更新优先于用户定义的 postwachers 回调函数的执行 用户就可以在 watcher 的回调函数中 访问更新后的 $refs 中的数据
   * queue 或者 activePostFlushCbs 中的 job 在执行过程中 还会再次向 pendingPreFlushCbs pendingPostFlushCbs 或者 queue 中再次添加一些新的 job  ， 为了保证新添加的 pendingPostFlushCbs 后执行 不能再 flushPostFlushCbs 结束后执行   flushPostFlushCbs 函数
 
+```ts
+export function flushPostFlushCbs(seen?: CountMap) {
+  if (pendingPostFlushCbs.length) {
+    const deduped = [...new Set(pendingPostFlushCbs)]
+    pendingPostFlushCbs.length = 0
+
+    // #1947 already has active queue, nested flushPostFlushCbs call
+    if (activePostFlushCbs) {
+      activePostFlushCbs.push(...deduped)
+      return
+    }
+
+    activePostFlushCbs = deduped
+    if (__DEV__) {
+      seen = seen || new Map()
+    }
+
+    activePostFlushCbs.sort((a, b) => getId(a) - getId(b))
+
+    for (
+      postFlushIndex = 0;
+      postFlushIndex < activePostFlushCbs.length;
+      postFlushIndex++
+    ) {
+      if (
+        __DEV__ &&
+        checkRecursiveUpdates(seen!, activePostFlushCbs[postFlushIndex])
+      ) {
+        continue
+      }
+      activePostFlushCbs[postFlushIndex]()
+    }
+    activePostFlushCbs = null
+    postFlushIndex = 0
+  }
+}
+```
+
 ## 检查循环更新
 
 ### checkRecursiveUpdates
 
 * flushJobs 一开始创建了 seen 是一个 map 对象  然后在 checkRecursiveUpdates 的时候
 * 会把任务添加到 seen 中并记录引用计数 count  初始值 为 1 如果再次添加相同的任务 会自增 如果 count 大于了 我们定义的 限制 100 就说明可能存在无限更新的情况
+
+```ts
+function checkRecursiveUpdates(seen: CountMap, fn: SchedulerJob) {
+  if (!seen.has(fn)) {
+    seen.set(fn, 1)
+  } else {
+    const count = seen.get(fn)!
+    if (count > RECURSION_LIMIT) {
+      const instance = fn.ownerInstance
+      const componentName = instance && getComponentName(instance.type)
+      warn(
+        `Maximum recursive updates exceeded${
+          componentName ? ` in component <${componentName}>` : ``
+        }. ` +
+          `This means you have a reactive effect that is mutating its own ` +
+          `dependencies and thus recursively triggering itself. Possible sources ` +
+          `include component template, render function, updated hook or ` +
+          `watcher source function.`
+      )
+      return true
+    } else {
+      seen.set(fn, count + 1)
+    }
+  }
+}
+```

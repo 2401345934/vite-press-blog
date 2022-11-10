@@ -12,3 +12,22 @@ tag: 'Vue源码'
   * type ： 0 表示是一个根节点类型
   * children： 就是前面解析的 子节点 nodes 数组
 * 根节点还添加了其他的属性
+
+```ts
+function createRoot(options: Partial<RootNode> = {}): RootNode {
+  return {
+    type: NodeTypes.ROOT,
+    children: [],
+    helpers: [],
+    components: [],
+    directives: [],
+    imports: [],
+    hoists: [],
+    cached: 0,
+    temps: 0,
+    codegenNode: createSimpleExpression(`null`, false),
+    loc: locStub,
+    ...options
+  }
+}
+```

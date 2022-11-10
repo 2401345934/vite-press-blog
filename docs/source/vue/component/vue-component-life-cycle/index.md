@@ -27,11 +27,71 @@ tag: 'Vue源码'
 * 都是通过 createHook 注册
 * 会返回一个函数 内部通过 injectHook 注册钩子函数
 
+```ts
+export function injectHook(
+  type: LifecycleHooks,
+  hook: Function & { __weh?: Function },
+  target: ComponentInternalInstance | null = currentInstance,
+  prepend: boolean = false
+): Function | undefined {
+  if (target) {
+    const hooks = target[type] || (target[type] = [])
+    // cache the error handling wrapper for injected hooks so the same hook
+    // can be properly deduped by the scheduler. "__weh" stands for "with error
+    // handling".
+    const wrappedHook =
+      hook.__weh ||
+      (hook.__weh = (...args: unknown[]) => {
+        if (target.isUnmounted) {
+          return
+        }
+        // disable tracking inside all lifecycle hooks
+        // since they can potentially be called inside effects.
+        pauseTracking()
+        // Set currentInstance during hook invocation.
+        // This assumes the hook does not synchronously trigger other hooks, which
+        // can only be false when the user does something really funky.
+        setCurrentInstance(target)
+        const res = callWithAsyncErrorHandling(hook, target, type, args)
+        unsetCurrentInstance()
+        resetTracking()
+        return res
+      })
+    if (prepend) {
+      hooks.unshift(wrappedHook)
+    } else {
+      hooks.push(wrappedHook)
+    }
+    return wrappedHook
+  } else if (__DEV__) {
+    const apiName = toHandlerKey(ErrorTypeStrings[type].replace(/ hook$/, ''))
+    warn(
+      `${apiName} is called when there is no active component instance to be ` +
+        `associated with. ` +
+        `Lifecycle injection APIs can only be used during execution of setup().` +
+        (__FEATURE_SUSPENSE__
+          ? ` If you are using async setup(), make sure to register lifecycle ` +
+            `hooks before the first await statement.`
+          : ``)
+    )
+  }
+}
+```
+
 ## injectHook
 
 * 对用户注册的钩子函数 hook 做了一层封装
 * 然后添加到一个数组中 并把数组保存到当前组件的实例的 target 上
 * 不同类型的钩子函数会被保存到组件实例的不同属性上
+
+```ts
+export const createHook =
+  <T extends Function = () => any>(lifecycle: LifecycleHooks) =>
+  (hook: T, target: ComponentInternalInstance | null = currentInstance) =>
+    // post-create lifecycle registrations are noops during SSR (except for serverPrefetch)
+    (!isInSSRComponentSetup || lifecycle === LifecycleHooks.SERVER_PREFETCH) &&
+    injectHook(lifecycle, (...args: unknown[]) => hook(...args), target)
+```
 
 ## onBeforeMount 和 onMounted
 

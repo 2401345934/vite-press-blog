@@ -22,6 +22,16 @@ tag: 'Vue源码'
 * 内部也是通过 doWatch 函数实现的
 * getter 函数就是对 source 函数 简单封装  会先判断组件的实例是否已经注销 然后每次执行 source 函数前执行 cleanup 清理函数
 
+```ts
+// Simple effect.
+export function watchEffect(
+  effect: WatchEffect,
+  options?: WatchOptionsBase
+): WatchStopHandle {
+  return doWatch(effect, null, options)
+}
+```
+
 ## 注册无效回调函数 onInvalidate
 
 * 可以利用 watchEffect 注册一个副作用函数  有一个 onInvalidate 参数

@@ -23,3 +23,94 @@ tag: 'Vue源码'
 * 在 ComputeRefImpl 内部 对实例的 value 属性创建了 getter 和 setter 当 computed 对象的 value 属性被访问过之后 触发 getter 函数 对计算属性本身进行依赖收集
 * 然后判断是否 _dirtry 如果是 执行 effect.run 函数重置_dirtry 的值
 * 当我们直接设置 computed 对象的值 会触发 setter 执行 compunted 函数内部定义的 setter 函数
+
+```ts
+export class ReactiveEffect<T = any> {
+  active = true
+  deps: Dep[] = []
+  parent: ReactiveEffect | undefined = undefined
+
+  /**
+   * Can be attached after creation
+   * @internal
+   */
+  computed?: ComputedRefImpl<T>
+  /**
+   * @internal
+   */
+  allowRecurse?: boolean
+  /**
+   * @internal
+   */
+  private deferStop?: boolean
+
+  onStop?: () => void
+  // dev only
+  onTrack?: (event: DebuggerEvent) => void
+  // dev only
+  onTrigger?: (event: DebuggerEvent) => void
+
+  constructor(
+    public fn: () => T,
+    public scheduler: EffectScheduler | null = null,
+    scope?: EffectScope
+  ) {
+    recordEffectScope(this, scope)
+  }
+
+  run() {
+    if (!this.active) {
+      return this.fn()
+    }
+    let parent: ReactiveEffect | undefined = activeEffect
+    let lastShouldTrack = shouldTrack
+    while (parent) {
+      if (parent === this) {
+        return
+      }
+      parent = parent.parent
+    }
+    try {
+      this.parent = activeEffect
+      activeEffect = this
+      shouldTrack = true
+
+      trackOpBit = 1 << ++effectTrackDepth
+
+      if (effectTrackDepth <= maxMarkerBits) {
+        initDepMarkers(this)
+      } else {
+        cleanupEffect(this)
+      }
+      return this.fn()
+    } finally {
+      if (effectTrackDepth <= maxMarkerBits) {
+        finalizeDepMarkers(this)
+      }
+
+      trackOpBit = 1 << --effectTrackDepth
+
+      activeEffect = this.parent
+      shouldTrack = lastShouldTrack
+      this.parent = undefined
+
+      if (this.deferStop) {
+        this.stop()
+      }
+    }
+  }
+
+  stop() {
+    // stopped while running itself - defer the cleanup
+    if (activeEffect === this) {
+      this.deferStop = true
+    } else if (this.active) {
+      cleanupEffect(this)
+      if (this.onStop) {
+        this.onStop()
+      }
+      this.active = false
+    }
+  }
+}
+```

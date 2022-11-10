@@ -8,6 +8,24 @@ tag: 'Vue源码'
 * reactive 函数拥有单个参数 target 必须是对象或者数据类型
 * 内部通过了 createReactiveObject 函数执行 把 target 变成一个响应式对象
 
+```ts
+export function reactive<T extends object>(target: T): UnwrapNestedRefs<T>
+export function reactive(target: object) {
+  // if trying to observe a readonly proxy, return the readonly version.
+  if (isReadonly(target)) {
+    return target
+  }
+  return createReactiveObject(
+    target,
+    false,
+    mutableHandlers,
+    mutableCollectionHandlers,
+    reactiveMap
+  )
+}
+
+```
+
 ## createReactiveObject
 
 * createReactiveObject 拥有 5个参数
@@ -28,6 +46,49 @@ tag: 'Vue源码'
 * 把原始对象 target 作为 key 响应式对象 proxy 作为 value 存储到 map 类型的对象 proxyMap
   * 这就是为什么多次执行 reactive 函数返回同一个对象
 
+```ts
+
+function createReactiveObject(
+  target: Target,
+  isReadonly: boolean,
+  baseHandlers: ProxyHandler<any>,
+  collectionHandlers: ProxyHandler<any>,
+  proxyMap: WeakMap<Target, any>
+) {
+  if (!isObject(target)) {
+    if (__DEV__) {
+      console.warn(`value cannot be made reactive: ${String(target)}`)
+    }
+    return target
+  }
+  // target is already a Proxy, return it.
+  // exception: calling readonly() on a reactive object
+  if (
+    target[ReactiveFlags.RAW] &&
+    !(isReadonly && target[ReactiveFlags.IS_REACTIVE])
+  ) {
+    return target
+  }
+  // target already has corresponding Proxy
+  const existingProxy = proxyMap.get(target)
+  if (existingProxy) {
+    return existingProxy
+  }
+  // only specific value types can be observed.
+  const targetType = getTargetType(target)
+  if (targetType === TargetType.INVALID) {
+    return target
+  }
+  const proxy = new Proxy(
+    target,
+    targetType === TargetType.COLLECTION ? collectionHandlers : baseHandlers
+  )
+  proxyMap.set(target, proxy)
+  return proxy
+}
+
+```
+
 ## mutableHandlers
 
 * 劫持了对 proxy 对象对一些操作
@@ -36,3 +97,14 @@ tag: 'Vue源码'
 * 删除对象属性会触发 deleteProperty 函数
 * in 操作符会触发 has 函数
 * Object.getOwnPropertyNames 访问对象属性触发 ownKeys 函数
+
+```ts
+export const mutableHandlers: ProxyHandler<object> = {
+  get,
+  set,
+  deleteProperty,
+  has,
+  ownKeys
+}
+
+```

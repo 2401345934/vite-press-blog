@@ -28,3 +28,41 @@ tag: 'Vue源码'
 * dep 集合 中存储的是依赖的副作用函数
 * 每次执行  track 函数 就会把当前激活副作用函数 activeEffect 作为依赖
 * 收集到 与target 相关的 depsMap 对应 key 下的依赖集合 dep 中
+
+```ts
+
+const arrayInstrumentations = /*#__PURE__*/ createArrayInstrumentations()
+
+function createArrayInstrumentations() {
+  const instrumentations: Record<string, Function> = {}
+  // instrument identity-sensitive Array methods to account for possible reactive
+  // values
+  ;(['includes', 'indexOf', 'lastIndexOf'] as const).forEach(key => {
+    instrumentations[key] = function (this: unknown[], ...args: unknown[]) {
+      const arr = toRaw(this) as any
+      for (let i = 0, l = this.length; i < l; i++) {
+        track(arr, TrackOpTypes.GET, i + '')
+      }
+      // we run the method using the original args first (which may be reactive)
+      const res = arr[key](...args)
+      if (res === -1 || res === false) {
+        // if that didn't work, run it again using raw values.
+        return arr[key](...args.map(toRaw))
+      } else {
+        return res
+      }
+    }
+  })
+  // instrument length-altering mutation methods to avoid length being tracked
+  // which leads to infinite loops in some cases (#2137)
+  ;(['push', 'pop', 'shift', 'unshift', 'splice'] as const).forEach(key => {
+    instrumentations[key] = function (this: unknown[], ...args: unknown[]) {
+      pauseTracking()
+      const res = (toRaw(this) as any)[key].apply(this, args)
+      resetTracking()
+      return res
+    }
+  })
+  return instrumentations
+}
+```

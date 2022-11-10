@@ -1,4 +1,4 @@
-## <small>1.1.14 (2022-11-10)</small>
+## <small>1.1.15 (2022-11-10)</small>
 
 * ⚡️性能(webpack): 修复令牌 ([ab89e15](https://github.com/2401345934/vite-press/commit/ab89e15))
 * ✨新增(config): 新增yml文件 ([be08d5f](https://github.com/2401345934/vite-press/commit/be08d5f))
@@ -21,6 +21,7 @@
 * ✨新增(doc/面试题): 补充面试题合集 ([b1d8eae](https://github.com/2401345934/vite-press/commit/b1d8eae))
 * ✨新增(doc/面试题): 面试题集合 ([5a7d856](https://github.com/2401345934/vite-press/commit/5a7d856))
 * ✨新增(doc/面试题): 新增设计模式 ([55f75e7](https://github.com/2401345934/vite-press/commit/55f75e7))
+* ✨新增(doc/面试题): 性能优化 ([df358f8](https://github.com/2401345934/vite-press/commit/df358f8))
 * ✨新增(doc/面试题): 性能优化 \& 埋点 ([1b1be4e](https://github.com/2401345934/vite-press/commit/1b1be4e))
 * ✨新增(doc/面试题): 修改 http 目录结构 ([374f7e5](https://github.com/2401345934/vite-press/commit/374f7e5))
 * ✨新增(doc/面试题): js \& 网络 \& html \& css ([4306336](https://github.com/2401345934/vite-press/commit/4306336))

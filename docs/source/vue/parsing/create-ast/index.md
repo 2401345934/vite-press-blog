@@ -17,12 +17,89 @@ tag: 'Vue源码'
   * options 一些配置信息
 * compile 内部通过 baseCompile 函数完成编译工作 可以看到 baseCompile 在参数 options 的基础上又拓展了一些配置
 
+```ts
+export function compileSFCScript(
+  src: string,
+  options?: Partial<SFCScriptCompileOptions>,
+  parseOptions?: SFCParseOptions
+) {
+  const { descriptor } = parse(src, parseOptions)
+  return compileScript(descriptor, {
+    ...options,
+    id: mockId
+  })
+}
+```
+
 ## baseCompile
 
 * 主要做了三件事
   * 解析 template 生成 AST  抽象语法树
   * AST 转换
   * 生成代码
+
+```ts
+// we name it `baseCompile` so that higher order compilers like
+// @vue/compiler-dom can export `compile` while re-exporting everything else.
+export function baseCompile(
+  template: string | RootNode,
+  options: CompilerOptions = {}
+): CodegenResult {
+  const onError = options.onError || defaultOnError
+  const isModuleMode = options.mode === 'module'
+  /* istanbul ignore if */
+  if (__BROWSER__) {
+    if (options.prefixIdentifiers === true) {
+      onError(createCompilerError(ErrorCodes.X_PREFIX_ID_NOT_SUPPORTED))
+    } else if (isModuleMode) {
+      onError(createCompilerError(ErrorCodes.X_MODULE_MODE_NOT_SUPPORTED))
+    }
+  }
+
+  const prefixIdentifiers =
+    !__BROWSER__ && (options.prefixIdentifiers === true || isModuleMode)
+  if (!prefixIdentifiers && options.cacheHandlers) {
+    onError(createCompilerError(ErrorCodes.X_CACHE_HANDLER_NOT_SUPPORTED))
+  }
+  if (options.scopeId && !isModuleMode) {
+    onError(createCompilerError(ErrorCodes.X_SCOPE_ID_NOT_SUPPORTED))
+  }
+
+  const ast = isString(template) ? baseParse(template, options) : template
+  const [nodeTransforms, directiveTransforms] =
+    getBaseTransformPreset(prefixIdentifiers)
+
+  if (!__BROWSER__ && options.isTS) {
+    const { expressionPlugins } = options
+    if (!expressionPlugins || !expressionPlugins.includes('typescript')) {
+      options.expressionPlugins = [...(expressionPlugins || []), 'typescript']
+    }
+  }
+
+  transform(
+    ast,
+    extend({}, options, {
+      prefixIdentifiers,
+      nodeTransforms: [
+        ...nodeTransforms,
+        ...(options.nodeTransforms || []) // user transforms
+      ],
+      directiveTransforms: extend(
+        {},
+        directiveTransforms,
+        options.directiveTransforms || {} // user transforms
+      )
+    })
+  )
+
+  return generate(
+    ast,
+    extend({}, options, {
+      prefixIdentifiers
+    })
+  )
+}
+```
 
 ## 生成 AST
 
@@ -50,3 +127,18 @@ tag: 'Vue源码'
   * 创建解析上下文
   * 解析子节点
   * 创建AST 根节点
+
+```ts
+export function baseParse(
+  content: string,
+  options: ParserOptions = {}
+): RootNode {
+  const context = createParserContext(content, options)
+  const start = getCursor(context)
+  return createRoot(
+    parseChildren(context, TextModes.DATA, []),
+    getSelection(context, start)
+  )
+}
+
+```

@@ -24,3 +24,45 @@ tag: 'Vue源码'
 
 * 内部会缓存上次的计算结果 value  只有 _dirtry 为 true 的时候才会重新计算
 * 如果访问计算属性时_dirtry  为 false  直接返回 缓存的 value
+
+```ts
+export function computed<T>(
+  getter: ComputedGetter<T>,
+  debugOptions?: DebuggerOptions
+): ComputedRef<T>
+export function computed<T>(
+  options: WritableComputedOptions<T>,
+  debugOptions?: DebuggerOptions
+): WritableComputedRef<T>
+export function computed<T>(
+  getterOrOptions: ComputedGetter<T> | WritableComputedOptions<T>,
+  debugOptions?: DebuggerOptions,
+  isSSR = false
+) {
+  let getter: ComputedGetter<T>
+  let setter: ComputedSetter<T>
+
+  const onlyGetter = isFunction(getterOrOptions)
+  if (onlyGetter) {
+    getter = getterOrOptions
+    setter = __DEV__
+      ? () => {
+          console.warn('Write operation failed: computed value is readonly')
+        }
+      : NOOP
+  } else {
+    getter = getterOrOptions.get
+    setter = getterOrOptions.set
+  }
+
+  const cRef = new ComputedRefImpl(getter, setter, onlyGetter || !setter, isSSR)
+
+  if (__DEV__ && debugOptions && !isSSR) {
+    cRef.effect.onTrack = debugOptions.onTrack
+    cRef.effect.onTrigger = debugOptions.onTrigger
+  }
+
+  return cRef as any
+}
+
+```

@@ -13,11 +13,97 @@ tag: 'Vue源码'
 
 ## 如何创建 vnode
 
-createBaseVNode
+### createBaseVNode
 
 1. 用来创建基础的 vnode 对象
 2. 根据传入的参数 创建一个 vnode 对象 可以完整的描述该节点的信息
 3. 如果参数 needFullChildrenNormalization 为 true 还会执行 normalizeChildren 去标准化子节点
+
+```ts
+function createBaseVNode(
+  type: VNodeTypes | ClassComponent | typeof NULL_DYNAMIC_COMPONENT,
+  props: (Data & VNodeProps) | null = null,
+  children: unknown = null,
+  patchFlag = 0,
+  dynamicProps: string[] | null = null,
+  shapeFlag = type === Fragment ? 0 : ShapeFlags.ELEMENT,
+  isBlockNode = false,
+  needFullChildrenNormalization = false
+) {
+  const vnode = {
+    __v_isVNode: true,
+    __v_skip: true,
+    type,
+    props,
+    key: props && normalizeKey(props),
+    ref: props && normalizeRef(props),
+    scopeId: currentScopeId,
+    slotScopeIds: null,
+    children,
+    component: null,
+    suspense: null,
+    ssContent: null,
+    ssFallback: null,
+    dirs: null,
+    transition: null,
+    el: null,
+    anchor: null,
+    target: null,
+    targetAnchor: null,
+    staticCount: 0,
+    shapeFlag,
+    patchFlag,
+    dynamicProps,
+    dynamicChildren: null,
+    appContext: null
+  } as VNode
+
+  if (needFullChildrenNormalization) {
+    normalizeChildren(vnode, children)
+    // normalize suspense children
+    if (__FEATURE_SUSPENSE__ && shapeFlag & ShapeFlags.SUSPENSE) {
+      ;(type as typeof SuspenseImpl).normalize(vnode)
+    }
+  } else if (children) {
+    // compiled element vnode - if children is passed, only possible types are
+    // string or Array.
+    vnode.shapeFlag |= isString(children)
+      ? ShapeFlags.TEXT_CHILDREN
+      : ShapeFlags.ARRAY_CHILDREN
+  }
+
+  // validate key
+  if (__DEV__ && vnode.key !== vnode.key) {
+    warn(`VNode created with invalid key (NaN). VNode type:`, vnode.type)
+  }
+
+  // track vnode for block tree
+  if (
+    isBlockTreeEnabled > 0 &&
+    // avoid a block node from tracking itself
+    !isBlockNode &&
+    // has current parent block
+    currentBlock &&
+    // presence of a patch flag indicates this node needs patching on updates.
+    // component nodes also should always be patched, because even if the
+    // component doesn't need to update, it needs to persist the instance on to
+    // the next vnode so that it can be properly unmounted later.
+    (vnode.patchFlag > 0 || shapeFlag & ShapeFlags.COMPONENT) &&
+    // the EVENTS flag is only for hydration and if it is the only flag, the
+    // vnode should not be considered dynamic due to handler caching.
+    vnode.patchFlag !== PatchFlags.HYDRATE_EVENTS
+  ) {
+    currentBlock.push(vnode)
+  }
+
+  if (__COMPAT__) {
+    convertLegacyVModelProps(vnode)
+    defineLegacyVNodeProperties(vnode)
+  }
+
+  return vnode
+}
+```
 
 ### createVNode
 
@@ -29,6 +115,107 @@ createBaseVNode
 6. render 函数内部会执行 createBaseVNode 创建普通元素的 vnode 执行 createVNode 创建组件的 vnode
 7. vnode 之间是有父子关系的 createBaseVNode createVNode 第三个参数表示子节点的 vnode
 8. 通过父子关系的建立 组件内部的 vnode 实际就构成了一颗 vnode 树 和模版中的 DOM 一一映射
+
+```ts
+function _createVNode(
+  type: VNodeTypes | ClassComponent | typeof NULL_DYNAMIC_COMPONENT,
+  props: (Data & VNodeProps) | null = null,
+  children: unknown = null,
+  patchFlag: number = 0,
+  dynamicProps: string[] | null = null,
+  isBlockNode = false
+): VNode {
+  if (!type || type === NULL_DYNAMIC_COMPONENT) {
+    if (__DEV__ && !type) {
+      warn(`Invalid vnode type when creating vnode: ${type}.`)
+    }
+    type = Comment
+  }
+
+  if (isVNode(type)) {
+    // createVNode receiving an existing vnode. This happens in cases like
+    // <component :is="vnode"/>
+    // #2078 make sure to merge refs during the clone instead of overwriting it
+    const cloned = cloneVNode(type, props, true /* mergeRef: true */)
+    if (children) {
+      normalizeChildren(cloned, children)
+    }
+    if (isBlockTreeEnabled > 0 && !isBlockNode && currentBlock) {
+      if (cloned.shapeFlag & ShapeFlags.COMPONENT) {
+        currentBlock[currentBlock.indexOf(type)] = cloned
+      } else {
+        currentBlock.push(cloned)
+      }
+    }
+    cloned.patchFlag |= PatchFlags.BAIL
+    return cloned
+  }
+
+  // class component normalization.
+  if (isClassComponent(type)) {
+    type = type.__vccOpts
+  }
+
+  // 2.x async/functional component compat
+  if (__COMPAT__) {
+    type = convertLegacyComponent(type, currentRenderingInstance)
+  }
+
+  // class & style normalization.
+  if (props) {
+    // for reactive or proxy objects, we need to clone it to enable mutation.
+    props = guardReactiveProps(props)!
+    let { class: klass, style } = props
+    if (klass && !isString(klass)) {
+      props.class = normalizeClass(klass)
+    }
+    if (isObject(style)) {
+      // reactive state objects need to be cloned since they are likely to be
+      // mutated
+      if (isProxy(style) && !isArray(style)) {
+        style = extend({}, style)
+      }
+      props.style = normalizeStyle(style)
+    }
+  }
+
+  // encode the vnode type information into a bitmap
+  const shapeFlag = isString(type)
+    ? ShapeFlags.ELEMENT
+    : __FEATURE_SUSPENSE__ && isSuspense(type)
+    ? ShapeFlags.SUSPENSE
+    : isTeleport(type)
+    ? ShapeFlags.TELEPORT
+    : isObject(type)
+    ? ShapeFlags.STATEFUL_COMPONENT
+    : isFunction(type)
+    ? ShapeFlags.FUNCTIONAL_COMPONENT
+    : 0
+
+  if (__DEV__ && shapeFlag & ShapeFlags.STATEFUL_COMPONENT && isProxy(type)) {
+    type = toRaw(type)
+    warn(
+      `Vue received a Component which was made a reactive object. This can ` +
+        `lead to unnecessary performance overhead, and should be avoided by ` +
+        `marking the component with \`markRaw\` or using \`shallowRef\` ` +
+        `instead of \`ref\`.`,
+      `\nComponent that was made reactive: `,
+      type
+    )
+  }
+
+  return createBaseVNode(
+    type,
+    props,
+    children,
+    patchFlag,
+    dynamicProps,
+    shapeFlag,
+    isBlockNode,
+    true
+  )
+}
+```
 
 ## 组件的挂载
 
@@ -44,6 +231,85 @@ createBaseVNode
 2. container 组件挂载的父节点
 3. anchor 表示挂载的参考锚点
 4. parentComponent 父组件的示例
+
+```ts
+  const mountComponent: MountComponentFn = (
+    initialVNode,
+    container,
+    anchor,
+    parentComponent,
+    parentSuspense,
+    isSVG,
+    optimized
+  ) => {
+    // 2.x compat may pre-create the component instance before actually
+    // mounting
+    const compatMountInstance =
+      __COMPAT__ && initialVNode.isCompatRoot && initialVNode.component
+    const instance: ComponentInternalInstance =
+      compatMountInstance ||
+      (initialVNode.component = createComponentInstance(
+        initialVNode,
+        parentComponent,
+        parentSuspense
+      ))
+
+    if (__DEV__ && instance.type.__hmrId) {
+      registerHMR(instance)
+    }
+
+    if (__DEV__) {
+      pushWarningContext(initialVNode)
+      startMeasure(instance, `mount`)
+    }
+
+    // inject renderer internals for keepAlive
+    if (isKeepAlive(initialVNode)) {
+      ;(instance.ctx as KeepAliveContext).renderer = internals
+    }
+
+    // resolve props and slots for setup context
+    if (!(__COMPAT__ && compatMountInstance)) {
+      if (__DEV__) {
+        startMeasure(instance, `init`)
+      }
+      setupComponent(instance)
+      if (__DEV__) {
+        endMeasure(instance, `init`)
+      }
+    }
+
+    // setup() is async. This component relies on async logic to be resolved
+    // before proceeding
+    if (__FEATURE_SUSPENSE__ && instance.asyncDep) {
+      parentSuspense && parentSuspense.registerDep(instance, setupRenderEffect)
+
+      // Give it a placeholder if this is not hydration
+      // TODO handle self-defined fallback
+      if (!initialVNode.el) {
+        const placeholder = (instance.subTree = createVNode(Comment))
+        processCommentNode(null, placeholder, container!, anchor)
+      }
+      return
+    }
+
+    setupRenderEffect(
+      instance,
+      initialVNode,
+      container,
+      anchor,
+      parentSuspense,
+      isSVG,
+      optimized
+    )
+
+    if (__DEV__) {
+      popWarningContext()
+      endMeasure(instance, `mount`)
+    }
+  }
+
+```
 
 ### 应用程序初始化
 

@@ -73,9 +73,12 @@ export default [
   {
     text: 'cicd',
     items: [
-     
       {
         text: 'gitlab CiCd',
+        link: '/engineering/cicd/gitlab-cicd-start/',
+      },
+      {
+        text: 'GitLab CI 从入门到实践',
         link: '/engineering/cicd/gitlab-cicd/',
       },
       {
@@ -118,6 +121,28 @@ export default [
       {
         text: 'Vite项目屏幕适配的两种方案',
         link: '/engineering/vite/screen-adaptation/',
+      }
+    ],
+  },
+  {
+    text: 'GitHub',
+    items: [
+      {
+        text: '代码同步 Github 和 Gitee',
+        link: '/engineering/github/github-gitee/',
+      },
+      {
+        text: 'actions',
+        link: '/engineering/github/actions/',
+      }
+    ],
+  },
+  {
+    text: 'Markdown',
+    items: [
+      {
+        text: 'hard-line-breaks',
+        link: '/engineering/Markdown/details/',
       }
     ],
   },

@@ -77,6 +77,16 @@ export default [
           { text: 'AST 转换总结', link: '/source/vue/ast-transform/conclusion/' },
         ]
       },
+      {
+        text: '生成代码',
+        items: [
+          { text: '生成代码', link: '/source/vue/create-code/1/' },
+          { text: '创建代码生成上下文', link: '/source/vue/create-code/2/' },
+          { text: '生成预设代码', link: '/source/vue/create-code/3/' },
+          { text: '生成预设代码', link: '/source/vue/create-code/4/' },
+          { text: '生成资源声明代码', link: '/source/vue/create-code/5/' },
+        ]
+      },
     ]
   },
 ]
