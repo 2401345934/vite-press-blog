@@ -128,6 +128,10 @@ export default [
     text: 'GitHub',
     items: [
       {
+        text: 'GitHub Pages部署报错：JavaScript heap out of memory',
+        link: '/engineering/github/pages-js-memory/',
+      },
+      {
         text: '代码同步 Github 和 Gitee',
         link: '/engineering/github/github-gitee/',
       },
