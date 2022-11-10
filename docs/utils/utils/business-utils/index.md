@@ -1544,3 +1544,25 @@ function firstPromise(promiseFunction) {
   };
 }
 ```
+
+## 获取获取字符串的宽度
+
+```js
+// 获取获取字符串的宽度代码： 
+getTextWidth(textStr,fontSize = 14) {
+    // 创建一个临时的 div 标签
+    const div = document.createElement('div');
+    // 将文本追加到元素中
+    div.innerText = textStr;
+    // 设置字体大小
+    div.style.fontSize = `${fontSize}px`;
+    // 追加到 body 中
+    document.body.appendChild(div);
+    // 获取元素的宽度
+    const width = div.offsetWidth;
+    // 移除临时标签
+    document.body.removeChild(div);
+    return width
+},
+
+```

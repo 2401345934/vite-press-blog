@@ -4,6 +4,7 @@ export default [
     items: [
       { text: '渲染控制', link: '/source/react/render/' },
       { text: '事件机制', link: '/source/react/event-mechanism/' },
+      { text: '协调与调度 ', link: '/source/react/coordination-scheduling/' },
       { text: 'Hooks原理', link: '/source/react/hooks/' },
     ]
   },

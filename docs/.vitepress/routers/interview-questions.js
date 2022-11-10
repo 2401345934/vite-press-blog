@@ -62,6 +62,7 @@ export default [
         text: 'JS优化',
         items: [
           { text: '减少引用类型内存访问', link: '/interview-questions/performance-optimization/js/reference-memory-access/' },
+          { text: '何减少卡顿的代码', link: '/interview-questions/performance-optimization/js/reduce-stuttering-code/' },
         ]
       },
       {

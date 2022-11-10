@@ -2,7 +2,7 @@
 createTime: 2022/10/19
 tag: 'React源码'
 ---
-# 渲染控制
+# 协调与调度
 
 ## render阶段作用是什么？
 
