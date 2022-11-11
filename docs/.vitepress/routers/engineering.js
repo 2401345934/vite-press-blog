@@ -128,10 +128,6 @@ export default [
     text: 'GitHub',
     items: [
       {
-        text: 'GitHub Pages部署报错：JavaScript heap out of memory',
-        link: '/engineering/github/pages-js-memory/',
-      },
-      {
         text: '代码同步 Github 和 Gitee',
         link: '/engineering/github/github-gitee/',
       },
@@ -139,6 +135,24 @@ export default [
         text: 'actions',
         link: '/engineering/github/actions/',
       }
+    ],
+  },
+  {
+    text: '部署',
+    items: [
+      {
+        text: 'GitHub Pages部署报错：JavaScript heap out of memory',
+        link: '/engineering/deployment/pages-js-memory/',
+      },
+    ],
+  },
+  {
+    text: '适配',
+    items: [
+      {
+        text: '数据大屏适配方案',
+        link: '/engineering/adapter/data-screen/',
+      },
     ],
   },
   {

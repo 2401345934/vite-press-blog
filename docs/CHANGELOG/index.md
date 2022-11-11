@@ -1,4 +1,4 @@
-## <small>1.1.15 (2022-11-10)</small>
+## <small>1.1.16 (2022-11-11)</small>
 
 * ⚡️性能(webpack): 修复令牌 ([ab89e15](https://github.com/2401345934/vite-press/commit/ab89e15))
 * ✨新增(config): 新增yml文件 ([be08d5f](https://github.com/2401345934/vite-press/commit/be08d5f))
@@ -128,6 +128,8 @@
 * 修改标题 deep ([910f2ab](https://github.com/2401345934/vite-press/commit/910f2ab))
 * 修改默认进入路径和增加tcp握手挥手 ([d9bcb29](https://github.com/2401345934/vite-press/commit/d9bcb29))
 * 修改Valine ([fec0ce9](https://github.com/2401345934/vite-press/commit/fec0ce9))
+* 修改workflows内存 ([069be0c](https://github.com/2401345934/vite-press/commit/069be0c))
+* 增加解决github page 内存报错的思考 ([7327fec](https://github.com/2401345934/vite-press/commit/7327fec))
 * 增加了性能优化篇 ([36cc771](https://github.com/2401345934/vite-press/commit/36cc771))
 * 增加全局评论组件 && 默认所有页面下面都有该组件 ([49d9e7f](https://github.com/2401345934/vite-press/commit/49d9e7f))
 * 增加chrome ([fa4eab2](https://github.com/2401345934/vite-press/commit/fa4eab2))
