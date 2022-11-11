@@ -112,7 +112,23 @@ export default [
       {
         text: '从0搭建 Vite 3 + Vue 3',
         link: '/engineering/project-structures/vue3-vite/',
-      }
+      },
+      {
+        text: '整理的一些前后端协同工作',
+        link: '/engineering/project-structures/synergy/',
+      },
+      {
+        text: '处理浏览器默认样式',
+        link: '/engineering/project-structures/commonly-css-base/',
+      },
+      {
+        text: '常用 less mixins',
+        link: '/engineering/project-structures/commonly-less/',
+      },
+      {
+        text: '常用scss mixins',
+        link: '/engineering/project-structures/commonly-scss/',
+      },
     ],
   },
   {

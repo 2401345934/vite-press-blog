@@ -58,3 +58,29 @@ function intercept(fn, { beforeCall = null, afterCall = null }) {
   }
 }
 ```
+
+## 函数重载
+
+```js
+function createOverloaded(fnList) {
+    let curFn = null
+    function addMethod(fn) {
+        const old = curFn
+        return function () {
+            if (fn.length === arguments.length) return fn.apply(this, arguments)
+            else if (typeof old === 'function') return old.apply(this, arguments)
+        }
+    }
+    fnList.map(fn => {
+        curFn = addMethod(fn)
+    })
+    return curFn
+ }
+ const fn1 = createOverloaded([
+     (name) => console.log(`我是${name}`),
+     (name, age) => console.log(`我是${name},今年${age}岁`),
+     (name, age, sport) => console.log(`我是${name},今年${age}岁,喜欢的运动是${sport}`),
+     `后面可以根据需要，继续往下添加重载方法`
+ ])
+
+```
