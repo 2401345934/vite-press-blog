@@ -184,6 +184,19 @@ const Router: RouterType = [
     ],
   },
   {
+    text: 'AST',
+    items: [
+      {
+        text: 'AST的介绍',
+        link: '/engineering/ast/start/',
+      },
+      {
+        text: 'AST的广泛应用',
+        link: '/engineering/ast/widely-used/',
+      }
+    ],
+  },
+  {
     text: '埋点',
     items: [
       {
