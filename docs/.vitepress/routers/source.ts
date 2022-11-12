@@ -86,6 +86,9 @@ const Router: RouterType = [
           { text: '生成预设代码', link: '/source/vue/create-code/3/' },
           { text: '生成预设代码', link: '/source/vue/create-code/4/' },
           { text: '生成资源声明代码', link: '/source/vue/create-code/5/' },
+          { text: '生成创建的 vnode 树的表达式', link: '/source/vue/create-code/6/' },
+          { text: '运行时的优化', link: '/source/vue/create-code/7/' },
+          { text: '总结', link: '/source/vue/create-code/conclusion/' },
         ]
       },
     ]
