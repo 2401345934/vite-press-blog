@@ -30,7 +30,7 @@
         </svg>
       </span>
       <time class="meta-content"
-            :datetime="frontmatter.createTime || date.toISOString()"
+            :datetime="frontmatter?.createTime || date.toISOString()"
             :title="dayjs().to(dayjs(date))">{{ date.toLocaleString('zh', {
                 year: 'numeric', month: 'numeric', day:
                   'numeric', hour: 'numeric', minute: 'numeric'
@@ -101,7 +101,7 @@ const props: any = defineProps({
 const { frontmatter } = useData()
 const data = reactive({
   author: 'Alan',
-  date: frontmatter.value.createTime || new Date(),
+  date: frontmatter?.value?.createTime || new Date(),
   categories: props.article?.categories ?? [],
   tags: frontmatter?.value?.tag?.split(',')
 })

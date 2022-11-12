@@ -67,3 +67,23 @@ toCurrency(123456.789, 'USD', 'en-us'); // $123,456.79
 toCurrency(123456.789, 'USD', 'fa'); // ۱۲۳٬۴۵۶٫۷۹
 toCurrency(322342436423.2435, 'JPY'); // ¥322,342,436,423 
 ```
+
+## 数值单位转换
+
+```js
+const numberUnitFormat =(value) => {
+            let param = {};
+            let k = 10000;
+            let sizes = ['', '万', '亿', '万亿'];
+            let i = null;
+            if (value < k) {
+                param.value = value;
+                param.unit = '';
+            } else {
+                i = Math.floor(Math.log(value) / Math.log(k));
+                param.value = (value / Math.pow(k, i)).toFixed(2);
+                param.unit = sizes[i];
+            }
+            return param;
+        }
+```

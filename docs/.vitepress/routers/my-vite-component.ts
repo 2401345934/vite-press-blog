@@ -1,5 +1,7 @@
 
-export default [
+
+import RouterType from "./types.type"
+const Router: RouterType = [
   {
     text: '组件',
     items: [
@@ -59,7 +61,9 @@ export default [
         text: 'DrawImage 图片合并',
         link: '/my-vite-component/DrawImage/',
       },
-      
-     ]
+
+    ]
   },
 ]
+
+export default Router

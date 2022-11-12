@@ -12,7 +12,7 @@ const markdown: MarkdownOptions = {
   // 在所有文档的<h1>标签后添加<ArticleMetadata/>组件
   config: (md) => {
     md.renderer.rules.heading_close = (tokens, idx, options, env, slf) => {
-      let htmlResult = slf.renderToken(tokens, idx, options, env, slf)
+      let htmlResult = slf.renderToken(tokens, idx, options,)
       if (tokens[idx].tag === 'h1') htmlResult += `\n<ClientOnly><ArticleMetadata /></ClientOnly>`
       return htmlResult
     }

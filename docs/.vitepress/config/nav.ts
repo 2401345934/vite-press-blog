@@ -1,5 +1,5 @@
 
-export default [
+const resultList: Array<{ text: string, link: string, activeMatch: string }> = [
   { text: "面试题", link: "/interview-questions/westore/principle/", activeMatch: '/interview-questions/' },
   { text: "源码", link: "/source/react/render/", activeMatch: '/source/' },
   { text: "utils", link: "/utils/utils/business-utils/", activeMatch: '/utils/' },
@@ -10,3 +10,6 @@ export default [
   { text: "vite-component-doc", link: "/my-vite-component/introduce/", activeMatch: '/my-vite-component/' },
   { text: "CHANGELOG", link: "/CHANGELOG/", activeMatch: '/CHANGELOG/' },
 ]
+
+
+export default resultList

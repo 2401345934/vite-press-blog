@@ -84,3 +84,35 @@ function createOverloaded(fnList) {
  ])
 
 ```
+
+## 函数结果缓存
+
+```js
+function fnCache(fn) {
+  const cache = {};
+  return function (...args) {
+    // 将参数变为字符串，作为缓存key
+    const key = JSON.stringify(args);
+    if(key in cache) {
+      return cache[key];
+    }
+    return cache[key] = fn.apply(this, args);
+  }
+}
+// 用法示例：
+function sum() { ...}
+const cacheSum = fnCache(sum);
+
+// 我们还可以将key的生成方式暴露出去
+function fnCache(fn, keyCreator) {
+  const cache = {};
+  return function (...args) {
+    // 优先自定义的key生成函数
+    const key = keyCreator ? keyCreator(args) : JSON.stringify(args);
+    if(key in cache) {
+      return cache[key];
+    }
+    return cache[key] = fn.apply(this, args);
+  }
+}
+```

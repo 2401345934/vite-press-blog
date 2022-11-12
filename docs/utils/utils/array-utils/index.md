@@ -48,6 +48,36 @@ console.log(uniqueArr(['前端', 'js', 'html', 'js', 'css', 'html']))
 // ['前端', 'js', 'html', 'css']
 ```
 
+## 对象数组去重
+
+```js
+/**
+ * 数组的对象完全匹配后去重
+ * @param  {} data 对象数组
+ */
+const uniqObject = (data) => {
+ let uniques = [];
+ let stringify = {};
+ for (let i = 0; i < data.length; i++) {
+  let keys = Object.keys(data[i]);
+  keys.sort(function (a, b) {
+   return Number(a) - Number(b);
+  });
+  let str = '';
+  for (let j = 0; j < keys.length; j++) {
+   str += JSON.stringify(keys[j]);
+   str += JSON.stringify(data[i][keys[j]]);
+  }
+  if (!stringify.hasOwnProperty(str)) {
+   uniques.push(data[i]);
+   stringify[str] = true;
+  }
+ }
+ uniques = uniques;
+ return uniques;
+};
+```
+
 ## all：布尔全等判断
 
 ```javascript

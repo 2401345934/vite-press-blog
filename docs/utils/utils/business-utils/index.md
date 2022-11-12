@@ -1566,3 +1566,47 @@ getTextWidth(textStr,fontSize = 14) {
 },
 
 ```
+
+## 笛卡尔积算法 计算商品SKU集合
+
+```js
+
+// 调用：cartesian({         color: ['黑色', '白色', '金色'],           storage: ['64', '128', '256', '512'],           size: ['5.5', '6.5', '7.5'],           brand: ['Apple', 'Huawei', 'Mi', 'vivo']  })     =>     [{color: '黑色', storage: '64', size: '5.5', brand: 'Apple'},...] 144条数据
+const cartesian = (input) => {
+        const entries = Object.entries(input || {})
+
+        let products = []
+        entries.forEach((entry) => {
+                products = cartesianProduct(entry, products)
+        })
+
+        return products
+}
+
+const cartesianProduct = (item, currentProducts) => {
+        console.log(item, currentProducts)
+        const itemKey = item[0]
+        const itemValue = item[1]
+        const _currentProducts = currentProducts || []
+
+        if (Object.keys(_currentProducts).length <= 0) {
+                return itemValue.map((value) => ({
+                        [itemKey]: value,
+                }))
+        }
+
+        const products = []
+
+        Object.keys(itemValue).forEach((key) => {
+                _currentProducts.forEach((product) => {
+                        products.push({
+                                ...product,
+                                [itemKey]: itemValue[key],
+                        })
+                })
+        })
+
+        return products
+}
+
+```

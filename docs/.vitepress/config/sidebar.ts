@@ -7,21 +7,24 @@ import engineering from "../routers/engineering"
 import dataStructuresAlgorithms from "../routers/data-structures-algorithms"
 import myViteComponent from "../routers/my-vite-component"
 
-function addCollapsible(data){
+function addCollapsible(data: any) {
   data.forEach(item => {
-    if(item?.items?.length) {
+    if (item?.items?.length) {
       item.collapsible = true
       item.collapsed = true
-      if(Array.isArray(item.items) && item.items.length) {
+      if (Array.isArray(item.items) && item.items.length) {
         addCollapsible(item.items)
       }
     }
   })
 
-  return  data
+  return data
 }
 
-export default {
+
+const resultList: {
+  [key: string]: any
+} = {
   '/interview-questions/': addCollapsible(interviewQuestions),
   '/source/': addCollapsible(source),
   '/utils/': addCollapsible(utils),
@@ -31,3 +34,4 @@ export default {
   '/engineering/': addCollapsible(engineering),
   '/my-vite-component/': addCollapsible(myViteComponent),
 }
+export default resultList

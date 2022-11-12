@@ -1,5 +1,7 @@
 
-export default [
+import RouterType from "./types.type"
+
+const Router: RouterType = [
   {
     text: 'utils',
     items: [
@@ -39,6 +41,14 @@ export default [
         text: 'url-utils',
         link: '/utils/utils/url-utils/',
       },
+      {
+        text: 'img-utils',
+        link: '/utils/utils/img-utils/',
+      },
+      {
+        text: 'request-utils',
+        link: '/utils/utils/request-utils/',
+      },
     ]
   },
   {
@@ -60,3 +70,4 @@ export default [
     ]
   },
 ]
+export default Router

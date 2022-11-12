@@ -10,6 +10,6 @@ export default {
   Layout: MyLayout,
   enhanceApp({ app }) {
     app.use(AlanViteComponent)
-    app.component('ArticleMetadata',ArticleMetadata)
+    app.component('ArticleMetadata', ArticleMetadata)
   }
 }

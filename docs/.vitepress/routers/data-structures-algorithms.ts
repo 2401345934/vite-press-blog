@@ -1,8 +1,9 @@
+import RouterType from "./types.type"
 
-export default [
+const Router: RouterType = [
   {
-    text:"算法",
-    items:[
+    text: "算法",
+    items: [
       {
         text: '入门',
         link: '/data-structures-algorithms/introduction/',
@@ -38,8 +39,9 @@ export default [
             text: '二叉树',
             link: '/data-structures-algorithms/binary-tree/',
           },
-         ]
+        ]
       },
     ]
   }
 ]
+export default Router

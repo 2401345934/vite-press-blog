@@ -1,5 +1,6 @@
 
-export default [
+import RouterType from "./types.type"
+const Router: RouterType = [
   {
     text: '工作工具',
     items: [
@@ -76,3 +77,4 @@ export default [
     ]
   },
 ]
+export default Router

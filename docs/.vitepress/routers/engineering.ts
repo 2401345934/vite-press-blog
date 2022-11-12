@@ -1,4 +1,7 @@
-export default [
+
+import RouterType from "./types.type"
+
+const Router: RouterType = [
   {
     text: 'NPM',
     items: [
@@ -190,3 +193,5 @@ export default [
     ],
   },
 ]
+
+export default Router

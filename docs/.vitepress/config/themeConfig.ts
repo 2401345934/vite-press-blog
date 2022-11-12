@@ -32,4 +32,4 @@ const themeConfig = {
   sidebar
 }
 
-export  default themeConfig
+export default themeConfig

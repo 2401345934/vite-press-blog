@@ -102,3 +102,32 @@ const decapitalize = ([first, ...rest]) =>
 decapitalize('FooBar'); // 'fooBar'
 decapitalize('FooBar'); // 'fooBar'
 ```
+
+## '-'连接命名转换成小驼峰命名
+
+```js
+const _toLittleCamel =(str) => {
+    if(!str) return ''
+    return str.replace(/-(\w)/g, (_, code) => (code ? code.toUpperCase() : ""))
+}
+```
+
+## '-'连接命名转换成大驼峰命名
+
+```js
+const _toBigCamel = (str) => {
+        if (!str) return ''
+        return str
+                .replace(/-(\w)/g, ($0, $1) => $1.toUpperCase())
+                .replace(/\S/, (code) => code.toUpperCase())
+}
+```
+
+## 驼峰命名转换成'-'连接命名
+
+```js
+const camelTo_ = (str) => {
+        if (!str) return ''
+        return str.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()
+}
+```

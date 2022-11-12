@@ -1,4 +1,5 @@
-export default [
+import RouterType from "./types.type"
+const Router: RouterType = [
   {
     text: 'React',
     items: [
@@ -90,3 +91,5 @@ export default [
     ]
   },
 ]
+
+export default Router

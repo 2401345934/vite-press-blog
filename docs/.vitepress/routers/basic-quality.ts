@@ -1,4 +1,8 @@
-export default [
+
+
+import RouterType from "./types.type"
+
+const Router: RouterType = [
   {
     text: 'HTTP',
     items: [
@@ -78,7 +82,7 @@ export default [
     items: [
       {
         text: '计算机网络',
-        items:[
+        items: [
           {
             text: '计算机网络基础知识',
             link: '/basic-quality/computer-networks/',
@@ -117,14 +121,14 @@ export default [
   },
   {
     text: '软能力',
-    items:[
+    items: [
       {
         text: '沟通能力',
-        items:[
+        items: [
           {
             text: '提问的艺术',
             link: '/basic-quality/soft-power/asking-questions/',
-            items:[]
+            items: []
           },
         ]
       },
@@ -221,6 +225,8 @@ export default [
         text: 'Store as global (存储为一个全局变量)',
         link: '/basic-quality/browser/chrome-dev/skills/open-prod-vue-devtool/',
       },
-     ]
+    ]
   },
 ]
+
+export default Router
