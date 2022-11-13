@@ -155,6 +155,10 @@ const Router: RouterType = [
     text: '场景题 ',
     items: [
       { text: '并发请求数量控制', link: '/interview-questions/scene-problem/concurrent-requests/' },
+      { text: 'EventLoop', link: '/interview-questions/scene-problem/event-loop/' },
+      { text: '请求合并', link: '/interview-questions/scene-problem/request-merge/' },
+      { text: '拖拽的实现', link: '/interview-questions/scene-problem/drag/' },
+      { text: '红绿灯', link: '/interview-questions/scene-problem/promise-traffic-light/' },
     ]
   },
   {
