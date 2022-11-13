@@ -92,6 +92,10 @@ const Router: RouterType = [
           { text: '总结', link: '/source/vue/create-code/conclusion/' },
         ]
       },
+      {
+        text: '依赖注入',
+        link: '/source/vue/provide-inject/'
+      },
     ]
   },
 ]

@@ -1,4 +1,4 @@
-## 1.3.0 (2022-11-13)
+## <small>1.3.1 (2022-11-13)</small>
 
 * ⚡️性能(webpack): 修复令牌 ([ab89e15](https://github.com/2401345934/vite-press/commit/ab89e15))
 * ✨新增(components): 新增补充组件 ([542888a](https://github.com/2401345934/vite-press/commit/542888a))
@@ -21,6 +21,7 @@
 * ✨新增(doc/工作工具): code-fun ([a84483e](https://github.com/2401345934/vite-press/commit/a84483e))
 * ✨新增(doc/面试题): 30到vue面试题合集 ([f3dd2a8](https://github.com/2401345934/vite-press/commit/f3dd2a8))
 * ✨新增(doc/面试题): 37道vue面试图补充 ([76f1672](https://github.com/2401345934/vite-press/commit/76f1672))
+* ✨新增(doc/面试题): 补充了场景题 ([83bfa24](https://github.com/2401345934/vite-press/commit/83bfa24))
 * ✨新增(doc/面试题): 补充面试题合集 ([b1d8eae](https://github.com/2401345934/vite-press/commit/b1d8eae))
 * ✨新增(doc/面试题): 面试题集合 ([5a7d856](https://github.com/2401345934/vite-press/commit/5a7d856))
 * ✨新增(doc/面试题): 新增 ast ([164e104](https://github.com/2401345934/vite-press/commit/164e104))

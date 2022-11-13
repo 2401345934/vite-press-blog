@@ -7,6 +7,7 @@ const Router: RouterType = [
     text: 'html ',
     items: [
       { text: '基础', link: '/interview-questions/html/start/' },
+      { text: 'meta标签知识', link: '/interview-questions/html/meta/' },
     ]
   },
   {
