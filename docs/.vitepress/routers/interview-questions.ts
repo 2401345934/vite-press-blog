@@ -152,6 +152,12 @@ const Router: RouterType = [
     ]
   },
   {
+    text: '场景题 ',
+    items: [
+      { text: '并发请求数量控制', link: '/interview-questions/scene-problem/concurrent-requests/' },
+    ]
+  },
+  {
     text: '面试题纲集合',
     items: [
       { text: '30 道 Vue 面试题', link: '/interview-questions/topic-outline/vue30/' },

@@ -1,4 +1,4 @@
-## <small>1.1.20 (2022-11-12)</small>
+## 1.2.0 (2022-11-13)
 
 * ⚡️性能(webpack): 修复令牌 ([ab89e15](https://github.com/2401345934/vite-press/commit/ab89e15))
 * ✨新增(config): 新增yml文件 ([be08d5f](https://github.com/2401345934/vite-press/commit/be08d5f))
@@ -32,6 +32,7 @@
 * ✨新增(doc/面试题): linux ([b7afb96](https://github.com/2401345934/vite-press/commit/b7afb96))
 * ✨新增(doc/面试题): node ([0669303](https://github.com/2401345934/vite-press/commit/0669303))
 * ✨新增(doc/面试题): vue ([20831b9](https://github.com/2401345934/vite-press/commit/20831b9))
+* ✨新增(doc/面试题): vue面试题 ([fec1599](https://github.com/2401345934/vite-press/commit/fec1599))
 * ✨新增(doc/面试题): webpack ([260806e](https://github.com/2401345934/vite-press/commit/260806e))
 * ✨新增(doc/软能力): 软能力更新 ([c28c21d](https://github.com/2401345934/vite-press/commit/c28c21d))
 * ✨新增(doc/源码): 大幅度更新 vue源码 配图 配代码 ([d48d227](https://github.com/2401345934/vite-press/commit/d48d227))

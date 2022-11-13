@@ -4,6 +4,7 @@ const Router: RouterType = [
     text: 'React',
     items: [
       { text: '渲染控制', link: '/source/react/render/' },
+      { text: 'React 17 vs React 18 变化', link: '/source/react/17vs18/' },
       { text: '事件机制', link: '/source/react/event-mechanism/' },
       { text: '协调与调度 ', link: '/source/react/coordination-scheduling/' },
       { text: 'Hooks原理', link: '/source/react/hooks/' },
