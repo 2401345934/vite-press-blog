@@ -159,6 +159,7 @@ const Router: RouterType = [
       { text: '请求合并', link: '/interview-questions/scene-problem/request-merge/' },
       { text: '拖拽的实现', link: '/interview-questions/scene-problem/drag/' },
       { text: '红绿灯', link: '/interview-questions/scene-problem/promise-traffic-light/' },
+      { text: 'requestAnimationFrame 和 requestIdleCallback', link: '/interview-questions/scene-problem/requestAnimationFrame-requestIdleCallback/' },
     ]
   },
   {

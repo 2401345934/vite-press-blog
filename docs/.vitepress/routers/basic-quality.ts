@@ -54,6 +54,11 @@ const Router: RouterType = [
           },
         ],
       },
+
+      {
+        text: '浏览器渲染流水线解析',
+        link: '/basic-quality/browser/browser/render-pipeline-parsing/',
+      },
       {
         text: '浏览器 storage',
         link: '/basic-quality/browser/browser/storage/',

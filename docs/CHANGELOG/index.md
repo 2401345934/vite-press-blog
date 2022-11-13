@@ -1,6 +1,7 @@
-## <small>1.2.1 (2022-11-13)</small>
+## 1.3.0 (2022-11-13)
 
 * ⚡️性能(webpack): 修复令牌 ([ab89e15](https://github.com/2401345934/vite-press/commit/ab89e15))
+* ✨新增(components): 新增补充组件 ([542888a](https://github.com/2401345934/vite-press/commit/542888a))
 * ✨新增(config): 新增yml文件 ([be08d5f](https://github.com/2401345934/vite-press/commit/be08d5f))
 * ✨新增(config): 暂时去掉search ([9252450](https://github.com/2401345934/vite-press/commit/9252450))
 * ✨新增(config): 增加 ts类型 ([93babbf](https://github.com/2401345934/vite-press/commit/93babbf))
