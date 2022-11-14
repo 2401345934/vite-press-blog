@@ -9,6 +9,14 @@ const Router: RouterType = [
         link: '/tool/compressed-image/',
       },
       {
+        text: '生成指定尺寸的图片',
+        link: '/tool/create-image/',
+      },
+      {
+        text: '代码转换工具',
+        link: '/tool/code-transform/',
+      },
+      {
         text: '压缩视频',
         link: '/tool/compressed-video/',
       },
@@ -51,6 +59,14 @@ const Router: RouterType = [
         link: '/tool/code-fun/',
       },
       {
+        text: '奇链',
+        link: '/tool/q-link/',
+      },
+      {
+        text: '抽奖插件',
+        link: '/tool/ducky-draw/',
+      },
+      {
         text: 'CDN',
         link: '/tool/cdn/',
       },
@@ -73,6 +89,14 @@ const Router: RouterType = [
       {
         text: '好看的loading网站',
         link: '/tool/loading-html/',
+      },
+      {
+        text: '在线ps',
+        link: '/tool/ps/',
+      },
+      {
+        text: '在线编辑器',
+        link: '/tool/code/',
       },
     ]
   },

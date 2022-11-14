@@ -96,6 +96,10 @@ const Router: RouterType = [
         text: '依赖注入',
         link: '/source/vue/provide-inject/'
       },
+      {
+        text: '插槽',
+        link: '/source/vue/slot/'
+      },
     ]
   },
 ]

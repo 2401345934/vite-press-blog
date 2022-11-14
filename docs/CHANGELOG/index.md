@@ -1,4 +1,4 @@
-## <small>1.3.3 (2022-11-14)</small>
+## <small>1.3.4 (2022-11-14)</small>
 
 * ⚡️性能(webpack): 修复令牌 ([ab89e15](https://github.com/2401345934/vite-press/commit/ab89e15))
 * ✨新增(components): 新增补充组件 ([542888a](https://github.com/2401345934/vite-press/commit/542888a))
@@ -8,6 +8,7 @@
 * ✨新增(custom): 更新 md ([87234de](https://github.com/2401345934/vite-press/commit/87234de))
 * ✨新增(doc/工程化): 工程化补充 ([f8dc538](https://github.com/2401345934/vite-press/commit/f8dc538))
 * ✨新增(doc/工程化): 项目搭建 ([313af20](https://github.com/2401345934/vite-press/commit/313af20))
+* ✨新增(doc/工程化): 项目搭建 vue ([5b2952f](https://github.com/2401345934/vite-press/commit/5b2952f))
 * ✨新增(doc/工程化): cicd ([7d7c70b](https://github.com/2401345934/vite-press/commit/7d7c70b))
 * ✨新增(doc/工程化): npm ([7e765c6](https://github.com/2401345934/vite-press/commit/7e765c6))
 * ✨新增(doc/工程化): npm ([0622beb](https://github.com/2401345934/vite-press/commit/0622beb))
