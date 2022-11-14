@@ -117,6 +117,10 @@ const Router: RouterType = [
         link: '/engineering/project-structures/vue3-vite/',
       },
       {
+        text: 'vue3+vite+ts+vuex+vue-router+Element-plus+tailwindcss+mock 搭建完整项目',
+        link: '/engineering/project-structures/vue3-project/',
+      },
+      {
         text: '整理的一些前后端协同工作',
         link: '/engineering/project-structures/synergy/',
       },
