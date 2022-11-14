@@ -12,7 +12,7 @@
         </svg>
       </span>
       <span class="meta-content">
-        <a title="进入作者主页">{{ author }}</a>
+        <a target="_blank" :href="link" title="进入作者主页">{{ author }}</a>
       </span>
     </div>
     <div class="meta-item">
@@ -100,12 +100,13 @@ const props: any = defineProps({
 // 初始化文章元数据信息
 const { frontmatter } = useData()
 const data = reactive({
-  author: 'Alan',
+  author: frontmatter?.value?.userName ||  'Alan',
+  link: frontmatter?.value?.link ||  'https://github.com/2401345934',
   date: frontmatter?.value?.createTime || new Date(),
   categories: props.article?.categories ?? [],
   tags: frontmatter?.value?.tag?.split(',')
 })
-const { author, date, tags } = toRefs(data)
+const { author, date, tags, link } = toRefs(data)
 </script>
 
 <style scoped>
