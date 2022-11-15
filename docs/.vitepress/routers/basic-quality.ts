@@ -133,9 +133,16 @@ const Router: RouterType = [
           {
             text: '提问的艺术',
             link: '/basic-quality/soft-power/asking-questions/',
-            items: []
+          },
+          {
+            text: '回答的艺术',
+            link: '/basic-quality/soft-power/answer/',
           },
         ]
+      },
+      {
+        text: '什么是架构师',
+        link: '/basic-quality/soft-power/architect/',
       },
       {
         text: '结构化思维-MECE分析方法',
