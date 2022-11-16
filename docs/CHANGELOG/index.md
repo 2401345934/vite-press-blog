@@ -1,4 +1,4 @@
-## <small>1.3.5 (2022-11-15)</small>
+## <small>1.3.6 (2022-11-16)</small>
 
 * ⚡️性能(webpack): 修复令牌 ([ab89e15](https://github.com/2401345934/vite-press/commit/ab89e15))
 * ✨新增(components): 新增补充组件 ([542888a](https://github.com/2401345934/vite-press/commit/542888a))
@@ -40,6 +40,7 @@
 * ✨新增(doc/面试题): vue ([20831b9](https://github.com/2401345934/vite-press/commit/20831b9))
 * ✨新增(doc/面试题): vue面试题 ([fec1599](https://github.com/2401345934/vite-press/commit/fec1599))
 * ✨新增(doc/面试题): webpack ([260806e](https://github.com/2401345934/vite-press/commit/260806e))
+* ✨新增(doc/软能力): 软能力 ([9313935](https://github.com/2401345934/vite-press/commit/9313935))
 * ✨新增(doc/软能力): 软能力更新 ([c28c21d](https://github.com/2401345934/vite-press/commit/c28c21d))
 * ✨新增(doc/源码): 大幅度更新 vue源码 配图 配代码 ([d48d227](https://github.com/2401345934/vite-press/commit/d48d227))
 * ✨新增(doc/源码): vue provide-inject ([5feb9b9](https://github.com/2401345934/vite-press/commit/5feb9b9))

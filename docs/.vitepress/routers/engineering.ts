@@ -10,6 +10,10 @@ const Router: RouterType = [
         link: '/engineering/npm/private/',
       },
       {
+        text: 'NPM 发布包',
+        link: '/engineering/npm/npm-release/',
+      },
+      {
         text: '初识 npm script',
         link: '/engineering/npm/start-script/',
       },
