@@ -146,6 +146,10 @@ const Router: RouterType = [
     text: 'Vite',
     items: [
       {
+        text: 'Vite 入门篇',
+        link: '/engineering/vite/start/',
+      },
+      {
         text: 'Vite项目屏幕适配的两种方案',
         link: '/engineering/vite/screen-adaptation/',
       }
@@ -201,6 +205,16 @@ const Router: RouterType = [
       {
         text: 'AST的广泛应用',
         link: '/engineering/ast/widely-used/',
+      }
+    ],
+  },
+
+  {
+    text: '权限',
+    items: [
+      {
+        text: '前端B端权限控制【资源权限，数据权限】',
+        link: '/engineering/permissions/tob-permissions/',
       }
     ],
   },

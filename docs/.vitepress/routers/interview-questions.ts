@@ -20,6 +20,7 @@ const Router: RouterType = [
     text: 'Js ',
     items: [
       { text: '跨域原理', link: '/interview-questions/js/cross-domain/' },
+      { text: '浅拷贝与深拷贝', link: '/interview-questions/js/copy/' },
       { text: 'JSON-stringify', link: '/interview-questions/js/json-stringify/' },
       { text: 'URL 转码 和解码', link: '/interview-questions/js/url-encryption-to-decrypt/' },
       { text: 'for-in vs for-of', link: '/interview-questions/js/forIn-forOf/' },
@@ -156,6 +157,7 @@ const Router: RouterType = [
     text: '场景题 ',
     items: [
       { text: '并发请求数量控制', link: '/interview-questions/scene-problem/concurrent-requests/' },
+      { text: '文本环绕球体', link: '/interview-questions/scene-problem/css-text-rotate/' },
       { text: 'EventLoop', link: '/interview-questions/scene-problem/event-loop/' },
       { text: '请求合并', link: '/interview-questions/scene-problem/request-merge/' },
       { text: '拖拽的实现', link: '/interview-questions/scene-problem/drag/' },

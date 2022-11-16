@@ -1,4 +1,4 @@
-## <small>1.3.6 (2022-11-16)</small>
+## <small>1.3.7 (2022-11-16)</small>
 
 * ⚡️性能(webpack): 修复令牌 ([ab89e15](https://github.com/2401345934/vite-press/commit/ab89e15))
 * ✨新增(components): 新增补充组件 ([542888a](https://github.com/2401345934/vite-press/commit/542888a))
@@ -13,6 +13,7 @@
 * ✨新增(doc/工程化): npm ([7e765c6](https://github.com/2401345934/vite-press/commit/7e765c6))
 * ✨新增(doc/工程化): npm ([0622beb](https://github.com/2401345934/vite-press/commit/0622beb))
 * ✨新增(doc/工程化): npm 安装流程 ([9102d55](https://github.com/2401345934/vite-press/commit/9102d55))
+* ✨新增(doc/工程化): npm 发包过程 ([3bf6bab](https://github.com/2401345934/vite-press/commit/3bf6bab))
 * ✨新增(doc/工程化): npm 内容 ([9324251](https://github.com/2401345934/vite-press/commit/9324251))
 * ✨新增(doc/工程化): npm 知识补充 ([f21e5e1](https://github.com/2401345934/vite-press/commit/f21e5e1))
 * ✨新增(doc/工程化): package start ([72a067f](https://github.com/2401345934/vite-press/commit/72a067f))
