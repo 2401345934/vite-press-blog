@@ -100,6 +100,15 @@ const Router: RouterType = [
         text: '插槽',
         link: '/source/vue/slot/'
       },
+      {
+        text: '自定义指令',
+        items: [
+          { text: '自定义指令的定义', link: '/source/vue/directive/1/' },
+          { text: '指令的注册', link: '/source/vue/directive/2/' },
+          { text: '指令的应用', link: '/source/vue/directive/3/' },
+          { text: '总结', link: '/source/vue/directive/conclusion/' },
+        ]
+      },
     ]
   },
 ]

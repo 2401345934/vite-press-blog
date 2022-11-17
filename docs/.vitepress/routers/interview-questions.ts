@@ -159,6 +159,7 @@ const Router: RouterType = [
     items: [
       { text: '并发请求数量控制', link: '/interview-questions/scene-problem/concurrent-requests/' },
       { text: '文本环绕球体', link: '/interview-questions/scene-problem/css-text-rotate/' },
+      { text: '前端水印功能', link: '/interview-questions/scene-problem/watermark/' },
       { text: 'EventLoop', link: '/interview-questions/scene-problem/event-loop/' },
       { text: '请求合并', link: '/interview-questions/scene-problem/request-merge/' },
       { text: '拖拽的实现', link: '/interview-questions/scene-problem/drag/' },
