@@ -89,6 +89,7 @@ const Router: RouterType = [
     text: 'React ',
     items: [
       { text: '自定义hooks', link: '/interview-questions/react/hooks/' },
+      { text: 'React的setState是异步的还是同步的', link: '/interview-questions/react/setstate/' },
     ]
   },
   {

@@ -1,4 +1,4 @@
-## <small>1.3.7 (2022-11-16)</small>
+## <small>1.3.8 (2022-11-17)</small>
 
 * ⚡️性能(webpack): 修复令牌 ([ab89e15](https://github.com/2401345934/vite-press/commit/ab89e15))
 * ✨新增(components): 新增补充组件 ([542888a](https://github.com/2401345934/vite-press/commit/542888a))
@@ -18,6 +18,7 @@
 * ✨新增(doc/工程化): npm 知识补充 ([f21e5e1](https://github.com/2401345934/vite-press/commit/f21e5e1))
 * ✨新增(doc/工程化): package start ([72a067f](https://github.com/2401345934/vite-press/commit/72a067f))
 * ✨新增(doc/工程化): vite 屏幕适配 ([ce5cc9e](https://github.com/2401345934/vite-press/commit/ce5cc9e))
+* ✨新增(doc/工程化): vite 起步 ([98350ac](https://github.com/2401345934/vite-press/commit/98350ac))
 * ✨新增(doc/工程化): webrtc ([3bdce5e](https://github.com/2401345934/vite-press/commit/3bdce5e))
 * ✨新增(doc/工作工具): 工作工具 ([98ec3e4](https://github.com/2401345934/vite-press/commit/98ec3e4))
 * ✨新增(doc/工作工具): 视频压缩工具 ([a2b60b3](https://github.com/2401345934/vite-press/commit/a2b60b3))
