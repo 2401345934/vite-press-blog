@@ -1,4 +1,4 @@
-## <small>1.3.9 (2022-11-17)</small>
+## 1.4.0 (2022-11-19)
 
 * ⚡️性能(webpack): 修复令牌 ([ab89e15](https://github.com/2401345934/vite-press/commit/ab89e15))
 * ✨新增(components): 新增补充组件 ([542888a](https://github.com/2401345934/vite-press/commit/542888a))
@@ -46,6 +46,7 @@
 * ✨新增(doc/软能力): 软能力 ([9313935](https://github.com/2401345934/vite-press/commit/9313935))
 * ✨新增(doc/软能力): 软能力更新 ([c28c21d](https://github.com/2401345934/vite-press/commit/c28c21d))
 * ✨新增(doc/源码): 大幅度更新 vue源码 配图 配代码 ([d48d227](https://github.com/2401345934/vite-press/commit/d48d227))
+* ✨新增(doc/源码): uve 指令源码解读 ([881b39f](https://github.com/2401345934/vite-press/commit/881b39f))
 * ✨新增(doc/源码): vue provide-inject ([5feb9b9](https://github.com/2401345934/vite-press/commit/5feb9b9))
 * ✨新增(doc/vite-component): 新增图片合并组建 ([e5e5e52](https://github.com/2401345934/vite-press/commit/e5e5e52))
 * ✨新增(package): 升级 alan-vite-component ([38b85fd](https://github.com/2401345934/vite-press/commit/38b85fd))

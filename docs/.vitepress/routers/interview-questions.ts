@@ -104,6 +104,7 @@ const Router: RouterType = [
     text: 'Node ',
     items: [
       { text: '需要了解的nodejs知识', link: '/interview-questions/node/understand-start/' },
+      { text: 'require加载器实现原理 ', link: '/interview-questions/node/require/' },
     ]
   },
   {

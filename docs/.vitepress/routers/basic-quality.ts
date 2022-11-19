@@ -145,6 +145,10 @@ const Router: RouterType = [
         link: '/basic-quality/soft-power/architect/',
       },
       {
+        text: '前端招聘面试流程',
+        link: '/basic-quality/soft-power/interview-process/',
+      },
+      {
         text: '结构化思维-MECE分析方法',
         link: '/basic-quality/soft-power/mece/',
       },
