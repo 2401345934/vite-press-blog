@@ -2,7 +2,6 @@
 import RouterType from "./types.type"
 
 const Router: RouterType = [
-
   {
     text: 'html ',
     items: [
@@ -19,6 +18,7 @@ const Router: RouterType = [
   {
     text: 'Js ',
     items: [
+      { text: '路由实现原理', link: '/interview-questions/js/router/' },
       { text: '跨域原理', link: '/interview-questions/js/cross-domain/' },
       { text: '浅拷贝与深拷贝', link: '/interview-questions/js/copy/' },
       { text: 'JSON-stringify', link: '/interview-questions/js/json-stringify/' },

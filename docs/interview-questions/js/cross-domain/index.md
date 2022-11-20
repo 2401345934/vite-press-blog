@@ -1,13 +1,12 @@
-
 ---
-
 createTime: 2022/11/07
 tag: 'js,面试题'
 ---
 
 # 九种跨域方式实现原理
 
-一、什么是跨域？
+## 一、什么是跨域？
+
 --------
 
 ### 1.什么是同源策略及其限制内容？
@@ -70,7 +69,7 @@ JSONP优点是简单兼容性好，可用于解决主流浏览器的跨域数据
 
 在开发中可能会遇到多个 JSONP 请求的回调函数名是相同的，这时候就需要自己封装一个 JSONP函数。
 
-```
+```js
 // index.html
 function jsonp({ url, params, callback }) {
   return new Promise((resolve, reject) => {
@@ -100,7 +99,7 @@ jsonp({
 
 上面这段代码相当于向`http://localhost:3000/say?wd=Iloveyou&callback=show`这个地址请求数据，然后后台返回`show('我不爱你')`，最后会运行show()这个函数，打印出'我不爱你'
 
-```
+```js
 // server.js
 let express = require('express')
 let app = express()
@@ -118,17 +117,16 @@ app.listen(3000)
 
 **JSONP都是GET和异步请求的，不存在其他的请求方式和同步请求，且jQuery默认就会给JSONP的请求清除缓存。**
 
-```
+```js
 $.ajax({
-url:"http://crossdomain.com/jsonServerResponse",
-dataType:"jsonp",
-type:"get",//可以省略
-jsonpCallback:"show",//->自定义传递给服务器的函数名，而不是使用jQuery自动生成的，可省略
-jsonp:"callback",//->把传递函数名的那个形参callback，可省略
-success:function (data){
-console.log(data);}
+  url:"http://crossdomain.com/jsonServerResponse",
+  dataType:"jsonp",
+  type:"get",//可以省略
+  jsonpCallback:"show",//->自定义传递给服务器的函数名，而不是使用jQuery自动生成的，可省略
+  jsonp:"callback",//->把传递函数名的那个形参callback，可省略
+  success:function (data){
+  console.log(data);}
 });
-
 ```
 
 ### 2.cors
@@ -165,7 +163,7 @@ console.log(data);}
 
 我们用`PUT`向后台请求时，属于复杂请求，后台需做如下配置：
 
-```
+```js
 // 允许哪个方法访问我
 res.setHeader('Access-Control-Allow-Methods', 'PUT')
 // 预检的存活时间
@@ -184,7 +182,7 @@ app.put('/getData', function(req, res) {
 
 接下来我们看下一个完整复杂请求的例子，并且介绍下CORS请求相关的字段
 
-```
+```js
 // index.html
 let xhr = new XMLHttpRequest()
 document.cookie = 'name=xiamen' // cookie不能跨域
@@ -204,16 +202,15 @@ xhr.send()
 
 ```
 
-```
+```js
 //server1.js
 let express = require('express');
 let app = express();
 app.use(express.static(__dirname));
 app.listen(3000);
-
 ```
 
-```
+```js
 //server2.js
 let express = require('express')
 let app = express()
@@ -274,7 +271,7 @@ postMessage是HTML5 XMLHttpRequest Level 2中的API，且是为数不多可以�
 
 接下来我们看个例子： `http://localhost:3000/a.html`页面向`http://localhost:4000/b.html`传递“我爱你”,然后后者传回"我不爱你"。
 
-```
+```js
 // a.html
   <iframe src="http://localhost:4000/b.html" frameborder="0" id="frame" onload="load()"></iframe> //等它加载完触发一个事件
   //内嵌在http://localhost:3000/a.html
@@ -307,7 +304,7 @@ Websocket是HTML5的一个持久化的协议，它实现了浏览器与服务器
 
 我们先来看个例子：本地文件socket.html向`localhost:3000`发生数据和接受数据
 
-```
+```js
 // socket.html
 <script>
     let socket = new WebSocket('ws://localhost:3000');
@@ -321,7 +318,7 @@ Websocket是HTML5的一个持久化的协议，它实现了浏览器与服务器
 
 ```
 
-```
+```js
 // server.js
 let express = require('express');
 let app = express();
@@ -349,7 +346,7 @@ wss.on('connection',function(ws) {
 
 我们先来看个例子：本地文件index.html文件，通过代理服务器`http://localhost:3000`向目标服务器`http://localhost:4000`请求数据。
 
-```
+```js
 // index.html(http://127.0.0.1:5500)
  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
     <script>
@@ -369,7 +366,7 @@ wss.on('connection',function(ws) {
 
 ```
 
-```
+```js
 // server1.js 代理服务器(http://localhost:3000)
 const http = require('http')
 // 第一步：接受客户端请求
@@ -411,7 +408,7 @@ server.listen(3000, () => {
 
 ```
 
-```
+```js
 // server2.js(http://localhost:4000)
 const http = require('http')
 const data = { title: 'fontend', password: '123456' }
@@ -458,7 +455,7 @@ server {
 
 最后通过命令行`nginx -s reload`启动nginx
 
-```
+```js
 // index.html
 var xhr = new XMLHttpRequest();
 // 前端开关：浏览器是否读写cookie
@@ -469,7 +466,7 @@ xhr.send();
 
 ```
 
-```
+```js
 // server.js
 var http = require('http');
 var server = http.createServer();
@@ -494,7 +491,7 @@ window.name属性的独特之处：name值在不同的页面（甚至不同域�
 
 其中a.html和b.html是同域的，都是`http://localhost:3000`;而c.html是`http://localhost:4000`
 
-```
+```js
  // a.html(http://localhost:3000/b.html)
   <iframe src="http://localhost:4000/c.html" frameborder="0" onload="load()" id="iframe"></iframe>
   <script>
@@ -533,7 +530,7 @@ b.html为中间代理页，与a.html同域，内容为空。
 
 具体实现步骤：一开始a.html给c.html传一个hash值，然后c.html收到hash值后，再把hash值传递给b.html，最后b.html将结果放到a.html的hash值中。 同样的，a.html和b.html是同域的，都是`http://localhost:3000`;而c.html是`http://localhost:4000`
 
-```
+```js
  // a.html
   <iframe src="http://localhost:4000/c.html#iloveyou"></iframe>
   <script>
@@ -544,7 +541,7 @@ b.html为中间代理页，与a.html同域，内容为空。
 
 ```
 
-```
+```js
  // b.html
   <script>
     window.parent.parent.location.hash = location.hash 
@@ -553,7 +550,7 @@ b.html为中间代理页，与a.html同域，内容为空。
 
 ```
 
-```
+```js
  // c.html
  console.log(location.hash);
   let iframe = document.createElement('iframe');
@@ -570,7 +567,7 @@ b.html为中间代理页，与a.html同域，内容为空。
 
 我们看个例子：页面`a.zf1.cn:3000/a.html`获取页面`b.zf1.cn:3000/b.html`中a的值
 
-```
+```js
 // a.html
 <body>
  helloa
@@ -585,7 +582,7 @@ b.html为中间代理页，与a.html同域，内容为空。
 
 ```
 
-```
+```js
 // b.html
 <body>
    hellob
