@@ -159,13 +159,16 @@ const Router: RouterType = [
     text: '场景题 ',
     items: [
       { text: '并发请求数量控制', link: '/interview-questions/scene-problem/concurrent-requests/' },
+      { text: '无感刷新token', link: '/interview-questions/scene-problem/refresh-token/' },
       { text: '文本环绕球体', link: '/interview-questions/scene-problem/css-text-rotate/' },
       { text: '前端水印功能', link: '/interview-questions/scene-problem/watermark/' },
       { text: 'EventLoop', link: '/interview-questions/scene-problem/event-loop/' },
       { text: '请求合并', link: '/interview-questions/scene-problem/request-merge/' },
       { text: '拖拽的实现', link: '/interview-questions/scene-problem/drag/' },
       { text: '红绿灯', link: '/interview-questions/scene-problem/promise-traffic-light/' },
+      { text: '请设计一个不能操作DOM和调接口的环境', link: '/interview-questions/scene-problem/operaction-dom/' },
       { text: 'requestAnimationFrame 和 requestIdleCallback', link: '/interview-questions/scene-problem/requestAnimationFrame-requestIdleCallback/' },
+
     ]
   },
   {

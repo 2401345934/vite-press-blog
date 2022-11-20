@@ -52,6 +52,15 @@ const Router: RouterType = [
     ]
   },
   {
+    text: '特效',
+    items: [
+      {
+        text: '鼠标特效',
+        link: '/tool/special-effects/mouse/',
+      },
+    ]
+  },
+  {
     text: '功能网站',
     items: [
       {
