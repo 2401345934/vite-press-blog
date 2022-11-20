@@ -1,6 +1,12 @@
 import RouterType from "./types.type"
 const Router: RouterType = [
   {
+    text: 'Axios',
+    items: [
+      { text: '入门', link: '/source/axios/start/' },
+    ]
+  },
+  {
     text: 'React',
     items: [
       { text: '渲染控制', link: '/source/react/render/' },
