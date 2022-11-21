@@ -121,6 +121,10 @@ const Router: RouterType = [
         link: '/engineering/project-structures/vue3-vite/',
       },
       {
+        text: '从零搭建vitepress博客',
+        link: '/engineering/project-structures/vite-press/',
+      },
+      {
         text: 'vue3+vite+ts+vuex+vue-router+Element-plus+tailwindcss+mock 搭建完整项目',
         link: '/engineering/project-structures/vue3-project/',
       },

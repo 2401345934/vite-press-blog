@@ -77,6 +77,12 @@ const Router: RouterType = [
         ]
       },
       { text: '前端懒加载和预加载', link: '/interview-questions/performance-optimization/lazyload-preload/' },
+      {
+        text: 'Webapack优化',
+        items: [
+          { text: 'webpack 5高级配置优化', link: '/interview-questions/performance-optimization/webpack/webpack5-optimization/' },
+        ]
+      },
     ]
   },
   {
