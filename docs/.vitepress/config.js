@@ -11,5 +11,5 @@ export default {
   markdown,
   themeConfig,
   head,
-  base:'/vite-press',
+  base:'/vite-press-blog',
 }
