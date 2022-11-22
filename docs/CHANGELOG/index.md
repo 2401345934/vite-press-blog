@@ -1,5 +1,6 @@
-## <small>1.4.4 (2022-11-21)</small>
+## <small>1.4.5 (2022-11-22)</small>
 
+* ✨新增(doc/面试题): 面试题 性能优化 webpack配置 ([3920f84](https://github.com/2401345934/vite-press/commit/3920f84))
 * 修改博客前缀 ([ac2c279](https://github.com/2401345934/vite-press/commit/ac2c279))
 
 

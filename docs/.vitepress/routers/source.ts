@@ -115,6 +115,10 @@ const Router: RouterType = [
           { text: '总结', link: '/source/vue/directive/conclusion/' },
         ]
       },
+      {
+        text: 'v-model',
+        link: '/source/vue/v-model/'
+      },
     ]
   },
 ]
