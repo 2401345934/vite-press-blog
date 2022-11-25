@@ -1,17 +1,12 @@
-// docs/.vitepress/theme/MyLayout.vue
 <script setup>
 import DefaultTheme from 'vitepress/theme'
 import Copyright from "./layout/Copyright.vue"
 import ValineComment from '../ValineComment/index.vue'
 import { useData } from 'vitepress'
-import { downText } from "./hooks/mouse"
 import md5 from 'blueimp-md5'
 import { onMounted } from 'vue';
 const { page, } = useData()
 const { Layout } = DefaultTheme
-onMounted(() => {
-  downText()
-})
 const detectDeviceType = () => {
   if (typeof window === 'undefined') return
   return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)

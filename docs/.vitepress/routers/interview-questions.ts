@@ -165,6 +165,7 @@ const Router: RouterType = [
     text: '场景题 ',
     items: [
       { text: '并发请求数量控制', link: '/interview-questions/scene-problem/concurrent-requests/' },
+      { text: '微信小程序实现一些优惠券/卡券', link: '/interview-questions/scene-problem/wx-coupon/' },
       { text: '无感刷新token', link: '/interview-questions/scene-problem/refresh-token/' },
       { text: '文本环绕球体', link: '/interview-questions/scene-problem/css-text-rotate/' },
       { text: '前端水印功能', link: '/interview-questions/scene-problem/watermark/' },
