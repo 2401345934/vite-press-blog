@@ -1,7 +1,8 @@
-## <small>1.4.7 (2022-11-27)</small>
+## <small>1.4.8 (2022-11-27)</small>
 
 * ✨新增(doc/面试题): 场景题 ([3b6ca8a](https://github.com/2401345934/vite-press/commit/3b6ca8a))
 * ✨新增(doc/面试题): 面试题 性能优化 webpack配置 ([3920f84](https://github.com/2401345934/vite-press/commit/3920f84))
+* ✨新增(doc/面试题): docker 部署本地代码 ([487cec1](https://github.com/2401345934/vite-press/commit/487cec1))
 * ✨新增(doc/源码): vue-v-model 原理 ([eb4cd80](https://github.com/2401345934/vite-press/commit/eb4cd80))
 * 修改博客前缀 ([ac2c279](https://github.com/2401345934/vite-press/commit/ac2c279))
 

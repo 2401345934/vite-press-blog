@@ -76,6 +76,7 @@ const Router: RouterType = [
           { text: 'react版本', link: '/interview-questions/performance-optimization/virtual-list/react/' },
         ]
       },
+      { text: 'westore优化', link: '/interview-questions/performance-optimization/westore/load-compress/' },
       { text: '前端懒加载和预加载', link: '/interview-questions/performance-optimization/lazyload-preload/' },
       {
         text: 'Webapack优化',
