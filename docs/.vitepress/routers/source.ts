@@ -119,6 +119,10 @@ const Router: RouterType = [
         text: 'v-model',
         link: '/source/vue/v-model/'
       },
+      {
+        text: '内置组件',
+        link: '/source/vue/built-components/'
+      },
     ]
   },
 ]
