@@ -209,6 +209,10 @@ const Router: RouterType = [
       {
         text: 'AST的广泛应用',
         link: '/engineering/ast/widely-used/',
+      },
+      {
+        text: '🔥 手撕babel插件-消灭console！ ',
+        link: '/engineering/ast/delete-console/',
       }
     ],
   },
