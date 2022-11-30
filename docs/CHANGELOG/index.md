@@ -1,6 +1,7 @@
-## <small>1.5.1 (2022-11-29)</small>
+## <small>1.5.2 (2022-11-30)</small>
 
 * ✨新增(doc/面试题): 场景题 ([3b6ca8a](https://github.com/2401345934/vite-press/commit/3b6ca8a))
+* ✨新增(doc/面试题): 场景题 插件系统 ([3bd78c4](https://github.com/2401345934/vite-press/commit/3bd78c4))
 * ✨新增(doc/面试题): 面试题 性能优化 webpack配置 ([3920f84](https://github.com/2401345934/vite-press/commit/3920f84))
 * ✨新增(doc/面试题): 新增 ast 面试题过程 ([2a1a5e3](https://github.com/2401345934/vite-press/commit/2a1a5e3))
 * ✨新增(doc/面试题): 新增性能优化之小程序 ([1880df5](https://github.com/2401345934/vite-press/commit/1880df5))

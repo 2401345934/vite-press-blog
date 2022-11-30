@@ -20,6 +20,9 @@ const Router: RouterType = [
     text: 'Js ',
     items: [
       { text: '路由实现原理', link: '/interview-questions/js/router/' },
+      { text: '如何理解 js 的异步', link: '/interview-questions/js/async/' },
+      { text: '事件循环', link: '/interview-questions/js/event-loop/' },
+      { text: 'JS 中的计时器能做到精确计时吗？为什么？', link: '/interview-questions/js/timer-accurate/' },
       { text: '跨域原理', link: '/interview-questions/js/cross-domain/' },
       { text: '浅拷贝与深拷贝', link: '/interview-questions/js/copy/' },
       { text: 'JSON-stringify', link: '/interview-questions/js/json-stringify/' },
