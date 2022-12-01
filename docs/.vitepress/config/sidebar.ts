@@ -5,7 +5,6 @@ import basicQuality from "../routers/basic-quality"
 import tool from "../routers/tool"
 import engineering from "../routers/engineering"
 import dataStructuresAlgorithms from "../routers/data-structures-algorithms"
-import myViteComponent from "../routers/my-vite-component"
 
 function addCollapsible(data: any) {
   data.forEach(item => {
@@ -32,6 +31,5 @@ const resultList: {
   '/basic-quality/': addCollapsible(basicQuality),
   '/tool/': addCollapsible(tool),
   '/engineering/': addCollapsible(engineering),
-  '/my-vite-component/': addCollapsible(myViteComponent),
 }
 export default resultList
