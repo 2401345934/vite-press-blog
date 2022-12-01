@@ -54,7 +54,10 @@ const Router: RouterType = [
           },
         ],
       },
-
+      {
+        text: '浏览器的渲染原理',
+        link: '/basic-quality/browser/browser/render/',
+      },
       {
         text: '浏览器渲染流水线解析',
         link: '/basic-quality/browser/browser/render-pipeline-parsing/',

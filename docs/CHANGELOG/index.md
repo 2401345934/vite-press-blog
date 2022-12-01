@@ -1,9 +1,10 @@
-## <small>1.5.2 (2022-11-30)</small>
+## <small>1.5.3 (2022-12-01)</small>
 
 * ✨新增(doc/面试题): 场景题 ([3b6ca8a](https://github.com/2401345934/vite-press/commit/3b6ca8a))
 * ✨新增(doc/面试题): 场景题 插件系统 ([3bd78c4](https://github.com/2401345934/vite-press/commit/3bd78c4))
 * ✨新增(doc/面试题): 面试题 性能优化 webpack配置 ([3920f84](https://github.com/2401345934/vite-press/commit/3920f84))
 * ✨新增(doc/面试题): 新增 ast 面试题过程 ([2a1a5e3](https://github.com/2401345934/vite-press/commit/2a1a5e3))
+* ✨新增(doc/面试题): 新增浏览器的事件循环 ([9498f35](https://github.com/2401345934/vite-press/commit/9498f35))
 * ✨新增(doc/面试题): 新增性能优化之小程序 ([1880df5](https://github.com/2401345934/vite-press/commit/1880df5))
 * ✨新增(doc/面试题): docker 部署本地代码 ([487cec1](https://github.com/2401345934/vite-press/commit/487cec1))
 * ✨新增(doc/源码): vue 内置组件解析 ([2a6cf53](https://github.com/2401345934/vite-press/commit/2a6cf53))
