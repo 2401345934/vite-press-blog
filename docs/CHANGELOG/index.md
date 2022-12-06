@@ -1,4 +1,4 @@
-## <small>1.5.4 (2022-12-01)</small>
+## <small>1.5.5 (2022-12-06)</small>
 
 * ✨新增(doc/浏览器): 渲染原理 ([042387c](https://github.com/2401345934/vite-press/commit/042387c))
 * ✨新增(doc/面试题): 场景题 ([3b6ca8a](https://github.com/2401345934/vite-press/commit/3b6ca8a))
@@ -11,6 +11,9 @@
 * ✨新增(doc/源码): vue 内置组件解析 ([2a6cf53](https://github.com/2401345934/vite-press/commit/2a6cf53))
 * ✨新增(doc/源码): vue-v-model 原理 ([eb4cd80](https://github.com/2401345934/vite-press/commit/eb4cd80))
 * ✨新增(doc/vite-component): 更新 vite-component 版本依赖 ([d82f495](https://github.com/2401345934/vite-press/commit/d82f495))
+* 拆组件库 ([3885174](https://github.com/2401345934/vite-press/commit/3885174))
+* 修复/错别字 ([d1f1dd3](https://github.com/2401345934/vite-press/commit/d1f1dd3))
+* 修复/错别字 ([0b13108](https://github.com/2401345934/vite-press/commit/0b13108))
 * 修改博客前缀 ([ac2c279](https://github.com/2401345934/vite-press/commit/ac2c279))
 * html 面试题 ([0a304a1](https://github.com/2401345934/vite-press/commit/0a304a1))
 
