@@ -65,6 +65,7 @@ const Router: RouterType = [
     text: '性能优化',
     items: [
       { text: 'performance', link: '/interview-questions/performance-optimization/performance/' },
+      { text: '最全的前端性能定位总结 ', link: '/interview-questions/performance-optimization/performance-summary/' },
       { text: 'HTML优化', link: '/interview-questions/performance-optimization/html/' },
       { text: '图片懒加载', link: '/interview-questions/performance-optimization/img-lazy/' },
       {

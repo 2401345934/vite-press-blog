@@ -1,8 +1,9 @@
-## <small>1.5.5 (2022-12-06)</small>
+## <small>1.5.6 (2022-12-07)</small>
 
 * ✨新增(doc/浏览器): 渲染原理 ([042387c](https://github.com/2401345934/vite-press/commit/042387c))
 * ✨新增(doc/面试题): 场景题 ([3b6ca8a](https://github.com/2401345934/vite-press/commit/3b6ca8a))
 * ✨新增(doc/面试题): 场景题 插件系统 ([3bd78c4](https://github.com/2401345934/vite-press/commit/3bd78c4))
+* ✨新增(doc/面试题): 更新/输入一个 url ([c443055](https://github.com/2401345934/vite-press/commit/c443055))
 * ✨新增(doc/面试题): 面试题 性能优化 webpack配置 ([3920f84](https://github.com/2401345934/vite-press/commit/3920f84))
 * ✨新增(doc/面试题): 新增 ast 面试题过程 ([2a1a5e3](https://github.com/2401345934/vite-press/commit/2a1a5e3))
 * ✨新增(doc/面试题): 新增浏览器的事件循环 ([9498f35](https://github.com/2401345934/vite-press/commit/9498f35))
