@@ -227,11 +227,19 @@ const Router: RouterType = [
     ],
   },
   {
-    text: '埋点',
+    text: 'SDK',
     items: [
       {
+        text: '从0到1搭建前端监控平台',
+        link: '/engineering/sdk/monitoring-platform/',
+      },
+      {
         text: '数据埋点起步',
-        link: '/engineering/buried-point/start/',
+        link: '/engineering/sdk/buried-point/',
+      },
+      {
+        text: '前端录屏+定位源码',
+        link: '/engineering/sdk/source-bug/',
       }
     ],
   },
