@@ -68,6 +68,10 @@ const Router: RouterType = [
         link: '/tool/code-fun/',
       },
       {
+        text: 'chartGpt 注册',
+        link: '/tool/chartGpt/',
+      },
+      {
         text: '奇链',
         link: '/tool/q-link/',
       },

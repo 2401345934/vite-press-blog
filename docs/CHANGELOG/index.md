@@ -1,5 +1,6 @@
-## <small>1.5.7 (2022-12-08)</small>
+## <small>1.5.8 (2022-12-09)</small>
 
+* ✨新增(doc/工程化): sdk补充 ([84e1eb2](https://github.com/2401345934/vite-press/commit/84e1eb2))
 * ✨新增(doc/浏览器): 渲染原理 ([042387c](https://github.com/2401345934/vite-press/commit/042387c))
 * ✨新增(doc/面试题): ([8169bd8](https://github.com/2401345934/vite-press/commit/8169bd8))
 * ✨新增(doc/面试题): 场景题 ([3b6ca8a](https://github.com/2401345934/vite-press/commit/3b6ca8a))
