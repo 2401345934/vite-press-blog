@@ -121,6 +121,10 @@ const Router: RouterType = [
         link: '/engineering/project-structures/vue3-vite/',
       },
       {
+        text: ' 手把手教你搭建一个生产级的vite SSR项目',
+        link: '/engineering/project-structures/vite-ssr/',
+      },
+      {
         text: '从零搭建vitepress博客',
         link: '/engineering/project-structures/vite-press/',
       },
