@@ -5,6 +5,10 @@
   "homepage": "https://2401345934.github.io/vite-press/",
   "bugs": "https://github.com/2401345934/vite-press/issues/new",
   "author": "minghhui",
+  "engines": {
+    "node": ">=14.18.0",
+    "npm": ">=8.0.0"
+  },
   "scripts": {
     "version": "# 修改 version  \n zx bump.mjs",
     "start": "vitepress dev docs",
