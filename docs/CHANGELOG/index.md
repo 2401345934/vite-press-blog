@@ -1,4 +1,4 @@
-## <small>1.5.9 (2022-12-10)</small>
+## <small>1.5.10 (2022-12-18)</small>
 
 * ✨新增(components): 新增了注册chartgpt ([09a7b00](https://github.com/2401345934/vite-press/commit/09a7b00))
 * ✨新增(doc/工程化): sdk补充 ([84e1eb2](https://github.com/2401345934/vite-press/commit/84e1eb2))
@@ -8,6 +8,7 @@
 * ✨新增(doc/面试题): 场景题 插件系统 ([3bd78c4](https://github.com/2401345934/vite-press/commit/3bd78c4))
 * ✨新增(doc/面试题): 更新/输入一个 url ([c443055](https://github.com/2401345934/vite-press/commit/c443055))
 * ✨新增(doc/面试题): 面试题 性能优化 webpack配置 ([3920f84](https://github.com/2401345934/vite-press/commit/3920f84))
+* ✨新增(doc/面试题): 项目搭建 ([37332f5](https://github.com/2401345934/vite-press/commit/37332f5))
 * ✨新增(doc/面试题): 新增 ast 面试题过程 ([2a1a5e3](https://github.com/2401345934/vite-press/commit/2a1a5e3))
 * ✨新增(doc/面试题): 新增浏览器的事件循环 ([9498f35](https://github.com/2401345934/vite-press/commit/9498f35))
 * ✨新增(doc/面试题): 新增性能优化之小程序 ([1880df5](https://github.com/2401345934/vite-press/commit/1880df5))
@@ -16,10 +17,15 @@
 * ✨新增(doc/源码): vue-v-model 原理 ([eb4cd80](https://github.com/2401345934/vite-press/commit/eb4cd80))
 * ✨新增(doc/vite-component): 更新 vite-component 版本依赖 ([d82f495](https://github.com/2401345934/vite-press/commit/d82f495))
 * 拆组件库 ([3885174](https://github.com/2401345934/vite-press/commit/3885174))
+* 升级npm版本 ([97560a6](https://github.com/2401345934/vite-press/commit/97560a6))
 * 修复/错别字 ([d1f1dd3](https://github.com/2401345934/vite-press/commit/d1f1dd3))
 * 修复/错别字 ([0b13108](https://github.com/2401345934/vite-press/commit/0b13108))
 * 修改博客前缀 ([ac2c279](https://github.com/2401345934/vite-press/commit/ac2c279))
+* 修改下载依赖命令 ([0946f15](https://github.com/2401345934/vite-press/commit/0946f15))
 * html 面试题 ([0a304a1](https://github.com/2401345934/vite-press/commit/0a304a1))
+* test ([2f7a97e](https://github.com/2401345934/vite-press/commit/2f7a97e))
+* trst ([41597e4](https://github.com/2401345934/vite-press/commit/41597e4))
+* Update deploy-pages.yml ([9235140](https://github.com/2401345934/vite-press/commit/9235140))
 
 
 

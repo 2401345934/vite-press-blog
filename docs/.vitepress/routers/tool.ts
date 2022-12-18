@@ -8,6 +8,7 @@ const Router: RouterType = [
         text: '压缩图片',
         link: '/tool/compressed-image/',
       },
+
       {
         text: '生成指定尺寸的图片',
         link: '/tool/create-image/',
@@ -46,6 +47,10 @@ const Router: RouterType = [
         link: '/tool/Warp/',
       },
       {
+        text: '快速搭建前端Mac环境',
+        link: '/tool/mac-init/',
+      },
+      {
         text: 'Markdown-marktext',
         link: '/tool/marktext/',
       },
@@ -67,6 +72,7 @@ const Router: RouterType = [
         text: 'code-fun 生成代码',
         link: '/tool/code-fun/',
       },
+
       {
         text: 'chartGpt 注册',
         link: '/tool/chartGpt/',
