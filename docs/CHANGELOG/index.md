@@ -1,4 +1,4 @@
-## <small>1.5.10 (2022-12-18)</small>
+## 1.6.0 (2022-12-23)
 
 * ✨新增(components): 新增了注册chartgpt ([09a7b00](https://github.com/2401345934/vite-press/commit/09a7b00))
 * ✨新增(doc/工程化): sdk补充 ([84e1eb2](https://github.com/2401345934/vite-press/commit/84e1eb2))
@@ -11,6 +11,7 @@
 * ✨新增(doc/面试题): 项目搭建 ([37332f5](https://github.com/2401345934/vite-press/commit/37332f5))
 * ✨新增(doc/面试题): 新增 ast 面试题过程 ([2a1a5e3](https://github.com/2401345934/vite-press/commit/2a1a5e3))
 * ✨新增(doc/面试题): 新增浏览器的事件循环 ([9498f35](https://github.com/2401345934/vite-press/commit/9498f35))
+* ✨新增(doc/面试题): 新增面试题 ([595efab](https://github.com/2401345934/vite-press/commit/595efab))
 * ✨新增(doc/面试题): 新增性能优化之小程序 ([1880df5](https://github.com/2401345934/vite-press/commit/1880df5))
 * ✨新增(doc/面试题): docker 部署本地代码 ([487cec1](https://github.com/2401345934/vite-press/commit/487cec1))
 * ✨新增(doc/源码): vue 内置组件解析 ([2a6cf53](https://github.com/2401345934/vite-press/commit/2a6cf53))
