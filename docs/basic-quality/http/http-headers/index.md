@@ -64,7 +64,6 @@ const contentDispositionNoFilename = async (req, res, next) => {
 实施：“客户反馈`Bug` 还是没修复。”  
 你：“哥，真修复了，要不你让客户清一下缓存？”  
 实施：“啊？客户说他不会清……”  
-![图片](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/27dff5bd3a2546168adcb1d6651dcd91~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image)
 
 永远不要期望你的客户会进行 **“那些研发才懂”** 的操作。也不要把你的问题，归因到 **浏览器缓存** 上。
 
