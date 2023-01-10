@@ -63,6 +63,13 @@ const Router: RouterType = [
     ]
   },
   {
+    text: 'JS年度事件 ',
+    items: [
+      { text: '2022 年前端大事记', link: '/interview-questions/event/2022/' },
+
+    ]
+  },
+  {
     text: '性能优化',
     items: [
       { text: 'performance', link: '/interview-questions/performance-optimization/performance/' },
