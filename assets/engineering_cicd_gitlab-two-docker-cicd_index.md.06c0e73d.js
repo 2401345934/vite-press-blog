@@ -1,0 +1,243 @@
+import{_ as p,o as c,c as o,b as s,w as r,d as n,e as i,a as t,r as a}from"./app.1fbcae6f.js";const D=JSON.parse('{"title":"基于 Docker ( Gitlab、Gitlab Runner ) 搭建一整套自动化CI、CD流程，完成从代码提交到自动打包编译到自动部署运行","description":"","frontmatter":{"createTime":"2022/11/08","tag":"工程化,gitlab,cicd,docker"},"headers":[{"level":3,"title":"一、安装 Docker","slug":"一、安装-docker","link":"#一、安装-docker","children":[]},{"level":3,"title":"二、基于 Docker 安装 Gitlab","slug":"二、基于-docker-安装-gitlab","link":"#二、基于-docker-安装-gitlab","children":[]},{"level":3,"title":"三、基于 Docker 安装 Gitlab Runner、","slug":"三、基于-docker-安装-gitlab-runner、","link":"#三、基于-docker-安装-gitlab-runner、","children":[]},{"level":3,"title":"四、编写 .gitlab-ci.yml 提供CI、CD配置项","slug":"四、编写-gitlab-ci-yml-提供ci、cd配置项","link":"#四、编写-gitlab-ci-yml-提供ci、cd配置项","children":[]}],"relativePath":"engineering/cicd/gitlab-two-docker-cicd/index.md","lastUpdated":1667921721000}'),b={name:"engineering/cicd/gitlab-two-docker-cicd/index.md"},d=n("h1",{id:"基于-docker-gitlab、gitlab-runner-搭建一整套自动化ci、cd流程-完成从代码提交到自动打包编译到自动部署运行",tabindex:"-1"},[i("基于 Docker ( Gitlab、Gitlab Runner ) 搭建一整套自动化CI、CD流程，完成从代码提交到自动打包编译到自动部署运行 "),n("a",{class:"header-anchor",href:"#基于-docker-gitlab、gitlab-runner-搭建一整套自动化ci、cd流程-完成从代码提交到自动打包编译到自动部署运行","aria-hidden":"true"},"#")],-1),u=t(`<h3 id="一、安装-docker" tabindex="-1">一、安装 Docker <a class="header-anchor" href="#一、安装-docker" aria-hidden="true">#</a></h3><p><code>linux</code>服务器使用<code>curl</code>下载快速安装的<code>shell</code>脚本</p><div class="language- line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki one-dark-pro vp-code-dark"><code><span class="line"><span style="color:#abb2bf;">curl -fsSL get.docker.com -o get-docker.sh</span></span>
+<span class="line"><span style="color:#abb2bf;"></span></span></code></pre><pre class="shiki material-palenight vp-code-light"><code><span class="line"><span style="color:#A6ACCD;">curl -fsSL get.docker.com -o get-docker.sh</span></span>
+<span class="line"><span style="color:#A6ACCD;"></span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br></div></div><p>下载完成后，可以<code>ls</code>命令查看一下。已经存在的话，使用<code>sh</code>命令执行这个脚本</p><div class="language- line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki one-dark-pro vp-code-dark"><code><span class="line"><span style="color:#abb2bf;">sh get-docker.sh</span></span>
+<span class="line"><span style="color:#abb2bf;"></span></span></code></pre><pre class="shiki material-palenight vp-code-light"><code><span class="line"><span style="color:#A6ACCD;">sh get-docker.sh</span></span>
+<span class="line"><span style="color:#A6ACCD;"></span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br></div></div><p>注意如果不是<code>root</code>用户，需要使用<code>sudo su</code>获取超级管理员权限。</p><p>安装完成后启动一下<code>Docker Server</code></p><div class="language- line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki one-dark-pro vp-code-dark"><code><span class="line"><span style="color:#abb2bf;">systemctl start docker</span></span>
+<span class="line"><span style="color:#abb2bf;"></span></span></code></pre><pre class="shiki material-palenight vp-code-light"><code><span class="line"><span style="color:#A6ACCD;">systemctl start docker</span></span>
+<span class="line"><span style="color:#A6ACCD;"></span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br></div></div><p>使用<code>docker version</code>命令能看到<code>Client</code>和<code>Server</code>就启动成功了。</p><h3 id="二、基于-docker-安装-gitlab" tabindex="-1">二、基于 Docker 安装 Gitlab <a class="header-anchor" href="#二、基于-docker-安装-gitlab" aria-hidden="true">#</a></h3><h4 id="_1-一键安装命令" tabindex="-1">1. 一键安装命令 <a class="header-anchor" href="#_1-一键安装命令" aria-hidden="true">#</a></h4><div class="language- line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki one-dark-pro vp-code-dark"><code><span class="line"><span style="color:#abb2bf;">docker run --detach \\</span></span>
+<span class="line"><span style="color:#abb2bf;">  --hostname localhost \\</span></span>
+<span class="line"><span style="color:#abb2bf;">  --publish 443:443 --publish 80:80 --publish 222:22 \\</span></span>
+<span class="line"><span style="color:#abb2bf;">  --name gitlab \\</span></span>
+<span class="line"><span style="color:#abb2bf;">  --restart always \\</span></span>
+<span class="line"><span style="color:#abb2bf;">  --volume /home/gitlab/config:/etc/gitlab \\</span></span>
+<span class="line"><span style="color:#abb2bf;">  --volume /home/gitlab/logs:/var/log/gitlab \\</span></span>
+<span class="line"><span style="color:#abb2bf;">  --volume /home/gitlab/data:/var/opt/gitlab \\</span></span>
+<span class="line"><span style="color:#abb2bf;">  gitlab/gitlab-ce:latest</span></span>
+<span class="line"><span style="color:#abb2bf;"></span></span></code></pre><pre class="shiki material-palenight vp-code-light"><code><span class="line"><span style="color:#A6ACCD;">docker run --detach \\</span></span>
+<span class="line"><span style="color:#A6ACCD;">  --hostname localhost \\</span></span>
+<span class="line"><span style="color:#A6ACCD;">  --publish 443:443 --publish 80:80 --publish 222:22 \\</span></span>
+<span class="line"><span style="color:#A6ACCD;">  --name gitlab \\</span></span>
+<span class="line"><span style="color:#A6ACCD;">  --restart always \\</span></span>
+<span class="line"><span style="color:#A6ACCD;">  --volume /home/gitlab/config:/etc/gitlab \\</span></span>
+<span class="line"><span style="color:#A6ACCD;">  --volume /home/gitlab/logs:/var/log/gitlab \\</span></span>
+<span class="line"><span style="color:#A6ACCD;">  --volume /home/gitlab/data:/var/opt/gitlab \\</span></span>
+<span class="line"><span style="color:#A6ACCD;">  gitlab/gitlab-ce:latest</span></span>
+<span class="line"><span style="color:#A6ACCD;"></span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p><code>hostname</code>: 这里改成你自己的域名(域名要设置解析)或服务器ip</p><p><code>publish</code>: 端口映射(服务器端口：容器内端口)</p><p><code>restart</code>: 重启方式</p><p><code>volume</code>: 目录挂载，把容器内目录挂载到服务器本地(服务器本地目录：容器内目录)</p><p><code>gitlab/gitlab-ce:latest</code> 镜像名称</p><h4 id="_2-安装完成后通过域名或服务器ip访问" tabindex="-1">2. 安装完成后通过域名或服务器ip访问 <a class="header-anchor" href="#_2-安装完成后通过域名或服务器ip访问" aria-hidden="true">#</a></h4><p>通过<code>root</code>用户登陆</p><p><code>root</code>用户默认密码，通过</p><div class="language- line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki one-dark-pro vp-code-dark"><code><span class="line"><span style="color:#abb2bf;">docker exec -it gitlab sh</span></span>
+<span class="line"><span style="color:#abb2bf;"></span></span></code></pre><pre class="shiki material-palenight vp-code-light"><code><span class="line"><span style="color:#A6ACCD;">docker exec -it gitlab sh</span></span>
+<span class="line"><span style="color:#A6ACCD;"></span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br></div></div><p>shell命令方式进入容器内，然后</p><div class="language- line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki one-dark-pro vp-code-dark"><code><span class="line"><span style="color:#abb2bf;">cat /etc/gitlab/initial_root_password</span></span>
+<span class="line"><span style="color:#abb2bf;"></span></span></code></pre><pre class="shiki material-palenight vp-code-light"><code><span class="line"><span style="color:#A6ACCD;">cat /etc/gitlab/initial_root_password</span></span>
+<span class="line"><span style="color:#A6ACCD;"></span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br></div></div><p>查看默认密码，<code>root</code>用户登陆后，记得改默认密码，这个默认密码文件在24小时后会自动删除。</p><h3 id="三、基于-docker-安装-gitlab-runner、" tabindex="-1">三、基于 Docker 安装 Gitlab Runner、 <a class="header-anchor" href="#三、基于-docker-安装-gitlab-runner、" aria-hidden="true">#</a></h3><p><code>Gitlab Runner</code> 就是提供我们的CI、CD能力的工具。</p><h4 id="_1-一键安装运行-gitlab-runner" tabindex="-1">1. 一键安装运行 Gitlab Runner <a class="header-anchor" href="#_1-一键安装运行-gitlab-runner" aria-hidden="true">#</a></h4><div class="language- line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki one-dark-pro vp-code-dark"><code><span class="line"><span style="color:#abb2bf;">docker run -d --name gitlab-runner --restart always \\</span></span>
+<span class="line"><span style="color:#abb2bf;">  -v /home/gitlab-runner/config:/etc/gitlab-runner \\</span></span>
+<span class="line"><span style="color:#abb2bf;">  -v /var/run/docker.sock:/var/run/docker.sock \\</span></span>
+<span class="line"><span style="color:#abb2bf;">  gitlab/gitlab-runner:latest</span></span>
+<span class="line"><span style="color:#abb2bf;"></span></span></code></pre><pre class="shiki material-palenight vp-code-light"><code><span class="line"><span style="color:#A6ACCD;">docker run -d --name gitlab-runner --restart always \\</span></span>
+<span class="line"><span style="color:#A6ACCD;">  -v /home/gitlab-runner/config:/etc/gitlab-runner \\</span></span>
+<span class="line"><span style="color:#A6ACCD;">  -v /var/run/docker.sock:/var/run/docker.sock \\</span></span>
+<span class="line"><span style="color:#A6ACCD;">  gitlab/gitlab-runner:latest</span></span>
+<span class="line"><span style="color:#A6ACCD;"></span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p><code>-d</code>: 后台运行</p><p><code>--name</code>: 指定运行后的容器名</p><p><code>restart</code>: 重启方式</p><p><code>-v</code>: 目录挂载</p><h4 id="_2-查看gitlab-runner配置信息" tabindex="-1">2. 查看Gitlab Runner配置信息 <a class="header-anchor" href="#_2-查看gitlab-runner配置信息" aria-hidden="true">#</a></h4><p>安装好<code>Gitlab Runner</code>后，它只是在容器内运行的一个服务，我们需要让它与<code>Gitlab</code>关联起来，此时需要注册<code>Gitlab Runner</code>。</p><p>首先在<code>Gitlab</code>上，通过<code>root</code>用户个人设置页面，<code>overview</code>里面有个<code>Runners</code>的配置项，可以看到<code>token</code>，在注册的时候需要用。</p><p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/48f3a092251f4f89987dab99722d87fa~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image?" alt="image.png"></p><h4 id="_3-注册gitlab-runner" tabindex="-1">3. 注册Gitlab Runner <a class="header-anchor" href="#_3-注册gitlab-runner" aria-hidden="true">#</a></h4><p>运行注册命令</p><div class="language- line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki one-dark-pro vp-code-dark"><code><span class="line"><span style="color:#abb2bf;">docker run --rm -v /home/gitlab-runner/config:/etc/gitlab-runner gitlab/gitlab-runner register \\</span></span>
+<span class="line"><span style="color:#abb2bf;">  --non-interactive \\</span></span>
+<span class="line"><span style="color:#abb2bf;">  --executor &quot;docker&quot; \\</span></span>
+<span class="line"><span style="color:#abb2bf;">  --docker-image alpine:latest \\</span></span>
+<span class="line"><span style="color:#abb2bf;">  --url &quot;http://localhost/&quot; \\</span></span>
+<span class="line"><span style="color:#abb2bf;">  --registration-token &quot;xxxxxx&quot; \\</span></span>
+<span class="line"><span style="color:#abb2bf;">  --description &quot;runner&quot; \\</span></span>
+<span class="line"><span style="color:#abb2bf;">  --tag-list &quot;build&quot; \\</span></span>
+<span class="line"><span style="color:#abb2bf;">  --run-untagged=&quot;true&quot; \\</span></span>
+<span class="line"><span style="color:#abb2bf;">  --locked=&quot;false&quot; \\</span></span>
+<span class="line"><span style="color:#abb2bf;">  --access-level=&quot;not_protected&quot;</span></span>
+<span class="line"><span style="color:#abb2bf;"></span></span></code></pre><pre class="shiki material-palenight vp-code-light"><code><span class="line"><span style="color:#A6ACCD;">docker run --rm -v /home/gitlab-runner/config:/etc/gitlab-runner gitlab/gitlab-runner register \\</span></span>
+<span class="line"><span style="color:#A6ACCD;">  --non-interactive \\</span></span>
+<span class="line"><span style="color:#A6ACCD;">  --executor &quot;docker&quot; \\</span></span>
+<span class="line"><span style="color:#A6ACCD;">  --docker-image alpine:latest \\</span></span>
+<span class="line"><span style="color:#A6ACCD;">  --url &quot;http://localhost/&quot; \\</span></span>
+<span class="line"><span style="color:#A6ACCD;">  --registration-token &quot;xxxxxx&quot; \\</span></span>
+<span class="line"><span style="color:#A6ACCD;">  --description &quot;runner&quot; \\</span></span>
+<span class="line"><span style="color:#A6ACCD;">  --tag-list &quot;build&quot; \\</span></span>
+<span class="line"><span style="color:#A6ACCD;">  --run-untagged=&quot;true&quot; \\</span></span>
+<span class="line"><span style="color:#A6ACCD;">  --locked=&quot;false&quot; \\</span></span>
+<span class="line"><span style="color:#A6ACCD;">  --access-level=&quot;not_protected&quot;</span></span>
+<span class="line"><span style="color:#A6ACCD;"></span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p><code>* --url</code>: 后面改成刚才你<code>gitlab</code>上的<code>url</code></p><p><code>* registration-token</code>: 后面改成<code>gitlab</code>上查看的<code>token</code></p><p>其他配置项都是些基本信息，如<code>tag</code>、<code>description</code>等。</p><p>注册成功后在<code>gitlab</code>刷新就可以看到</p><p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f2c90aed55c74013a0db7a59677f18fb~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image?" alt="image.png"></p><p>到这，我们基本的<code>CI、CD</code>能力已经有了，后面就是编写<code>.gitlab-ci.yml</code>来提供给我们<code>gitlab runner</code>相应的配置。它会按照我们编写的这个文件来执行相应的操作。</p><h3 id="四、编写-gitlab-ci-yml-提供ci、cd配置项" tabindex="-1">四、编写 .gitlab-ci.yml 提供CI、CD配置项 <a class="header-anchor" href="#四、编写-gitlab-ci-yml-提供ci、cd配置项" aria-hidden="true">#</a></h3><h4 id="_1-提供前端编译、构建功能" tabindex="-1">1. 提供前端编译、构建功能 <a class="header-anchor" href="#_1-提供前端编译、构建功能" aria-hidden="true">#</a></h4><p>在项目根目录下创建一个<code>.gitlab-ci.yml</code>的文件，写入如下</p><div class="language- line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki one-dark-pro vp-code-dark"><code><span class="line"><span style="color:#abb2bf;">image: node:16.13.2-slim</span></span>
+<span class="line"><span style="color:#abb2bf;"></span></span>
+<span class="line"><span style="color:#abb2bf;">stages: # 分段</span></span>
+<span class="line"><span style="color:#abb2bf;">  - install</span></span>
+<span class="line"><span style="color:#abb2bf;">  - eslint</span></span>
+<span class="line"><span style="color:#abb2bf;">  - build</span></span>
+<span class="line"><span style="color:#abb2bf;">  - deploy</span></span>
+<span class="line"><span style="color:#abb2bf;"></span></span>
+<span class="line"><span style="color:#abb2bf;">cache: # 缓存</span></span>
+<span class="line"><span style="color:#abb2bf;">  paths:</span></span>
+<span class="line"><span style="color:#abb2bf;">    - node_modules</span></span>
+<span class="line"><span style="color:#abb2bf;">    - dist</span></span>
+<span class="line"><span style="color:#abb2bf;"></span></span>
+<span class="line"><span style="color:#abb2bf;">job_install:</span></span>
+<span class="line"><span style="color:#abb2bf;">  tags:</span></span>
+<span class="line"><span style="color:#abb2bf;">    - build</span></span>
+<span class="line"><span style="color:#abb2bf;">  stage: install</span></span>
+<span class="line"><span style="color:#abb2bf;">  script:</span></span>
+<span class="line"><span style="color:#abb2bf;">    - npm install</span></span>
+<span class="line"><span style="color:#abb2bf;"></span></span>
+<span class="line"><span style="color:#abb2bf;">job_build:</span></span>
+<span class="line"><span style="color:#abb2bf;">  tags:</span></span>
+<span class="line"><span style="color:#abb2bf;">    - build</span></span>
+<span class="line"><span style="color:#abb2bf;">  stage: build</span></span>
+<span class="line"><span style="color:#abb2bf;">  script:</span></span>
+<span class="line"><span style="color:#abb2bf;">    - npm run build</span></span>
+<span class="line"><span style="color:#abb2bf;"></span></span>
+<span class="line"><span style="color:#abb2bf;"></span></span></code></pre><pre class="shiki material-palenight vp-code-light"><code><span class="line"><span style="color:#A6ACCD;">image: node:16.13.2-slim</span></span>
+<span class="line"><span style="color:#A6ACCD;"></span></span>
+<span class="line"><span style="color:#A6ACCD;">stages: # 分段</span></span>
+<span class="line"><span style="color:#A6ACCD;">  - install</span></span>
+<span class="line"><span style="color:#A6ACCD;">  - eslint</span></span>
+<span class="line"><span style="color:#A6ACCD;">  - build</span></span>
+<span class="line"><span style="color:#A6ACCD;">  - deploy</span></span>
+<span class="line"><span style="color:#A6ACCD;"></span></span>
+<span class="line"><span style="color:#A6ACCD;">cache: # 缓存</span></span>
+<span class="line"><span style="color:#A6ACCD;">  paths:</span></span>
+<span class="line"><span style="color:#A6ACCD;">    - node_modules</span></span>
+<span class="line"><span style="color:#A6ACCD;">    - dist</span></span>
+<span class="line"><span style="color:#A6ACCD;"></span></span>
+<span class="line"><span style="color:#A6ACCD;">job_install:</span></span>
+<span class="line"><span style="color:#A6ACCD;">  tags:</span></span>
+<span class="line"><span style="color:#A6ACCD;">    - build</span></span>
+<span class="line"><span style="color:#A6ACCD;">  stage: install</span></span>
+<span class="line"><span style="color:#A6ACCD;">  script:</span></span>
+<span class="line"><span style="color:#A6ACCD;">    - npm install</span></span>
+<span class="line"><span style="color:#A6ACCD;"></span></span>
+<span class="line"><span style="color:#A6ACCD;">job_build:</span></span>
+<span class="line"><span style="color:#A6ACCD;">  tags:</span></span>
+<span class="line"><span style="color:#A6ACCD;">    - build</span></span>
+<span class="line"><span style="color:#A6ACCD;">  stage: build</span></span>
+<span class="line"><span style="color:#A6ACCD;">  script:</span></span>
+<span class="line"><span style="color:#A6ACCD;">    - npm run build</span></span>
+<span class="line"><span style="color:#A6ACCD;"></span></span>
+<span class="line"><span style="color:#A6ACCD;"></span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><p><code>image</code>: 指定基础镜像环境，前端就是<code>node、docker</code>等，后端有<code>java、python、docker</code></p><p><code>stages</code>: 指定执行的阶段有哪些，流水线执行时会按照这个阶段顺序执行</p><p><code>cache</code>: 针对哪些目录启用缓存</p><p><code>job</code>: 指定每个阶段执行的任务，<code>tags</code>就是使用的<code>runner</code>，<code>stage</code>指定阶段，<code>script</code>指定相应执行的<code>shell</code>命令</p><p>代码<code>push</code>之后流水线就会自动根据这个文件执行，执行的情况可以在下图地方查看</p><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bd3e34de75f14b01a6e60c0c48b942ca~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image?" alt="image.png"></p><h4 id="_2-nginx配置文件编写" tabindex="-1">2. nginx配置文件编写 <a class="header-anchor" href="#_2-nginx配置文件编写" aria-hidden="true">#</a></h4><p>在项目根目录创建<code>nginx.conf</code>文件，把这个文件复制到容器内作为nginx配置文件，写入以下内容</p><div class="language- line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki one-dark-pro vp-code-dark"><code><span class="line"><span style="color:#abb2bf;">server {</span></span>
+<span class="line"><span style="color:#abb2bf;">  #端口</span></span>
+<span class="line"><span style="color:#abb2bf;">  listen 80; </span></span>
+<span class="line"><span style="color:#abb2bf;">  server_name localhost;</span></span>
+<span class="line"><span style="color:#abb2bf;"></span></span>
+<span class="line"><span style="color:#abb2bf;">  #charset koi8-r;</span></span>
+<span class="line"><span style="color:#abb2bf;">  access_log /var/log/nginx/host.access.log main;</span></span>
+<span class="line"><span style="color:#abb2bf;">  error_log /var/log/nginx/error.log error;</span></span>
+<span class="line"><span style="color:#abb2bf;"></span></span>
+<span class="line"><span style="color:#abb2bf;">  #配置 vue 路由 history模式</span></span>
+<span class="line"><span style="color:#abb2bf;">  location / {</span></span>
+<span class="line"><span style="color:#abb2bf;">    root /usr/share/nginx/html;</span></span>
+<span class="line"><span style="color:#abb2bf;">    try_files $uri $uri/ /index.html;</span></span>
+<span class="line"><span style="color:#abb2bf;">  }</span></span>
+<span class="line"><span style="color:#abb2bf;"></span></span>
+<span class="line"><span style="color:#abb2bf;">  #error_page 404 /404.html;</span></span>
+<span class="line"><span style="color:#abb2bf;">  # redirect server error pages to the static page /50x.html</span></span>
+<span class="line"><span style="color:#abb2bf;">  #</span></span>
+<span class="line"><span style="color:#abb2bf;">  error_page 500 502 503 504 /50x.html;</span></span>
+<span class="line"><span style="color:#abb2bf;">  location = /50x.html {</span></span>
+<span class="line"><span style="color:#abb2bf;">    root /usr/share/nginx/html;</span></span>
+<span class="line"><span style="color:#abb2bf;">  }</span></span>
+<span class="line"><span style="color:#abb2bf;">}</span></span>
+<span class="line"><span style="color:#abb2bf;"></span></span>
+<span class="line"><span style="color:#abb2bf;"></span></span></code></pre><pre class="shiki material-palenight vp-code-light"><code><span class="line"><span style="color:#A6ACCD;">server {</span></span>
+<span class="line"><span style="color:#A6ACCD;">  #端口</span></span>
+<span class="line"><span style="color:#A6ACCD;">  listen 80; </span></span>
+<span class="line"><span style="color:#A6ACCD;">  server_name localhost;</span></span>
+<span class="line"><span style="color:#A6ACCD;"></span></span>
+<span class="line"><span style="color:#A6ACCD;">  #charset koi8-r;</span></span>
+<span class="line"><span style="color:#A6ACCD;">  access_log /var/log/nginx/host.access.log main;</span></span>
+<span class="line"><span style="color:#A6ACCD;">  error_log /var/log/nginx/error.log error;</span></span>
+<span class="line"><span style="color:#A6ACCD;"></span></span>
+<span class="line"><span style="color:#A6ACCD;">  #配置 vue 路由 history模式</span></span>
+<span class="line"><span style="color:#A6ACCD;">  location / {</span></span>
+<span class="line"><span style="color:#A6ACCD;">    root /usr/share/nginx/html;</span></span>
+<span class="line"><span style="color:#A6ACCD;">    try_files $uri $uri/ /index.html;</span></span>
+<span class="line"><span style="color:#A6ACCD;">  }</span></span>
+<span class="line"><span style="color:#A6ACCD;"></span></span>
+<span class="line"><span style="color:#A6ACCD;">  #error_page 404 /404.html;</span></span>
+<span class="line"><span style="color:#A6ACCD;">  # redirect server error pages to the static page /50x.html</span></span>
+<span class="line"><span style="color:#A6ACCD;">  #</span></span>
+<span class="line"><span style="color:#A6ACCD;">  error_page 500 502 503 504 /50x.html;</span></span>
+<span class="line"><span style="color:#A6ACCD;">  location = /50x.html {</span></span>
+<span class="line"><span style="color:#A6ACCD;">    root /usr/share/nginx/html;</span></span>
+<span class="line"><span style="color:#A6ACCD;">  }</span></span>
+<span class="line"><span style="color:#A6ACCD;">}</span></span>
+<span class="line"><span style="color:#A6ACCD;"></span></span>
+<span class="line"><span style="color:#A6ACCD;"></span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><h4 id="_3-dockerfile文件编写" tabindex="-1">3. Dockerfile文件编写 <a class="header-anchor" href="#_3-dockerfile文件编写" aria-hidden="true">#</a></h4><p>在项目根目录下创建<code>Dockerfile</code>文件，<code>runner</code>会根据这个文件创建一个的<code>docker</code>镜像，文件写入以下内容</p><div class="language- line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki one-dark-pro vp-code-dark"><code><span class="line"><span style="color:#abb2bf;">FROM nginx</span></span>
+<span class="line"><span style="color:#abb2bf;">COPY dist/ /usr/share/nginx/html/</span></span>
+<span class="line"><span style="color:#abb2bf;">COPY nginx.conf /etc/nginx/conf.d/default.conf</span></span>
+<span class="line"><span style="color:#abb2bf;"></span></span>
+<span class="line"><span style="color:#abb2bf;"></span></span></code></pre><pre class="shiki material-palenight vp-code-light"><code><span class="line"><span style="color:#A6ACCD;">FROM nginx</span></span>
+<span class="line"><span style="color:#A6ACCD;">COPY dist/ /usr/share/nginx/html/</span></span>
+<span class="line"><span style="color:#A6ACCD;">COPY nginx.conf /etc/nginx/conf.d/default.conf</span></span>
+<span class="line"><span style="color:#A6ACCD;"></span></span>
+<span class="line"><span style="color:#A6ACCD;"></span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h4 id="_4-使用docker自动部署前端项目" tabindex="-1">4. 使用docker自动部署前端项目 <a class="header-anchor" href="#_4-使用docker自动部署前端项目" aria-hidden="true">#</a></h4><p>首先是<code>.gitlab-ci.yml</code>文件编写</p><div class="language- line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki one-dark-pro vp-code-dark"><code><span class="line"><span style="color:#abb2bf;">image: node:16.13.2-slim</span></span>
+<span class="line"><span style="color:#abb2bf;"></span></span>
+<span class="line"><span style="color:#abb2bf;">stages: # 分段</span></span>
+<span class="line"><span style="color:#abb2bf;">  - install</span></span>
+<span class="line"><span style="color:#abb2bf;">  - eslint</span></span>
+<span class="line"><span style="color:#abb2bf;">  - build</span></span>
+<span class="line"><span style="color:#abb2bf;">  - deploy</span></span>
+<span class="line"><span style="color:#abb2bf;"></span></span>
+<span class="line"><span style="color:#abb2bf;">cache: # 缓存</span></span>
+<span class="line"><span style="color:#abb2bf;">  paths:</span></span>
+<span class="line"><span style="color:#abb2bf;">    - node_modules</span></span>
+<span class="line"><span style="color:#abb2bf;">    - dist</span></span>
+<span class="line"><span style="color:#abb2bf;"></span></span>
+<span class="line"><span style="color:#abb2bf;">job_install:</span></span>
+<span class="line"><span style="color:#abb2bf;">  tags:</span></span>
+<span class="line"><span style="color:#abb2bf;">    - build</span></span>
+<span class="line"><span style="color:#abb2bf;">  stage: install</span></span>
+<span class="line"><span style="color:#abb2bf;">  script:</span></span>
+<span class="line"><span style="color:#abb2bf;">    - npm install</span></span>
+<span class="line"><span style="color:#abb2bf;"></span></span>
+<span class="line"><span style="color:#abb2bf;">job_build:</span></span>
+<span class="line"><span style="color:#abb2bf;">  tags:</span></span>
+<span class="line"><span style="color:#abb2bf;">    - build</span></span>
+<span class="line"><span style="color:#abb2bf;">  stage: build</span></span>
+<span class="line"><span style="color:#abb2bf;">  script:</span></span>
+<span class="line"><span style="color:#abb2bf;">    - npm run build</span></span>
+<span class="line"><span style="color:#abb2bf;"></span></span>
+<span class="line"><span style="color:#abb2bf;">job_deploy:</span></span>
+<span class="line"><span style="color:#abb2bf;">    image: docker</span></span>
+<span class="line"><span style="color:#abb2bf;">    stage: deploy</span></span>
+<span class="line"><span style="color:#abb2bf;">    script:</span></span>
+<span class="line"><span style="color:#abb2bf;">      - docker build -t appimages .</span></span>
+<span class="line"><span style="color:#abb2bf;">      - if [ $(docker ps -aq --filter name=app-container) ]; then docker rm -f app-container;fi</span></span>
+<span class="line"><span style="color:#abb2bf;">      - docker run -d -p 8080:80 --name app-container appimages</span></span>
+<span class="line"><span style="color:#abb2bf;"></span></span>
+<span class="line"><span style="color:#abb2bf;"></span></span></code></pre><pre class="shiki material-palenight vp-code-light"><code><span class="line"><span style="color:#A6ACCD;">image: node:16.13.2-slim</span></span>
+<span class="line"><span style="color:#A6ACCD;"></span></span>
+<span class="line"><span style="color:#A6ACCD;">stages: # 分段</span></span>
+<span class="line"><span style="color:#A6ACCD;">  - install</span></span>
+<span class="line"><span style="color:#A6ACCD;">  - eslint</span></span>
+<span class="line"><span style="color:#A6ACCD;">  - build</span></span>
+<span class="line"><span style="color:#A6ACCD;">  - deploy</span></span>
+<span class="line"><span style="color:#A6ACCD;"></span></span>
+<span class="line"><span style="color:#A6ACCD;">cache: # 缓存</span></span>
+<span class="line"><span style="color:#A6ACCD;">  paths:</span></span>
+<span class="line"><span style="color:#A6ACCD;">    - node_modules</span></span>
+<span class="line"><span style="color:#A6ACCD;">    - dist</span></span>
+<span class="line"><span style="color:#A6ACCD;"></span></span>
+<span class="line"><span style="color:#A6ACCD;">job_install:</span></span>
+<span class="line"><span style="color:#A6ACCD;">  tags:</span></span>
+<span class="line"><span style="color:#A6ACCD;">    - build</span></span>
+<span class="line"><span style="color:#A6ACCD;">  stage: install</span></span>
+<span class="line"><span style="color:#A6ACCD;">  script:</span></span>
+<span class="line"><span style="color:#A6ACCD;">    - npm install</span></span>
+<span class="line"><span style="color:#A6ACCD;"></span></span>
+<span class="line"><span style="color:#A6ACCD;">job_build:</span></span>
+<span class="line"><span style="color:#A6ACCD;">  tags:</span></span>
+<span class="line"><span style="color:#A6ACCD;">    - build</span></span>
+<span class="line"><span style="color:#A6ACCD;">  stage: build</span></span>
+<span class="line"><span style="color:#A6ACCD;">  script:</span></span>
+<span class="line"><span style="color:#A6ACCD;">    - npm run build</span></span>
+<span class="line"><span style="color:#A6ACCD;"></span></span>
+<span class="line"><span style="color:#A6ACCD;">job_deploy:</span></span>
+<span class="line"><span style="color:#A6ACCD;">    image: docker</span></span>
+<span class="line"><span style="color:#A6ACCD;">    stage: deploy</span></span>
+<span class="line"><span style="color:#A6ACCD;">    script:</span></span>
+<span class="line"><span style="color:#A6ACCD;">      - docker build -t appimages .</span></span>
+<span class="line"><span style="color:#A6ACCD;">      - if [ $(docker ps -aq --filter name=app-container) ]; then docker rm -f app-container;fi</span></span>
+<span class="line"><span style="color:#A6ACCD;">      - docker run -d -p 8080:80 --name app-container appimages</span></span>
+<span class="line"><span style="color:#A6ACCD;"></span></span>
+<span class="line"><span style="color:#A6ACCD;"></span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br></div></div><p>主要是多了<code>deploy</code>阶段的任务</p><p><code>image</code>: 使用<code>docker</code>镜像</p><p><code>script第一行</code>: 根据我们项目目录下的<code>Dockerfile</code>文件创建一个<code>docker</code>镜像</p><p><code>script第二行</code>: 判断<code>name=app-container</code>这个容器是否在运行，在运行的话就进行销毁</p><p><code>script第三行</code>: 根据我们打包出来的镜像启动一个<code>app-container</code>的容器</p><hr><p>到此部署的配置基本完成，但是部署的时候可能会遇到一个连接错误的问题</p><p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e30c5d8b61df4ad4944686413e84bea5~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image?" alt="image.png"></p><p>通过</p><div class="language- line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki one-dark-pro vp-code-dark"><code><span class="line"><span style="color:#abb2bf;">vi /home/gitlab-runner/config/config.toml</span></span>
+<span class="line"><span style="color:#abb2bf;"></span></span>
+<span class="line"><span style="color:#abb2bf;"></span></span></code></pre><pre class="shiki material-palenight vp-code-light"><code><span class="line"><span style="color:#A6ACCD;">vi /home/gitlab-runner/config/config.toml</span></span>
+<span class="line"><span style="color:#A6ACCD;"></span></span>
+<span class="line"><span style="color:#A6ACCD;"></span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>修改<code>runner</code>的配置项，对相应的<code>runner</code>内容卷这加<code>&quot;/usr/bin/docker:/usr/bin/docker&quot;, &quot;/var/run/docker.sock:/var/run/docker.sock&quot;</code></p><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/dc20c650f7db470193ad296c923d124b~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.image?" alt="image.png"></p><blockquote><p>到此，所有的流程都已经完成，我们完成了代码提交后，自动去执行打包编译，部署到相应的容器的操作。如果各位伙伴有什么问题可以联系我，也可以评论区交流哦！</p></blockquote>`,77);function y(m,C,g,A,h,f){const l=a("ArticleMetadata"),e=a("ClientOnly");return c(),o("div",null,[d,s(e,null,{default:r(()=>[s(l)]),_:1}),u])}const v=p(b,[["render",y]]);export{D as __pageData,v as default};
