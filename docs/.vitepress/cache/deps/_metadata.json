@@ -1,0 +1,53 @@
+{
+  "hash": "84c7575d",
+  "browserHash": "1561e9be",
+  "optimized": {
+    "vue": {
+      "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "file": "vue.js",
+      "fileHash": "e38590e8",
+      "needsInterop": false
+    },
+    "@xiaomh/vue3-alan-vite-component": {
+      "src": "../../../../node_modules/@xiaomh/vue3-alan-vite-component/lib/vue3-alan-vite-component.es.js",
+      "file": "@xiaomh_vue3-alan-vite-component.js",
+      "fileHash": "8afb7ec2",
+      "needsInterop": false
+    },
+    "blueimp-md5": {
+      "src": "../../../../node_modules/blueimp-md5/js/md5.js",
+      "file": "blueimp-md5.js",
+      "fileHash": "4c79f0bc",
+      "needsInterop": true
+    },
+    "dayjs": {
+      "src": "../../../../node_modules/dayjs/dayjs.min.js",
+      "file": "dayjs.js",
+      "fileHash": "4a6b1193",
+      "needsInterop": true
+    },
+    "dayjs/locale/zh-cn": {
+      "src": "../../../../node_modules/dayjs/locale/zh-cn.js",
+      "file": "dayjs_locale_zh-cn.js",
+      "fileHash": "13e141ee",
+      "needsInterop": true
+    },
+    "dayjs/plugin/relativeTime": {
+      "src": "../../../../node_modules/dayjs/plugin/relativeTime.js",
+      "file": "dayjs_plugin_relativeTime.js",
+      "fileHash": "f59eb8c5",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "chunk-6S52NMOK": {
+      "file": "chunk-6S52NMOK.js"
+    },
+    "chunk-SHT7PVZX": {
+      "file": "chunk-SHT7PVZX.js"
+    },
+    "chunk-RSJERJUL": {
+      "file": "chunk-RSJERJUL.js"
+    }
+  }
+}

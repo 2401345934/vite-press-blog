@@ -1,6 +1,6 @@
 {
   "name": "@xiaomh/vitepress",
-  "version": "1.7.1",
+  "version": "1.7.3",
   "main": "index.js",
   "homepage": "https://2401345934.github.io/vite-press/",
   "bugs": "https://github.com/2401345934/vite-press/issues/new",
@@ -42,7 +42,7 @@
     "markdown-it": "^13.0.1",
     "prettier": "^2.7.1",
     "prompts": "^2.4.2",
-    "vitepress": "1.0.0-alpha.40",
+    "vitepress": "^1.0.0-alpha.45",
     "vitepress-plugin-search": "^1.0.4-alpha.14",
     "zx": "^7.1.1"
   },
@@ -52,6 +52,7 @@
     "dayjs": "^1.11.6",
     "fast-glob": "^3.2.12",
     "gray-matter": "^4.0.3",
+    "shiki": "^0.14.0",
     "valine": "^1.5.1"
   }
 }
