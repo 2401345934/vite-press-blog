@@ -1,4 +1,4 @@
-## <small>1.7.3 (2023-02-01)</small>
+## <small>1.7.4 (2023-02-01)</small>
 
 * ✨新增(components): 新增了注册chartgpt ([09a7b00](https://github.com/2401345934/vite-press/commit/09a7b00))
 * ✨新增(doc/工程化): sdk补充 ([84e1eb2](https://github.com/2401345934/vite-press/commit/84e1eb2))
@@ -20,6 +20,7 @@
 * ✨新增(doc/源码): vue-v-model 原理 ([eb4cd80](https://github.com/2401345934/vite-press/commit/eb4cd80))
 * ✨新增(doc/vite-component): 更新 vite-component 版本依赖 ([d82f495](https://github.com/2401345934/vite-press/commit/d82f495))
 * 🐛修复(config): 修复 package 版本锁定 ([7731ed2](https://github.com/2401345934/vite-press/commit/7731ed2))
+* 🐛修复(config): shiki 主题删除 ([d4465c9](https://github.com/2401345934/vite-press/commit/d4465c9))
 * 🐛修复(doc/面试题): 错别字修复 ([10f7d09](https://github.com/2401345934/vite-press/commit/10f7d09))
 * 拆组件库 ([3885174](https://github.com/2401345934/vite-press/commit/3885174))
 * 升级npm版本 ([97560a6](https://github.com/2401345934/vite-press/commit/97560a6))
