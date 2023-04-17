@@ -29,10 +29,7 @@ const Router: RouterType = [
         text: '常用git命令',
         link: '/tool/git-all/',
       },
-      {
-        text: '好看的颜色选择',
-        link: '/tool/color-all/',
-      },
+      
       {
         text: 'json可视化',
         link: '/tool/json-view/',

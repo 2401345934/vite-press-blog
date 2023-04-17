@@ -1,4 +1,4 @@
-## <small>1.7.4 (2023-02-01)</small>
+## <small>1.7.5 (2023-04-17)</small>
 
 * ✨新增(components): 新增了注册chartgpt ([09a7b00](https://github.com/2401345934/vite-press/commit/09a7b00))
 * ✨新增(doc/工程化): sdk补充 ([84e1eb2](https://github.com/2401345934/vite-press/commit/84e1eb2))
@@ -22,6 +22,7 @@
 * 🐛修复(config): 修复 package 版本锁定 ([7731ed2](https://github.com/2401345934/vite-press/commit/7731ed2))
 * 🐛修复(config): shiki 主题删除 ([d4465c9](https://github.com/2401345934/vite-press/commit/d4465c9))
 * 🐛修复(doc/面试题): 错别字修复 ([10f7d09](https://github.com/2401345934/vite-press/commit/10f7d09))
+* 🔧工具(custom): 构建工具升级 ([b1b375e](https://github.com/2401345934/vite-press/commit/b1b375e))
 * 拆组件库 ([3885174](https://github.com/2401345934/vite-press/commit/3885174))
 * 升级npm版本 ([97560a6](https://github.com/2401345934/vite-press/commit/97560a6))
 * 修复/错别字 ([d1f1dd3](https://github.com/2401345934/vite-press/commit/d1f1dd3))
@@ -31,6 +32,7 @@
 * html 面试题 ([0a304a1](https://github.com/2401345934/vite-press/commit/0a304a1))
 * test ([2f7a97e](https://github.com/2401345934/vite-press/commit/2f7a97e))
 * trst ([41597e4](https://github.com/2401345934/vite-press/commit/41597e4))
+* Update deploy-pages.yml ([b54cc51](https://github.com/2401345934/vite-press/commit/b54cc51))
 * Update deploy-pages.yml ([9235140](https://github.com/2401345934/vite-press/commit/9235140))
 
 

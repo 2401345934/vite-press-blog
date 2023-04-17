@@ -22,10 +22,16 @@ import {
   useSlots,
   vShow,
   withDirectives
-} from "./chunk-6S52NMOK.js";
+} from "./chunk-IBAS2QTM.js";
 import "./chunk-RSJERJUL.js";
 
 // node_modules/@xiaomh/vue3-alan-vite-component/lib/vue3-alan-vite-component.es.js
+var __defProp = Object.defineProperty;
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __publicField = (obj, key, value) => {
+  __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
+  return value;
+};
 var _export_sfc = (sfc, props) => {
   const target = sfc.__vccOpts || sfc;
   for (const [key, val] of props) {
@@ -33,13 +39,13 @@ var _export_sfc = (sfc, props) => {
   }
   return target;
 };
-var _hoisted_1$a = { class: "starry-sky-bg" };
-var _hoisted_2$4 = { class: "stars" };
-var __default__$b = defineComponent({
+var _hoisted_1$b = { class: "starry-sky-bg" };
+var _hoisted_2$5 = { class: "stars" };
+var __default__$d = defineComponent({
   name: "StarrySky"
 });
-var _sfc_main$c = defineComponent({
-  ...__default__$b,
+var _sfc_main$e = defineComponent({
+  ...__default__$d,
   props: {
     starsCount: {
       type: Number,
@@ -63,8 +69,8 @@ var _sfc_main$c = defineComponent({
       });
     });
     return (_ctx, _cache) => {
-      return openBlock(), createElementBlock("div", _hoisted_1$a, [
-        createBaseVNode("div", _hoisted_2$4, [
+      return openBlock(), createElementBlock("div", _hoisted_1$b, [
+        createBaseVNode("div", _hoisted_2$5, [
           (openBlock(true), createElementBlock(Fragment, null, renderList(__props.starsCount, (item) => {
             return openBlock(), createElementBlock("div", {
               key: item,
@@ -79,9 +85,9 @@ var _sfc_main$c = defineComponent({
     };
   }
 });
-var StarrySky = _export_sfc(_sfc_main$c, [["__scopeId", "data-v-7932ec82"]]);
+var StarrySky = _export_sfc(_sfc_main$e, [["__scopeId", "data-v-7932ec82"]]);
 StarrySky.install = (App) => {
-  App.component(StarrySky.__name, StarrySky);
+  App.component(StarrySky.name, StarrySky);
 };
 var RecordingVideo = class {
   constructor() {
@@ -230,7 +236,7 @@ function throttle(func, wait, options) {
   let previous = 0;
   options = options || {};
   let later = function() {
-    let now = new Date().getTime();
+    let now = (/* @__PURE__ */ new Date()).getTime();
     previous = options.leading === false ? 0 : now;
     timeout = null;
     result = func.apply(context, args);
@@ -240,7 +246,7 @@ function throttle(func, wait, options) {
   return function() {
     context = this;
     args = arguments;
-    let now = new Date().getTime();
+    let now = (/* @__PURE__ */ new Date()).getTime();
     if (!previous && options.leading === false)
       previous = now;
     let remaining = wait - (now - previous);
@@ -391,11 +397,11 @@ var useDigitScroll = DigitScroll;
 var useRandomRgbColor = randomRgbColor;
 var useRecordingVideo = RecordingVideo;
 var useDrawImage = DrawImage$1;
-var __default__$a = defineComponent({
+var __default__$c = defineComponent({
   name: "DigitalScroll"
 });
-var _sfc_main$b = defineComponent({
-  ...__default__$a,
+var _sfc_main$d = defineComponent({
+  ...__default__$c,
   props: {
     targetNumber: {
       type: Number,
@@ -422,16 +428,16 @@ var _sfc_main$b = defineComponent({
     };
   }
 });
-var DigitalScroll = _export_sfc(_sfc_main$b, [["__scopeId", "data-v-45c23839"]]);
+var DigitalScroll = _export_sfc(_sfc_main$d, [["__scopeId", "data-v-45c23839"]]);
 DigitalScroll.install = (App) => {
-  App.component(DigitalScroll.alanComponentName, DigitalScroll);
+  App.component(DigitalScroll.name, DigitalScroll);
 };
-var _hoisted_1$9 = ["disabled"];
-var __default__$9 = defineComponent({
+var _hoisted_1$a = ["disabled"];
+var __default__$b = defineComponent({
   name: "AlanButton"
 });
-var _sfc_main$a = defineComponent({
-  ...__default__$9,
+var _sfc_main$c = defineComponent({
+  ...__default__$b,
   props: {
     type: {
       type: String,
@@ -453,20 +459,20 @@ var _sfc_main$a = defineComponent({
         class: normalizeClass(["btn", __props.block && "block", __props.disabled && "disabled", __props.type])
       }, [
         renderSlot(_ctx.$slots, "default", {}, void 0, true)
-      ], 10, _hoisted_1$9);
+      ], 10, _hoisted_1$a);
     };
   }
 });
-var AlanButton = _export_sfc(_sfc_main$a, [["__scopeId", "data-v-3313c991"]]);
+var AlanButton = _export_sfc(_sfc_main$c, [["__scopeId", "data-v-3313c991"]]);
 AlanButton.install = (App) => {
-  App.component(AlanButton.alanComponentName, Button);
+  App.component(AlanButton.name, Button);
 };
-var _hoisted_1$8 = ["height", "width"];
-var __default__$8 = defineComponent({
+var _hoisted_1$9 = ["height", "width"];
+var __default__$a = defineComponent({
   name: "CodeBackgroundWall"
 });
-var _sfc_main$9 = defineComponent({
-  ...__default__$8,
+var _sfc_main$b = defineComponent({
+  ...__default__$a,
   props: {
     width: {
       type: Number,
@@ -552,23 +558,23 @@ var _sfc_main$9 = defineComponent({
         height: __props.height,
         width: __props.width,
         class: "cvs"
-      }, null, 8, _hoisted_1$8);
+      }, null, 8, _hoisted_1$9);
     };
   }
 });
-var CodeBackgroundWall = _export_sfc(_sfc_main$9, [["__scopeId", "data-v-f79d4606"]]);
+var CodeBackgroundWall = _export_sfc(_sfc_main$b, [["__scopeId", "data-v-f79d4606"]]);
 CodeBackgroundWall.install = (App) => {
-  App.component(CodeBackgroundWall.alanComponentName, CodeBackgroundWall);
+  App.component(CodeBackgroundWall.name, CodeBackgroundWall);
 };
-var _hoisted_1$7 = {
+var _hoisted_1$8 = {
   key: 0,
   class: "alan-back-top-content"
 };
-var __default__$7 = defineComponent({
+var __default__$9 = defineComponent({
   name: "AlanBackTop"
 });
-var _sfc_main$8 = defineComponent({
-  ...__default__$7,
+var _sfc_main$a = defineComponent({
+  ...__default__$9,
   props: {
     visibilityHeight: {
       type: Number,
@@ -604,19 +610,19 @@ var _sfc_main$8 = defineComponent({
         createBaseVNode("div", {
           class: normalizeClass(["warp", visibilityH.value && "visibilityH"])
         }, [
-          !slotDefault ? (openBlock(), createElementBlock("div", _hoisted_1$7, " 返回 ")) : createCommentVNode("", true),
+          !slotDefault ? (openBlock(), createElementBlock("div", _hoisted_1$8, " 返回 ")) : createCommentVNode("", true),
           renderSlot(_ctx.$slots, "default", {}, void 0, true)
         ], 2)
       ]);
     };
   }
 });
-var BackTop = _export_sfc(_sfc_main$8, [["__scopeId", "data-v-2fc49e58"]]);
+var BackTop = _export_sfc(_sfc_main$a, [["__scopeId", "data-v-2fc49e58"]]);
 BackTop.install = (App) => {
-  App.component(BackTop.alanComponentName, BackTop);
+  App.component(BackTop.name, BackTop);
 };
-var _sfc_main$7 = {
-  alanComponentName: "DynamicCard",
+var _sfc_main$9 = {
+  name: "DynamicCard",
   props: {
     cardList: {
       type: Array,
@@ -714,14 +720,14 @@ var _sfc_main$7 = {
     }
   }
 };
-var _hoisted_1$6 = { class: "AnimationCards" };
-var _hoisted_2$3 = { class: "demo-content" };
+var _hoisted_1$7 = { class: "AnimationCards" };
+var _hoisted_2$4 = { class: "demo-content" };
 var _hoisted_3$3 = { class: "animation-cards-box" };
 var _hoisted_4$2 = ["onClick"];
 var _hoisted_5$2 = { class: "text-span" };
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", _hoisted_1$6, [
-    createBaseVNode("div", _hoisted_2$3, [
+  return openBlock(), createElementBlock("div", _hoisted_1$7, [
+    createBaseVNode("div", _hoisted_2$4, [
       createBaseVNode("div", _hoisted_3$3, [
         (openBlock(true), createElementBlock(Fragment, null, renderList($data.cards, (styles, index2) => {
           return openBlock(), createElementBlock("div", {
@@ -737,12 +743,12 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     ])
   ]);
 }
-var DynamicCard = _export_sfc(_sfc_main$7, [["render", _sfc_render], ["__scopeId", "data-v-4c78669c"]]);
+var DynamicCard = _export_sfc(_sfc_main$9, [["render", _sfc_render], ["__scopeId", "data-v-393e8e1d"]]);
 DynamicCard.install = (App) => {
-  App.component(DynamicCard.alanComponentName, DynamicCard);
+  App.component(DynamicCard.name, DynamicCard);
 };
-var _hoisted_1$5 = { class: "camera_outer" };
-var _hoisted_2$2 = ["width", "height"];
+var _hoisted_1$6 = { class: "camera_outer" };
+var _hoisted_2$3 = ["width", "height"];
 var _hoisted_3$2 = ["width", "height"];
 var _hoisted_4$1 = {
   key: 0,
@@ -751,10 +757,10 @@ var _hoisted_4$1 = {
 var _hoisted_5$1 = createBaseVNode("h2", null, "效果预览", -1);
 var _hoisted_6$1 = ["src"];
 var _hoisted_7$1 = { class: "button" };
-var __default__$6 = defineComponent({
+var __default__$8 = defineComponent({
   name: "TakingPictures"
 });
-var _sfc_main$6 = Object.assign(__default__$6, {
+var _sfc_main$8 = Object.assign(__default__$8, {
   props: {
     autoGetCompetence: {
       type: Boolean,
@@ -832,13 +838,13 @@ var _sfc_main$6 = Object.assign(__default__$6, {
       state.thisVideo.srcObject.getTracks()[0].stop();
     };
     return (_ctx, _cache) => {
-      return openBlock(), createElementBlock("div", _hoisted_1$5, [
+      return openBlock(), createElementBlock("div", _hoisted_1$6, [
         createBaseVNode("video", {
           id: "videoCamera",
           width: state.videoWidth,
           height: state.videoHeight,
           autoplay: ""
-        }, null, 8, _hoisted_2$2),
+        }, null, 8, _hoisted_2$3),
         createBaseVNode("canvas", {
           style: { "display": "none" },
           id: "canvasCamera",
@@ -871,12 +877,12 @@ var _sfc_main$6 = Object.assign(__default__$6, {
     };
   }
 });
-_sfc_main$6.install = (App) => {
-  App.component(_sfc_main$6.alanComponentName, _sfc_main$6);
+_sfc_main$8.install = (App) => {
+  App.component(_sfc_main$8.name, _sfc_main$8);
 };
 var _withScopeId = (n) => (pushScopeId("data-v-47e5d9bc"), n = n(), popScopeId(), n);
-var _hoisted_1$4 = { class: "container flex-row j_c" };
-var _hoisted_2$1 = { class: "container-box" };
+var _hoisted_1$5 = { class: "container flex-row j_c" };
+var _hoisted_2$2 = { class: "container-box" };
 var _hoisted_3$1 = { class: "box-lines" };
 var _hoisted_4 = { class: "left" };
 var _hoisted_5 = { class: "right" };
@@ -885,10 +891,10 @@ var _hoisted_7 = _withScopeId(() => createBaseVNode("div", { class: "box-shadow"
 var _hoisted_8 = { class: "bottom-center" };
 var _hoisted_9 = { class: "container-title" };
 var _hoisted_10 = _withScopeId(() => createBaseVNode("text", null, "C", -1));
-var __default__$5 = defineComponent({
+var __default__$7 = defineComponent({
   name: "TherMometer"
 });
-var _sfc_main$5 = Object.assign(__default__$5, {
+var _sfc_main$7 = Object.assign(__default__$7, {
   props: {
     show: {
       type: Boolean,
@@ -911,8 +917,8 @@ var _sfc_main$5 = Object.assign(__default__$5, {
       stepList.unshift(step * i);
     }
     return (_ctx, _cache) => {
-      return openBlock(), createElementBlock("section", _hoisted_1$4, [
-        createBaseVNode("div", _hoisted_2$1, [
+      return openBlock(), createElementBlock("section", _hoisted_1$5, [
+        createBaseVNode("div", _hoisted_2$2, [
           createBaseVNode("div", _hoisted_3$1, [
             (openBlock(true), createElementBlock(Fragment, null, renderList(unref(stepList), (item, index2) => {
               return openBlock(), createElementBlock("div", {
@@ -957,16 +963,16 @@ var _sfc_main$5 = Object.assign(__default__$5, {
     };
   }
 });
-var TherMometer = _export_sfc(_sfc_main$5, [["__scopeId", "data-v-47e5d9bc"]]);
+var TherMometer = _export_sfc(_sfc_main$7, [["__scopeId", "data-v-47e5d9bc"]]);
 TherMometer.install = (App) => {
-  App.component(TherMometer.alanComponentName, TherMometer);
+  App.component(TherMometer.name, TherMometer);
 };
-var _hoisted_1$3 = { id: "canvas" };
-var __default__$4 = defineComponent({
+var _hoisted_1$4 = { id: "canvas" };
+var __default__$6 = defineComponent({
   name: "YuanWar"
 });
-var _sfc_main$4 = defineComponent({
-  ...__default__$4,
+var _sfc_main$6 = defineComponent({
+  ...__default__$6,
   props: {
     width: {
       type: Number,
@@ -1140,18 +1146,18 @@ var _sfc_main$4 = defineComponent({
       game.start();
     });
     return (_ctx, _cache) => {
-      return openBlock(), createElementBlock("canvas", _hoisted_1$3);
+      return openBlock(), createElementBlock("canvas", _hoisted_1$4);
     };
   }
 });
-_sfc_main$4.install = (App) => {
-  App.component(_sfc_main$4.alanComponentName, _sfc_main$4);
+_sfc_main$6.install = (App) => {
+  App.component(_sfc_main$6.name, _sfc_main$6);
 };
-var _hoisted_1$2 = ["width", "height"];
-var __default__$3 = defineComponent({
+var _hoisted_1$3 = ["width", "height"];
+var __default__$5 = defineComponent({
   name: "Clocks"
 });
-var _sfc_main$3 = Object.assign(__default__$3, {
+var _sfc_main$5 = Object.assign(__default__$5, {
   props: {
     width: {
       type: Number,
@@ -1306,7 +1312,7 @@ var _sfc_main$3 = Object.assign(__default__$3, {
         return result;
       }
       function showTime() {
-        let now = new Date();
+        let now = /* @__PURE__ */ new Date();
         let today = now.toLocaleDateString();
         let time = now.toLocaleTimeString();
         let day = now.getDay();
@@ -1374,39 +1380,39 @@ var _sfc_main$3 = Object.assign(__default__$3, {
         id: "canvas",
         width: __props.width,
         height: __props.height
-      }, null, 8, _hoisted_1$2);
+      }, null, 8, _hoisted_1$3);
     };
   }
 });
-_sfc_main$3.install = (App) => {
-  App.component(_sfc_main$3.alanComponentName, Button);
+_sfc_main$5.install = (App) => {
+  App.component(_sfc_main$5.name, Button);
 };
-var _hoisted_1$1 = { class: "layui-body" };
-var _hoisted_2 = createStaticVNode('<div id="container" data-v-177b98b4><video id="gum" autoplay muted data-v-177b98b4></video><div class="controls" data-v-177b98b4><button id="record" disabled data-v-177b98b4>开始录制</button><button id="play" disabled data-v-177b98b4>播放</button><button id="download" disabled data-v-177b98b4>下载</button><span id="tEl" data-v-177b98b4></span></div><video id="gum2" controls="controls" autoplay style="display:none;" data-v-177b98b4></video></div>', 1);
+var _hoisted_1$2 = { class: "layui-body" };
+var _hoisted_2$1 = createStaticVNode('<div id="container" data-v-177b98b4><video id="gum" autoplay muted data-v-177b98b4></video><div class="controls" data-v-177b98b4><button id="record" disabled data-v-177b98b4>开始录制</button><button id="play" disabled data-v-177b98b4>播放</button><button id="download" disabled data-v-177b98b4>下载</button><span id="tEl" data-v-177b98b4></span></div><video id="gum2" controls="controls" autoplay style="display:none;" data-v-177b98b4></video></div>', 1);
 var _hoisted_3 = [
-  _hoisted_2
+  _hoisted_2$1
 ];
-var __default__$2 = defineComponent({
+var __default__$4 = defineComponent({
   name: "VideoRecording"
 });
-var _sfc_main$2 = Object.assign(__default__$2, {
+var _sfc_main$4 = Object.assign(__default__$4, {
   setup(__props) {
     onMounted(() => {
       new useRecordingVideo();
     });
     return (_ctx, _cache) => {
-      return openBlock(), createElementBlock("div", _hoisted_1$1, _hoisted_3);
+      return openBlock(), createElementBlock("div", _hoisted_1$2, _hoisted_3);
     };
   }
 });
-var VideoRecording = _export_sfc(_sfc_main$2, [["__scopeId", "data-v-177b98b4"]]);
+var VideoRecording = _export_sfc(_sfc_main$4, [["__scopeId", "data-v-177b98b4"]]);
 VideoRecording.install = (App) => {
-  App.component(VideoRecording.alanComponentName, VideoRecording);
+  App.component(VideoRecording.name, VideoRecording);
 };
-var __default__$1 = defineComponent({
+var __default__$3 = defineComponent({
   name: "Spotlight"
 });
-var _sfc_main$1 = Object.assign(__default__$1, {
+var _sfc_main$3 = Object.assign(__default__$3, {
   props: {
     width: {
       type: Number,
@@ -1458,15 +1464,15 @@ var _sfc_main$1 = Object.assign(__default__$1, {
     };
   }
 });
-_sfc_main$1.install = (App) => {
-  App.component(_sfc_main$1.alanComponentName, Button);
+_sfc_main$3.install = (App) => {
+  App.component(_sfc_main$3.name, Button);
 };
-var _hoisted_1 = ["width", "height"];
-var __default__ = defineComponent({
+var _hoisted_1$1 = ["width", "height"];
+var __default__$2 = defineComponent({
   name: "DrawImage"
 });
-var _sfc_main = defineComponent({
-  ...__default__,
+var _sfc_main$2 = defineComponent({
+  ...__default__$2,
   props: {
     width: {
       type: Number,
@@ -1510,7 +1516,7 @@ var _sfc_main = defineComponent({
           width: __props.width,
           height: __props.height,
           style: normalizeStyle(`width:${__props.width}px`)
-        }, null, 12, _hoisted_1),
+        }, null, 12, _hoisted_1$1),
         createBaseVNode("div", null, [
           createBaseVNode("button", {
             onClick: _cache[0] || (_cache[0] = ($event) => download())
@@ -1520,31 +1526,355 @@ var _sfc_main = defineComponent({
     };
   }
 });
-var DrawImage = _export_sfc(_sfc_main, [["__scopeId", "data-v-bddadfbe"]]);
+var DrawImage = _export_sfc(_sfc_main$2, [["__scopeId", "data-v-bddadfbe"]]);
 DrawImage.install = (App) => {
-  App.component(DrawImage.alanComponentName, DrawImage);
+  App.component(DrawImage.name, DrawImage);
 };
-var components = [StarrySky, DigitalScroll, AlanButton, CodeBackgroundWall, BackTop, TherMometer, _sfc_main$4, DynamicCard, _sfc_main$6, VideoRecording, _sfc_main$3, _sfc_main$1, DrawImage];
+var __default__$1 = defineComponent({
+  name: "CanvasAutograph"
+});
+var _sfc_main$1 = Object.assign(__default__$1, {
+  props: {
+    config: {
+      type: Object,
+      default: {
+        width: 400,
+        height: 200,
+        lineWidth: 3,
+        strokeStyle: "red",
+        lineCap: "round",
+        lineJoin: "round"
+      }
+    }
+  },
+  setup(__props) {
+    const props = __props;
+    const refs = ref("null");
+    let canvas = null;
+    let ctx = null;
+    onMounted(() => {
+      var _a, _b;
+      canvas = refs.value;
+      canvas.width = (_a = props.config) == null ? void 0 : _a.width;
+      canvas.height = (_b = props.config) == null ? void 0 : _b.height;
+      canvas.style.border = "1px solid #000";
+      ctx = canvas.getContext("2d");
+      ctx.fillStyle = "transparent";
+      ctx.fillRect(
+        0,
+        0,
+        props.config.width,
+        props.config.height
+      );
+      const client = {
+        offsetX: 0,
+        offsetY: 0,
+        endX: 0,
+        endY: 0
+      };
+      const mobileStatus = /Mobile|Android|iPhone/i.test(navigator.userAgent);
+      const init = (event) => {
+        const { offsetX, offsetY, pageX, pageY } = mobileStatus ? event.changedTouches[0] : event;
+        client.offsetX = offsetX;
+        client.offsetY = offsetY;
+        client.endX = pageX;
+        client.endY = pageY;
+        ctx.beginPath();
+        ctx.lineWidth = props.config.lineWidth;
+        ctx.strokeStyle = props.config.strokeStyle;
+        ctx.lineCap = props.config.lineCap;
+        ctx.lineJoin = props.config.lineJoin;
+        ctx.moveTo(client.endX, client.endY);
+        window.addEventListener(mobileStatus ? "touchmove" : "mousemove", draw);
+      };
+      const draw = (event) => {
+        const { pageX, pageY } = mobileStatus ? event.changedTouches[0] : event;
+        client.endX = pageX;
+        client.endY = pageY;
+        ctx.lineTo(pageX, pageY);
+        ctx.stroke();
+      };
+      const cloaseDraw = () => {
+        ctx.closePath();
+        window.removeEventListener("mousemove", draw);
+      };
+      window.addEventListener(mobileStatus ? "touchstart" : "mousedown", init);
+      window.addEventListener(mobileStatus ? "touchend" : "mouseup", cloaseDraw);
+    });
+    const cancel = () => {
+      ctx.clearRect(0, 0, props.config.width, props.config.height);
+    };
+    const save = () => {
+      canvas.toBlob((blob) => {
+        const date = Date.now().toString();
+        const a = document.createElement("a");
+        a.download = `${date}.png`;
+        a.href = URL.createObjectURL(blob);
+        a.click();
+        a.remove();
+      });
+    };
+    return (_ctx, _cache) => {
+      return openBlock(), createElementBlock(Fragment, null, [
+        createBaseVNode("canvas", {
+          ref_key: "refs",
+          ref: refs
+        }, null, 512),
+        createBaseVNode("div", null, [
+          createBaseVNode("button", {
+            onClick: _cache[0] || (_cache[0] = ($event) => cancel())
+          }, "取消"),
+          createBaseVNode("button", {
+            onClick: _cache[1] || (_cache[1] = ($event) => save())
+          }, "保存")
+        ])
+      ], 64);
+    };
+  }
+});
+_sfc_main$1.install = (App) => {
+  App.component(_sfc_main$1.name, _sfc_main$1);
+};
+var _hoisted_1 = createBaseVNode("button", null, "点击开始", -1);
+var _hoisted_2 = {
+  ref: "canvas",
+  class: "canvas"
+};
+var __default__ = defineComponent({
+  name: "RedPacketRain"
+});
+var _sfc_main = Object.assign(__default__, {
+  setup(__props) {
+    onMounted(() => {
+      const canvas = document.querySelector(".canvas");
+      canvas.width = "400";
+      canvas.height = "400";
+      const cwidth = canvas.width;
+      if (canvas.getContext) {
+        let start = function() {
+          let ball = new Ball(1, 3, getRandom(0, cwidth - 50), 0, canvas.clientWidth, canvas.clientHeight);
+          ball.draw();
+          arr.push(ball);
+          setInterval(() => {
+            let ball2 = new Ball(1, 3, getRandom(0, cwidth - 50), 0, canvas.clientWidth, canvas.clientHeight);
+            ball2.draw();
+            arr.push(ball2);
+          }, 500);
+          move();
+        }, move = function() {
+          ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+          for (let i = 0; i < arr.length; i++) {
+            if (arr[i].y >= canvas.height) {
+              arr.splice(i, 1);
+              arr[i].move();
+              arr[i].draw();
+            } else {
+              arr[i].move();
+              arr[i].draw();
+            }
+          }
+          window.requestAnimationFrame(move);
+        }, getRandom = function(min, max) {
+          return Math.ceil(Math.random() * (max - min) + min);
+        };
+        const ctx = canvas.getContext("2d");
+        class Ball {
+          constructor(speedX, speedY, x, y, boxWidth, boxHeight, width = 50, height = 50, color = "red") {
+            this.speedY = speedY;
+            this.speedX = speedX;
+            this.x = x;
+            this.y = y;
+            this.boxWidth = boxWidth;
+            this.boxHeight = boxHeight;
+            this.width = width;
+            this.height = height;
+            this.color = color;
+          }
+          draw() {
+            ctx.strokeStyle = this.color;
+            ctx.strokeRect(this.x, this.y, this.width, this.height);
+          }
+          move() {
+            this.y += this.speedY;
+          }
+        }
+        let arr = [];
+        document.querySelector("button").onclick = start;
+        document.querySelector(".canvas").onclick = function(e) {
+          const clickX = e.clientX - canvas.offsetLeft;
+          const clickY = e.clientY - canvas.offsetTop;
+          for (let i = 0; i < arr.length; i++) {
+            if (arr[i].x <= clickX && arr[i].x + arr[i].width >= clickX && arr[i].y <= clickY && arr[i].y + arr[i].height >= clickY) {
+              console.log(arr[i]);
+              arr[i].color = "green";
+              continue;
+            }
+          }
+        };
+      }
+    });
+    return (_ctx, _cache) => {
+      return openBlock(), createElementBlock(Fragment, null, [
+        _hoisted_1,
+        createBaseVNode("canvas", _hoisted_2, " 浏览器版本较低 ", 512)
+      ], 64);
+    };
+  }
+});
+_sfc_main.install = (App) => {
+  App.component(_sfc_main.name, _sfc_main);
+};
+var WaterMark = class {
+  constructor(waterTexts, needAddWaterTextElementIds) {
+    __publicField(this, "waterTexts", []);
+    __publicField(this, "needAddWaterTextElementIds", null);
+    __publicField(this, "saveNeedAddWaterMarkElement", []);
+    if (waterTexts && waterTexts.length != 0) {
+      this.waterTexts = waterTexts;
+    } else {
+      this.waterTexts = ["水印文字哈哈哈哈", "2022-12-08"];
+    }
+    this.needAddWaterTextElementIds = Array.isArray(needAddWaterTextElementIds) ? needAddWaterTextElementIds : [needAddWaterTextElementIds];
+  }
+  startWaterMark() {
+    const self = this;
+    if (this.needAddWaterTextElementIds) {
+      this.needAddWaterTextElementIds.forEach((id) => {
+        let el = document.getElementById(id);
+        self.saveNeedAddWaterMarkElement.push(el);
+      });
+    } else {
+      this.saveNeedAddWaterMarkElement = Array.from(document.getElementsByTagName("img"));
+    }
+    this.saveNeedAddWaterMarkElement.forEach((el) => {
+      self.startWaterMarkToElement(el);
+    });
+  }
+  startWaterMarkToElement(el) {
+    let nodeName = el.nodeName;
+    if (["IMG", "img"].indexOf(nodeName) != -1) {
+      this.addWaterMarkToImg(el);
+    } else {
+      this.addWaterMarkToNormalEle(el);
+    }
+  }
+  async addWaterMarkToImg(img) {
+    if (!img.complete) {
+      await new Promise((resolve) => {
+        img.onload = resolve;
+      });
+    }
+    this.addWaterMarkToNormalEle(img);
+  }
+  addWaterMarkToNormalEle(el) {
+    const self = this;
+    let canvas = document.createElement("canvas");
+    canvas.width = el.width ? el.width : el.clientWidth;
+    canvas.height = el.height ? el.height : el.clientHeight;
+    let ctx = canvas.getContext("2d");
+    let maxSize = Math.max(canvas.height, canvas.width);
+    let font = maxSize / 25;
+    ctx.font = font + 'px "微软雅黑"';
+    ctx.fillStyle = "rgba(195,195,195,1)";
+    ctx.textAlign = "left";
+    ctx.textBaseline = "top";
+    ctx.save();
+    let angle = -Math.PI / 10;
+    let translateX = canvas.height * Math.tan(Math.abs(angle));
+    let translateY = (canvas.width - translateX) * Math.tan(Math.abs(angle));
+    ctx.translate(-translateX / 2, translateY / 2);
+    ctx.rotate(angle);
+    let x = 0;
+    let y = 0;
+    let sepY = font / 2;
+    while (y < canvas.height) {
+      let rowCurrentMaxY = 0;
+      while (x < canvas.width) {
+        let totleMaxX = 0;
+        let currentY = 0;
+        this.waterTexts.forEach((text, index2) => {
+          currentY += index2 * (sepY + font);
+          let rect = self.drawWater(ctx, text, x, y + currentY);
+          let currentMaxX = rect.x + rect.width;
+          totleMaxX = currentMaxX > totleMaxX ? currentMaxX : totleMaxX;
+          rowCurrentMaxY = currentY;
+        });
+        x = totleMaxX + 20;
+      }
+      x = 0;
+      y += rowCurrentMaxY + (sepY + font + canvas.height / 5);
+    }
+    ctx.restore();
+    this.addCanvas(canvas, el);
+  }
+  drawWater(ctx, text, x, y) {
+    ctx.fillText(text, x, y);
+    let textRect = ctx.measureText(text);
+    let width = textRect.width;
+    let height = textRect.height;
+    return { x, y, width, height };
+  }
+  addCanvas(canvas, el) {
+    let warterMarDiv = document.createElement("div");
+    el.warterMark = warterMarDiv;
+    this.resetCanvasPosition(el);
+    warterMarDiv.appendChild(canvas);
+    el.parentElement.insertBefore(warterMarDiv, el);
+  }
+  resetCanvasPosition(el) {
+    if (el.warterMark) {
+      el.parentElement.style.cssText = `position: relative;`;
+      el.warterMark.style.cssText = "position: absolute;top: 0px;left: 0px;pointer-events:none";
+    }
+  }
+};
+var useToggleFullscreen = ({
+  fullscreenFlag,
+  className
+}) => {
+  const isFullScreen = document.fullscreen || document.webkitIsFullScreen || document.mozFullScreen;
+  const contentEle = className ? document.querySelector(`.${className}`) : document.body;
+  if (contentEle && !fullscreenFlag) {
+    let fullScreenEle = contentEle.requestFullscreen || contentEle.mozRequestFullScreen || contentEle.webkitRequestFullScreen || contentEle.msRequestFullscreen;
+    if (fullScreenEle) {
+      fullScreenEle.call(contentEle);
+    }
+  }
+  if (document && isFullScreen && fullscreenFlag) {
+    let exitFullScreen = document.exitFullscreen || document.mozCancelFullScreen || document.webkitCancelFullScreen || document.msExitFullscreen;
+    if (exitFullScreen) {
+      exitFullScreen.call(document);
+    }
+  }
+};
+var Utils = {
+  WaterMark,
+  useToggleFullscreen
+};
+var components = [StarrySky, DigitalScroll, AlanButton, CodeBackgroundWall, BackTop, TherMometer, _sfc_main$6, DynamicCard, _sfc_main$8, VideoRecording, _sfc_main$5, _sfc_main$3, DrawImage, _sfc_main$1, _sfc_main];
 var install = (App) => {
   components.forEach((item) => {
     App.component(item.name, item);
   });
 };
-var index = { install };
+var index = { install, Utils };
 export {
   BackTop as AlanBackTop,
   AlanButton,
-  _sfc_main$3 as Clocks,
+  _sfc_main$1 as CanvasAutograph,
+  _sfc_main$5 as Clocks,
   CodeBackgroundWall,
   DigitalScroll,
   DrawImage,
   DynamicCard,
-  _sfc_main$1 as Spotlight,
+  _sfc_main as RedPacketRain,
+  _sfc_main$3 as Spotlight,
   StarrySky,
-  _sfc_main$6 as TakingPictures,
+  _sfc_main$8 as TakingPictures,
   TherMometer,
+  Utils,
   VideoRecording,
-  _sfc_main$4 as YuanWar,
+  _sfc_main$6 as YuanWar,
   index as default
 };
 //# sourceMappingURL=@xiaomh_vue3-alan-vite-component.js.map

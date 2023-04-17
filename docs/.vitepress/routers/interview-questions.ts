@@ -52,6 +52,7 @@ const Router: RouterType = [
     text: '微信小程序',
     items: [
       { text: 'westore', link: '/interview-questions/westore/principle/' },
+      { text: '微信小程序的攻略', link: '/interview-questions/westore/introduction/' },
       { text: '微信小程序的理解', link: '/interview-questions/westore/understand/' },
       { text: '小程序生命周期', link: '/interview-questions/westore/life-cycle/' },
       { text: '微信小程序中路由跳转的方式有哪些？区别', link: '/interview-questions/westore/router-navigate/' },
