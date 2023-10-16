@@ -1,6 +1,6 @@
 {
   "name": "@xiaomh/vitepress",
-  "version": "1.7.5",
+  "version": "2.0.0",
   "main": "index.js",
   "homepage": "https://2401345934.github.io/vite-press/",
   "bugs": "https://github.com/2401345934/vite-press/issues/new",
@@ -28,32 +28,32 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@commitlint/config-conventional": "^17.6.1",
-    "@types/node": "^18.15.11",
+    "@commitlint/config-conventional": "^17.8.0",
+    "@types/node": "^20.8.6",
     "commitizen": "^4.3.0",
-    "commitlint": "^17.6.1",
+    "commitlint": "^17.8.0",
     "commitlint-config-cz": "^0.13.3",
     "cz-conventional-changelog": "^3.3.0",
     "cz-customizable": "^7.0.0",
-    "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
     "flexsearch": "^0.7.31",
     "husky": "^8.0.3",
-    "lint-staged": "^13.2.1",
-    "markdown-it": "^13.0.1",
-    "prettier": "^2.8.7",
+    "lint-staged": "^15.0.1",
+    "markdown-it": "^13.0.2",
+    "prettier": "^3.0.3",
     "prompts": "^2.4.2",
-    "vitepress": "^1.0.0-alpha.71",
+    "vitepress": "^1.0.0-rc.22",
     "vitepress-plugin-search": "^1.0.4-alpha.20",
-    "zx": "^7.2.1"
+    "zx": "^7.2.3"
   },
   "dependencies": {
     "@xiaomh/vue3-alan-vite-component": "1.2.3",
     "blueimp-md5": "^2.19.0",
-    "dayjs": "^1.11.7",
-    "fast-glob": "^3.2.12",
+    "dayjs": "^1.11.10",
+    "fast-glob": "^3.3.1",
     "gray-matter": "^4.0.3",
-    "shiki": "^0.14.1",
+    "shiki": "^0.14.5",
     "valine": "^1.5.1"
   }
 }
