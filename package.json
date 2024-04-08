@@ -1,6 +1,6 @@
 {
   "name": "@xiaomh/vitepress",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "main": "index.js",
   "homepage": "https://2401345934.github.io/vite-press/",
   "bugs": "https://github.com/2401345934/vite-press/issues/new",
@@ -43,8 +43,8 @@
     "markdown-it": "^13.0.2",
     "prettier": "^3.0.3",
     "prompts": "^2.4.2",
-    "vitepress": "^1.0.0-rc.22",
-    "vitepress-plugin-search": "^1.0.4-alpha.20",
+    "vitepress": "^1.0.2",
+    "vitepress-plugin-search": "^1.0.4-alpha.22",
     "zx": "^7.2.3"
   },
   "dependencies": {

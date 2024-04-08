@@ -1,4 +1,4 @@
-## 2.0.0 (2023-10-16)
+## 3.0.0 (2024-04-08)
 
 * ✨新增(components): 新增了注册chartgpt ([09a7b00](https://github.com/2401345934/vite-press/commit/09a7b00))
 * ✨新增(doc/工程化): sdk补充 ([84e1eb2](https://github.com/2401345934/vite-press/commit/84e1eb2))
@@ -23,6 +23,7 @@
 * 🐛修复(config): 修复 package 版本锁定 ([7731ed2](https://github.com/2401345934/vite-press/commit/7731ed2))
 * 🐛修复(config): shiki 主题删除 ([d4465c9](https://github.com/2401345934/vite-press/commit/d4465c9))
 * 🐛修复(doc/面试题): 错别字修复 ([10f7d09](https://github.com/2401345934/vite-press/commit/10f7d09))
+* 🔧工具(config): package 工具更新 ([75c3a58](https://github.com/2401345934/vite-press/commit/75c3a58))
 * 🔧工具(custom): 构建工具升级 ([b1b375e](https://github.com/2401345934/vite-press/commit/b1b375e))
 * 拆组件库 ([3885174](https://github.com/2401345934/vite-press/commit/3885174))
 * 升级npm版本 ([97560a6](https://github.com/2401345934/vite-press/commit/97560a6))
