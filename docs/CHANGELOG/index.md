@@ -1,6 +1,7 @@
 ## <small>3.0.1 (2024-04-08)</small>
 
 * ✨新增(components): 新增了注册chartgpt ([09a7b00](https://github.com/2401345934/vite-press/commit/09a7b00))
+* ✨新增(config): 更新lock ([3366e73](https://github.com/2401345934/vite-press/commit/3366e73))
 * ✨新增(config): 升级package ([7ec849d](https://github.com/2401345934/vite-press/commit/7ec849d))
 * ✨新增(doc/工程化): sdk补充 ([84e1eb2](https://github.com/2401345934/vite-press/commit/84e1eb2))
 * ✨新增(doc/浏览器): 渲染原理 ([042387c](https://github.com/2401345934/vite-press/commit/042387c))
