@@ -34,7 +34,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           # 选择要使用的 node 版本
-          node-version: "16.7.0"
+          node-version: "19.2.0"
 
       # 如果缓存没有命中，安装依赖
       - name: Install dependencies
